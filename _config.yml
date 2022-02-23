@@ -22,6 +22,9 @@ linkedin_username: "renan-af"
 #########################################################################################
 theme: "minima"
 
+minima:
+  skin: dark
+
 rss: rss
 
 kramdown:
