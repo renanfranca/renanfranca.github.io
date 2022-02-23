@@ -17,8 +17,8 @@ linkedin_username: "renan-af"
 #youtube_username: username
 #googleplus_username: +username
 
-#minima:
-#  skin: dark
+minima:
+  skin: dark
 
 #########################################################################################
 ######### Nothing below needs to be changed (unless you know what you're doing) #########
