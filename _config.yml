@@ -35,7 +35,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
-google_analytics​: ​UA-221311981-1
+#google_analytics​: ​UA-221311981-1
 
 titles_from_headings:
   strip_title: true
