@@ -35,7 +35,6 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
-# Google Analytics
 google_analytics​: G-BLB41NFCTQ
 
 titles_from_headings:
