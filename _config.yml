@@ -1,8 +1,6 @@
 title: "Renan Hipster"
 author: "Renan Franca"
 description: "I enjoy java☕ spring boot🍃 and Kubernetes☸️ to build awesome microservices • I love implementing automated tests😊• @jhipster lover🤓" # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
-# Google Analytics
-google_analytics​: ​UA-221311981-1
 
 # Email / Social media user names used by the minima theme:
 # All of these are optional and can be removed or commented out
@@ -36,6 +34,9 @@ kramdown:
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+
+# Google Analytics
+google_analytics​: ​UA-221311981-1
 
 titles_from_headings:
   strip_title: true
