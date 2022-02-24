@@ -21,6 +21,9 @@ linkedin_username: renan-af
 #  social_links:
 #    twitter: jekyllrb
 
+header_pages:
+  - archive.html
+
 #########################################################################################
 ######### Nothing below needs to be changed (unless you know what you're doing) #########
 #########################################################################################
