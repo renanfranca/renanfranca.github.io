@@ -29,6 +29,8 @@ layout: default
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
 
+Comments {{ site.comments_repo }}
+
 {% if site.comments_repo %}
   {% include comments.html %}
 {% endif %}
