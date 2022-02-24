@@ -5,7 +5,7 @@ title: Blog Archive
 
 <a href="/archive.html">Sort by category</a>
 
-{%- assign allposts = site.posts | concat: site.personal | sort_natural: "date" | reverse %}
+{%- assign allposts = site.posts | sort_natural: "date" | reverse %}
 
 {%- assign postsByYearMonth = allposts | group_by_exp:"allposts", "allposts.date | date: '%Y %B'"  %}
 
