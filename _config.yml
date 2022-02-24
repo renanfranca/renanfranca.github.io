@@ -19,6 +19,8 @@ linkedin_username: "renan-af"
 
 minima:
   skin: dark
+  social_links:
+    twitter: jekyllrb
 
 #########################################################################################
 ######### Nothing below needs to be changed (unless you know what you're doing) #########
