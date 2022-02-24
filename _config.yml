@@ -15,10 +15,10 @@ linkedin_username: "renan-af"
 #youtube_username: username
 #googleplus_username: +username
 
-minima:
-  skin: dark
-  social_links:
-    twitter: jekyllrb
+#minima:
+#  skin: dark
+#  social_links:
+#    twitter: jekyllrb
 
 #########################################################################################
 ######### Nothing below needs to be changed (unless you know what you're doing) #########
@@ -36,7 +36,7 @@ plugins:
   - jekyll-sitemap
 
 # Google Analytics
-google_analytics​: "G-BLB41NFCTQ"
+google_analytics​: G-BLB41NFCTQ
 
 titles_from_headings:
   strip_title: true
