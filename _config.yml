@@ -36,7 +36,7 @@ plugins:
   - jekyll-sitemap
 
 # Google Analytics
-google_analytics​: G-BLB41NFCTQ
+google_analytics​: "G-BLB41NFCTQ"
 
 titles_from_headings:
   strip_title: true
