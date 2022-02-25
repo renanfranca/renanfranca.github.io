@@ -8,7 +8,7 @@ tags: JHipster
 
 • Get Start JHipster 7 video with [@mraible](https://twitter.com/mraible?t=BK6_6Qf1CS0jFODjpxEjMg&s=09){:target="_blank"}  and replicate the github tutorial step by step on your machine (my first contact with JHipster 🤯) - [https://t.co/OYF9asaLyj](https://t.co/OYF9asaLyj){:target="_blank"} 
 
-• Learn how to debug JHipster source code and learn how it works - [https://t.co/pirXeJoC6H](https://t.co/pirXeJoC6H){:target="_blank"} | [https://t.co/7QaNZgixRQ](https://t.co/7QaNZgixRQ){:target="_blank"} by [@avdev4j](https://twitter.com/avdev4j?t=5f1PdVVFRzYQ3ViicdJwBg&s=09){:target="_blank"}
+• Learn how to debug JHipster source code and learn how it works - [https://t.co/pirXeJoC6H](https://t.co/pirXeJoC6H){:target="_blank"} || [https://t.co/7QaNZgixRQ](https://t.co/7QaNZgixRQ){:target="_blank"} by [@avdev4j](https://twitter.com/avdev4j?t=5f1PdVVFRzYQ3ViicdJwBg&s=09){:target="_blank"}
 
 • I made one personal blueprint ([https://t.co/lZPiE27YkK](https://t.co/lZPiE27YkK){:target="_blank"}) that changes the spring boot generated code pattern
 
