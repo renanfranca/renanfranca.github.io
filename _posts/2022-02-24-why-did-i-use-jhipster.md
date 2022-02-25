@@ -36,7 +36,6 @@ After some research I found JHipster wich is a rapid application development pla
 
 • Create DTO classes
 
-
 • Create Mapper classes
 
 • Configure liquibase
@@ -55,4 +54,4 @@ After some research I found JHipster wich is a rapid application development pla
 
 • Create yml files to deploy on Kubernetes
 
-**I hope you have the time to try out JHipster**. If you have any questions or just want to say something, use the comment section 👇
+**I hope you have the time to try out  [JHipster](https://www.jhipster.tech/){:target="_blank"}**. If you have any questions or just want to say something, use the comment section 👇
