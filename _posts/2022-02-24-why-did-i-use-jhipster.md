@@ -12,7 +12,19 @@ I have been thinking that we type a lot of boilerplate code demanded by the tech
 
 Even though, as a backend developer, using Spring Boot Annotation, Lombok and maven archetype project doesn't completely solve this issue. Why didn't we already automate the development process itself?
 
-After some research I found JHipster! Explain JHipster..
+After some research I found JHipster wich is a rapid application development plataform for java web applications and microservices.
+
+### Some of the JHipster options:
+
+• Generate simple monolith web applications
+
+• Generate complete microservice architecture
+
+• Generate domain model (entities)
+
+• Generate Continuous Integration (CI)/Continuous Deployment (CD) pipelines
+
+• Deploy to the cloud or containers
 
 ### I am using JHipster because I am tired of:
 
@@ -42,3 +54,5 @@ After some research I found JHipster! Explain JHipster..
 • Manually keep spring boot and the project dependencies updated
 
 • Create yml files to deploy on Kubernetes
+
+I hope you have the time to try out JHipster. If you have any questions or just want to say something, use the comment section 👇
