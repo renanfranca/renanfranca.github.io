@@ -6,7 +6,7 @@ date: 2022-02-24 13:00:00 -0300
 tags: JHipster
 ---
 
-## Why did I use JHipster?
+## Why did I use JHipster? 
 
 I have been thinking that we type a lot of boilerplate code demanded by the technology before the business logic code.
 
