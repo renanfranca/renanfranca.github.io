@@ -32,4 +32,4 @@ tags: jhipster
 
 • Full Stack Java with React, Spring Boot, and JHipster by [@mraible](https://twitter.com/mraible?t=BK6_6Qf1CS0jFODjpxEjMg&s=09){:target="_blank"} - [https://t.co/F4ga4sjHyr](https://t.co/F4ga4sjHyr){:target="_blank"}
 
-**I hope you have the time to try out [JHipster](https://www.jhipster.tech/){:target="_blank"}**. If you have any questions or just want to say something, use the comment section 👇
+**I hope you have the time to try out [JHipster](https://www.jhipster.tech/){:target="_blank"}**. If you have any questions or just want to say something, please, use the comment section 😊
