@@ -44,11 +44,11 @@ After some research I found JHipster wich is a rapid application development pla
 
 • Configure spring application yml for each environment
  
- • Database connection 
+  * Database connection 
 
- • Spring profiles
+  * Spring profiles
 
- • Set framework/library properties
+  * Set framework/library properties
 
 • Manually keep spring boot and the project dependencies updated
 
