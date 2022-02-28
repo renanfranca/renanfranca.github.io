@@ -16,9 +16,7 @@ If you have a repository at github, you can access the [VsCode web](https://gith
 After that, your github repository will be opened with a VsCode web version and each commit automatically push the change to de repository.
 
 As an example of the use VsCode on Android I will remove the target _blank from the JHipster link at home:
-![Remove target _blank](https://renanfranca.github.io/img/vscode-android/vscode-android-2.webp)
-
-Change my blog repository using VsCode on fullscreen
+![Change my blog repository using VsCode on fullscreen](https://renanfranca.github.io/img/vscode-android/vscode-android-2.webp)
 
 Once the repository was changed, [the github action](https://dev.to/entando/get-started-with-github-actions-1gde) will automatically publish my blog update and the JHipster link will open at the same tab:
 
@@ -26,6 +24,6 @@ Once the repository was changed, [the github action](https://dev.to/entando/get-
 
 I used vscode to easily navigate through my repository files, I used the search/replace, change files folder and rename. It helped me a lot!
 
-In my opinion, VsCode for Android isn't a smooth experience and it's hard to hit the spot you want to change at code.
+In my opinion, VsCode for Android isn't a smooth experience and it's hard to hit the spot you want to change at the code.
 
 If you have any questions or just want to say something, please, use the comment section 😊
