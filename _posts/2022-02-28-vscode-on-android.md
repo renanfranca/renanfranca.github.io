@@ -1,5 +1,5 @@
 ---
-title: VsCode on Android
+title: VsCode on Android (no need to install anything)
 description: Since my baby girl was born I don't have the time to use my computer because I'm taking care of her and I only have a short period of free time during the day. So I needed to use my Android smartphone to create and update [my blog](https://renanfranca.github.io?utm_source=dev.to&utm_medium=social&utm_campaign=promote-blog).
 published: false
 tags: tipsandtricks vscode tools
