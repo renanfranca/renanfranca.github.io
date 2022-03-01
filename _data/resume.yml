@@ -1,7 +1,7 @@
 theme: default
 header:
   name: Renan Franca
-  suffix: 
+  #suffix: 
   display_contact_info: true
   current_title: Software Engineer
   intro: >

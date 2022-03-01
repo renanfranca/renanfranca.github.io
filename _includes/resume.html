@@ -2,7 +2,7 @@
 
 <script>
   // Hack to get a better name when printing the file to PDF
-  document.title = "{{resume.header.name}}{{if resume.header.suffix}}, {{resume.header.suffix}}{{endif}} - {{resume.header.current_title}} - Resume";
+  document.title = "{{resume.header.name}}{{if resume.header.suffix}}, {{resume.header.suffix}}{{endif}} - {{resume.header.current_title}} - About";
 
   function JobDateDiff (start, end) {
       var daysDiff = (new Date(end).getTime() -  new Date(start).getTime()) / 86400000 //ms in a day;
