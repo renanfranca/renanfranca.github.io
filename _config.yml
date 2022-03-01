@@ -25,6 +25,7 @@ linkedin_username: renan-af
 #    twitter: jekyllrb
 
 header_pages:
+  - resume.html
   - archive.html
 
 #########################################################################################
