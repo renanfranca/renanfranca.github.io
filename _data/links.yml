@@ -2,9 +2,9 @@
   url: https://linkedin.com/in/renan-af
   label: renan-af
 
-- name: Credly/Acclaim
-  url: https://credly.com/users/chadbaldwin
-  label: chadbaldwin
+- name: Twitter
+  url: https://www.twitter.com/renan_afranca
+  label: renan_afranca
 
 - name: GitHub
   url: https://github.com/renanfranca
@@ -14,6 +14,6 @@
   url: https://stackoverflow.com/users/1184154/
   label: renan-franca
 
-- name: PluralSight
+- name: Dev.to
   url: https://app.pluralsight.com/profile/chadbaldwin
   label: chadbaldwin
