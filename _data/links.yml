@@ -17,3 +17,7 @@
 - name: Dev.to
   url: https://dev.to/renanfranca
   label: renanfranca
+
+- name: Hashnode
+  url: https://hashnode.com/@renanfranca
+  label: renanfranca
