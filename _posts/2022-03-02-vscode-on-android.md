@@ -1,7 +1,8 @@
 ---
+layout: post
 title: VsCode on Android (no need to install anything)
 description: Since my baby girl was born I don't have the time to use my computer because I'm taking care of her and I only have a short period of free time during the day. So I needed to use my Android smartphone to create and update [my blog](https://renanfranca.github.io?utm_source=dev.to&utm_medium=social&utm_campaign=promote-blog).
-published: false
+date: 2022-03-02 08:04:05 -03:00
 tags: tipsandtricks vscode tools
 ---
 
@@ -27,3 +28,5 @@ I used vscode to easily navigate through my repository files, I used the search/
 In my opinion, VsCode for Android isn't a smooth experience and it's hard to hit the spot you want to change at the code.
 
 If you have any questions or just want to say something, please, use the comment section 😊
+
+**Thank you** for reading this post, let me know if you enjoy it or not🥺. If you find the content interesting, follow me 👣 on [![Twitter](https://renanfranca.github.io/img/socialicons/twitter.svg)](https://www.twitter.com/renan_afranca) or [![LinkedIn](https://renanfranca.github.io/img/socialicons/linkedin.svg)](https://www.linkedin.com/in/renan-af)
