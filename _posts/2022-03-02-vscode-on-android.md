@@ -19,7 +19,7 @@ After that, your github repository will be opened with a VSCode web version and 
 As an example of the use VSCode on Android I will remove the target _blank from the JHipster link at home:
 ![Change my blog repository using VSCode on fullscreen](https://renanfranca.github.io/img/vscode-android/vscode-android-2.webp)
 
-Once the repository was changed, [the github action](https://dev.to/entando/get-started-with-github-actions-1gde) will automatically publish my blog update and the JHipster link will open at the same tab:
+Once the repository was changed, [the github action](https://dev.to/entando/get-started-with-github-actions-1gde) (by [@avdev4j](https://twitter.com/avdev4j)) will automatically publish my blog update and the JHipster link will open at the same tab:
 
 ![Github action automatically publishing my blog update](https://renanfranca.github.io/img/vscode-android/vscode-android-3.webp)
 
