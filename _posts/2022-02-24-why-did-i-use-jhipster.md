@@ -6,7 +6,7 @@ date: 2022-02-24 13:00:00 -0300
 tags: jhipster
 image: /img/postbanners/2022-02-24-cover-why-jhipster.jpeg
 ---
-
+![cover image](/img/postbanners/2022-02-24-cover-why-jhipster.jpeg)
 I have been thinking that we type a lot of boilerplate code demanded by the technology before the business logic code.
 
 Even though, as a backend developer, using Spring Boot Annotation, Lombok and maven archetype project doesn't completely solve this issue. Why didn't we already automate the development process itself?
