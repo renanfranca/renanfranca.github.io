@@ -4,7 +4,7 @@ title: My road map to learn JHipster
 description: Get Start JHipster 7 video with [@mraible](https://twitter.com/mraible?t=BK6_6Qf1CS0jFODjpxEjMg&s=09)  and replicate the github tutorial step by step on your machine (my first contact with JHipster 🤯) - [https://t.co/OYF9asaLyj](https://t.co/OYF9asaLyj) 
 date: 2022-02-25 15:00:00 -0300
 tags: jhipster
-images: /img/postbanners/2022-02-25-cover-roadmap-jhipster.jpeg
+image: /img/postbanners/2022-02-25-cover-roadmap-jhipster.jpeg
 ---
 ![cover image](/img/postbanners/2022-02-25-cover-roadmap-jhipster.jpeg)
 
