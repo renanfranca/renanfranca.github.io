@@ -3,8 +3,10 @@ layout: post
 title: VSCode on Android (you don't need to install anything)
 description: Since my baby girl was born I don't have the time to use my computer because I'm taking care of her and I only have a short period of free time during the day. So I needed to use my Android smartphone to create and update [my blog](https://renanfranca.github.io?utm_source=dev.to&utm_medium=social&utm_campaign=promote-blog).
 date: 2022-03-02 08:04:05 -03:00
-tags: tipsandtricks vscode
+tags: vscode
+image: /img/postbanners/2032-03-02-cover-vscode-android.jpeg
 ---
+![cover image](/img/postbanners/2032-03-02-cover-vscode-android.jpeg)
 
 Since my baby girl was born I don't have the time to use my computer because I'm taking care of her and I only have a short period of free time during the day. So I needed to use my Android smartphone to create and update [my blog](https://renanfranca.github.io?utm_source=dev.to&utm_medium=social&utm_campaign=promote-blog).
 
