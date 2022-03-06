@@ -14,35 +14,35 @@ Even though, as a backend developer, using Spring Boot Annotation, Lombok and ma
 
 After some research I found JHipster wich is a rapid application development plataform for java web applications and microservices.
 
-### Some of the JHipster options:
+## Some of the JHipster options
 
-• Generate simple monolith web applications
+* Generate simple monolith web applications
 
-• Generate complete microservice architecture
+* Generate complete microservice architecture
 
-• Generate domain model (entities)
+* Generate domain model (entities)
 
-• Generate Continuous Integration (CI)/Continuous Deployment (CD) pipelines
+* Generate Continuous Integration (CI)/Continuous Deployment (CD) pipelines
 
-• Deploy to the cloud or containers
+* Deploy to the cloud or containers
 
-### I am using JHipster because I am tired of:
+## I am using JHipster because I am tired of
 
-• Create/Type entity classes
+* Create/Type entity classes
 
-• Create/Type Repository, Services and Controllers classes with CRUD code
+* Create/Type Repository, Services and Controllers classes with CRUD code
 
-• Create integration test for CRUD operation 
+* Create integration test for CRUD operation 
 
-• Create DTO classes
+* Create DTO classes
 
-• Create Mapper classes
+* Create Mapper classes
 
-• Configure liquibase
+* Configure liquibase
 
-• Configure Security
+* Configure Security
 
-• Configure spring application yml for each environment
+* Configure spring application yml for each environment
  
   * Database connection 
 
@@ -50,8 +50,8 @@ After some research I found JHipster wich is a rapid application development pla
 
   * Set framework/library properties
 
-• Manually keep spring boot and the project dependencies updated
+* Manually keep spring boot and the project dependencies updated
 
-• Create yml files to deploy on Kubernetes
+* Create yml files to deploy on Kubernetes
 
 **I hope you have the time to try out [JHipster](https://www.jhipster.tech/)**. If you have any questions or just want to say something, please, use the comment section 😊
