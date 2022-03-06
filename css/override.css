@@ -45,8 +45,6 @@ hr {
 }
 
 .header-link {
-  position: absolute;
-  left: -0.5em;
   opacity: 0.6;
 
   \-webkit-transition: opacity 0.2s ease-in-out 0.1s;
