@@ -2,7 +2,7 @@
 layout: post
 title: My 15+ Reasons to use JHipster
 description: You are going to have a bootstrap project with a lot of features and functionality already configured and implemented. I will share with you the JHipster features I like the most.
-published: false
+published: true
 date: 2022-03-08 09:00:00 -0300
 tags: jhipster
 image: /img/postbanners/2022-03-08-cover-my-reasons-to-use-jhipster.jpeg
