@@ -33,7 +33,7 @@ You are going to have a bootstrap project with a lot of features and functionali
 9. Already configured [liquibase](https://www.liquibase.org/). Learn more on [How to Use Liquibase to Update the Schema of Your JHipster Application](https://dev.to/entando/how-to-use-liquibase-to-update-the-schema-of-your-jhipster-application-1cm3) by [@avdev4j](https://twitter.com/avdev4j)
 10. Already implemented user management module (registration, login, forgot password, roles)
 11. Every generated code has an automatic test implemented (Angular and Spring Boot), so after using the JHipster generator just run `./mvnw verify` and you are ready to go if all tests pass
-12. Already built-in internationalization support!! - [https://www.jhipster.tech/development/#internationalization](https://www.jhipster.tech/development/#internationalization)
+12. Already built-in internationalization support!! - [jhipster internationalization](https://www.jhipster.tech/development/#internationalization)
 13. The Angular and Spring Boot code is really easy to read and customize! In addition, there are many “helper” classes to assist you with business logic implementation!
 14. Already configured [Cypress](https://www.cypress.io/) for end-to-end tests. [Learn how to use cypress with Anthony Viard](https://www.youtube.com/watch?v=FOWDZpOYIDA)
 15. Already implemented a sophisticated error handler - [https://www.jhipster.tech/managing-server-errors/](https://www.jhipster.tech/managing-server-errors/) 
