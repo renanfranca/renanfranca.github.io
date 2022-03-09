@@ -22,7 +22,7 @@ You are going to have a bootstrap project with a lot of features and functionali
 
 ## My 15+ Reasons to use JHipster
 
-1. Update all libraries and framework automatically when upgrading the JHipster version of the project (I upgraded from version 7.1.0 to 7.1.0 smoothly) - [https://www.jhipster.tech/upgrading-an-application/](https://www.jhipster.tech/upgrading-an-application/)
+1. Update all libraries and framework automatically when upgrading the JHipster version of the project (I upgraded from version 7.1.0 to 7.2.0 smoothly) - [https://www.jhipster.tech/upgrading-an-application/](https://www.jhipster.tech/upgrading-an-application/)
 2. Already configured Husky (configure git hooks for automatic tasks) - [https://typicode.github.io/husky](https://typicode.github.io/husky) 
 3. Already configured eslint (javascript code analysis and automatic fix) - [https://eslint.org/](https://eslint.org/) 
 4. Already configured EditorConfig to maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs - [https://editorconfig.org/](https://editorconfig.org/) 
