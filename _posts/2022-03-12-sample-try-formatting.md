@@ -1,6 +1,6 @@
 ---
 layout: post
-title:Sample Try Formatting
+title: Sample Try Formatting
 published: true
 ---
 
