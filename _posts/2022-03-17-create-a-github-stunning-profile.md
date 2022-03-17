@@ -24,7 +24,7 @@ Let's create an [attractive Github profile](https://naveenkumarj.hashnode.dev/tr
 
 The result will be something like [my Github profile](https://github.com/renanfranca):
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/byMQDWcsKIY/0.jpg)](http://www.youtube.com/watch?v=byMQDWcsKIY)
+{% include youtubePlayer.html id=byMQDWcsKIY %}
 
 ## Dynamically listing your recent blog posts
 
