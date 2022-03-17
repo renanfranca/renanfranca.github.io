@@ -7,6 +7,7 @@ date: 2022-03-17 06:55:00 -0300
 tags: blogging
 image: /img/postbanners/2022-03-17-cover-github-stunning-profile.jpeg
 youtubeFirstId: byMQDWcsKIY
+youtubeSecondId: vSzr4HO8x24
 ---
 ![cover image](/img/postbanners/2022-03-17-cover-github-stunning-profile.jpeg)
 
@@ -37,7 +38,7 @@ The above code implements a workflow to update a github profile README.md with t
 
 I am going to show you how to make it works.
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/vSzr4HO8x24/0.jpg)](http://www.youtube.com/watch?v=vSzr4HO8x24)
+{% include youtubePlayer.html id=page.youtubeSecondId %}
 
 Let's change that workflow to execute automatically every hour. Replace this
 ```yaml
