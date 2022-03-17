@@ -22,8 +22,7 @@ Let's create an [attractive Github profile](https://naveenkumarj.hashnode.dev/tr
 3. Access [this awesome open source project](https://rahuldkjain.github.io/gh-profile-readme-generator/) (by [@Rahuldkjain](https://twitter.com/Rahuldkjain)) to help you to generate the README.md file content
 4. Copy and paste the generated content into your README.md and commit it
 
-The result will be something like that ([my Github profile](https://github.com/renanfranca)):
-
+The result will be something like [my Github profile](https://github.com/renanfranca):
 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/byMQDWcsKIY/0.jpg)](http://www.youtube.com/watch?v=byMQDWcsKIY)
 
