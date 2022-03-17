@@ -6,6 +6,7 @@ description: I learned that you have to expose your blog posts as much you can, 
 date: 2022-03-17 06:55:00 -0300
 tags: blogging
 image: /img/postbanners/2022-03-17-cover-github-stunning-profile.jpeg
+youtubeFirstId: byMQDWcsKIY
 ---
 ![cover image](/img/postbanners/2022-03-17-cover-github-stunning-profile.jpeg)
 
@@ -24,7 +25,7 @@ Let's create an [attractive Github profile](https://naveenkumarj.hashnode.dev/tr
 
 The result will be something like [my Github profile](https://github.com/renanfranca):
 
-{% include youtubePlayer.html id=byMQDWcsKIY %}
+{% include youtubePlayer.html id=page.youtubeFirstId %}
 
 ## Dynamically listing your recent blog posts
 
