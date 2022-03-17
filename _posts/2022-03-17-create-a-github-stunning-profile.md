@@ -1,9 +1,9 @@
 ---
 layout: post
-published: false
+published: true
 title: Create a Github stunning profile 💫 (by dynamically listing your recent blog posts)
 description: I learned that you have to expose your blog posts as much you can, without spamming or being annoying, to have a chance to someone read them.
-date: 2022-03-17 07:00:00 -0300
+date: 2022-03-17 06:55:00 -0300
 tags: blogging
 image: /img/postbanners/2022-03-17-cover-create-a-github-stunning-profile.jpeg
 ---
@@ -24,8 +24,7 @@ Let's create an [attractive Github profile](https://naveenkumarj.hashnode.dev/tr
 
 The result will be something like that:
 
-{% youtube byMQDWcsKIY %}
-
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/byMQDWcsKIY/0.jpg)](http://www.youtube.com/watch?v=byMQDWcsKIY)
 
 ## Dynamically listing your recent blog posts
 
@@ -37,7 +36,7 @@ The above code implements a workflow to update a github profile README.md with t
 
 I am going to show you how to make it works.
 
-{% youtube vSzr4HO8x24 %}
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/vSzr4HO8x24/0.jpg)](http://www.youtube.com/watch?v=vSzr4HO8x24)
 
 Let's change that workflow to execute automatically every hour. Replace this
 ```yaml
