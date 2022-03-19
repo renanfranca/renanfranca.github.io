@@ -34,4 +34,6 @@ image: /img/postbanners/2022-02-25-cover-roadmap-jhipster.jpeg
 
 * Full Stack Java with React, Spring Boot, and JHipster by [@mraible](https://twitter.com/mraible?t=BK6_6Qf1CS0jFODjpxEjMg&s=09) - [https://t.co/F4ga4sjHyr](https://t.co/F4ga4sjHyr)
 
+* Join the JHipster Twitter community [https://twitter.com/i/communities/1498905075833520131](https://twitter.com/i/communities/1498905075833520131)
+
 **I hope you have the time to try out [JHipster](https://www.jhipster.tech/)**. If you have any questions or just want to say something, please, use the comment section 😊
