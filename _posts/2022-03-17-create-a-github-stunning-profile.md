@@ -30,7 +30,7 @@ The result will be something like [my Github profile](https://github.com/renanfr
 
 ## Dynamically listing your recent blog posts
 
-Now we are going to add the latest blog posts to my GitHub profile by using [Github Actions](https://dev.to/entando/get-started-with-github-actions-1gde) (by [@avdev4j](https://twitter.com/avdev4j) ) with the help of [this addon](https://rahuldkjain.github.io/gh-profile-readme-generator/addons) (by [@Rahuldkjain](https://twitter.com/Rahuldkjain))
+Now we are going to add the latest blog posts to my GitHub profile by using [Github Actions](https://dev.to/entando/get-started-with-github-actions-1gde) (by [@avdev4j](https://twitter.com/avdev4j) ) with the help of [this addon](https://github.com/gautamkrishnar/blog-post-workflow) (by [@gautamkrishnar](https://twitter.com/gautamkrishnar))
 
 <script src="https://gist.github.com/renanfranca/66eef25dd7fb00ace885e07d049cfc79.js"></script>
 
