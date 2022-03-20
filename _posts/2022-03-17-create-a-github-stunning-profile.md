@@ -56,5 +56,5 @@ The final file will be like this
 
 <script src="https://gist.github.com/renanfranca/8fe7bf5c34cbc28e849c0bc14fea2437.js"></script>
 
-A special thanks to [@Rahuldkjain](https://twitter.com/Rahuldkjain)) for building the awesome open source project that I used on this post. Please, visit [the repository](https://github.com/rahuldkjain/github-profile-readme-generator) and give it a star 🤩
+A special thanks to [@Rahuldkjain](https://twitter.com/Rahuldkjain) for building the awesome open source project that I used on this post. Please, visit [the repository](https://github.com/rahuldkjain/github-profile-readme-generator) and give it a star 🤩
 
