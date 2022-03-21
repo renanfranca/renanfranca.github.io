@@ -56,4 +56,4 @@ The final file will be like this
 
 <script src="https://gist.github.com/renanfranca/8fe7bf5c34cbc28e849c0bc14fea2437.js"></script>
 
-A special thanks to [@Rahuldkjain](https://twitter.com/Rahuldkjain) and [@gautamkrishnar](https://twitter.com/gautamkrishnar) for building the awesome open source project that I used on this post. Please, visit [rahuldkjain's project repository](https://github.com/rahuldkjain/github-profile-readme-generator) and [gautamkrishnar's project repository](https://github.com/gautamkrishnar/blog-post-workflow) and give it a star 🤩
+A special thanks to [@Rahuldkjain](https://twitter.com/Rahuldkjain) and [@gautamkrishnar](https://twitter.com/gautamkrishnar) for building the awesome open source projects that I used on this post. Please, visit [rahuldkjain's project repository](https://github.com/rahuldkjain/github-profile-readme-generator) and [gautamkrishnar's project repository](https://github.com/gautamkrishnar/blog-post-workflow) and give it a star 🤩
