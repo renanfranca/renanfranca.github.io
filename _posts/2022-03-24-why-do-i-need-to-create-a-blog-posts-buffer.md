@@ -5,7 +5,10 @@ title: Why do I need to create a blog posts buffer? (stop blogging weekly)
 description: I am going to stop blogging weekly before I failed. I am going to explain why.
 date: 2022-03-24 23:20:00 -0300
 tags: blogging
+image: /img/postbanners/2022-03-24-cover-why-do-i-need-to-create-a-blog-posts-buffer.jpeg
 ---
+![cover image](/img/postbanners/2022-03-24-cover-why-do-i-need-to-create-a-blog-posts-buffer.jpeg)
+
 I am going to stop blogging weekly before I failed. I am going to explain why.
 
 Since I started blogging (last month😅, I am a beginner) I have been using exclusively my phone to write my blog posts because I had to take care of my baby girl. That's leading me to create the following interesting post:
