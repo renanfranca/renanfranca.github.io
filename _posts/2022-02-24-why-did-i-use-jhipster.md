@@ -12,7 +12,7 @@ I have been thinking that we type a lot of boilerplate code demanded by the tech
 
 Even though, as a backend developer, using Spring Boot Annotation, Lombok and maven archetype project doesn't completely solve this issue. Why didn't we already automate the development process itself?
 
-After some research I found JHipster wich is a rapid application development plataform for java web applications and microservices.
+After some research, I found JHipster which is a rapid application development platform for java web applications and microservices.
 
 ## Some of the JHipster options
 
