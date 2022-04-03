@@ -15,7 +15,7 @@ Since I started blogging (last month😅, I am a beginner) I have been using exc
 
 * [VSCode on Android (you don’t need to install anything)](https://renanfranca.github.io/2022/03/02/vscode-on-android.html)
 
-Then I realized that you enjoyed the objective content and it's getting better if there is a short screen capture video showing how to. Here is another blog post with short video:
+Then I realized that you enjoyed the objective content and it's getting better if there is a short screen capture video showing how to. Here is another blog post with a short video:
 
 * [Create a Github stunning profile 💫 (by dynamically listing your recent blog posts)](https://renanfranca.github.io/2022/03/17/create-a-github-stunning-profile.html)
 
