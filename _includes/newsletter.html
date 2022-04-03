@@ -1,9 +1,11 @@
-<div id="content">
+<div id="content" class="content">
   <form class="subscription" action="https://www.getrevue.co/profile/renanfranca/add_subscriber" method="post" id="revue-form" name="revue-form"  target="_blank">
+<!--
   <div class="revue-form-group">
     <label for="member_email">Email address</label>
+ -->
     <input class="add-email" placeholder="Your email address..." type="email" name="member[email]" id="member_email">
-  </div>
+<!--  </div>  -->
 <!--
   <div class="revue-form-group">
     <label for="member_first_name">First name <span class="optional">(Optional)</span></label>
@@ -14,25 +16,15 @@
     <input class="revue-form-field" placeholder="Last name... (Optional)" type="text" name="member[last_name]" id="member_last_name">
   </div>
 -->
-  <div class="revue-form-actions">
-    <input class="submit-email" type="submit" value="Subscribe" name="member[subscribe]" id="member_submit">
-  </div>
+  <button class="submit-email" type="submit" name="member[subscribe]" id="member_submit">
+     <span class="before-submit">Subscribe</span>
+     <span class="after-submit">Thank you for subscribing!</span>
+  </button>
   <div class="revue-form-footer">By subscribing, you agree with Revue’s <a target="_blank" href="https://www.getrevue.co/terms">Terms of Service</a> and <a target="_blank" href="https://www.getrevue.co/privacy">Privacy Policy</a>.</div>
   </form>
 </div>
 
 <style>
-.container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .content {
   width: 360px;
   height: 40px;
@@ -93,7 +85,6 @@
   transition: visibility .35s ease-in-out,
     opacity .35s ease-in-out;
 }
-
 .subscription.done .submit-email .before-submit,
 .subscription:not(.done) .submit-email .after-submit {
   visibility: hidden;
@@ -109,7 +100,11 @@
   visibility: visible;
   opacity: 1;
 }
-
-
-Resources
 </style>
+
+<script>
+document.querySelector('.submit-email').addEventListener('mousedown', (e) => {
+  e.preventDefault();
+  document.querySelector('.subscription').classList.add('done');
+});
+</script>
