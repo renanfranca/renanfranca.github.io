@@ -37,7 +37,7 @@ I will need to screen capture my notebook for the following posts, so I will nee
 
 Some opportunities appear because I am blogging. So I need more free time to grab those opportunities and see what is going to happen 😆. 
 
-Last week I participated at Twitter Space hosted by [@TheSohini](https://twitter.com/TheSohini) and [@avdev4j](https://twitter.com/avdev4j)
+Last week I participated in Twitter Space hosted by [@TheSohini](https://twitter.com/TheSohini) and [@avdev4j](https://twitter.com/avdev4j)
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">The recording <a href="https://t.co/ZuVLPC4Y6I">https://t.co/ZuVLPC4Y6I</a><br><br>At the end I talked about my recently experience with the <a href="https://twitter.com/jhipster?ref_src=twsrc%5Etfw">@jhipster</a> project and how I am sharing it on my blog <a href="https://t.co/KAA1n9yMvU">https://t.co/KAA1n9yMvU</a></p>&mdash; Renan Franca (@renan_afranca) <a href="https://twitter.com/renan_afranca/status/1504833377144291341?ref_src=twsrc%5Etfw">March 18, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
