@@ -10,7 +10,7 @@ image: /img/postbanners/2022-03-02-cover-vscode-android.jpeg
 
 Since my baby girl was born I don't have the time to use my computer because I'm taking care of her and I only have a short period of free time during the day. So I needed to use my Android smartphone to create and update [my blog](https://renanfranca.github.io?utm_source=dev.to&utm_medium=social&utm_campaign=promote-blog).
 
-When you click on the JHipster link at my blog home page, It will open the JHipster site into a new tab:
+When you click on the JHipster link on my blog home page, It will open the JHipster site into a new tab:
 
 ![My blog home page](https://renanfranca.github.io/img/vscode-android/vscode-android-1.webp)
 
