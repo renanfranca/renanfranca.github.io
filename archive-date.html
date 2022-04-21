@@ -5,17 +5,15 @@ title: Blog Archive
 
 <a href="/archive.html">Sort by category</a>
 
-{%- assign allposts = site.posts | sort_natural: "date" | reverse %}
+{%- assign allposts = site.posts | sort_natural: "date" | reverse | where_exp: "item", "item.draft != 'true'" %}
 
 {%- assign postsByYearMonth = allposts | group_by_exp:"allposts", "allposts.date | date: '%Y %B'"  %}
 
 {%- for yearMonth in postsByYearMonth %}
 <h3>{{ yearMonth.name }}</h3>
 <ul>
-  {% unless post.draft %}
   {%- for post in yearMonth.items %}
   <li><a href="{{ post.url }}">{{ post.title }}</a></li>
   {%- endfor %}
-  {% endunless %}
 </ul>
 {%- endfor %}
