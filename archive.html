@@ -21,7 +21,7 @@ title: Blog Archive
 <h3>{{- tag[0] -}}</h3>
 <ul>
   {% unless post.draft %}
-  {%- for post in tag[1] %}
+  {%- for post in filteredPosts %}
   <li><a href="{{ post.url }}">{{ post.date | date: "%b %Y" }} - {{ post.title }}</a></li>
   {%- endfor %}
   {% endunless %}
