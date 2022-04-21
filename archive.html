@@ -14,7 +14,7 @@ title: Blog Archive
 {% endunless %}
 {%- endfor %}
 
-{% if filteredPosts %}
+{% if filteredPosts.size > 0 %}
 <h3>{{- tag[0] -}}</h3>
 <ul>
   {%- for post in filteredPosts %}
