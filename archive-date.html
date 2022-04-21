@@ -5,9 +5,14 @@ title: Blog Archive
 
 <a href="/archive.html">Sort by category</a>
 
-{%- assign allposts = site.posts | sort_natural: "date" | reverse | where_exp: "item", "item.draft != 'true'" %}
+{%- assign allposts = site.posts | sort_natural: "date" | reverse %}
+{% for post in allposts %}
+{% unless post.draft %}
+{% assign filteredPosts = filteredPosts | push:post %}
+{% endunless %}
+{% endfor %}
+{%- assign postsByYearMonth = filteredPosts | group_by_exp:"allposts", "allposts.date | date: '%Y %B'" %}
 
-{%- assign postsByYearMonth = allposts | group_by_exp:"allposts", "allposts.date | date: '%Y %B'"  %}
 
 {%- for yearMonth in postsByYearMonth %}
 <h3>{{ yearMonth.name }}</h3>
