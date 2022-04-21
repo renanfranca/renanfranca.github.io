@@ -17,7 +17,7 @@ title: Blog Archive
 {% endunless %}
 {%- endfor %}
 
-{% unless filteredPosts %}
+{% if filteredPosts %}
 <h3>{{- tag[0] -}}</h3>
 <ul>
   {% unless post.draft %}
@@ -26,7 +26,7 @@ title: Blog Archive
   {%- endfor %}
   {% endunless %}
 </ul>
-{% endunless %}
+{%- endif -%}
 {%- endfor %}
 <!-- ok
 <h3>Personal</h3>
