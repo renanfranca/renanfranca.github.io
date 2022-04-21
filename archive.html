@@ -6,6 +6,18 @@ title: Blog Archive
 <a href="/archive-date.html">Sort by date</a>
 
 {% for tag in site.tags %}
+{%- endfor %}
+
+{% for tag in site.tags %}
+
+{% assign filteredPosts = "" | split,"" %}
+{%- for post in tag[1] %}
+{% unless post.draft %}
+{% assign filteredPosts = filteredPosts | push:post %}
+{% endunless %}
+{%- endfor %}
+
+{% unless filteredPosts %}
 <h3>{{- tag[0] -}}</h3>
 <ul>
   {% unless post.draft %}
@@ -15,6 +27,7 @@ title: Blog Archive
   {% endunless %}
 </ul>
 {%- endfor %}
+{% endunless %}
 <!-- ok
 <h3>Personal</h3>
 <ul>
