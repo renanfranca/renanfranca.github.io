@@ -11,8 +11,8 @@ title: Blog Archive
   {% unless post.draft %}
   {%- for post in tag[1] %}
   <li><a href="{{ post.url }}">{{ post.date | date: "%b %Y" }} - {{ post.title }}</a></li>
-  {% endunless %}
   {%- endfor %}
+  {% endunless %}
 </ul>
 {%- endfor %}
 <!-- ok
