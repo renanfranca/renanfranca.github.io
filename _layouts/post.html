@@ -25,7 +25,7 @@ layout: default
   </div>
 
   <div class="post-content e-content" itemprop="articleBody">
-    {% if page.tags contains 'draft' %}
+    {% if page.draft == true %}
     <div class="message">DRAFT - This blog post is <b>under construction</b>.</div>
     {% endif %}
     {{ content }}
