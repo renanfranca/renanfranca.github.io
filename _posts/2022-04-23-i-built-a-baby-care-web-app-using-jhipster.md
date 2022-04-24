@@ -116,7 +116,7 @@ git clone https://github.com/renanfranca/mamazinha-baby.git
 
   - `.\mvnw`
 
-- 📄 jhipster-registry.7.1.0.jar
+- 📄 [jhipster-registry.7.1.0.jar](https://github.com/jhipster/jhipster-registry/releases/download/v7.1.0/jhipster-registry-7.1.0.jar)
 
 A short screen record video showing how to make it works 🤓
 {% include youtubePlayer.html id=page.youtubeId4 %}
