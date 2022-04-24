@@ -94,17 +94,20 @@ Your folder struct and the command to execute in each one will be like:
 📂mamazinha
 - `git clone https://github.com/renanfranca/mamazinha-gateway.git`
 - `git clone https://github.com/renanfranca/mamazinha-baby.git`
-- `java -jar jhipster-registry-7.1.0.jar --spring.profiles.active=dev --spring.security.user.password=admin --jhipster.registry.password=admin --spring.cloud.config.server.composite.0.type=native --spring.cloud.config.server.composite.0.search-locations=file:./mamazinha-gateway/src/main/docker/central-server-config/localhost-config/`
-- 📂|__ mamazinha-gateway
+- 
+```
+ java -jar jhipster-registry-7.1.0.jar --spring.profiles.active=dev --spring.security.user.password=admin --jhipster.registry.password=admin --spring.cloud.config.server.composite.0.type=native --spring.cloud.config.server.composite.0.search-locations=file:./mamazinha-gateway/src/main/docker/central-server-config/localhost-config/
+ ```
+- 📂 mamazinha-gateway
 
   - `.\mvnw`
   - `npm start`
 
-- 📂|__ mamazinha-baby
+- 📂 mamazinha-baby
 
   - `.\mvnw`
 
-- 📄|__ jhipster-registry.7.1.0.jar
+- 📄 jhipster-registry.7.1.0.jar
 
 A short screen record video showing how to make it works 🤓
 {% include youtubePlayer.html id=page.youtubeId4 %}
