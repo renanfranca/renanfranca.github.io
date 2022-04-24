@@ -29,7 +29,7 @@ My baby girl Marília was born on December 14th/2021, so I decided to build a we
 {% include youtubePlayer.html id=page.youtubeId1 %}
 
 - Breast/formula feeding feature
-- {% include youtubePlayer.html id=page.youtubeId2 %}
+{% include youtubePlayer.html id=page.youtubeId2 %}
 
 - Favorite nap place
 - The mood when weak up and during the day
@@ -53,7 +53,6 @@ Here is the [JDL file](https://www.jhipster.tech/jdl/intro) created to build thi
 After running the Jhipster generator from the jdl file, two projects were created:
 
  [![renanfranca/mamazinha-gateway](https://renanfranca.github.io/img/mamazinha-baby-care/github-mamazinha-gateway-image_readme.png)](https://github.com/renanfranca/mamazinha-gateway)
- 
  [![renanfranca/mamazinha-baby](https://renanfranca.github.io/img/mamazinha-baby-care/github-mamazinha-baby-image_readme.png)](https://github.com/renanfranca/mamazinha-baby)
 
 An overview of what I have to change to make my project works as I want on the gateway:
@@ -124,10 +123,14 @@ A short screen record video showing how to make it works 🤓
 ## Benefits from that project
 
 - Me and my wife discovered that our baby needs at least 10 breastfeeds to have a sweet night's sleep 💤 (7 to 8 hours in a row)
+
 ![breastfeeding 10 times](https://renanfranca.github.io/img/built-baby-care-web-app/breastfeeding_10_times.jpg)
+
 - We realized that our baby needs to wait at least 1 hour between breastfeeds to full digestion
 - Easily knows how many slept hours at the current day
+
 ![tracking slept hours 12](https://renanfranca.github.io/img/built-baby-care-web-app/tracking_slept_hours_12.jpg)
+
 - Detect a pattern of her nap time
 
 ## Why did I open source it?
