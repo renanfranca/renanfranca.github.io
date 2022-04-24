@@ -92,8 +92,14 @@ Here, I will show you how to run the project on development mode and you are goi
 Your folder struct and the command to execute in each one will be like:
 
 📂mamazinha
-- `git clone https://github.com/renanfranca/mamazinha-gateway.git`
-- `git clone https://github.com/renanfranca/mamazinha-baby.git`
+- 
+```
+git clone https://github.com/renanfranca/mamazinha-gateway.git
+```
+- 
+```
+git clone https://github.com/renanfranca/mamazinha-baby.git
+```
 - 
 ```
  java -jar jhipster-registry-7.1.0.jar --spring.profiles.active=dev --spring.security.user.password=admin --jhipster.registry.password=admin --spring.cloud.config.server.composite.0.type=native --spring.cloud.config.server.composite.0.search-locations=file:./mamazinha-gateway/src/main/docker/central-server-config/localhost-config/
