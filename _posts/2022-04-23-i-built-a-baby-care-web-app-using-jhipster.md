@@ -1,7 +1,7 @@
 ---
 layout: post
 title: I built a Baby Care web app using JHipster (open source from now on 🥰)
-date: 2022-04-29 23:43:25 -0300
+date: 2022-04-23 00:00:00 -0300
 tags: jhipster
 image: img/postbanners/cover-built-baby-care-web-app.jpeg
 draft: true
