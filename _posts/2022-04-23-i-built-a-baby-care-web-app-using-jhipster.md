@@ -92,6 +92,7 @@ Here, I will show you how to run the project on development mode and you are goi
 Your folder struct and the command to execute in each one will be like:
 
 📂mamazinha
+
 - 
 ```
 git clone https://github.com/renanfranca/mamazinha-gateway.git
