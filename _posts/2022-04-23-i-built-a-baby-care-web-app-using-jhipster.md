@@ -51,8 +51,9 @@ Here is the [JDL file](https://www.jhipster.tech/jdl/intro) created to build thi
 <script src="https://gist.github.com/renanfranca/e473ac73e6493357d1ee60699b63101f.js"></script>
 
 After running the Jhipster generator from the jdl file, two projects were created:
- - [renanfranca/mamazinha-gateway](https://github.com/renanfranca/mamazinha-gateway)
- - [renanfranca/mamazinha-baby](https://github.com/renanfranca/mamazinha-baby)
+
+ [![renanfranca/mamazinha-gateway](https://renanfranca.github.io/img/mamazinha-baby-care/github-mamazinha-gateway-image_readme.png)](https://github.com/renanfranca/mamazinha-gateway)
+ [![renanfranca/mamazinha-baby](https://renanfranca.github.io/img/mamazinha-baby-care/github-mamazinha-baby-image_readme.png)](https://github.com/renanfranca/mamazinha-baby)
 
 An overview of what I have to change to make my project works as I want on the gateway:
 
