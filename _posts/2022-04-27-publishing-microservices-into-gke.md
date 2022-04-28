@@ -38,3 +38,22 @@ After logging in at Google Cloud Console, Let’s create the Cluster Zone and th
 
 ![image](https://renanfranca.github.io/img/publishing-microservices-gke/cluster-created-screen.png)
 <figcaption>You will end up with something like this</figcaption>
+
+Now you have to connect to your cluster. Install google cloud SDK and install Google kubectl (I'm using windows)
+`gcloud components install kubectl`
+
+On git bash:
+1. confirm that the installation was successful `wich kubectl` and the response should be something like `/c/Users/ÀccountName/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin/kubectl`.
+2. execute the following command to connect to your cluster, change ==mamazinha== to your cluster name and change ==southamerica-east1-a== to your zone
+`gcloud container clusters get-credentials mamazinha -zone=southamerica-east1-a`
+
+You can now publish the yml files to GKE:
+1. clone the repository `git clone git@github.com:renanfranca/mamazinha-k8s.git`
+2. Switch to branch `google-cloud`
+3. On git bash go to the root of the cloned project folder and run the command `./kubectl-apply.sh -f`
+
+Install the amazing k9s https://k9scli.io/topics/install/ and type the command to connect to your cluster `k9s -n mamazinha`
+
+![image](https://renanfranca.github.io/img/publishing-microservices-gke/k9s-home-screen.png)
+<figcaption>k9s home screen</figcaption>
+
