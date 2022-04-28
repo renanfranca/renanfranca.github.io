@@ -27,3 +27,14 @@ So I made this pricing simulation (I choose São Paulo as my Region because I am
 ![Pricing simulation](https://renanfranca.github.io/img/publishing-microservices-gke/price-simulation.png)
 <figcaption>
 https://cloud.google.com/products/calculator/#id=d2a4523b-27f9-4a35-950b-924cd8b0d590 </figcaption>
+
+After logging in at Google Cloud Console, Let’s create the Cluster Zone and the first Node Pool
+
+![image](https://renanfranca.github.io/img/publishing-microservices-gke/open-gke-standar-option.png)
+<figcaption>Open GKE Standar Option</figcaption>
+
+![image](https://renanfranca.github.io/img/publishing-microservices-gke/cluster-options.png)
+<figcaption>Choose those options. Only edit the cluster name and the cluster zone (choose the nearest zone from your location or your client location)</figcaption>
+
+![image](https://renanfranca.github.io/img/publishing-microservices-gke/cluster-created-screen.png)
+<figcaption>You will end up with something like this</figcaption>
