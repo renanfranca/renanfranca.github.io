@@ -9,7 +9,7 @@ draft: true
 
 ---
 
-I will show you how to publish the [Mamazinha Baby Care Web App - Open Source Project](https://renanfranca.github.io/redirect/mamazinha-baby-care-app.html) on [Google Kubernet Engine (GKE)
+I will show you how to publish the [Mamazinha Baby Care Web App - Open Source Project](https://renanfranca.github.io/redirect/mamazinha-baby-care-app.html) on [Google Kubernetes Engine (GKE)
 ](https://cloud.google.com/kubernetes-engine).
 
 ## Before we start
@@ -25,4 +25,5 @@ I’ll cover here the Google Cloud configuration that I made to run my project a
 
 So I made this pricing simulation (I choose São Paulo as my Region because I am from Brazil):
 ![Pricing simulation](https://renanfranca.github.io/img/publishing-microservices-gke/price-simulation.png)
-<figcaption>[https://cloud.google.com/products/calculator/#id=d2a4523b-27f9-4a35-950b-924cd8b0d590](https://cloud.google.com/products/calculator/#id=d2a4523b-27f9-4a35-950b-924cd8b0d590)</figcaption>
+<figcaption>
+https://cloud.google.com/products/calculator/#id=d2a4523b-27f9-4a35-950b-924cd8b0d590 </figcaption>
