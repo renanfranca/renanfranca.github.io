@@ -11,7 +11,7 @@
   label: renanfranca
 
 - name: StackOverflow
-  url: https://stackoverflow.com/users/1184154/
+  url: https://stackoverflow.com/users/1184154/renan-franca?tab=profile
   label: renan-franca
 
 - name: Dev.to
@@ -30,6 +30,10 @@
   url: https://www.polywork.com/renanfranca
   label: renanfranca
 
+- name: Google Developers
+  url: https://g.dev/renanfranca
+  label: renanfranca
+  
 - name: Tealfeed
   url: https://tealfeed.com/renanfranca
   label: renanfranca
