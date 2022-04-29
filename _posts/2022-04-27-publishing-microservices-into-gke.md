@@ -23,6 +23,7 @@ I’ll cover here the Google Cloud configuration that I made to run my project a
 
 > The GKE free tier provides $74.40 in monthly credits per billing account that are applied to zonal and Autopilot clusters. If you only use a single Zonal or Autopilot cluster, this credit will at least cover the complete cost of that cluster each month. Unused free tier credits are not rolled over, and cannot be applied to any other SKUs (for example, they cannot be applied to compute charges, or the cluster fee for Regional clusters).
 
+### Initial setup
 So I made this pricing simulation (I choose São Paulo as my Region because I am from Brazil):
 ![Pricing simulation](https://renanfranca.github.io/img/publishing-microservices-gke/price-simulation.png)
 <figcaption>
@@ -43,8 +44,8 @@ Now you have to connect to your cluster. Install google cloud SDK and install Go
 `gcloud components install kubectl`
 
 On git bash:
-1. confirm that the installation was successful `wich kubectl` and the response should be something like `/c/Users/ÀccountName/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin/kubectl`.
-2. execute the following command to connect to your cluster, change ==mamazinha== to your cluster name and change ==southamerica-east1-a== to your zone
+1. confirm that the installation was successful `wich kubectl` and the response should be something like `/c/Users/AccountName/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin/kubectl`.
+2. execute the following command to connect to your cluster, change `mamazinha` to your cluster name and change `southamerica-east1-a` to your zone
 `gcloud container clusters get-credentials mamazinha -zone=southamerica-east1-a`
 
 You can now publish the yml files to GKE:
@@ -57,3 +58,31 @@ Install the amazing k9s https://k9scli.io/topics/install/ and type the command t
 ![image](https://renanfranca.github.io/img/publishing-microservices-gke/k9s-home-screen.png)
 <figcaption>k9s home screen</figcaption>
 
+As you can see only 3 nodes weren't enough for my project, after digging around I discovery [the preemptible VM option](https://cloud.google.com/kubernetes-engine/docs/how-to/preemptible-vms?_ga=2.47436577.-747971199.1636929609) 😆! The registry/baby microservice both are stateless, so I don't care if after 24h the VM will be destroyed and they will be initialized at another VM.
+
+Let’s create a new node pool with preemptible VM which costs less than the regular machine type.
+
+![image](https://renanfranca.github.io/img/publishing-microservices-gke/add-node-pool-menu.png)
+<figcaption>Go to Cluster Kubernetes Engine > Clusters > Clique on your cluster > clique on ADD NODE POOL</figcaption>
+
+![image](https://renanfranca.github.io/img/publishing-microservices-gke/node-pool-details.png)
+<figcaption>Only one node number</figcaption>
+
+![image](https://renanfranca.github.io/img/publishing-microservices-gke/node-pool-detail-2.png)
+<figcaption>You must mark the node as preemptible! Then click on CREATE! 🤩</figcaption>
+
+![image](https://renanfranca.github.io/img/publishing-microservices-gke/created-preemptible-node.png)
+<figcaption>Now we can see 4 nodes and only one preemptible</figcaption>
+
+![image](https://renanfranca.github.io/img/publishing-microservices-gke/k9s-node-24h-shutdown.png)
+<figcaption>That’s what happened after 24h! Shutdown the preemptible VM 😜</figcaption>
+
+The cluster is ready! But how to choose the place to deploy each component of my project? The Postgres database can’t be deployed at the preemptible node, because the data will be lost every 24hrs!
+
+The answer is [NodeAffinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#node-affinity), let’s take the gateway as an example. I want to always deploy the gateway on the node `gke-mamazinha-pool-small-cost-03fa0890-zqn0`
+
+1.  Create a label for the node `kubectl label nodes gke-mamazinha-pool-small-cost-03fa0890-zqn0 app=gateway`
+2.  Add this nodeAffinity property to my yml file
+
+
+### Final setup
