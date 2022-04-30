@@ -25,9 +25,10 @@ I’ll cover here the Google Cloud configuration that I made to run my project a
 
 ### Initial setup
 So I made this pricing simulation (I choose São Paulo as my Region because I am from Brazil):
+
 ![Pricing simulation](https://renanfranca.github.io/img/publishing-microservices-gke/price-simulation.png)
 <figcaption>
-https://cloud.google.com/products/calculator/#id=d2a4523b-27f9-4a35-950b-924cd8b0d590 </figcaption>
+https://cloud.google.com/products/calculator/#id=d2a4523b-27f9-4a35-950b-924cd8b0d590</figcaption>
 
 After logging in at Google Cloud Console, Let’s create the Cluster Zone and the first Node Pool
 
@@ -118,4 +119,21 @@ With this approach, my web app is going to have downtime every 24hrs. To mitigat
 ![image](https://renanfranca.github.io/img/publishing-microservices-gke/k9s-pods-same-time.png)
 <figcaption>All pods running on preemptible nodes at the same time</figcaption>
 
-[According to Google Pricing](https://cloud.google.com/kubernetes-engine/pricing#:~:text=The%20cluster%20management%20fee%20of,to%20zonal%20and%20Autopilot%20clusters.), the cluster manager fee will be free but I don’t know if it will be enough to help me out keep Mamazinha Baby Care online.
+### The final cost
+
+[According to Google Pricing](https://cloud.google.com/kubernetes-engine/pricing#:~:text=The%20cluster%20management%20fee%20of,to%20zonal%20and%20Autopilot%20clusters.), the cluster manager fee will be free.
+
+After using only preemptible nodes the cost was reduced a lot.
+
+![image](https://renanfranca.github.io/img/publishing-microservices-gke/preemptible-billing-report.png)
+<figcaption>Mamazinha billing report after using only preemptible nodes</figcaption>
+
+The invoice from January 2022 was R$844,09 (~$162.14), I don’t think it is too expensive. But I can’t afford this value by myself.
+
+![image](https://renanfranca.github.io/img/publishing-microservices-gke/january-billing-report.png)
+<figcaption>The cost from January 2022</figcaption>
+
+So I couldn't keep the web app online on Google Cloud.
+
+![image](https://renanfranca.github.io/img/publishing-microservices-gke/until-shutdown-billing-report.png)
+<figcaption>The cost until I shut down the web app</figcaption>
