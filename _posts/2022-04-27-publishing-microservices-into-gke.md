@@ -44,8 +44,11 @@ Now you have to connect to your cluster. Install google cloud SDK and install Go
 `gcloud components install kubectl`
 
 On git bash:
-1. confirm that the installation was successful `wich kubectl` and the response should be something like `/c/Users/AccountName/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin/kubectl`.
-2. execute the following command to connect to your cluster, change `mamazinha` to your cluster name and change `southamerica-east1-a` to your zone
+1. confirm that the installation was successful `wich kubectl` and the response should be something like 
+```
+/c/Users/AccountName/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin/kubectl
+```
+3. execute the following command to connect to your cluster, change `mamazinha` to your cluster name and change `southamerica-east1-a` to your zone
 `gcloud container clusters get-credentials mamazinha -zone=southamerica-east1-a`
 
 You can now publish the yml files to GKE:
