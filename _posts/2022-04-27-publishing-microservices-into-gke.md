@@ -53,7 +53,7 @@ On git bash:
 
 You can now publish the yml files to GKE:
 1. clone the repository `git clone git@github.com:renanfranca/mamazinha-k8s.git`
-2. Switch to branch `google-cloud`
+2. Switch to google-cloud branch `git checkout google-cloud`
 3. On git bash go to the root of the cloned project folder and run the command `./kubectl-apply.sh -f`
 
 Install the amazing k9s https://k9scli.io/topics/install/ and type the command to connect to your cluster `k9s -n mamazinha`
@@ -86,6 +86,7 @@ The answer is [NodeAffinity](https://kubernetes.io/docs/concepts/scheduling-evic
 
 1.  Create a label for the node `kubectl label nodes gke-mamazinha-pool-small-cost-03fa0890-zqn0 app=gateway`
 2.  Add this nodeAffinity property to my yml file
+
 ![image](https://renanfranca.github.io/img/publishing-microservices-gke/nodeAffinity-property.png)
 <figcaption>gateway-deployment.yml</figcaption>
 
@@ -96,6 +97,7 @@ The answer is [NodeAffinity](https://kubernetes.io/docs/concepts/scheduling-evic
 5. Repeat this for the other components if you want to deploy at a specific node.
 
 Here is the real cost of this configuration. I am from Brazil, so the costs is on my country currency. You can do the conversion by knowing that $1 Dollar was R$5,40 Reais when I capture the print screen from the following billing report.
+
 ![image](https://renanfranca.github.io/img/publishing-microservices-gke/standard-node-cost.png)
 <figcaption>Mamazinha Google Cloud Project billing report</figcaption>
 
