@@ -102,3 +102,20 @@ Here is the real cost of this configuration. I am from Brazil, so the costs is o
 <figcaption>Mamazinha Google Cloud Project billing report</figcaption>
 
 ### Final setup
+The preemptible VM cost 80% less than the regular machine, so my goal was to use only preemptible. The only way I figured it out to do this is to create [persistent volume on my kubernetes cluster](https://cloud.google.com/architecture/deploying-highly-available-postgresql-with-gke#deploy_postgresql_to_the_regional_gke_cluster) for each Postgres database because after 24h even the Postgres could be shut down without losing data.
+
+First I [port-forward the Postgres pods](https://cloud.google.com/architecture/deploying-highly-available-postgresql-with-gke#set_up_port_forwarding) to backup the data using [pgAdmin](https://www.pgadmin.org/download/) then I defined the persistence volume in the yml file:
+
+![image](https://renanfranca.github.io/img/publishing-microservices-gke/persistence-volume-property.png)
+<figcaption>gateway-postgresql.yml (partial)</figcaption>
+
+The next step was to delete the regular machine type node pool then I resize the preemptible node pool to have 4 nodes.
+
+After that I apply both yml files ( `kubectl apply -f baby-k8s/baby-postgresql.yml -n mamazinha` and `kubectl apply -f gateway-k8s/gateway-postgresql.yml -n mamazinha`) and restore the backup using pgAdmin that will be stored at the persistent volume.
+
+With this approach, my web app is going to have downtime every 24hrs. To mitigate that I decided to deploy everything simultaneously so after 24h everything will be shut down and going up in 2 minutes.
+
+![image](https://renanfranca.github.io/img/publishing-microservices-gke/k9s-pods-same-time.png)
+<figcaption>All pods running on preemptible nodes at the same time</figcaption>
+
+[According to Google Pricing](https://cloud.google.com/kubernetes-engine/pricing#:~:text=The%20cluster%20management%20fee%20of,to%20zonal%20and%20Autopilot%20clusters.), the cluster manager fee will be free but I don’t know if it will be enough to help me out keep Mamazinha Baby Care online.
