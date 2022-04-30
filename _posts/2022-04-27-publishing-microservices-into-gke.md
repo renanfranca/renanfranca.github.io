@@ -13,7 +13,7 @@ I will show you how to publish the [Mamazinha Baby Care Web App - Open Source Pr
 ](https://cloud.google.com/kubernetes-engine).
 
 ## Before we start
-I used JHipster to build the web app, everything you need to know about how to generate the Kubernetes (k8s) files to publish on GKE is detailed step by step in this tutorial (I strongly recommend watching the video first before getting your hand dirty 😁): [https://developer.okta.com/blog/2021/06/01/kubernetes-spring-boot-jhipster](https://developer.okta.com/blog/2021/06/01/kubernetes-spring-boot-jhipster).
+I used JHipster to build the web app, everything you need to know about how to generate the Kubernetes (k8s) yml files to publish on GKE is detailed step by step [in this tutorial (I strongly recommend watching the video first before getting your hand dirty 😁)](https://developer.okta.com/blog/2021/06/01/kubernetes-spring-boot-jhipster)  created by [@mraible](https://twitter.com/mraible)
 
 ## Publishing on GKE
 I open source the yaml files that i used to publish on GKE:
