@@ -48,7 +48,7 @@ On git bash:
 ```
 /c/Users/AccountName/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin/kubectl
 ```
-3. execute the following command to connect to your cluster, change `mamazinha` to your cluster name and change `southamerica-east1-a` to your zone
+2. execute the following command to connect to your cluster, change `mamazinha` to your cluster name and change `southamerica-east1-a` to your zone
 `gcloud container clusters get-credentials mamazinha -zone=southamerica-east1-a`
 
 You can now publish the yml files to GKE:
@@ -61,9 +61,9 @@ Install the amazing k9s https://k9scli.io/topics/install/ and type the command t
 ![image](https://renanfranca.github.io/img/publishing-microservices-gke/k9s-home-screen.png)
 <figcaption>k9s home screen</figcaption>
 
-As you can see only 3 nodes weren't enough for my project, after digging around I discovery [the preemptible VM option](https://cloud.google.com/kubernetes-engine/docs/how-to/preemptible-vms?_ga=2.47436577.-747971199.1636929609) 😆! The registry/baby microservice both are stateless, so I don't care if after 24h the VM will be destroyed and they will be initialized at another VM.
+As you can see only 3 nodes weren't enough for my project, after digging around I discovered [the preemptible VM option](https://cloud.google.com/kubernetes-engine/docs/how-to/preemptible-vms?_ga=2.47436577.-747971199.1636929609) 😆! The registry/baby microservice both are stateless, so I don't care if after 24h the VM will be destroyed and they will be initialized at another VM.
 
-Let’s create a new node pool with preemptible VM which costs less than the regular machine type.
+Let’s create a new node pool with a preemptible VM which costs less than the regular machine type.
 
 ![image](https://renanfranca.github.io/img/publishing-microservices-gke/add-node-pool-menu.png)
 <figcaption>Go to Cluster Kubernetes Engine > Clusters > Clique on your cluster > clique on ADD NODE POOL</figcaption>
@@ -86,6 +86,17 @@ The answer is [NodeAffinity](https://kubernetes.io/docs/concepts/scheduling-evic
 
 1.  Create a label for the node `kubectl label nodes gke-mamazinha-pool-small-cost-03fa0890-zqn0 app=gateway`
 2.  Add this nodeAffinity property to my yml file
+![image](https://renanfranca.github.io/img/publishing-microservices-gke/nodeAffinity-property.png)
+<figcaption>gateway-deployment.yml</figcaption>
 
+3. Change to`replicas: 0` and apply the deployment yml to terminate every gateway running instances `kubectl apply -f gateway-k8s/gateway-deployment.yml -n mamazinha`
+
+4. Change back to `replicas: 1` and apply again `kubectl apply -f gateway-k8s/gateway-deployment.yml -n mamazinha`
+
+5. Repeat this for the other components if you want to deploy at a specific node.
+
+Here is the real cost of this configuration. I am from Brazil, so the costs is on my country currency. You can do the conversion by knowing that $1 Dollar was R$5,40 Reais when I capture the print screen from the following billing report.
+![image](https://renanfranca.github.io/img/publishing-microservices-gke/standard-node-cost.png)
+<figcaption>Mamazinha Google Cloud Project billing report</figcaption>
 
 ### Final setup
