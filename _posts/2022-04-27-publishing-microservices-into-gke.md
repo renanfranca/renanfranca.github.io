@@ -140,5 +140,12 @@ So I couldn't keep the web app online on Google Cloud.
 ![image](https://renanfranca.github.io/img/publishing-microservices-gke/until-shutdown-billing-report.png)
 <figcaption>The cost until I shut down the web app</figcaption>
 
-## My considerations
-Google cloud platform is easy to use and set things up. 
+## How was my experience with Google Cloud?
+Google cloud platform is easy to use and I set things up quickly. I could learn while I was using it, I could undo, destroyed and build easily 😆
+
+I think Google Cloud should have a real free plan for small microservices applications, so the user will pay when the product gain traction and started to be used ☺
+
+### Now it's your turn! How was your experience with Google Cloud?
+I will enjoy to read your comments 🤗
+
+If you have any question feel free to ask me anything here or Direct Message (DM) me on Twitter  [@renan_afranca](https://www.twitter.com/renan_afranca) (follow me and I will follow you back to unlock the DM option).
