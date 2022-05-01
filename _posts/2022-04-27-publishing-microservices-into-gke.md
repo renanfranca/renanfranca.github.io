@@ -9,6 +9,8 @@ draft: true
 
 ---
 
+<span class="references"> <a target="_blank" href="https://icons8.com/icon/WHRLQdbEXQ16/google-cloud">Google Cloud</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> </span>
+
 I will show you how to publish the [Mamazinha Baby Care Web App - Open Source Project](https://renanfranca.github.io/redirect/mamazinha-baby-care-app.html) on [Google Kubernetes Engine (GKE)
 ](https://cloud.google.com/kubernetes-engine).
 
@@ -97,7 +99,7 @@ The answer is [NodeAffinity](https://kubernetes.io/docs/concepts/scheduling-evic
 
 5. Repeat this for the other components if you want to deploy at a specific node.
 
-Here is the real cost of this configuration. I am from Brazil, so the costs is on my country currency. You can do the conversion by knowing that $1 Dollar was R$5,40 Reais when I capture the print screen from the following billing report.
+Here is the real cost of this configuration. I am from Brazil, so the costs are in my country's currency. You can do the conversion by knowing that $1 Dollar was R$5,40 Reais when I capture the print screen from the following billing report.
 
 ![image](https://renanfranca.github.io/img/publishing-microservices-gke/standard-node-cost.png)
 <figcaption>Mamazinha Google Cloud Project billing report</figcaption>
@@ -110,9 +112,9 @@ First I [port-forward the Postgres pods](https://cloud.google.com/architecture/d
 ![image](https://renanfranca.github.io/img/publishing-microservices-gke/persistence-volume-property.png)
 <figcaption>gateway-postgresql.yml (partial)</figcaption>
 
-The next step was to delete the regular machine type node pool then I resize the preemptible node pool to have 4 nodes.
+The next step was to delete the regular machine-type node pool then I resize the preemptible node pool to have 4 nodes.
 
-After that I apply both yml files ( `kubectl apply -f baby-k8s/baby-postgresql.yml -n mamazinha` and `kubectl apply -f gateway-k8s/gateway-postgresql.yml -n mamazinha`) and restore the backup using pgAdmin that will be stored at the persistent volume.
+After that, I apply both yml files ( `kubectl apply -f baby-k8s/baby-postgresql.yml -n mamazinha` and `kubectl apply -f gateway-k8s/gateway-postgresql.yml -n mamazinha`) and restore the backup using pgAdmin that will be stored at the persistent volume.
 
 With this approach, my web app is going to have downtime every 24hrs. To mitigate that I decided to deploy everything simultaneously so after 24h everything will be shut down and going up in 2 minutes.
 
@@ -137,3 +139,6 @@ So I couldn't keep the web app online on Google Cloud.
 
 ![image](https://renanfranca.github.io/img/publishing-microservices-gke/until-shutdown-billing-report.png)
 <figcaption>The cost until I shut down the web app</figcaption>
+
+## My considerations
+Google cloud platform is easy to use and set things up. 
