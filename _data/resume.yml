@@ -5,7 +5,7 @@ header:
   display_contact_info: true
   current_title: Software Engineer
   intro: >
-    I am a software engineer since 2008 ([check out my timeline](https://www.polywork.com/renanfranca)). Disciplined and Organized java software engineer. I am always ready to help my team to succeed, with a smile on my face 😁. Every time I struggled with a particular problem, I document how I overcome it and share it with my co-workers. So no one will spend time when faced with the documented problem.
+    I am a software engineer since 2008 (<a href="https://www.polywork.com/renanfranca)">check out my timeline</a>). Disciplined and Organized java software engineer. I am always ready to help my team to succeed, with a smile on my face 😁. Every time I struggled with a particular problem, I document how I overcome it and share it with my co-workers. So no one will spend time when faced with the documented problem.
     I decided to build that blog to share some of the problems I overcome and I will share what I learn from them.
 contact:
   #address: 
