@@ -1,6 +1,6 @@
 ---
 title: Sponsored Post
-layout: default
+layout: page
 ---
 {% assign sponsored-content = site.pages | where: 'name','sponsored-content.md' %}
 {{sponsored-content}}
