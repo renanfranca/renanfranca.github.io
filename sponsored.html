@@ -2,4 +2,5 @@
 title: Sponsored Post
 layout: default
 ---
-{%- include sponsored-content.md -%}
+{% assign sponsored-content = site.pages | where: 'name','sponsored-content.md' %}
+{{sponsored-content}}
