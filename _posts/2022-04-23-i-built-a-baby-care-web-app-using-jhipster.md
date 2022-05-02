@@ -5,6 +5,7 @@ description: My baby girl Marília was born on December 14th/2021, so I decided 
 date: 2022-04-23 00:00:00 -0300
 tags: jhipster
 image: img/postbanners/cover-built-baby-care-web-app.jpeg
+permalink: /:categories/:title:output_ext
 draft: true
 youtubeId1: JI0BiPdHV2E
 youtubeId2: zjsSHJaPgAk
@@ -24,7 +25,7 @@ My baby girl Marília was born on December 14th/2021, so I decided to build a we
  ![new nap screen](https://renanfranca.github.io/img/built-baby-care-web-app/new_nap_screen.png)
   <figcaption>Register my baby girl nap</figcaption>
 
- ![home screen sleep](https://renanfranca.github.io/img/built-baby-care-web-app/home_screen_sleep_progress.png)
+ ![home screen sleep](https://renanfranca.github.io/img/built-baby-care-web-app/home_screen_sleep_progress.png) 
   <figcaption>Monitor her sleep hours from last week versus this week. The goal is at least 16 hours/day after summing up every nap</figcaption>
 
 {% include youtubePlayer.html id=page.youtubeId1 %}
@@ -54,7 +55,7 @@ Here is the [JDL file](https://www.jhipster.tech/jdl/intro) created to build thi
 After running the Jhipster generator from the jdl file, two projects were created:
 
  [![renanfranca/mamazinha-gateway](https://renanfranca.github.io/img/mamazinha-baby-care/github-mamazinha-gateway-image_readme.png)](https://github.com/renanfranca/mamazinha-gateway)
-
+ 
  [![renanfranca/mamazinha-baby](https://renanfranca.github.io/img/mamazinha-baby-care/github-mamazinha-baby-image_readme.png)](https://github.com/renanfranca/mamazinha-baby)
 
 An overview of what I have to change to make my project works as I want on the gateway:
