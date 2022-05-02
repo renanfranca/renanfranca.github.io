@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Publishing Microservices into Google Kubernetes Engine (GKE)
-description: 
+description: I will show you how to publish the Mamazinha Baby Care Web App - Open Source Project on Google Kubernetes Engine (GKE). I’ll cover here the Google Cloud configuration that I made to run my project as cheap as possible. 
 date: 2022-04-27 20:32:16 -0300
 tags: jhipster
 image:  
