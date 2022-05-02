@@ -5,7 +5,7 @@ description:
 date: 2022-04-27 20:32:16 -0300
 tags: jhipster
 image:  
-permalink: none
+permalink: /:categories/:title:output_ext
 draft: true
 
 ---
