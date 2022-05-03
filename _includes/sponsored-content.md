@@ -8,7 +8,7 @@ Please, [read my blog posts](https://renanfranca.github.io/archive-date.html) an
 
 Some of my blog posts [got featured](https://www.polywork.com/renanfranca/collections/1086932). It's cool, isn't it?
 
-Read more [about me ](https://renanfranca.github.io/about.html)and you can aske anything by [email](mailto:renan.andradefranca@gmail.com) or Direct Message (DM) me on Twitter  [@renan_afranca](https://www.twitter.com/renan_afranca) (follow me and I will follow you back to unlock the DM option).
+Read more [about me ](https://renanfranca.github.io/about.html)and you can ask me anything by [email](mailto:renan.andradefranca@gmail.com) or Direct Message (DM) me on Twitter  [@renan_afranca](https://www.twitter.com/renan_afranca) (follow me and I will follow you back to unlock the DM option).
 
 ## How can I sponsor a post?
 If you enjoy the way I share my experiences and my thoughts, please, considering email me at [renan.andradefranca@gmail.com](mailto:renan.andradefranca@gmail.com) or Direct Message (DM) me on Twitter  [@renan_afranca](https://www.twitter.com/renan_afranca) (follow me and I will follow you back to unlock the DM option) with the subject/product/tool that you would like me to write about.
