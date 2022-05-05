@@ -11,9 +11,9 @@ draft: true
 ---
 
 ![cover image](https://renanfranca.github.io/img/postbanners/2022-04-27-cover-publishing-microservices-into-gke.jpeg)
-<span class="references"> <a target="_blank" href="https://icons8.com/icon/WHRLQdbEXQ16/google-cloud">Google Cloud</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> </span>
+<span class="resources-references"> <a target="_blank" href="https://icons8.com/icon/WHRLQdbEXQ16/google-cloud">Google Cloud</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> </span>
 
-I will show you how to publish the [Mamazinha Baby Care Web App - Open Source Project](https://renanfranca.github.io/redirect/mamazinha-baby-care-app.html) on [Google Kubernetes Engine (GKE)
+I will show you how to publish the [Mamazinha Baby Care Web App - Open Source Project](https://renanfranca.github.io/i-built-a-baby-care-web-app-using-jhipster.html) on [Google Kubernetes Engine (GKE)
 ](https://cloud.google.com/kubernetes-engine).
 
 ## Before we start
