@@ -48,7 +48,7 @@ My baby girl Marília was born on December 14th/2021, so I decided to build a we
 
 So I used [the Gateway with JHipster Registry architecture](https://www.jhipster.tech/api-gateway/) and create a microservice called 'baby' where I implemented the backend features described at the beginning. The gateway implements the front end, the user management, authentication, proxy all requests to the microservices and [it is reactive for optimized performance](https://developer.okta.com/blog/2021/01/20/reactive-java-microservices). Finally, there are two PostGres databases, one used by baby microservice and the other used by the gateway.
 
-Here is the [JDL file](https://www.jhipster.tech/jdl/intro) created to build this project (I explain each line with comments);
+Here is the [JDL file](https://www.jhipster.tech/jdl/intro) that was created using [JDL Studio](https://www.jhipster.tech/jdl-studio/) (by [@deepu105](https://twitter.com/deepu105)) to build this project (I explained each line with comments):
 
 <script src="https://gist.github.com/renanfranca/e473ac73e6493357d1ee60699b63101f.js"></script>
 
