@@ -1,6 +1,6 @@
 ---
 layout: post
-title: sponsored post template
+title: Sponsored Post Template
 description: 
 date: 2022-05-06 09:24:46 -0300
 tags: 
@@ -12,7 +12,7 @@ sponsored: true
 ---
 
 ![cover image](https://renanfranca.github.io/img/postbanners/2022-05-06-cover-sponsored-post-template.png)
-<span class="sponsored-post-highlight"> <a href="">Renan Franca</a> sponsored this post for Renan Hipster Blog. </span>
+<span class="sponsored-post-highlight"> <a href="https://www.twitter.com/renan_afranca">Renan Franca</a> sponsored this post for Renan Hipster Blog. </span>
 
 The post content goes here.
 
