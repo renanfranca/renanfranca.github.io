@@ -1,8 +1,6 @@
 ---
 layout: default
 ---
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 <link href="/css/override.css" rel="stylesheet" type="text/css">
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
@@ -26,9 +24,9 @@ layout: default
 
   <div class="post-content e-content" itemprop="articleBody">
     {% if page.draft == true %}
-    <div class="message">DRAFT - This blog post is <b>under construction</b>.</div>
+    <div class="message">DRAFT - This blog post is <strong>under construction</strong>.</div>
     {% endif %}
-    {{ content }}
+    {% include anchor_headings.html html=content anchorBody="<i class='fa fa-link header-link'></i>" %}
     {% include navlinks.html %}
   </div>
 
@@ -38,17 +36,3 @@ layout: default
 {% if site.comments_repo %}
   {% include comments.html %}
 {% endif %}
-
-<script>
-$(function() {
-  return $("h2, h3, h4, h5, h6").each(function(i, el) {
-    var $el, icon, id;
-    $el = $(el);
-    id = $el.attr('id');
-    icon = '<i class="fa fa-link"></i>';
-    if (id) {
-      return $el.append($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
-    }
-  });
-});
-</script>
