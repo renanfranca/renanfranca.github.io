@@ -1,4 +1,4 @@
-A sponsored post will be in the "Sponsored" category, you can identify it at the beginning of a post, here is an [sponsored post template]().
+A sponsored post will be in the "Sponsored" category, you can identify it at the beginning of a post, here is an [sponsored post template](https://renanfranca.github.io/sponsored-post-template.html).
 
 ## What is the difference between a regular post and a sponsored post?
 The content is created by me as always. The only difference is that the client chooses the subject which I am going to write about it.
