@@ -27,6 +27,7 @@ linkedin_username: renan-af
 header_pages:
   - about.html
   - timeline.html
+  - sponsored.md
   - archive.html
 
 #########################################################################################

@@ -21,3 +21,8 @@ If it is needed.
 
 ## Another header example
 If it is needed.
+
+## About post structure
+This template structure is just an example. I create the headers according to the blog post need.
+
+The most important thing is to make sure the reader has a smooth and enjoyable experience 🤩
