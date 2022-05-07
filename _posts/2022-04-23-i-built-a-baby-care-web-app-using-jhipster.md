@@ -152,7 +152,19 @@ to start trying out JHipster by [executing the command](https://renanfranca.gith
 - [mamazinha-gateway](https://github.com/renanfranca/mamazinha-gateway) <!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/renanfranca/mamazinha-gateway" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" aria-label="Star renanfranca/mamazinha-gateway on GitHub">⭐</a>
 - [mamazinha-baby](https://github.com/renanfranca/mamazinha-baby) <!-- Place this tag where you want the button to render. --><a class="github-button" href="https://github.com/renanfranca/mamazinha-baby" data-color-scheme="no-preference: dark; light: light; dark: dark;"  data-show-count="true" aria-label="Star renanfranca/mamazinha-baby on GitHub">⭐</a>
 <!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js">
+var sheet = new CSSStyleSheet
+sheet.replaceSync( `.widget {
+  display: inline-block;
+  overflow: unset;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: unset;
+  white-space: nowrap;
+}`)
+host.shadowRoot.adoptedStyleSheets = [ sheet ]
+
+</script>
 
 ### I would like to know
 That is my first time open sourcing a project. I am looking forward to seeing your comments about it.
