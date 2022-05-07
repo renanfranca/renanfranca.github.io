@@ -118,3 +118,11 @@ figcaption {
 .github-button {
   margin: 0px;
 }
+.widget {
+  display: inline-block;
+  overflow: unset;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  /* line-height: 0; */
+  white-space: nowrap;
+}
