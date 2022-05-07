@@ -117,7 +117,10 @@ figcaption {
 
 .github-button {
   margin: 0px;
+  overflow: unset;
+  line-height: unset;
 }
+
 .widget {
   display: inline-block;
   overflow: unset;
