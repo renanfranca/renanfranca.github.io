@@ -114,3 +114,7 @@ figcaption {
   margin-bottom: 1rem;
   // background-color: #cbf078;
 }
+
+.github-button {
+  margin-top: 10px;
+}
