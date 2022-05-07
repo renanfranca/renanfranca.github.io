@@ -16,8 +16,8 @@ sponsored: true
 
 The post content goes here.
 
-## A header
+## A header example
 If it is needed.
 
-## the end of post
+## Another header example
 If it is needed.
