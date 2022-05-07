@@ -138,11 +138,27 @@ A short screen record video showing how to make it works 🤓
 
 ## Why did I open source it?
 
-- I couldn't afford the cost to host it and make it free to use. So now everyone can use it by host it localhost like I am doing now.😁
-- I want to share a full project built with JHipster that could be a startup product (in my opinion). So I could enhanced this post by sharing how JHipster is awesome in a "real" application and not in a hypothetical or sample app.🤓
+- I couldn't afford the cost to host it and make it free to use. So now everyone can use it by hosting it localhost like I am doing now.😁
+- I want to share a full project built with JHipster that could be a startup product (in my opinion). So I could enhance this post by sharing how JHipster is awesome in a "real" application and not in a hypothetical or sample app.🤓
 - I want to have an experience by knowing what it's like to make an open source project and see where is going to lead me. ☺️
 
 ## I invite you
 
-to start try out JHipster by [executing the command](https://renanfranca.github.io/2022/03/08/my-reasons-to-use-jhipster.html#generating-your-project-using-jhipster-quick-start-steps) `jhipster jdl jhipster-jdl.jdl` with the [mamazinha-baby-care.jdl](https://gist.github.com/renanfranca/e473ac73e6493357d1ee60699b63101f). Then you will compare what jhipster gave to me as a bootstrap project with the final product I showed in this blog post.
-Please, ask me anything in the comment section and I am available on Twitter ([@renan_afranca](https://twitter.com/renan_afranca)) by tag me or DM to support your journey to mastery jhipster.
+to start trying out JHipster by [executing the command](https://renanfranca.github.io/2022/03/08/my-reasons-to-use-jhipster.html#generating-your-project-using-jhipster-quick-start-steps) `jhipster jdl jhipster-jdl.jdl` with the [mamazinha-baby-care.jdl](https://gist.github.com/renanfranca/e473ac73e6493357d1ee60699b63101f). Then you will compare what jhipster gave to me as a bootstrap project with the final product I showed in this blog post.
+
+## Feedback
+
+**If you like this project, please, considering give it a star 🌟 to support me and enhanced both repository's visibility 🤩!**
+- [mamazinha-gateway](https://github.com/renanfranca/mamazinha-gateway) <!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/renanfranca/mamazinha-gateway" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Star renanfranca/mamazinha-gateway on GitHub">Star</a>
+- [mamazinha-baby](https://github.com/renanfranca/mamazinha-baby) <!-- Place this tag where you want the button to render. --><a class="github-button" href="https://github.com/renanfranca/mamazinha-baby" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Star renanfranca/mamazinha-baby on GitHub">Star</a>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+### I would like to know
+That is my first time open sourcing a project. I am looking forward to seeing your comments about it.
+- What did I do right? 
+- What should I improve? 
+- What did I do wrong and how can I make it right?
+
+Please, ask me anything in the comment section and I am available to support your journey to mastery jhipster on Twitter ([@renan_afranca](https://twitter.com/renan_afranca)) by tag or Direct Message (DM) me (follow me and I will follow you back to unlock the DM option).
+
