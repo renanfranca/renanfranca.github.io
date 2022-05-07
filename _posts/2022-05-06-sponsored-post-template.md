@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Sponsored Post Template
-description: 
+description: A blog post example of how to identify a sponsored post.
 date: 2022-05-06 09:24:46 -0300
 tags: 
 image: img/postbanners/2022-05-06-cover-sponsored-post-template.png
@@ -14,7 +14,7 @@ sponsored: true
 ![cover image](https://renanfranca.github.io/img/postbanners/2022-05-06-cover-sponsored-post-template.png)
 <span class="sponsored-post-highlight"> <a href="https://www.twitter.com/renan_afranca">Renan Franca</a> sponsored this post for Renan Hipster Blog. </span>
 
-The post content goes here.
+The post content starts from here.
 
 ## A header example
 If it is needed.
