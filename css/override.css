@@ -120,9 +120,9 @@ figcaption {
 }
 .widget {
   display: inline-block;
-  overflow: unset;
+  overflow: unset; !important
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 14px; !important
   /* line-height: 0; */
   white-space: nowrap;
 }
