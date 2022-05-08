@@ -129,5 +129,3 @@ figcaption {
   line-height: unset;
   white-space: nowrap;
 }
-
-:host>*{border:1px red solid;}
