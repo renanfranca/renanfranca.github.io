@@ -149,8 +149,8 @@ to start trying out JHipster by [executing the command](https://renanfranca.gith
 ## Feedback
 
 **If you like this project, please, considering give it a star 🌟 to support me and enhanced both repository's visibility 🤩!**
-- [mamazinha-gateway](https://github.com/renanfranca/mamazinha-gateway) <!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/renanfranca/mamazinha-gateway" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" aria-label="Star renanfranca/mamazinha-gateway on GitHub">⭐ mamazinha-gateway</a>
-- [mamazinha-baby](https://github.com/renanfranca/mamazinha-baby) <!-- Place this tag where you want the button to render. --><a class="github-button" href="https://github.com/renanfranca/mamazinha-baby" data-color-scheme="no-preference: dark; light: light; dark: dark;"  data-show-count="true" aria-label="Star renanfranca/mamazinha-baby on GitHub">⭐</a>
+- <!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/renanfranca/mamazinha-gateway" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" aria-label="Star renanfranca/mamazinha-gateway on GitHub">⭐ mamazinha-gateway</a>
+- <!-- Place this tag where you want the button to render. --><a class="github-button" href="https://github.com/renanfranca/mamazinha-baby" data-color-scheme="no-preference: dark; light: light; dark: dark;"  data-show-count="true" aria-label="Star renanfranca/mamazinha-baby on GitHub">⭐ mamazinha-baby</a>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
@@ -161,4 +161,3 @@ That is my first time open sourcing a project. I am looking forward to seeing yo
 - What did I do wrong and how can I make it right?
 
 Please, ask me anything in the comment section and I am available to support your journey to mastery jhipster on Twitter ([@renan_afranca](https://twitter.com/renan_afranca)) by tag or Direct Message (DM) me (follow me and I will follow you back to unlock the DM option).
-
