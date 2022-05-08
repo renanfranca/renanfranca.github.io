@@ -150,7 +150,7 @@ to start trying out JHipster by [executing the command](https://renanfranca.gith
 
 **If you like this project, please, considering give it a star 🌟 to support me and enhanced both repository's visibility 🤩!**
 - <!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/renanfranca/mamazinha-gateway" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" data-size="large" aria-label="Star renanfranca/mamazinha-gateway on GitHub">⭐ mamazinha-gateway</a>
-- <!-- Place this tag where you want the button to render. --><a class="github-button" href="https://github.com/renanfranca/mamazinha-baby" data-color-scheme="no-preference: dark; light: light; dark: dark;"  data-show-count="true" aria-label="Star renanfranca/mamazinha-baby on GitHub">⭐ mamazinha-baby</a>
+- <!-- Place this tag where you want the button to render. --><a class="github-button" href="https://github.com/renanfranca/mamazinha-baby" data-color-scheme="no-preference: dark; light: light; dark: dark;"  data-show-count="true" data-size="large" aria-label="Star renanfranca/mamazinha-baby on GitHub">⭐ mamazinha-baby</a>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
