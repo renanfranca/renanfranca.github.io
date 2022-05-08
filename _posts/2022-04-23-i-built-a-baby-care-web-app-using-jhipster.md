@@ -2,7 +2,7 @@
 layout: post
 title: I built a Baby Care web app using JHipster (open source from now on 🥰)
 description: My baby girl Marília was born on December 14th/2021, so I decided to build a web app before she was born to help me to track her sleep hours, favorite nap place, her humor, breastfeeding and more. Her nickname is Mamazinha, so the web app is called Mamazinha Baby Care.
-date: 2022-05-08 08:20:00 -0300
+date: 2022-05-08 08:21:00 -0300
 tags: jhipster
 image: img/postbanners/2022-04-23-cover-built-baby-care-web-app.jpeg
 permalink: /:categories/:title:output_ext
