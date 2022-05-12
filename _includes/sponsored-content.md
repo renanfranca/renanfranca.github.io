@@ -16,4 +16,7 @@ If you enjoy the way I share my experiences and my thoughts, please, considering
 It will cost 100 dollars.
 
 ### My workflow 
-After the subject was chosen I charged $50,00 before starting to write the blog post. When I finished writing the post and sent the draft you will only pay the remaining $50,00 only if you enjoy it.
+1. Define the subject and scope
+2. I charged $50,00 before starting to write the blog post
+3. When I finished writing the post and sent the draft and you will only pay the remaining $50,00 only if you enjoy it.
+4. Publish the blog post here at Renan Hipster
