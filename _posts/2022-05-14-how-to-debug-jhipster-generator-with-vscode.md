@@ -24,17 +24,17 @@ jhipster import-jdl --inline 'entity RenanClass(RenanTable) { testString String 
 
 2. Then open the generator-jhipster root folder and your VSCode will look like that:
 
-![image](https://renanfranca.github.io/img/debug-jhipster-generator/vscode-generator-folder.png)
+	![image](https://renanfranca.github.io/img/debug-jhipster-generator/vscode-generator-folder.png)
 
-<figcaption>VSCode with generator-jhipster folder</figcaption>
+	<figcaption>VSCode with generator-jhipster folder</figcaption>
 
 3. Click at the bottom to change the Auto Attach to [Smart](https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_auto-attach).
 
 4. Click on Debug icon (left) :
 
-![image](https://renanfranca.github.io/img/debug-jhipster-generator/vscode-debug-view.png)
+	![image](https://renanfranca.github.io/img/debug-jhipster-generator/vscode-debug-view.png)
 
-<figcaption>VSCode Debug View</figcaption>
+	<figcaption>VSCode Debug View</figcaption>
 
 You will see at the top left some debug options. There are many options pre-configured for different commands. Choose the _jhipster import-jdl_ and click on the setting icon:
 
@@ -44,7 +44,7 @@ You will see at the top left some debug options. There are many options pre-conf
 
 5. Make a copy of _jhipster import-dl_ configuration and change it to be like that:
 
-```json
+	```json
 {  
             "type": "node",  
             "request": "launch",  
@@ -59,24 +59,24 @@ You will see at the top left some debug options. There are many options pre-conf
             "cwd": "${workspaceFolder}/test-integration/samples/app-sample-dev/",  
             "console": "integratedTerminal"  
         }
-```
-![image](https://renanfranca.github.io/img/debug-jhipster-generator/vscode-launch-json.png)
+	```
+	![image](https://renanfranca.github.io/img/debug-jhipster-generator/vscode-launch-json.png)
 
-<figcaption>VSCode launch.json</figcaption>
+	<figcaption>VSCode launch.json</figcaption>
 
 6. Choose the new debug option _CUSTOM jhipster import-jdl_ and hit the play button:
 
-![image](https://renanfranca.github.io/img/debug-jhipster-generator/vscode-run-debug.png)
+	![image](https://renanfranca.github.io/img/debug-jhipster-generator/vscode-run-debug.png)
 
-<figcaption>VSCode run Debug</figcaption>
+	<figcaption>VSCode run Debug</figcaption>
 
 7. My suggestion to be your first breakpoint. Open the file _cli\jhipster.js_ and put the breakpoint at the line 50:
 
-`if (preferLocal) {`
+	`if (preferLocal) {`
 
 8. If everything works and you got the execution stopped at the first breakpoint, I will recommended another one. Open file _cli\jdl.js_ and put the breakpoint at line 48:
 
-logger.debug(`jdlFiles: ${toString(jdlFiles)}`);
+	logger.debug(`jdlFiles: ${toString(jdlFiles)}`);
 
 **You could get this failure message**:
 
