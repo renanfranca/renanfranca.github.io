@@ -4,12 +4,13 @@ title: How to debug JHipster generator with VSCode (Windows 10)
 description: 
 date: 2022-05-14 23:11:42 -0300
 tags: jhipster
-image: 
+image: img/postbanners/2022-05-14-cover-debug-jhipster-generator.jpeg
 permalink: /:categories/:title:output_ext
 draft: true
 
 ---
 
+![cover image](https://renanfranca.github.io/img/postbanners/2022-05-14-cover-debug-jhipster-generator.jpeg)
 Here I will show you how to debug the jhipster import-jdl command with an inline entity example.
 
 ``` shell
