@@ -11,6 +11,7 @@ draft: true
 ---
 
 ![cover image](https://renanfranca.github.io/img/postbanners/2022-05-14-cover-debug-jhipster-generator.jpeg)
+
 Here I will show you how to debug the jhipster import-jdl command with an inline entity example.
 
 ``` shell
