@@ -78,7 +78,7 @@ jhipster import-jdl --inline 'entity RenanClass(RenanTable) { testString String 
 
 	logger.debug(`jdlFiles: ${toString(jdlFiles)}`);
 
-**You could get this failure message**:
+## You could get this failure message
 
 ```bash
 PS C:\Users\Renan\Documents\JHipster\TUTORIALS\how_debug_with_vscode\generator-jhipster\test-integration\samples\app-sample-dev>  ${env:NODE_OPTIONS}='--require "c:/Users/Renan/AppData/Local/Programs/Microsoft VS Code Insiders/resources/app/extensions/ms-vscode.js-debug/src/bootloader.bundle.js" --inspect-publish-uid=http'; ${env:VSCODE_INSPECTOR_OPTIONS}='{"inspectorIpc":"\\\\.\\pipe\\node-cdp.10508-2.sock","deferredMode":false,"waitForDebugger":"","execPath":"C:\\Program Files\\nodejs\\node.exe","onlyEntrypoint":false,"autoAttachMode":"always","fileCallback":"C:\\Users\\Renan\\AppData\\Local\\Temp\\node-debug-callback-f76952482a888dfe"}'; & 'C:\Program Files\nodejs\node.exe' '.\..\..\..\cli\jhipster.js' 'import-jdl' '--inline' 'entity RenanClass(RenanTable) { testString String }' '-d'  
@@ -93,7 +93,7 @@ internal/modules/cjs/loader.js:905
 
 `npm link`
 
-Go to the _test-integration\samples\app-sample-dev_ folder (if you hit the play button again, you are already there). After that, execute this command:
+Then go to the _test-integration\samples\app-sample-dev_ folder (if you hit the play button again, you are already there). After that, execute this command:
 
 `npm link generator-jhipster`
 
