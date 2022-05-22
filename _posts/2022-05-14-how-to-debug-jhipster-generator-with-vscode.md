@@ -36,11 +36,11 @@ jhipster import-jdl --inline 'entity RenanClass(RenanTable) { testString String 
 
 	<figcaption>VSCode Debug View</figcaption>
 
-You will see at the top left some debug options. There are many options pre-configured for different commands. Choose the _jhipster import-jdl_ and click on the setting icon:
+	You will see at the top left some debug options. There are many options pre-configured for different commands. Choose the _jhipster import-jdl_ and click on the setting icon:
 
-![image](https://renanfranca.github.io/img/debug-jhipster-generator/vscode-debug-options.png)
+	![image](https://renanfranca.github.io/img/debug-jhipster-generator/vscode-debug-options.png)
 
-<figcaption>VSCode JHipster Debug Options</figcaption>
+	<figcaption>VSCode JHipster Debug Options</figcaption>
 
 5. Make a copy of _jhipster import-dl_ configuration and change it to be like that:
 
