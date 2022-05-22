@@ -20,7 +20,7 @@ jhipster import-jdl --inline 'entity RenanClass(RenanTable) { testString String 
 
 1. First clone the generator-jhipster into a folder, follow the instructions below:
 
-[**_Set NPM to use the cloned project_**](https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md#set-npm-to-use-the-cloned-project)
+	[**_Set NPM to use the cloned project_**](https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md#set-npm-to-use-the-cloned-project)
 
 2. Then open the generator-jhipster root folder and your VSCode will look like that:
 
