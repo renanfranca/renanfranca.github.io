@@ -8,7 +8,7 @@ image: img/postbanners/2022-04-27-cover-publishing-microservices-into-gke.jpeg
 permalink: /:categories/:title:output_ext
 
 ---
-
+ 
 ![cover image](https://renanfranca.github.io/img/postbanners/2022-04-27-cover-publishing-microservices-into-gke.jpeg)
 <span class="resources-references"> <a target="_blank" href="https://icons8.com/icon/WHRLQdbEXQ16/google-cloud">Google Cloud</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> </span>
 
