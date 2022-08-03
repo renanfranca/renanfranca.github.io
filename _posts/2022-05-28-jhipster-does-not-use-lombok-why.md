@@ -4,11 +4,12 @@ title: JHipster does not use lombok. Why?
 description: 
 date: 2022-05-29 08:00:37 -0300
 tags: jhipster
-image: 
+image: img/postbanners/2022-05-28-cover-jhipster-dont-use-lombok.jpeg
 permalink: /:categories/:title:output_ext
 draft: true
 
 ---
+![cover image](https://renanfranca.github.io/img/postbanners/2022-05-28-cover-jhipster-dont-use-lombok.jpeg)
 After I run the [JHipster generator](https://renanfranca.github.io/2022/03/08/my-reasons-to-use-jhipster.html)  for the first time I realized that the back end implemented with spring boot doesn't use [Lombok](https://projectlombok.org/). So I decided to customize the generated code than I realized it wasn't the best way to use JHipster.
 
 ## Customize JHipster
