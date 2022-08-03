@@ -2,15 +2,15 @@
 layout: post
 title: JHipster does not use lombok. Why?
 description: 
-date: 2022-05-29 08:00:37 -0300
+date: 2022-08-03 20:37:37 -0300
 tags: jhipster
 image: img/postbanners/2022-05-28-cover-jhipster-dont-use-lombok.jpeg
 permalink: /:categories/:title:output_ext
-draft: true
 
 ---
 ![cover image](https://renanfranca.github.io/img/postbanners/2022-05-28-cover-jhipster-dont-use-lombok.jpeg)
-After I run the [JHipster generator](https://renanfranca.github.io/2022/03/08/my-reasons-to-use-jhipster.html)  for the first time I realized that the back end implemented with spring boot doesn't use [Lombok](https://projectlombok.org/). So I decided to customize the generated code than I realized it wasn't the best way to use JHipster.
+
+After I run the [JHipster generator](https://renanfranca.github.io/2022/03/08/my-reasons-to-use-jhipster.html)  for the first time I realized that the back end implemented with spring boot doesn't use [Lombok](https://projectlombok.org/). So I decided to customize the generated code to use lombok than I realized it wasn't the best way to use JHipster.
 
 ## Customize JHipster
 When [I realized how awesome JHipster was](https://renanfranca.github.io/2022/02/24/why-did-i-use-jhipster.html) I thought that I should change the generated code to be like the one I used to type manually. So I saw the opportunity to create my own [blueprint](https://www.jhipster.tech/modules/creating-a-blueprint/) with the following custom annotations:
