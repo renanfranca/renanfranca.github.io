@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JHipster does not use lombok. Why?
-description: 
+description: After I run the JHipster generator for the first time I realized that the back end implemented with spring boot doesn’t use Lombok. So I decided to customize the generated code to use lombok than I realized it wasn’t the best way to use JHipster.
 date: 2022-08-03 20:37:37 -0300
 tags: jhipster
 image: img/postbanners/2022-05-28-cover-jhipster-dont-use-lombok.jpeg
