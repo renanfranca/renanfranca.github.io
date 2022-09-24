@@ -98,14 +98,14 @@ You have to open the `fly.toml` file and edit the [env] section with the variabl
   SPRING_LIQUIBASE_URL="jdbc:postgresql://app-postgres-name.internal:5432/databasename"
   JHIPSTER_SLEEP=5
 ```
-**WARNING**: about potgres database URL for java. The [postgres start guide](https://fly.io/docs/reference/postgres/) examples didn't considered java language and the URL to connect to postgres which they gave to me after create the postgres instance was that: `postgres://baby-postgres.internal:5432/baby`. To solve the problem I change the prefix postgres to postgresql: `jdbc:postgresql://baby-postgres.internal:5432/baby`
+**WARNING**: about potgres database URL for java. The [postgres start guide](https://fly.io/docs/reference/postgres/) examples didn't consider java language and the URL to connect to postgres which they gave to me after creating the postgres instance was that: `postgres://baby-postgres.internal:5432/baby`. To solve the problem I change the prefix postgres to postgresql: `jdbc:postgresql://baby-postgres.internal:5432/baby`
 
 ##### Define the database password 
 You can use the secret option to keep your database password safe! Run the command:
 ```
 flyctl secrets set DB_POSTGRES_PASSWORD=pasteHereThePassword
 ```
-That will create an encrypted environment variabl. To list your secrets, run the command `flyctl secrets list`.
+That will create an encrypted environment variable. To list your secrets, run the command `flyctl secrets list`.
 
 ### Deploy the application
 
@@ -115,8 +115,8 @@ Run the command `flyctl deploy` . To open your already deployed application in a
 
 I am running my Baby Care App on fly.io since 03 September 2022, here is the link https://renanfranca.github.io/redirect/babycareapp.html.
 
-I accessing the app every day at least 10 times a day, I only got 5 downtime at the first week. After that me and my wife didn't notice any downtime 😊! 
+I accessed the app every day at least 10 times a day, I only got 5 downtimes the first week. After that me, and my wife didn't notice any downtime 😊! It looks like the app was always warmed up and ready to receive requests.
 
-At the dashboard web app you can see a lot of information about your app: https://fly.io/dashboard. My application constantly use 226 MB from the 232 MB available. In addition that, you can access the Grafana dashboard https://fly-metrics.net/ for awesome insight info 👏!
+On the dashboard web app, you can see a lot of information about your app: https://fly.io/dashboard. My application constantly use 226 MB from the 232 MB available. In addition that, you can access the Grafana dashboard https://fly-metrics.net/ for awesome insight info 👏!
 
-I just wanna say thank you to the fly.io team to add this free high-quality free tier option! It has the bearing minimum for your mvp version and to use it to host your portfolio projects!
+I just wanna say thank you to the fly.io team to add this free high-quality free tier option! It has the bearing minimum for your MVP version and to use it to host your portfolio projects!
