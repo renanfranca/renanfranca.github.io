@@ -100,7 +100,7 @@ You have to open the `fly.toml` file and edit the [env] section with the variabl
 ```
 **WARNING**: about potgres database URL for java. The [postgres start guide](https://fly.io/docs/reference/postgres/) examples didn't consider java language and the URL to connect to postgres which they gave to me after creating the postgres instance was that: `postgres://baby-postgres.internal:5432/baby`. To solve the problem I change the prefix postgres to postgresql: `jdbc:postgresql://baby-postgres.internal:5432/baby`
 
-##### Define the database password 
+#### Define the database password 
 You can use the secret option to keep your database password safe! Run the command:
 ```
 flyctl secrets set DB_POSTGRES_PASSWORD=pasteHereThePassword
