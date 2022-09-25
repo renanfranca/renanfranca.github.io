@@ -11,7 +11,7 @@ draft: true
 ---
 ![cover image](https://renanfranca.github.io/img/postbanners/2022-09-03-cover-deploy-jhipster-monolithic-fly-io.jpeg)
 
-[I built a Baby Care web app](https://renanfranca.github.io/i-built-a-baby-care-web-app-using-jhipster.html) using microservices architecture to challenge me in my roadmap to master [jhioster](https://renanfranca.github.io/2022/02/24/why-did-i-use-jhipster.html). Unfortunately turns out that I couldn't afford the cost of [Publishing Microservices into Google Kubernetes Engine (GKE)](https://renanfranca.github.io/publishing-microservices-into-gke.html) and I decided to self-host the Baby Care App in my notebook and keep accessing it through my phone.
+[I built a Baby Care web app](https://renanfranca.github.io/i-built-a-baby-care-web-app-using-jhipster.html) using microservices architecture to challenge me in my roadmap to master [jhipster](https://renanfranca.github.io/2022/02/24/why-did-i-use-jhipster.html). Unfortunately turns out that I couldn't afford the cost of [Publishing Microservices into Google Kubernetes Engine (GKE)](https://renanfranca.github.io/publishing-microservices-into-gke.html) and I decided to self-host the Baby Care App in my notebook and keep accessing it through my phone.
 
 My baby girl Marília complete 9 months old so we are going out with her and I couldn't access the Baby Care App outside of my home. I decided to rewrite the Baby Care App as a monolithic architecture using jhipster to deploy it on Heroku for free. When I finally rebuilt the app, I realized that [Heroku is going to shut down the free tier plan](https://techcrunch.com/2022/08/25/heroku-announces-plans-to-eliminate-free-plans-blaming-fraud-and-abuse/?utm_source=tldrnewsletter)!
 
