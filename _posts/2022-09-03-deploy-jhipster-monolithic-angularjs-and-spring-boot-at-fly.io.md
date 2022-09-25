@@ -25,10 +25,10 @@ According to [this flyio community post](https://community.fly.io/t/how-to-conve
 I am using Windows 10, so I had to run the following command at Powershell `iwr https://fly.io/install.ps1 -useb | iex` . Visit [this link](https://fly.io/docs/hands-on/install-flyctl/) to install it on another OS.
 
 ### Signup
-Run the command `fly auth signup` to create your account. I put my credit card to earn more free resources, [according to the documentation](https://fly.io/blog/free-postgres/) it's necessary to use postgres for free.
+Run the command `flyctl auth signup` to create your account. I put my credit card to earn more free resources, [according to the documentation](https://fly.io/blog/free-postgres/) it's necessary to use postgres for free.
 
 ### Login
-Run the command `fly auth login`
+Run the command `flyctl auth login`
 
 ### Create a postgres app
 Run the command `flyctl postgres create` and I choose the following options:
