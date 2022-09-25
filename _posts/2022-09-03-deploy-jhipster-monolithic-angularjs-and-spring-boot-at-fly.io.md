@@ -63,6 +63,8 @@ COPY target/baby-0.0.1-SNAPSHOT.jar baby-0.0.1-SNAPSHOT.jar
 ENV _JAVA_OPTIONS="-XX:MaxRAM=70m"
 CMD java $_JAVA_OPTIONS -Dspring.profiles.active=$SPRING_PROFILES_ACTIVE -Dspring.datasource.url=$SPRING_DATASOURCE_URL -Dspring.liquibase.url=$SPRING_LIQUIBASE_URL -Dspring.datasource.username=$SPRING_DATASOURCE_USERNAME -Dspring.datasource.password=$SPRING_DATASOURCE_PASSWORD -jar baby-0.0.1-SNAPSHOT.jar
 ```
+To build the final jar and optimize the baby application for production, run:
+`./mvnw -Pprod clean verify`
 Then I have to create a docker image locally from Dockerfile using this command at project root folder `docker build -t stting/mamazinhaflyio .`. Replace `stting` with your [dockerhub account](https://hub.docker.com/).
 
 The last step is to open dockerdesktop and push then cteated image to dockerhub.
@@ -110,6 +112,49 @@ That will create an encrypted environment variable. To list your secrets, run th
 ### Deploy the application
 
 Run the command `flyctl deploy` . To open your already deployed application in a browser, run the command `flyctl open`
+
+## Read this jhipster users
+Before deploy the app, you can test it using docker desktop.
+
+First edit the file `src/main/docker/app.yml` to use the docker image `stting/mamazinhaflyio` (in my case):
+```docker
+# This configuration is intended for development purpose, it's **your** responsibility to harden it for production 
+ version: '3.8' 
+ services: 
+   baby-app: 
+     image: stting/mamazinhaflyio 
+     environment: 
+       - _JAVA_OPTIONS=-Xmx128m -Xms128m 
+       - SPRING_PROFILES_ACTIVE=prod,api-docs 
+       - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=false 
+       - SPRING_DATASOURCE_URL=jdbc:postgresql://baby-postgresql:5432/baby 
+       - SPRING_LIQUIBASE_URL=jdbc:postgresql://baby-postgresql:5432/baby 
+       - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application 
+       - SPRING_DATASOURCE_USERNAME=baby 
+       - SPRING_DATASOURCE_PASSWORD= 
+     # If you want to expose these ports outside your dev PC, 
+     # remove the "127.0.0.1:" prefix 
+     ports: 
+       - 127.0.0.1:8080:8080 
+     deploy: 
+       resources: 
+         limits: 
+           memory: 256M 
+   baby-postgresql: 
+     image: postgres:14.2 
+     # volumes: 
+     #   - ~/volumes/jhipster/baby/postgresql/:/var/lib/postgresql/data/ 
+     environment: 
+       - POSTGRES_USER=baby 
+       - POSTGRES_PASSWORD= 
+       - POSTGRES_HOST_AUTH_METHOD=trust 
+     # If you want to expose these ports outside your dev PC, 
+     # remove the "127.0.0.1:" prefix 
+     ports: 
+       - 5432:5432
+```
+Then run the command `docker-compose -f src/main/docker/app.yml` and access your application at `http://localhost:8080` which is using postgres database.
+
 
 ## My own experience with fly.io
 
