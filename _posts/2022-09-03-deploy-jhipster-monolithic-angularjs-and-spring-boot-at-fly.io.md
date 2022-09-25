@@ -124,7 +124,7 @@ That will create an encrypted environment variable. To list your secrets, run th
 
 ### Deploy the application
 
-Run the command `flyctl deploy` . To open your already deployed application in a browser, run the command `flyctl open`
+Run the command `flyctl deploy` . To open your already deployed application in a browser, run the command `flyctl open`.
 
 ## Read this jhipster users
 Before deploy the app, you can test it using docker desktop.
