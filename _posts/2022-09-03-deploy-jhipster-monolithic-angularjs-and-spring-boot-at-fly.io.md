@@ -50,12 +50,12 @@ Run the following command `flyctl volumes list -a baby-postgres` to confirm that
 
 ### Create baby database
 You will have to connect to the fly.io postgres server that you crated to create the databasename. Use this command to portfoward and connect with [pdadmin](https://www.pgadmin.org/download/) locally `flyctl proxy 5432 -a <postgres-app-name>`.
-Use 127.0.0.1 instead of localhost when define the host of your connection at pgadmin, because if you use localhost you will get the following error `could not receive data from server: Socket is not connected` (https://serverfault.com/a/1003780/244961)
+Use 127.0.0.1 instead of localhost when define the host of your connection at pgadmin, because if you use localhost you will get the following error `could not receive data from server: Socket is not connected` ([https://serverfault.com/a/1003780/244961](https://serverfault.com/a/1003780/244961))
 In my case I created the database called baby that will be used by my spring boot application.
 
 ## Create angular + spring boot server
 ### Create dockerfile baby care app
-Let's create Dockerfile at root of your project folder to run my jhipster angular+spring boot application. I've got out of memory error when I tried to deploy using regular openjdk image, I learned that works if you use an optimize ibm jre (https://community.fly.io/t/deployment-of-java-spring-api-using-dockerfile/6708/5) :
+Let's create Dockerfile at root of your project folder to run my jhipster angular+spring boot application. I've got out of memory error when I tried to deploy using regular openjdk image. I learned that works if you use an optimize ibm jre ([https://community.fly.io/t/deployment-of-java-spring-api-using-dockerfile/6708/5](https://community.fly.io/t/deployment-of-java-spring-api-using-dockerfile/6708/5)) :
 ```docker
 FROM ibm-semeru-runtimes:open-11-jre-focal
 MAINTAINER https://renanfranca.github.io/about.html
@@ -63,7 +63,7 @@ COPY target/baby-0.0.1-SNAPSHOT.jar baby-0.0.1-SNAPSHOT.jar
 ENV _JAVA_OPTIONS="-XX:MaxRAM=70m"
 CMD java $_JAVA_OPTIONS -Dspring.profiles.active=$SPRING_PROFILES_ACTIVE -Dspring.datasource.url=$SPRING_DATASOURCE_URL -Dspring.liquibase.url=$SPRING_LIQUIBASE_URL -Dspring.datasource.username=$SPRING_DATASOURCE_USERNAME -Dspring.datasource.password=$SPRING_DATASOURCE_PASSWORD -jar baby-0.0.1-SNAPSHOT.jar
 ```
-<figcaption>[https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/Dockerfile](https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/Dockerfile)</figcaption>
+<figcaption>https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/Dockerfile</figcaption>
 
 
 To build the final jar and optimize the baby application for production, run:
@@ -78,7 +78,7 @@ I created the flyio folder `flyio/mamazinha` at the root directory of my project
 ```docker
 FROM stting/mamazinhaflyio:latest
 ```
-<figcaption>[https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/flyio/Dockerfile](https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/flyio/Dockerfile)</figcaption>
+<figcaption>https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/flyio/Dockerfile</figcaption>
 
 ### Create the flyio application
 Let's go to the folder `flyio/mamazinha` an run the command `flyctl launch` and I choose the following options:
@@ -105,7 +105,7 @@ You have to open the `fly.toml` file and edit the [env] section with the variabl
   SPRING_LIQUIBASE_URL="jdbc:postgresql://app-postgres-name.internal:5432/databasename"
   JHIPSTER_SLEEP=5
 ```
-<figcaption>[https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/flyio/fly.toml](https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/flyio/fly.toml)</figcaption>
+<figcaption>https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/flyio/fly.toml</figcaption>
 
 **WARNING**: about potgres database URL for java. The [postgres start guide](https://fly.io/docs/reference/postgres/) examples didn't consider java language and the URL to connect to postgres which they gave to me after creating the postgres instance was that: `postgres://baby-postgres.internal:5432/baby`. To solve the problem I change the prefix postgres to postgresql: `jdbc:postgresql://baby-postgres.internal:5432/baby`
 
@@ -160,7 +160,7 @@ First edit the file `src/main/docker/app.yml` to use the docker image `stting/ma
      ports: 
        - 5432:5432
 ```
-<figcaption>[https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/src/main/docker/app.yml](https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/src/main/docker/app.yml)</figcaption>
+<figcaption>https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/src/main/docker/app.yml</figcaption>
 
 
 Then run the command `docker-compose -f src/main/docker/app.yml` and access your application at `http://localhost:8080` which is using postgres database.
@@ -168,7 +168,8 @@ Then run the command `docker-compose -f src/main/docker/app.yml` and access your
 
 ## My own experience with fly.io
 
-I am running my Baby Care App on fly.io since 03 September 2022, here is the link [https://renanfranca.github.io/redirect/babycareapp.html](https://renanfranca.github.io/redirect/babycareapp.html).
+I am running my Baby Care App on fly.io since 03 September 2022, here is the link [https://renanfranca.github.io/
+redirect/babycareapp.html](https://renanfranca.github.io/redirect/babycareapp.html).
 
 I accessed the app every day at least 10 times a day, I only got 5 downtimes the first week. After that me, and my wife didn't notice any downtime 😊! It looks like the app was always warmed up and ready to receive requests.
 
