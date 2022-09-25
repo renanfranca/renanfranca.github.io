@@ -55,6 +55,11 @@ Use 127.0.0.1 instead of localhost when define the host of your connection at pg
 In my case I created the database called baby that will be used by my spring boot application.
 
 ## Create angular + spring boot server
+### Free tier plan
+According to [this flyio pricing link](https://fly.io/docs/about/pricing/), the free tier include:
+-   Up to 3 shared-cpu-1x 256mb VMs
+-   160GB outbound data transfer
+
 ### Create dockerfile baby care app
 Let's create Dockerfile at root of your project folder to run my jhipster angular+spring boot application. I've got out of memory error when I tried to deploy using regular openjdk image. I learned that works if you use an optimize ibm jre ([https://community.fly.io/t/deployment-of-java-spring-api-using-dockerfile/6708/5](https://community.fly.io/t/deployment-of-java-spring-api-using-dockerfile/6708/5)) :
 ```docker
