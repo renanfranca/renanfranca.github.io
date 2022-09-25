@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Deploy jhipster monolithic (angularjs + spring boot) at fly.io
+title: Deploy jhipster monolithic (angularjs + spring boot) at fly.io for FREE
 description: 
 date: 2022-09-03 21:40:48 -0300
 tags: jhipster
@@ -12,7 +12,7 @@ draft: true
 
 [I built a Baby Care web app](https://renanfranca.github.io/i-built-a-baby-care-web-app-using-jhipster.html) using microservices architecture to challenge me in my roadmap to master [jhioster](https://renanfranca.github.io/2022/02/24/why-did-i-use-jhipster.html). Unfortunately turns out that I couldn't afford the cost of [Publishing Microservices into Google Kubernetes Engine (GKE)](https://renanfranca.github.io/publishing-microservices-into-gke.html) and I decided to self-host the Baby Care App in my notebook and keep accessing it through my phone.
 
-My baby girl Marília complete 8 months old so we are going out with her and I couldn't access the Baby Care App outside of my home. I decided to rewrite the Baby Care App as a monolithic architecture using jhipster to deploy it on Heroku for free. When I finally rebuilt the app, I realized that [Heroku is going to shut down the free tier plan](https://techcrunch.com/2022/08/25/heroku-announces-plans-to-eliminate-free-plans-blaming-fraud-and-abuse/?utm_source=tldrnewsletter)!
+My baby girl Marília complete 9 months old so we are going out with her and I couldn't access the Baby Care App outside of my home. I decided to rewrite the Baby Care App as a monolithic architecture using jhipster to deploy it on Heroku for free. When I finally rebuilt the app, I realized that [Heroku is going to shut down the free tier plan](https://techcrunch.com/2022/08/25/heroku-announces-plans-to-eliminate-free-plans-blaming-fraud-and-abuse/?utm_source=tldrnewsletter)!
 
 I will share with you my experience to publish an angularjsjs + spring boot + postgres database solution into [fly.io](https://fly.io). I opened source [the Baby Care App as monolithic](https://github.com/renanfranca/mamazinha-monolithic/tree/publish-to-flydotio) to let you put your hands on the code as I explain the step-by-step.
 
@@ -63,8 +63,12 @@ COPY target/baby-0.0.1-SNAPSHOT.jar baby-0.0.1-SNAPSHOT.jar
 ENV _JAVA_OPTIONS="-XX:MaxRAM=70m"
 CMD java $_JAVA_OPTIONS -Dspring.profiles.active=$SPRING_PROFILES_ACTIVE -Dspring.datasource.url=$SPRING_DATASOURCE_URL -Dspring.liquibase.url=$SPRING_LIQUIBASE_URL -Dspring.datasource.username=$SPRING_DATASOURCE_USERNAME -Dspring.datasource.password=$SPRING_DATASOURCE_PASSWORD -jar baby-0.0.1-SNAPSHOT.jar
 ```
+<figcaption>https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/Dockerfile</figcaption>
+
+
 To build the final jar and optimize the baby application for production, run:
 `./mvnw -Pprod clean verify`
+
 Then I have to create a docker image locally from Dockerfile using this command at project root folder `docker build -t stting/mamazinhaflyio .`. Replace `stting` with your [dockerhub account](https://hub.docker.com/).
 
 The last step is to open dockerdesktop and push then cteated image to dockerhub.
@@ -74,6 +78,7 @@ I created the flyio folder `flyio/mamazinha` at the root directory of my project
 ```docker
 FROM stting/mamazinhaflyio:latest
 ```
+<figcaption>https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/flyio/Dockerfile</figcaption>
 
 ### Create the flyio application
 Let's go to the folder `flyio/mamazinha` an run the command `flyctl launch` and I choose the following options:
@@ -100,6 +105,8 @@ You have to open the `fly.toml` file and edit the [env] section with the variabl
   SPRING_LIQUIBASE_URL="jdbc:postgresql://app-postgres-name.internal:5432/databasename"
   JHIPSTER_SLEEP=5
 ```
+<figcaption>https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/flyio/fly.toml</figcaption>
+
 **WARNING**: about potgres database URL for java. The [postgres start guide](https://fly.io/docs/reference/postgres/) examples didn't consider java language and the URL to connect to postgres which they gave to me after creating the postgres instance was that: `postgres://baby-postgres.internal:5432/baby`. To solve the problem I change the prefix postgres to postgresql: `jdbc:postgresql://baby-postgres.internal:5432/baby`
 
 #### Define the database password 
@@ -153,6 +160,9 @@ First edit the file `src/main/docker/app.yml` to use the docker image `stting/ma
      ports: 
        - 5432:5432
 ```
+<figcaption>https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/src/main/docker/app.yml</figcaption>
+
+
 Then run the command `docker-compose -f src/main/docker/app.yml` and access your application at `http://localhost:8080` which is using postgres database.
 
 
@@ -162,6 +172,9 @@ I am running my Baby Care App on fly.io since 03 September 2022, here is the lin
 
 I accessed the app every day at least 10 times a day, I only got 5 downtimes the first week. After that me, and my wife didn't notice any downtime 😊! It looks like the app was always warmed up and ready to receive requests.
 
-On the dashboard web app, you can see a lot of information about your app: https://fly.io/dashboard. My application constantly use 226 MB from the 232 MB available. In addition that, you can access the Grafana dashboard https://fly-metrics.net/ for awesome insight info 👏!
+On the dashboard web app, you can see a lot of information about your app: https://fly.io/dashboard. My application constantly use 226 MB from the 232 MB available. In addition, you can access the Grafana dashboard https://fly-metrics.net/ for awesome insight info 👏!
 
+## Special Thanks
 I just wanna say thank you to the fly.io team to add this free high-quality free tier option! It has the bearing minimum for your MVP version and to use it to host your portfolio projects!
+
+Thank you [@pascalgrimaud](https://twitter.com/pascalgrimaud?t=aUYEiYODOpXITMcmTOkbOQ&s=09) for being available to chat and help me out when I've got stuck! It's important to read another point of view when I can't move on.
