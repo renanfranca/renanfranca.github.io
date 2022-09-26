@@ -169,7 +169,7 @@ First edit the file `src/main/docker/app.yml` to use the docker image `stting/ma
 <figcaption>https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/src/main/docker/app.yml</figcaption>
 
 
-Then run the command `docker-compose -f src/main/docker/app.yml` and access your application at `http://localhost:8080` which is using postgres database.
+Then run the command `docker-compose -f src/main/docker/app.yml up -d` and access your application at `http://localhost:8080` which is using postgres database.
 
 
 ## My own experience with fly.io
