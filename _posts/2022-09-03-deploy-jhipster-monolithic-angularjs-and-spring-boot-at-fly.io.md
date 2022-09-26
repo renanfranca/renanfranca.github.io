@@ -80,14 +80,14 @@ Then I have to create a docker image locally from Dockerfile using this command 
 The last step is to open dockerdesktop and push then cteated image to dockerhub.
 
 ### Create flyio dockerfile
-I created the flyio folder `flyio/mamazinha` at the root directory of my project. Inside that folder I created another dockerfile to push to flyio, doing this way you wont use the fly.io image builder, only pull from dockerhub (this make the deploy much faster):
+I created the flyio folder `flyio` at the root directory of my project. Inside that folder I created another dockerfile to push to flyio, doing this way you wont use the fly.io image builder, only pull from dockerhub (this make the deploy much faster):
 ```docker
 FROM stting/mamazinhaflyio:latest
 ```
 <figcaption>https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/flyio/Dockerfile</figcaption>
 
 ### Create the flyio application
-Let's go to the folder `flyio/mamazinha` an run the command `flyctl launch` and I choose the following options:
+Let's go to the folder `flyio` an run the command `flyctl launch` and I choose the following options:
 > Creating app in C:\Users\Blog\Documents\Projects\mamazinha-monolithic\flyio\mamazinha
 Scanning source code
 Detected a Dockerfile app
