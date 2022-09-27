@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Deploy jhipster monolithic (angularjs + spring boot) at fly.io for FREE
-description: I will share with you my experience to publish an angularjs + spring boot + postgres database solution into fly.io for FREE.
+title: Deploy jhipster monolithic (angular + spring boot) at fly.io for FREE
+description: I will share with you my experience to publish an angular + spring boot + postgres database solution into fly.io for FREE.
 date: 2022-09-27 11:30:00 -0300
 tags: jhipster
 image: img/postbanners/2022-09-03-cover-deploy-jhipster-monolithic-fly-io.jpeg
@@ -14,7 +14,7 @@ permalink: /:categories/:title:output_ext
 
 My baby girl Marília complete 9 months old so we are going out with her and I couldn't access the Baby Care App outside of my home. I decided to rewrite the Baby Care App as a monolithic architecture using jhipster to deploy it on Heroku for free. When I finally rebuilt the app, I realized that [Heroku is going to shut down the free tier plan](https://techcrunch.com/2022/08/25/heroku-announces-plans-to-eliminate-free-plans-blaming-fraud-and-abuse/?utm_source=tldrnewsletter)!
 
-I will share with you my experience to publish an angularjs + spring boot + postgres database solution into [fly.io](https://fly.io) for FREE. I opened source [the Baby Care App as monolithic](https://github.com/renanfranca/mamazinha-monolithic/tree/publish-to-flydotio) to let you put your hands on the code as I explain the step-by-step:
+I will share with you my experience to publish an angular + spring boot + postgres database solution into [fly.io](https://fly.io) for FREE. I opened source [the Baby Care App as monolithic](https://github.com/renanfranca/mamazinha-monolithic/tree/publish-to-flydotio) to let you put your hands on the code as I explain the step-by-step:
  [![renanfranca/mamazinha-monolithic](https://renanfranca.github.io/img/mamazinha-baby-care/github-mamazinha-monolithic-image_readme.png)](https://github.com/renanfranca/mamazinha-monolithic)
 
 ## Create postgres into flyio
@@ -32,14 +32,12 @@ Run the command `flyctl auth login`
 
 ### Create a postgres app
 Run the command `flyctl postgres create` and I choose the following options:
-
 - ? Choose an app name (leave blank to generate one): baby-postgres
 - automatically selected personal organization: Renan Franca
 - ? Select regions: São Paulo (gru)
 - ? Select configuration: Development - Single node, 1x shared CPU, 256MB RAM, 1GB disk
 
 After the potgres app were created you will receive something like that as an output:
-
 - Postgres cluster baby-postgres created
 - Username:    postgres
 - Password:    randompassword
