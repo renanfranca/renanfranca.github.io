@@ -186,6 +186,8 @@ On the dashboard web app, you can see a lot of information about your app: [http
 **If you like this project, please, considering give it a star 🌟 to support me and enhanced repository's visibility 🤩!**
 
 <!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/renanfranca/mamazinha-monolithic" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" data-size="large" aria-label="Star renanfranca/mamazinha-monolithic on GitHub">•⭐mamazinha-monolithic</a>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 
 ## Special Thanks
 I just wanna say thank you to the fly.io team to add this free high-quality free tier option! It has the bearing minimum for your MVP version and to use it to host your portfolio projects!
