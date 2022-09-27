@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Deploy jhipster monolithic (angularjs + spring boot) at fly.io for FREE
-description: 
-date: 2022-09-03 21:40:48 -0300
+description: I will share with you my experience to publish an angularjs + spring boot + postgres database solution into fly.io for FREE.
+date: 2022-09-27 11:30:00 -0300
 tags: jhipster
 image: img/postbanners/2022-09-03-cover-deploy-jhipster-monolithic-fly-io.jpeg
 permalink: /:categories/:title:output_ext
@@ -15,7 +15,7 @@ draft: true
 
 My baby girl Marília complete 9 months old so we are going out with her and I couldn't access the Baby Care App outside of my home. I decided to rewrite the Baby Care App as a monolithic architecture using jhipster to deploy it on Heroku for free. When I finally rebuilt the app, I realized that [Heroku is going to shut down the free tier plan](https://techcrunch.com/2022/08/25/heroku-announces-plans-to-eliminate-free-plans-blaming-fraud-and-abuse/?utm_source=tldrnewsletter)!
 
-I will share with you my experience to publish an angularjsjs + spring boot + postgres database solution into [fly.io](https://fly.io). I opened source [the Baby Care App as monolithic](https://github.com/renanfranca/mamazinha-monolithic/tree/publish-to-flydotio) to let you put your hands on the code as I explain the step-by-step:
+I will share with you my experience to publish an angularjs + spring boot + postgres database solution into [fly.io](https://fly.io) for FREE. I opened source [the Baby Care App as monolithic](https://github.com/renanfranca/mamazinha-monolithic/tree/publish-to-flydotio) to let you put your hands on the code as I explain the step-by-step:
  [![renanfranca/mamazinha-monolithic](https://renanfranca.github.io/img/mamazinha-baby-care/github-mamazinha-monolithic-image_readme.png)](https://github.com/renanfranca/mamazinha-monolithic)
 
 ## Create postgres into flyio
@@ -179,17 +179,20 @@ I am running my Baby Care App on fly.io since 03 September 2022, here is the lin
 
 I accessed the app every day at least 10 times a day, I only got 5 downtimes the first week. After that me, and my wife didn't notice any downtime 😊! It looks like the app was always warmed up and ready to receive requests.
 
-On the dashboard web app, you can see a lot of information about your app: [https://fly.io/dashboard](https://fly.io/dashboard). My application constantly use 226 MB from the 232 MB available. In addition, you can access the Grafana dashboard [https://fly-metrics.net/](https://fly-metrics.net/) for awesome insight info 👏!
+On the dashboard web app, you can see a lot of information about your app: [https://fly.io/dashboard](https://fly.io/dashboard). My application constantly uses 226 MB from the 232 MB available. In addition, you can access the Grafana dashboard [https://fly-metrics.net/](https://fly-metrics.net/) for awesome insight info 👏!
 
-## Feedback
+## 🌟Feedback
 
-**If you like this project, please, considering give it a star 🌟 to support me and enhanced repository's visibility 🤩!**
+**If you like this project, please, considering give it a star 🌟 to support me and enhanced the repository's visibility 🤩!**
 
 <!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/renanfranca/mamazinha-monolithic" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" data-size="large" aria-label="Star renanfranca/mamazinha-monolithic on GitHub">•⭐mamazinha-monolithic</a>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-## Special Thanks
-I just wanna say thank you to the fly.io team to add this free high-quality free tier option! It has the bearing minimum for your MVP version and to use it to host your portfolio projects!
+## 💙 Special Thanks
+
+I just wanna say thanks to the fly.io team for adding this free high-quality free tier option! It has the bearing minimum for your MVP version and to use it to host your portfolio projects!
 
 Thank you [@pascalgrimaud](https://twitter.com/pascalgrimaud?t=aUYEiYODOpXITMcmTOkbOQ&s=09) for being available to chat and help me out when I've got stuck! It's important to read another point of view when I can't move on.
+
+Last but not least, thank you JHipster Community!
