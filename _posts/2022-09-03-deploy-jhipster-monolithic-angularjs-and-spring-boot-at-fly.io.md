@@ -181,6 +181,12 @@ I accessed the app every day at least 10 times a day, I only got 5 downtimes the
 
 On the dashboard web app, you can see a lot of information about your app: [https://fly.io/dashboard](https://fly.io/dashboard). My application constantly use 226 MB from the 232 MB available. In addition, you can access the Grafana dashboard [https://fly-metrics.net/](https://fly-metrics.net/) for awesome insight info 👏!
 
+## Feedback
+
+**If you like this project, please, considering give it a star 🌟 to support me and enhanced repository's visibility 🤩!**
+
+<!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/renanfranca/mamazinha-monolithic" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" data-size="large" aria-label="Star renanfranca/mamazinha-monolithic on GitHub">•⭐mamazinha-monolithic</a>
+
 ## Special Thanks
 I just wanna say thank you to the fly.io team to add this free high-quality free tier option! It has the bearing minimum for your MVP version and to use it to host your portfolio projects!
 
