@@ -18,26 +18,34 @@ I will share with you my experience to publish an angular + spring boot + postgr
  [![renanfranca/mamazinha-monolithic](https://renanfranca.github.io/img/mamazinha-baby-care/github-mamazinha-monolithic-image_readme.png)](https://github.com/renanfranca/mamazinha-monolithic)
 
 ## Create postgres into flyio
+
 ### Free tier plan
+
 According to [this flyio community post](https://community.fly.io/t/how-to-convert-your-not-free-postgres-to-free-postgres/3888), the free tier is a postgres with 1GB volume attached running in the free tier machine (shared-cpu-1x 256mb VMs).
 
 ### Install flyctl
+
 I am using Windows 10, so I had to run the following command at Powershell `iwr https://fly.io/install.ps1 -useb | iex` . Visit [this link](https://fly.io/docs/hands-on/install-flyctl/) to install it on another OS.
 
 ### Signup
+
 Run the command `flyctl auth signup` to create your account. I put my credit card to earn more free resources, [according to the documentation](https://fly.io/blog/free-postgres/) it's necessary to use postgres for free.
 
 ### Login
+
 Run the command `flyctl auth login`
 
 ### Create a postgres app
+
 Run the command `flyctl postgres create` and I choose the following options:
+
 - ? Choose an app name (leave blank to generate one): baby-postgres
 - automatically selected personal organization: Renan Franca
 - ? Select regions: São Paulo (gru)
 - ? Select configuration: Development - Single node, 1x shared CPU, 256MB RAM, 1GB disk
 
 After the potgres app were created you will receive something like that as an output:
+
 - Postgres cluster baby-postgres created
 - Username:    postgres
 - Password:    randompassword
@@ -98,16 +106,15 @@ FROM stting/mamazinhaflyio:latest
 ### Create the flyio application
 
 Let's go to the folder `flyio` an run the command `flyctl launch` and I choose the following options:
-
-- Creating app in C:\Users\Blog\Documents\Projects\mamazinha-monolithic\flyio
-- Scanning source code
-- Detected a Dockerfile app
-- ? App Name (leave blank to use an auto-generated name): mamazinha-app
-- ? App Name (leave blank to use an auto-generated name): mamazinha-app
-- Automatically selected personal organization: Renan Franca
-- ? Select region: gru (São Paulo)
-- Created app mamazinha-app in organization personal
-- Wrote config file fly.toml
+> Creating app in C:\Users\Blog\Documents\Projects\mamazinha-monolithic\flyio
+> Scanning source code
+> Detected a Dockerfile app
+> ? App Name (leave blank to use an auto-generated name): mamazinha-app
+> ? App Name (leave blank to use an auto-generated name): mamazinha-app
+> Automatically selected personal organization: Renan Franca
+> ? Select region: gru (São Paulo)
+> Created app mamazinha-app in organization personal
+> Wrote config file fly.toml
 
 After running that command you will have an already configured `fly.toml` file with your application info and everything you need to deploy it 🤩.
 
