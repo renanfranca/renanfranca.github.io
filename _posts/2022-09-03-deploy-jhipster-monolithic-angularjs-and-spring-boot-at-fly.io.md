@@ -106,15 +106,16 @@ FROM stting/mamazinhaflyio:latest
 ### Create the flyio application
 
 Let's go to the folder `flyio` an run the command `flyctl launch` and I choose the following options:
-> Creating app in C:\Users\Blog\Documents\Projects\mamazinha-monolithic\flyio
-> Scanning source code
-> Detected a Dockerfile app
-> ? App Name (leave blank to use an auto-generated name): mamazinha-app
-> ? App Name (leave blank to use an auto-generated name): mamazinha-app
-> Automatically selected personal organization: Renan Franca
-> ? Select region: gru (São Paulo)
-> Created app mamazinha-app in organization personal
-> Wrote config file fly.toml
+
+- Creating app in C:\Users\Blog\Documents\Projects\mamazinha-monolithic\flyio
+- Scanning source code
+- Detected a Dockerfile app
+- ? App Name (leave blank to use an auto-generated name): mamazinha-app
+- ? App Name (leave blank to use an auto-generated name): mamazinha-app
+- Automatically selected personal organization: Renan Franca
+- ? Select region: gru (São Paulo)
+- Created app mamazinha-app in organization personal
+- Wrote config file fly.toml
 
 After running that command you will have an already configured `fly.toml` file with your application info and everything you need to deploy it 🤩.
 
