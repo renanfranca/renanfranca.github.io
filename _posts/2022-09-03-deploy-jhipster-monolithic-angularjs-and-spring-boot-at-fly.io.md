@@ -175,8 +175,7 @@ Then run the command `docker-compose -f src/main/docker/app.yml up -d` and acces
 
 ## My own experience with fly.io
 
-I am running my Baby Care App on fly.io since 03 September 2022, here is the link [https://renanfranca.github.io/
-redirect/babycareapp.html](https://renanfranca.github.io/redirect/babycareapp.html).
+I am running my Baby Care App on fly.io since 03 September 2022, here is the link: [Mamazinha Baby Care App](https://renanfranca.github.io/redirect/babycareapp.html).
 
 I accessed the app every day at least 10 times a day, I only got 5 downtimes the first week. After that me, and my wife didn't notice any downtime 😊! It looks like the app was always warmed up and ready to receive requests.
 
