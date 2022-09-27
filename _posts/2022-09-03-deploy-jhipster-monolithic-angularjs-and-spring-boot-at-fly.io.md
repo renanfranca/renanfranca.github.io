@@ -6,7 +6,6 @@ date: 2022-09-27 11:30:00 -0300
 tags: jhipster
 image: img/postbanners/2022-09-03-cover-deploy-jhipster-monolithic-fly-io.jpeg
 permalink: /:categories/:title:output_ext
-draft: true
 
 ---
 ![cover image](https://renanfranca.github.io/img/postbanners/2022-09-03-cover-deploy-jhipster-monolithic-fly-io.jpeg)
