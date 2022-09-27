@@ -32,19 +32,21 @@ Run the command `flyctl auth login`
 
 ### Create a postgres app
 Run the command `flyctl postgres create` and I choose the following options:
-> ? Choose an app name (leave blank to generate one): baby-postgres
-> automatically selected personal organization: Renan Franca
-> ? Select regions: São Paulo (gru)
-> ? Select configuration: Development - Single node, 1x shared CPU, 256MB RAM, 1GB disk
+
+- ? Choose an app name (leave blank to generate one): baby-postgres
+- automatically selected personal organization: Renan Franca
+- ? Select regions: São Paulo (gru)
+- ? Select configuration: Development - Single node, 1x shared CPU, 256MB RAM, 1GB disk
 
 After the potgres app were created you will receive something like that as an output:
-> Postgres cluster baby-postgres created
-> Username:    postgres
-> Password:    randompassword
-> Hostname:    baby-postgres.internal
-> Proxy Port:  5432
-> Postgres Port: 5433
-> postgres://postgres:randompassword@baby-postgres.internal:5432
+
+- Postgres cluster baby-postgres created
+- Username:    postgres
+- Password:    randompassword
+- Hostname:    baby-postgres.internal
+- Proxy Port:  5432
+- Postgres Port: 5433
+- postgres://postgres:randompassword@baby-postgres.internal:5432
 
 Write it down, because you won't have another chance to access your postgres server information.
 Run the following command `flyctl volumes list -a baby-postgres` to confirm that a persistent free volume were automatically created for your postgres app.
@@ -98,15 +100,16 @@ FROM stting/mamazinhaflyio:latest
 ### Create the flyio application
 
 Let's go to the folder `flyio` an run the command `flyctl launch` and I choose the following options:
-> Creating app in C:\Users\Blog\Documents\Projects\mamazinha-monolithic\flyio
-> Scanning source code
-> Detected a Dockerfile app
-> ? App Name (leave blank to use an auto-generated name): mamazinha-app
-> ? App Name (leave blank to use an auto-generated name): mamazinha-app
-> Automatically selected personal organization: Renan Franca
-> ? Select region: gru (São Paulo)
-> Created app mamazinha-app in organization personal
-> Wrote config file fly.toml
+
+- Creating app in C:\Users\Blog\Documents\Projects\mamazinha-monolithic\flyio
+- Scanning source code
+- Detected a Dockerfile app
+- ? App Name (leave blank to use an auto-generated name): mamazinha-app
+- ? App Name (leave blank to use an auto-generated name): mamazinha-app
+- Automatically selected personal organization: Renan Franca
+- ? Select region: gru (São Paulo)
+- Created app mamazinha-app in organization personal
+- Wrote config file fly.toml
 
 After running that command you will have an already configured `fly.toml` file with your application info and everything you need to deploy it 🤩.
 
