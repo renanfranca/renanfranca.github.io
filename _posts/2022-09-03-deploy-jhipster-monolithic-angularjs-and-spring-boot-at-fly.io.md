@@ -33,35 +33,41 @@ Run the command `flyctl auth login`
 ### Create a postgres app
 Run the command `flyctl postgres create` and I choose the following options:
 > ? Choose an app name (leave blank to generate one): baby-postgres
-automatically selected personal organization: Renan Franca
-? Select regions: São Paulo (gru)
-? Select configuration: Development - Single node, 1x shared CPU, 256MB RAM, 1GB disk
+> automatically selected personal organization: Renan Franca
+> ? Select regions: São Paulo (gru)
+> ? Select configuration: Development - Single node, 1x shared CPU, 256MB RAM, 1GB disk
 
 After the potgres app were created you will receive something like that as an output:
 > Postgres cluster baby-postgres created
-  Username:    postgres
-  Password:    randompassword
-  Hostname:    baby-postgres.internal
-  Proxy Port:  5432
-  Postgres Port: 5433
-postgres://postgres:randompassword@baby-postgres.internal:5432
+> Username:    postgres
+> Password:    randompassword
+> Hostname:    baby-postgres.internal
+> Proxy Port:  5432
+> Postgres Port: 5433
+> postgres://postgres:randompassword@baby-postgres.internal:5432
 
 Write it down, because you won't have another chance to access your postgres server information.
 Run the following command `flyctl volumes list -a baby-postgres` to confirm that a persistent free volume were automatically created for your postgres app.
 
 ### Create baby database
+
 You will have to connect to the fly.io postgres server that you crated to create the databasename. Use this command to portfoward and connect with [pdadmin](https://www.pgadmin.org/download/) locally `flyctl proxy 5432 -a <postgres-app-name>`.
 Use 127.0.0.1 instead of localhost when define the host of your connection at pgadmin, because if you use localhost you will get the following error `could not receive data from server: Socket is not connected` ([https://serverfault.com/a/1003780/244961](https://serverfault.com/a/1003780/244961))
 In my case I created the database called baby that will be used by my spring boot application.
 
 ## Create angular + spring boot server
+
 ### Free tier plan
+
 According to [this flyio pricing link](https://fly.io/docs/about/pricing/), the free tier include:
--   Up to 3 shared-cpu-1x 256mb VMs
--   160GB outbound data transfer
+
+- Up to 3 shared-cpu-1x 256mb VMs
+- 160GB outbound data transfer
 
 ### Create dockerfile baby care app
+
 Let's create Dockerfile at root of your project folder to run my jhipster angular+spring boot application. I've got out of memory error when I tried to deploy using regular openjdk image. I learned that works if you use an optimize ibm jre ([https://community.fly.io/t/deployment-of-java-spring-api-using-dockerfile/6708/5](https://community.fly.io/t/deployment-of-java-spring-api-using-dockerfile/6708/5)) :
+
 ```docker
 FROM ibm-semeru-runtimes:open-11-jre-focal
 MAINTAINER https://renanfranca.github.io/about.html
@@ -69,8 +75,8 @@ COPY target/baby-0.0.1-SNAPSHOT.jar baby-0.0.1-SNAPSHOT.jar
 ENV _JAVA_OPTIONS="-XX:MaxRAM=70m"
 CMD java $_JAVA_OPTIONS -Dspring.profiles.active=$SPRING_PROFILES_ACTIVE -Dspring.datasource.url=$SPRING_DATASOURCE_URL -Dspring.liquibase.url=$SPRING_LIQUIBASE_URL -Dspring.datasource.username=$SPRING_DATASOURCE_USERNAME -Dspring.datasource.password=$SPRING_DATASOURCE_PASSWORD -jar baby-0.0.1-SNAPSHOT.jar
 ```
-<figcaption>https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/Dockerfile</figcaption>
 
+<figcaption>https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/Dockerfile</figcaption>
 
 To build the final jar and optimize the baby application for production, run:
 `./mvnw -Pprod clean verify`
@@ -80,28 +86,34 @@ Then I have to create a docker image locally from Dockerfile using this command 
 The last step is to open dockerdesktop and push then cteated image to dockerhub.
 
 ### Create flyio dockerfile
+
 I created the flyio folder `flyio` at the root directory of my project. Inside that folder I created another dockerfile to push to flyio, doing this way you wont use the fly.io image builder, only pull from dockerhub (this make the deploy much faster):
+
 ```docker
 FROM stting/mamazinhaflyio:latest
 ```
+
 <figcaption>https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/flyio/Dockerfile</figcaption>
 
 ### Create the flyio application
+
 Let's go to the folder `flyio` an run the command `flyctl launch` and I choose the following options:
-> Creating app in C:\Users\Blog\Documents\Projects\mamazinha-monolithic\flyio\mamazinha
-Scanning source code
-Detected a Dockerfile app
-? App Name (leave blank to use an auto-generated name): mamazinha-app
-? App Name (leave blank to use an auto-generated name): mamazinha-app
-Automatically selected personal organization: Renan Franca
-? Select region: gru (São Paulo)
-Created app mamazinha-app in organization personal
-Wrote config file fly.toml
+> Creating app in C:\Users\Blog\Documents\Projects\mamazinha-monolithic\flyio
+> Scanning source code
+> Detected a Dockerfile app
+> ? App Name (leave blank to use an auto-generated name): mamazinha-app
+> ? App Name (leave blank to use an auto-generated name): mamazinha-app
+> Automatically selected personal organization: Renan Franca
+> ? Select region: gru (São Paulo)
+> Created app mamazinha-app in organization personal
+> Wrote config file fly.toml
 
 After running that command you will have an already configured `fly.toml` file with your application info and everything you need to deploy it 🤩.
 
 #### Define the environment variables
+
 You have to open the `fly.toml` file and edit the [env] section with the variables (replace the values with your recently created postgres app):
+
 ```docker
   _JAVA_OPTIONS="-XX:MaxRAM=70m"
   SPRING_PROFILES_ACTIVE="prod,api-docs"
@@ -111,15 +123,19 @@ You have to open the `fly.toml` file and edit the [env] section with the variabl
   SPRING_LIQUIBASE_URL="jdbc:postgresql://app-postgres-name.internal:5432/databasename"
   JHIPSTER_SLEEP=5
 ```
+
 <figcaption>https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/flyio/fly.toml</figcaption>
 
 **WARNING**: about potgres database URL for java. The [postgres start guide](https://fly.io/docs/reference/postgres/) examples didn't consider java language and the URL to connect to postgres which they gave to me after creating the postgres instance was that: `postgres://baby-postgres.internal:5432/baby`. To solve the problem I change the prefix postgres to postgresql: `jdbc:postgresql://baby-postgres.internal:5432/baby`
 
-#### Define the database password 
+#### Define the database password
+
 You can use the secret option to keep your database password safe! Run the command:
+
 ```
 flyctl secrets set DB_POSTGRES_PASSWORD=pasteHereThePassword
 ```
+
 That will create an encrypted environment variable. To list your secrets, run the command `flyctl secrets list`.
 
 ### Deploy the application
@@ -127,9 +143,11 @@ That will create an encrypted environment variable. To list your secrets, run th
 Run the command `flyctl deploy` . To open your already deployed application in a browser, run the command `flyctl open`.
 
 ## Read this jhipster users
+
 Before deploy the app, you can test it using docker desktop.
 
 First edit the file `src/main/docker/app.yml` to use the docker image `stting/mamazinhaflyio` (in my case):
+
 ```docker
 # This configuration is intended for development purpose, it's **your** responsibility to harden it for production 
  version: '3.8' 
@@ -166,11 +184,10 @@ First edit the file `src/main/docker/app.yml` to use the docker image `stting/ma
      ports: 
        - 5432:5432
 ```
+
 <figcaption>https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/src/main/docker/app.yml</figcaption>
 
-
 Then run the command `docker-compose -f src/main/docker/app.yml up -d` and access your application at `http://localhost:8080` which is using postgres database.
-
 
 ## My own experience with fly.io
 
