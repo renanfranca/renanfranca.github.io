@@ -176,7 +176,7 @@ Then run the command `docker-compose -f src/main/docker/app.yml up -d` and acces
 
 I am running my Baby Care App on fly.io since 03 September 2022, here is the link: [Mamazinha Baby Care App](https://renanfranca.github.io/redirect/babycareapp.html).
 
-I accessed the app every day at least 10 times a day, I only got 5 downtimes the first week. After that me, and my wife didn't notice any downtime 😊! It looks like the app was always warmed up and ready to receive requests.
+I accessed the app every day at least 10 times a day, I only got 5 downtimes the first week. After that, my wife and I didn't notice any downtime 😊! It looks like the app was always warmed up and ready to receive requests.
 
 On the dashboard web app, you can see a lot of information about your app: [https://fly.io/dashboard](https://fly.io/dashboard). My application constantly uses 226 MB from the 232 MB available. In addition, you can access the Grafana dashboard [https://fly-metrics.net/](https://fly-metrics.net/) for awesome insight info 👏!
 
