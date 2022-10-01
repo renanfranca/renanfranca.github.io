@@ -37,7 +37,7 @@ Run the command `flyctl postgres create` and I choose the following options:
 - ? Select regions: São Paulo (gru)
 - ? Select configuration: Development - Single node, 1x shared CPU, 256MB RAM, 1GB disk
 
-After the potgres app were created you will receive something like that as an output:
+After the postgres app were created you will receive something like that as an output:
 - Postgres cluster baby-postgres created
 - Username:    postgres
 - Password:    randompassword
@@ -47,12 +47,11 @@ After the potgres app were created you will receive something like that as an ou
 - postgres://postgres:randompassword@baby-postgres.internal:5432
 
 Write it down, because you won't have another chance to access your postgres server information.
-Run the following command `flyctl volumes list -a baby-postgres` to confirm that a persistent free volume were automatically created for your postgres app.
+Run the following command `flyctl volumes list -a baby-postgres` to confirm that a persistent free volume was automatically created for your postgres app.
 
-### Create baby database
-You will have to connect to the fly.io postgres server that you created to define the databasename. Use this command to portfoward and connect with [pdadmin](https://www.pgadmin.org/download/) locally `flyctl proxy 5432 -a <postgres-app-name>`.
-Use 127.0.0.1 instead of localhost when define the host of your connection at pgadmin, because if you use localhost you will get the following error `could not receive data from server: Socket is not connected` ([https://serverfault.com/a/1003780/244961](https://serverfault.com/a/1003780/244961))
-In my case I created the database called baby that will be used by my spring boot application.
+### Create the baby database
+You will have to connect to the fly.io postgres server that you created to define the databasename. Use this command to port forward and connect with [pdadmin](https://www.pgadmin.org/download/) locally `flyctl proxy 5432 -a <postgres-app-name>`.
+Use 127.0.0.1 instead of localhost when defining the host of your connection at pgadmin, because if you use localhost you will get the following error `could not receive data from server: Socket is not connected` ([https://serverfault.com/a/1003780/244961](https://serverfault.com/a/1003780/244961)). In my case, I created the database called baby that will be used by my spring boot application.
 
 ## Create angular + spring boot server
 ### Free tier plan
@@ -60,8 +59,8 @@ According to [this flyio pricing link](https://fly.io/docs/about/pricing/), the 
 -   Up to 3 shared-cpu-1x 256mb VMs
 -   160GB outbound data transfer
 
-### Create dockerfile baby care app
-Let's create Dockerfile at root of your project folder to run my jhipster angular+spring boot application. I've got out of memory error when I tried to deploy using regular openjdk image. I learned that works if you use an optimize ibm jre ([https://community.fly.io/t/deployment-of-java-spring-api-using-dockerfile/6708/5](https://community.fly.io/t/deployment-of-java-spring-api-using-dockerfile/6708/5)) :
+### Create the dockerfile to the baby care app
+Let's create the Dockerfile at the root of your project folder to run my jhipster angular+spring boot application. I got out of memory error when I tried to deploy using a regular OpenJDK image. I learned that works if you use an optimized ibm jre ([https://community.fly.io/t/deployment-of-java-spring-api-using-dockerfile/6708/5](https://community.fly.io/t/deployment-of-java-spring-api-using-dockerfile/6708/5)) :
 ```docker
 FROM ibm-semeru-runtimes:open-11-jre-focal
 MAINTAINER https://renanfranca.github.io/about.html
@@ -75,19 +74,19 @@ CMD java $_JAVA_OPTIONS -Dspring.profiles.active=$SPRING_PROFILES_ACTIVE -Dsprin
 To build the final jar and optimize the baby application for production, run:
 `./mvnw -Pprod clean verify`
 
-Then I have to create a docker image locally from Dockerfile using this command at project root folder `docker build -t stting/mamazinhaflyio .`. Replace `stting` with your [dockerhub account](https://hub.docker.com/).
+Then I have to create a docker image locally from Dockerfile using this command at the project root folder `docker build -t stting/mamazinhaflyio .`. Replace `stting` with your [dockerhub account](https://hub.docker.com/).
 
-The last step is to open dockerdesktop and push then cteated image to dockerhub.
+The last step is to open the docker desktop and push the created image to the docker hub.
 
 ### Create flyio dockerfile
-I created the flyio folder `flyio` at the root directory of my project. Inside that folder I created another dockerfile to push to flyio, doing this way you wont use the fly.io image builder, only pull from dockerhub (this make the deploy much faster):
+I created the flyio folder `flyio` in the root directory of my project. Inside that folder I created another dockerfile to push to flyio, doing this way you won't use the fly.io image builder, only pull from the docker hub (this makes the deployment much faster):
 ```docker
 FROM stting/mamazinhaflyio:latest
 ```
 <figcaption>https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/flyio/Dockerfile</figcaption>
 
 ### Create the flyio application
-Let's go to the folder `flyio` an run the command `flyctl launch` and I choose the following options:
+Let's go to the folder `flyio` and run the command `flyctl launch` and I choose the following options:
 - Creating app in C:\Users\Blog\Documents\Projects\mamazinha-monolithic\flyio
 - Scanning source code
 - Detected a Dockerfile app
@@ -113,7 +112,7 @@ You have to open the `fly.toml` file and edit the [env] section with the variabl
 ```
 <figcaption>https://github.com/renanfranca/mamazinha-monolithic/blob/publish-to-flydotio/flyio/fly.toml</figcaption>
 
-**WARNING**: about potgres database URL for java. The [postgres start guide](https://fly.io/docs/reference/postgres/) examples didn't consider java language and the URL to connect to postgres which they gave to me after creating the postgres instance was that: `postgres://baby-postgres.internal:5432/baby`. To solve the problem I change the prefix postgres to postgresql: `jdbc:postgresql://baby-postgres.internal:5432/baby`
+**WARNING**: about the postgres database URL for java. The [postgres start guide](https://fly.io/docs/reference/postgres/) examples didn't consider java language and the URL to connect to postgres which they gave to me after creating the postgres instance was that: `postgres://baby-postgres.internal:5432/baby`. To solve the problem I change the prefix postgres to postgresql: `jdbc:postgresql://baby-postgres.internal:5432/baby`
 
 #### Define the database password 
 You can use the secret option to keep your database password safe! Run the command:
@@ -126,10 +125,10 @@ That will create an encrypted environment variable. To list your secrets, run th
 
 Run the command `flyctl deploy` . To open your already deployed application in a browser, run the command `flyctl open`.
 
-## Read this jhipster users
-Before deploy the app, you can test it using docker desktop.
+## Read this jhipster user
+Before deploying the app, you can test it using the docker desktop.
 
-First edit the file `src/main/docker/app.yml` to use the docker image `stting/mamazinhaflyio` (in my case):
+First, edit the file `src/main/docker/app.yml` to use the docker image `stting/mamazinhaflyio` (in my case):
 ```docker
 # This configuration is intended for development purpose, it's **your** responsibility to harden it for production 
  version: '3.8' 
@@ -193,4 +192,4 @@ I just wanna say thanks to the fly.io team for adding this free high-quality fre
 
 Thank you [@pascalgrimaud](https://twitter.com/pascalgrimaud?t=aUYEiYODOpXITMcmTOkbOQ&s=09) for being available to chat and help me out when I've got stuck! It's important to read another point of view when I can't move on.
 
-Last but not least, thank you JHipster Community!
+Last but not least, thank you JHipster Community!Last but not least, thank you JHipster Community!
