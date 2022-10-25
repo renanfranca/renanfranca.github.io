@@ -192,4 +192,4 @@ I just wanna say thanks to the fly.io team for adding this free high-quality fre
 
 Thank you [@pascalgrimaud](https://twitter.com/pascalgrimaud?t=aUYEiYODOpXITMcmTOkbOQ&s=09) for being available to chat and help me out when I've got stuck! It's important to read another point of view when I can't move on.
 
-Last but not least, thank you JHipster Community!Last but not least, thank you JHipster Community!
+Last but not least, thank you JHipster Community!
