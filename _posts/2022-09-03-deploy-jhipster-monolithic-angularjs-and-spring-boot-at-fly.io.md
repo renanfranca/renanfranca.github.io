@@ -37,7 +37,7 @@ Run the command `flyctl postgres create` and I choose the following options:
 - ? Select regions: São Paulo (gru)
 - ? Select configuration: Development - Single node, 1x shared CPU, 256MB RAM, 1GB disk
 
-After the postgres app were created you will receive something like that as an output:
+After the postgres app was created you will receive something like that as an output:
 - Postgres cluster baby-postgres created
 - Username:    postgres
 - Password:    randompassword
