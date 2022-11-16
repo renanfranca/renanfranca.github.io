@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to debug JHipster generator with VSCode (Windows 10)
+title: Learn to debug JHipster generator, increase your chances to fix bounty issues
 description: 
 date: 2022-05-14 23:11:42 -0300
 tags: jhipster
@@ -12,13 +12,23 @@ draft: true
 
 ![cover image](https://renanfranca.github.io/img/postbanners/2022-05-14-cover-debug-jhipster-generator.jpeg)
 
+## Motivation
+
+You can earn money by fixing issues with bounty labels!
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Want to make some money doing open source <a href="https://twitter.com/java?ref_src=twsrc%5Etfw">@Java</a> development? There&#39;s over $2500 USD available for fixing issues in the <a href="https://twitter.com/jhipster?ref_src=twsrc%5Etfw">@JHipster</a> + <a href="https://twitter.com/QuarkusIO?ref_src=twsrc%5Etfw">@QuarkusIO</a> blueprint!<br><br>💰 <a href="https://t.co/p80VRNrGw0">https://t.co/p80VRNrGw0</a><br><br>See our bug bounty program for more info: <a href="https://t.co/PBURlaaqhg">https://t.co/PBURlaaqhg</a><a href="https://twitter.com/hashtag/java?src=hash&amp;ref_src=twsrc%5Etfw">#java</a> <a href="https://twitter.com/hashtag/jhipster?src=hash&amp;ref_src=twsrc%5Etfw">#jhipster</a> <a href="https://twitter.com/hashtag/opensource?src=hash&amp;ref_src=twsrc%5Etfw">#opensource</a></p>&mdash; Matt Raible (@mraible) <a href="https://twitter.com/mraible/status/1440286692049522690?ref_src=twsrc%5Etfw">September 21, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Take a look at the available [bounty issues](https://github.com/jhipster/generator-jhipster/issues?q=is%3Aissue+is%3Aopen+label%3A%22%24%24+bug-bounty+%24%24%22).
+
+## Hands on
+
 Here I will show you how to debug the jhipster import-jdl command with an inline entity example.
 
 ``` shell
 jhipster import-jdl --inline 'entity RenanClass(RenanTable) { testString String }'
 ```
 
-1. First clone the generator-jhipster into a folder, follow the instructions below:
+1. First clone the generator-jhipster into a folder, and follow the instructions below:
 
 	[**_Set NPM to use the cloned project_**](https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md#set-npm-to-use-the-cloned-project)
 
@@ -70,11 +80,11 @@ jhipster import-jdl --inline 'entity RenanClass(RenanTable) { testString String 
 
 	<figcaption>VSCode run Debug</figcaption>
 
-7. My suggestion to be your first breakpoint. Open the file _cli\jhipster.js_ and put the breakpoint at the line 50:
+7. My suggestion for your first breakpoint. Open the file _cli\jhipster.js_ and put the breakpoint at line 50:
 
 	`if (preferLocal) {`
 
-8. If everything works and you got the execution stopped at the first breakpoint, I will recommended another one. Open file _cli\jdl.js_ and put the breakpoint at line 48:
+8. If everything works and you got the execution stopped at the first breakpoint, I will recommend another one. Open file _cli\jdl.js_ and put the breakpoint at line 48:
 
 	logger.debug(`jdlFiles: ${toString(jdlFiles)}`);
 
