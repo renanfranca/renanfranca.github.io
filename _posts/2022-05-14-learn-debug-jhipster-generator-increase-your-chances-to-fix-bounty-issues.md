@@ -6,7 +6,6 @@ date: 2022-11-16 12:00:00 -0300
 tags: jhipster
 image: img/postbanners/2022-05-14-cover-debug-jhipster-generator.jpeg
 permalink: /:categories/:title:output_ext
-draft: true
 
 ---
 

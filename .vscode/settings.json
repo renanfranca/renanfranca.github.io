@@ -19,5 +19,8 @@
 		"titleBar.inactiveForeground": "#e7e7e799",
 		"commandCenter.border": "#e7e7e799"
 	},
-	"peacock.color": "#2e3911"
+	"peacock.color": "#2e3911",
+	"github-actions.workflows.pinned.workflows": [
+		"dynamic/pages/pages-build-deployment"
+	]
 }
