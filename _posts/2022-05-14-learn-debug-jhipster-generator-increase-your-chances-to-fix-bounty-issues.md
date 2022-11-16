@@ -22,7 +22,7 @@ Take a look at the available [bounty issues](https://github.com/jhipster/generat
 
 ## Hands on
 
-Here I will show you how to debug the jhipster import-jdl command with an inline entity example.
+Here I will show you how to debug the jhipster import-jdl command with an inline entity example. I am using VSCode with Windows 10.
 
 ``` shell
 jhipster import-jdl --inline 'entity RenanClass(RenanTable) { testString String }'
