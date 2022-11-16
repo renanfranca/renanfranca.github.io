@@ -2,7 +2,7 @@
 layout: post
 title: Learn to debug JHipster generator, increase your chances to fix bounty issues
 description: 
-date: 2022-05-14 23:11:42 -0300
+date: 2022-11-16 12:00:00 -0300
 tags: jhipster
 image: img/postbanners/2022-05-14-cover-debug-jhipster-generator.jpeg
 permalink: /:categories/:title:output_ext
