@@ -116,6 +116,6 @@ Now, hit the debug button and it will work smoothly =) !
 
 All steps I mentioned above are described at the [CONTRIBUTING.md](https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md#use-a-debugger). I’ve never work with node.js, yeoman, and ejs before. Because that, I had to read the instructions over and over again until I figured out how to make it works.
 
-In my opinion the [CONTRIBUTING.md](https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md#use-a-debugger) do the job, but we have to study to understand it.
+In my opinion, the [CONTRIBUTING.md](https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md#use-a-debugger) do the job, but we have to study to understand it.
 
 # Thank you JHipster!
