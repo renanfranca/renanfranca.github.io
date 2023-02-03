@@ -126,7 +126,9 @@ I am a Windows user, but I am migrating to use Linux (Ubuntu) through wsl 2 beca
 
 I enjoyed working on the jhlite project without being pressured and asynchronously! I could code when I have the time on my own passe 👏!
 
-I realized that I am not an expert in the TDD field, I have so much to learn. Here is an interesting article that opens my eyes [The Real Reasons for Doing Test-Driven Development](https://www.codecraftr.nl/why-use-tdd). Thanks to [Colin Damon](https://www.linkedin.com/in/colin-damon/) tell me that I was doing Test First and not TDD and for introducing the concept of [Software Craftsmanship](https://manifesto.softwarecraftsmanship).
+I realized that I am not an expert in the TDD field, I have so much to learn. Here is an interesting article that opens my eyes [The Real Reasons for Doing Test-Driven Development](https://www.codecraftr.nl/why-use-tdd). Thanks to [Colin Damon](https://www.linkedin.com/in/colin-damon/) let me know that I was doing Test First and not TDD and for introducing the concept of [Software Craftsmanship](https://manifesto.softwarecraftsmanship).
+
+Thanks to [Pascal Grimaud](https://twitter.com/pascalgrimaud) for being around and following along on the issue.
 
 ## What next
 
