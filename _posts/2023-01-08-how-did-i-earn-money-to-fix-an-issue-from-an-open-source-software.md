@@ -3,7 +3,7 @@ layout: post
 title: How did I earn money to fix an issue from an Open Source Software (OSS)
 description: I am going to share my approach and my own experience and opinion about fixing a bounty issue from the jhipster-lite Open Source Software (OSS)
 date: 2023-01-08 05:18:48 -0300
-tags: jhipsterlite
+tags: jhipster-lite
 image: img/postbanners/2023-01-08-cover-how-did-i-earn-money.jpeg
 permalink: /:categories/:title:output_ext
 draft: true
