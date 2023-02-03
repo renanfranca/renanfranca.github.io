@@ -3,12 +3,13 @@ layout: post
 title: How did I earn money to fix an issue from an Open Source Software (OSS)
 description: I am going to share my approach and my own experience and opinion about fixing a bounty issue from the jhipster-lite Open Source Software (OSS)
 date: 2023-01-08 05:18:48 -0300
-tags: jhipster, jhipster-lite
-image: 
+tags: jhipster jhipster-lite
+image: img/postbanners/2023-01-08-cover-how-did-i-earn-money.jpeg
 permalink: /:categories/:title:output_ext
 draft: true
 
 ---
+![cover image](https://renanfranca.github.io/img/postbanners/2023-01-08-cover-how-did-i-earn-money.jpeg)
 
 I am going to share my approach and my own experience and opinion about fixing a bounty issue from the [jhipster-lite Open Source Software (OSS)](https://github.com/jhipster/jhipster-lite).
 
@@ -126,7 +127,7 @@ I am a Windows user, but I am migrating to use Linux (Ubuntu) through wsl 2 beca
 
 I enjoyed working on the jhlite project without being pressured and asynchronously! I could code when I have the time on my own passe 👏!
 
-I realized that I am not an expert in the TDD field, I have so much to learn. Here is an interesting article that opens my eyes [The Real Reasons for Doing Test-Driven Development](https://www.codecraftr.nl/why-use-tdd). Thanks to [Colin Damon](https://www.linkedin.com/in/colin-damon/) let me know that I was doing Test First and not TDD and for introducing the concept of [Software Craftsmanship](https://manifesto.softwarecraftsmanship).
+I realized that I am not an expert in the TDD field, I have so much to learn. Here is an interesting article that opens my eyes [The Real Reasons for Doing Test-Driven Development](https://www.codecraftr.nl/why-use-tdd). Thanks to [Colin [Damon](https://www.linkedin.com/in/colin-damon/) for letting me know that I was doing Test First and not TDD and for introducing the concept of [Software Craftsmanship](https://manifesto.softwarecraftsmanship).
 
 Thanks to [Pascal Grimaud](https://twitter.com/pascalgrimaud) for being around and following along on the issue.
 
