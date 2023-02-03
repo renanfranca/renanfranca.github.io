@@ -2,10 +2,11 @@
 layout: post
 title: How did I earn money to fix an issue from an Open Source Software (OSS)
 description: I am going to share my approach and my own experience and opinion about fixing a bounty issue from the jhipster-lite Open Source Software (OSS)
-date: 2023-02-03 16:55:48 -0300
+date: 2023-01-08 05:18:48 -0300
 tags: jhipster-lite
 image: img/postbanners/2023-01-08-cover-how-did-i-earn-money.jpeg
 permalink: /:categories/:title:output_ext
+draft: true
 
 ---
 ![cover image](https://renanfranca.github.io/img/postbanners/2023-01-08-cover-how-did-i-earn-money.jpeg)
@@ -29,9 +30,9 @@ I started to read the closed issues to understand and look for answers to my que
 
 - How an issue was assigned to someone?
 - Should I ask for permission to fix it before I start to try to fix it?
-- What happens if someone was try to fix the same issue and both didn't ask for permission?
+- What happens if two contributors were trying to fix the same issue and both didn't ask for permission?
 
-I found all these answers in the [bounty issue instructions](https://www.jhipster.tech/bug-bounties/#how-to-get-the-money):
+I found all the answers in the [bounty issue instructions](https://www.jhipster.tech/bug-bounties/#how-to-get-the-money):
 >
 > - Create a Pull Request that fixes a ticket with the `$$ bug-bounty $$` label.
 > - In order to close the ticket automatically, you must have one commit message with the `Fix` keyword. For example, `Fix #1234` to close ticket `#1234`.
