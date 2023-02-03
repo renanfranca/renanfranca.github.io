@@ -2,11 +2,10 @@
 layout: post
 title: How did I earn money to fix an issue from an Open Source Software (OSS)
 description: I am going to share my approach and my own experience and opinion about fixing a bounty issue from the jhipster-lite Open Source Software (OSS)
-date: 2023-01-08 05:18:48 -0300
+date: 2023-02-03 16:54:48 -0300
 tags: jhipster-lite
 image: img/postbanners/2023-01-08-cover-how-did-i-earn-money.jpeg
 permalink: /:categories/:title:output_ext
-draft: true
 
 ---
 ![cover image](https://renanfranca.github.io/img/postbanners/2023-01-08-cover-how-did-i-earn-money.jpeg)
@@ -133,6 +132,6 @@ Thanks to [Pascal Grimaud](https://twitter.com/pascalgrimaud) for being around a
 
 ## What next
 
-I am planning to continue to contribute to the jhlite project by fixing issues and keep writing blog posts about jhipster in general.
+I am planning to continue to contribute to the jhlite project by fixing issues and keep writing blog posts about my experience with jhipster.
 
 One day, I wish to be part of the [jhipster core team](https://www.jhipster.tech/team/) 😊!
