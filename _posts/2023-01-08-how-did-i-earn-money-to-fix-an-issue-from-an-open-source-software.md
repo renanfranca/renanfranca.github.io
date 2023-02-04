@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How did I earn money to fix an issue from an Open Source Software (OSS)
+title: How did I earn money to fix an issue from an Open Source Software (OSS)?
 description: I am going to share my approach and my own experience and opinion about fixing a bounty issue from the jhipster-lite Open Source Software (OSS)
 date: 2023-02-03 16:55:48 -0300
 tags: jhipster-lite
@@ -119,6 +119,18 @@ There is a [Contributor Covenant Code of Conduct](https://github.com/jhipster/jh
 > In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
 
 In my own experience as a contributor, I can say that everyone who I interacted with was kind and genuinely wants the best for the project. I felt that they appreciate my effort to fix an issue and they were cheering me up!
+
+### Claim the bounty 
+
+After my pull request got merged, I was eligible to claim the bounty.
+
+First, I create an invoice at open collective: [$300 bug bounty claim for https://github.com/jhipster/jhipster-lite/pull/4814](https://opencollective.com/generator-jhipster/expenses/117514).
+
+Then I published the invoice link at my pull request: [https://github.com/jhipster/jhipster-lite/pull/4814#issuecomment-1374433366](https://github.com/jhipster/jhipster-lite/pull/4814#issuecomment-1374433366).
+
+After some time, the invoice was processed and I got paid 👏😃☺️!
+
+The official documentation explains each step to claim your bounty: [How to get the money](https://www.jhipster.tech/bug-bounties/#how-to-get-the-money).
 
 ## What was the outcome of this experience?
 
