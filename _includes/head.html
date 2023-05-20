@@ -11,6 +11,9 @@
   {% if page.draft == true %}
   <meta name="robots" content="noindex,nofollow">
   {%- endif -%}
+  {%- if jekyll.environment == 'production' -%}
+    {%- include google_ads.html -%}
+  {%- endif -%}
   
   <!-- highlight.js support -->
   <link rel="stylesheet" href="/js/highlightjs/styles/github.css">
