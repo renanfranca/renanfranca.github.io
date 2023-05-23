@@ -31,15 +31,169 @@ An interesting challenge I faced during this development was maintaining the pri
 
 I have come to appreciate the value of Hexagonal Architecture in isolating the application's core logic from external concerns. The experience also underscored the importance of clear and open communication in collaborative development.
 
-## Making Improvements
+# Making Improvements
 
-The first major shift came with the introduction of a new interface, `ModuleParametersRepository`, defining a contract for classes looking to implement a repository for storing and retrieving module parameters. Following this, an implementation of this interface was created, the `LocalStorageModuleParametersRepository`, designed to persist module parameters in the browser's local storage. These additions were made as a response to [Issue #3371](https://github.com/jhipster/jhipster-lite/issues/3371) and were put into action in the [Pull Request #6091](https://github.com/jhipster/jhipster-lite/pull/6091).
+These following changes have significantly improved the user experience by maintaining the state of module properties across different pages. The use of a repository for managing module parameters has also enhanced the efficiency and reliability of the code.
 
-To confirm everything works as expected, a suite of tests was also included, located at `src/test/javascript/spec/module/secondary/LocalStorageModuleParametersRepository.spec.ts`. These tests check if the module parameters are correctly stored and retrieved from local storage.
+## Part I: ModuleParametersRepository.ts and LocalStorageModuleParametersRepository.ts
 
-Further modifications were made to several files, including `src/main/webapp/app/main.ts`, `src/main/webapp/app/module/primary/landscape/Landscape.component.ts`, and `src/main/webapp/app/module/primary/modules-patch/ModulesPatch.component.ts`. In these files, direct references to `moduleParameters` were replaced with an injection of `ModuleParametersRepository`. This change ensures the module parameters' values are persisted in the browser's local storage. Whenever a module property is updated or deleted, these changes are stored in the module parameters repository. In addition, when applying new modules, the module parameters' values are fetched directly from the module parameters repository.
+I created two TypeScript files: `ModuleParametersRepository.ts` and `LocalStorageModuleParametersRepository.ts`.
 
-Even though these changes may seem small, they have a considerable impact on the modularity and scalability of the code, enabling better management of the application's state and dealing with more complex scenarios. Crucially, they enhance the user experience, as the module parameters no longer reset when navigating to a new page. This solution addresses the problem outlined in [Issue #3371](https://github.com/jhipster/jhipster-lite/issues/3371), where module properties were resetting each time a user navigated to a new page, which was proving to be quite bothersome.
+In `ModuleParametersRepository.ts`, I introduced an interface `ModuleParametersRepository`:
+
+```typescript
+import { ModuleParameterType } from "@/module/domain/ModuleParameters";
+
+export interface ModuleParametersRepository {
+  store(map: Map<string, ModuleParameterType>): void;
+  get(): Map<string, ModuleParameterType>;
+}
+```
+
+This interface provides a contract for storing and retrieving module parameters. The `store` method accepts a map of type `ModuleParameterType` and doesn't return anything, while the `get` method returns a map of the same type.
+
+In `LocalStorageModuleParametersRepository.ts`, I implemented the `ModuleParametersRepository` interface:
+
+```typescript
+import { ModuleParametersRepository } from "../domain/ModuleParametersRepository";
+import { ModuleParameterType } from "../domain/ModuleParameters";
+
+export class LocalStorageModuleParametersRepository
+  implements ModuleParametersRepository
+{
+  private readonly STORAGE_KEY = "moduleParameters";
+  private readonly localStorage: Storage;
+
+  constructor(localStorage: Storage) {
+    this.localStorage = localStorage;
+  }
+  store(map: Map<string, ModuleParameterType>): void {
+    this.localStorage.setItem(
+      this.STORAGE_KEY,
+      JSON.stringify(Array.from(map.entries()))
+    );
+  }
+
+  get(): Map<string, ModuleParameterType> {
+    const storedValue = this.localStorage.getItem(this.STORAGE_KEY);
+    if (storedValue) {
+      return new Map(JSON.parse(storedValue));
+    }
+    return new Map<string, ModuleParameterType>();
+  }
+}
+```
+
+In this class, I defined a `STORAGE_KEY` constant for identifying the storage location and a `localStorage` property of type `Storage`. The constructor accepts a `Storage` object and assigns it to `localStorage`.
+
+The `store` method takes a map of `ModuleParameterType`, converts it into a string using `JSON.stringify`, and stores this string in `localStorage` using the `setItem` method. The `get` method retrieves the stored string from `localStorage` using the `getItem` method, parses it back into a map using `JSON.parse`, and returns it. If no stored value is found, it returns a new, empty map.
+
+## Part II: Main.ts
+
+The first change I made was to add a new import at the top of the `main.ts` file. I imported the `LocalStorageModuleParametersRepository` class from the `./module/secondary/LocalStorageModuleParametersRepository` file. This class is responsible for storing the module properties in the browser's local storage.
+
+```javascript
+import { LocalStorageModuleParametersRepository } from "./module/secondary/LocalStorageModuleParametersRepository";
+```
+
+Next, I created a new instance of `LocalStorageModuleParametersRepository`, passing `localStorage` as an argument. This allows the class to access the browser's local storage to store and retrieve the module properties.
+
+```javascript
+const moduleParametersRepository = new LocalStorageModuleParametersRepository(
+  localStorage
+);
+```
+
+Finally, I added `moduleParametersRepository` to the Vue application context. This allows any Vue component to access the repository and, therefore, the module properties.
+
+```javascript
+app.provide("moduleParameters", moduleParametersRepository);
+```
+
+These changes allow module properties to be persistently stored, improving the user experience when navigating between pages. Moreover, the implementation of `LocalStorageModuleParametersRepository` allows other parts of the application to easily access the module properties, making the code more modular and easier to maintain.
+
+## Part III: Landscape.component.ts
+
+In the recent update to the Landscape component of the JHipster Lite project, a significant change was made to improve the management of module parameters. The original code used a local reference, `valuatedModuleParameters`, to store the parameters of the modules. This was replaced with a more robust solution: a repository pattern.
+
+The `ModuleParametersRepository` was imported at the top of the file, and an instance of it was injected into the component. This repository is responsible for managing the module parameters, providing a more centralized and consistent way to handle these values. This change can be seen in the following lines:
+
+```javascript
+import { ModuleParametersRepository } from '@/module/domain/ModuleParametersRepository';
+...
+const moduleParameters = inject('moduleParameters') as ModuleParametersRepository;
+const moduleParametersValues = ref(moduleParameters.get());
+```
+
+The `moduleParametersValues` reference now points to the values retrieved from the repository, and any changes to these values are stored back into the repository. This can be seen in the `updateProperty` and `deleteProperty` methods:
+
+```javascript
+const updateProperty = (property: ModuleParameter): void => {
+  moduleParametersValues.value.set(property.key, property.value);
+  moduleParameters.store(moduleParametersValues.value);
+};
+
+const deleteProperty = (key: string): void => {
+  moduleParametersValues.value.delete(key);
+  moduleParameters.store(moduleParametersValues.value);
+};
+```
+
+This new approach ensures that the module parameters are consistently managed across different parts of the application, reducing the risk of inconsistencies and bugs. It also makes the code more maintainable and easier to understand, as the responsibility of managing the module parameters is clearly defined and encapsulated within the `ModuleParametersRepository`.
+
+## Part IV: ModulesPatch.component.ts
+
+Starting with the import section, I introduced `ModuleParametersRepository` from the domain of the module. This repository is designed to manage the module parameters, providing a more efficient way to handle them.
+
+```javascript
+import { ModuleParametersRepository } from "@/module/domain/ModuleParametersRepository";
+```
+
+In the `defineComponent` function, I replaced the `moduleParameters` ref with an injection of `moduleParameters` from the `ModuleParametersRepository`. This allows the component to directly access the repository, improving the efficiency of data retrieval. I also introduced `moduleParametersValues` as a ref, which gets the current state of the module parameters from the repository.
+
+```javascript
+const moduleParameters = inject('moduleParameters') as ModuleParametersRepository;
+const moduleParametersValues = ref(moduleParameters.get());
+```
+
+In the `isNotSet` function, I changed the source of the value from `moduleParameters.value.get(propertyKey)` to `moduleParametersValues.value.get(propertyKey)`. This ensures that the function checks the current state of the module parameters.
+
+```javascript
+const value = moduleParametersValues.value.get(propertyKey);
+```
+
+In the `updateProperty` and `deleteProperty` functions, I updated the state of the module parameters in the repository after every change. This ensures that the repository always holds the most recent state of the module parameters.
+
+```javascript
+const updateProperty = (property: ModuleParameter): void => {
+  moduleParametersValues.value.set(property.key, property.value);
+  moduleParameters.store(moduleParametersValues.value);
+};
+
+const deleteProperty = (key: ModulePropertyKey): void => {
+  moduleParametersValues.value.delete(key);
+  moduleParameters.store(moduleParametersValues.value);
+};
+```
+
+In the function that applies a module, I replaced `moduleParameters.value` with `moduleParametersValues.value` as the source of parameters. This ensures that the most recent state of the module parameters is used when applying a module.
+
+```javascript
+parameters: moduleParametersValues.value,
+```
+
+In the function that handles project history properties, I updated the state of the module parameters in the repository after setting each unknown property. This ensures that the repository is updated with any new properties that are discovered.
+
+```javascript
+moduleParametersValues.value.set(property.key, property.value);
+moduleParameters.store(moduleParametersValues.value);
+```
+
+Finally, in the return statement of the `defineComponent` function, I replaced `moduleParameters` with `moduleParametersValues`. This ensures that the component always provides the most recent state of the module parameters.
+
+```javascript
+moduleParametersValues,
+```
 
 ## Conclusion
 
@@ -52,3 +206,7 @@ For a comprehensive understanding of the changes, I recommend reviewing the code
 ---
 
 I hope you found this post useful and interesting. If you have any questions or comments, please feel free to drop them below. Until next time, happy coding!
+
+```
+
+```
