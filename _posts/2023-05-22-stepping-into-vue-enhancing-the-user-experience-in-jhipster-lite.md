@@ -31,11 +31,11 @@ An interesting challenge I faced during this development was maintaining the pri
 
 I have come to appreciate the value of Hexagonal Architecture in isolating the application's core logic from external concerns. The experience also underscored the importance of clear and open communication in collaborative development.
 
-# Making Improvements
+## Making Improvements
 
 These following changes have significantly improved the user experience by maintaining the state of module properties across different pages. The use of a repository for managing module parameters has also enhanced the efficiency and reliability of the code.
 
-## Part I: ModuleParametersRepository.ts and LocalStorageModuleParametersRepository.ts
+### Part I: ModuleParametersRepository.ts and LocalStorageModuleParametersRepository.ts
 
 I created two TypeScript files: `ModuleParametersRepository.ts` and `LocalStorageModuleParametersRepository.ts`.
 
@@ -88,7 +88,7 @@ In this class, I defined a `STORAGE_KEY` constant for identifying the storage lo
 
 The `store` method takes a map of `ModuleParameterType`, converts it into a string using `JSON.stringify`, and stores this string in `localStorage` using the `setItem` method. The `get` method retrieves the stored string from `localStorage` using the `getItem` method, parses it back into a map using `JSON.parse`, and returns it. If no stored value is found, it returns a new, empty map.
 
-## Part II: Main.ts
+### Part II: Main.ts
 
 The first change I made was to add a new import at the top of the `main.ts` file. I imported the `LocalStorageModuleParametersRepository` class from the `./module/secondary/LocalStorageModuleParametersRepository` file. This class is responsible for storing the module properties in the browser's local storage.
 
@@ -112,7 +112,7 @@ app.provide("moduleParameters", moduleParametersRepository);
 
 These changes allow module properties to be persistently stored, improving the user experience when navigating between pages. Moreover, the implementation of `LocalStorageModuleParametersRepository` allows other parts of the application to easily access the module properties, making the code more modular and easier to maintain.
 
-## Part III: Landscape.component.ts
+### Part III: Landscape.component.ts
 
 In the recent update to the Landscape component of the JHipster Lite project, a significant change was made to improve the management of module parameters. The original code used a local reference, `valuatedModuleParameters`, to store the parameters of the modules. This was replaced with a more robust solution: a repository pattern.
 
@@ -141,7 +141,7 @@ const deleteProperty = (key: string): void => {
 
 This new approach ensures that the module parameters are consistently managed across different parts of the application, reducing the risk of inconsistencies and bugs. It also makes the code more maintainable and easier to understand, as the responsibility of managing the module parameters is clearly defined and encapsulated within the `ModuleParametersRepository`.
 
-## Part IV: ModulesPatch.component.ts
+### Part IV: ModulesPatch.component.ts
 
 Starting with the import section, I introduced `ModuleParametersRepository` from the domain of the module. This repository is designed to manage the module parameters, providing a more efficient way to handle them.
 
