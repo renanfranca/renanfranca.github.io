@@ -2,18 +2,17 @@
 layout: post
 title: Stepping into Vue - Enhancing the User Experience in JHipster Lite
 description: My journey into Vue.js and Hexagonal Architecture while enhancing the user experience in JHipster Lite
-date: 2023-05-21 16:55:48 -0300
+date: 2023-06-13 08:00:48 -0300
 tags: jhipster-lite
 image: img/postbanners/vue_jhipster_hexagonal_architecture_cover.jpeg
 permalink: /:categories/:title:output_ext
-draft: true
 ---
 
 ![cover image](https://renanfranca.github.io/img/postbanners/2023-01-08-cover-how-did-i-earn-money.jpeg)
 
 <!-- ![cover image](https://yourwebsite.github.io/img/postbanners/vue_jhipster_hexagonal_architecture_cover.jpeg) -->
 
-Greetings everyone! Today I'm thrilled to delve into my recent adventure into the world of Vue.js while working on the JHipster Lite project on GitHub. I took the plunge into this popular JavaScript framework to solve an issue, and in the process, learned a great deal about the framework and Hexagonal Architecture. So, let's dive right in!
+Greetings everyone! Today I'm thrilled to delve into my recent adventure into the world of Vue.js while working on the [JHipster Lite](https://renanfranca.github.io/how-did-i-earn-money-to-fix-an-issue-from-an-open-source-software.html#learn-about-the-jhipster-lite-project) project on GitHub. I took the plunge into this popular JavaScript framework to solve an issue, and in the process, learned a great deal about the framework and Hexagonal Architecture. So, let's dive right in!
 
 ## The Issue at Hand
 
