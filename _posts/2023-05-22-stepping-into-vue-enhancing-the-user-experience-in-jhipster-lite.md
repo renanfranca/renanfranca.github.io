@@ -13,11 +13,20 @@ draft: true
 
 <!-- ![cover image](https://yourwebsite.github.io/img/postbanners/vue_jhipster_hexagonal_architecture_cover.jpeg) -->
 
-Greetings everyone! Today I'm thrilled to delve into my recent adventure into the world of Vue.js while working on the JHipster Lite project on GitHub. I took the plunge into this popular JavaScript framework to solve an issue, and in the process, learnt a great deal about the framework and Hexagonal Architecture. So, let's dive right in!
+Greetings everyone! Today I'm thrilled to delve into my recent adventure into the world of Vue.js while working on the JHipster Lite project on GitHub. I took the plunge into this popular JavaScript framework to solve an issue, and in the process, learned a great deal about the framework and Hexagonal Architecture. So, let's dive right in!
 
 ## The Issue at Hand
 
-Firstly, I would like to address the problem that kick-started my Vue journey. In [Issue #3371](https://github.com/jhipster/jhipster-lite/issues/3371), I noticed that module properties were resetting every time a user navigated to another page. This could prove tiresome for users as they would need to redefine their preferences every time they switched pages. This prompted me to propose a solution: persist the module properties across pages.
+Firstly, I would like to address the problem that kick-started my Vue journey. The [Issue #3371](https://github.com/jhipster/jhipster-lite/issues/3371) describes that module properties were resetting every time a user navigated to another page. This could prove tiresome for users as they would need to redefine their preferences every time they switched pages. This proposed solution were to persist the module properties across pages using local storage.
+
+So the issue will be considered fixed when a property typed at the Landscape screen will be loaded at the Patch screen without the need to type it again. Let's take a look at the images below that show the same property 'Project full name' shared between the Landscape and the Patch menu options.
+
+![image](https://renanfranca.github.io/img/stepping-into-vue/landscape-module-property.jpg)
+<figcaption>Landscape screen has the property 'My Super App' highlighted with a blue rectangle </figcaption>
+
+![image](https://renanfranca.github.io/img/stepping-into-vue/patch-module-property.jpg)
+<figcaption>Patch screen has the same property 'My Super App' highlighted with a blue rectangle load automatically</figcaption>
+
 
 ## My First Steps with Vue
 
