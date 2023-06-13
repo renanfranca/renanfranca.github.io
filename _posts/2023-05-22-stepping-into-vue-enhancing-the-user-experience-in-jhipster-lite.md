@@ -27,7 +27,6 @@ So the issue will be considered fixed when a property typed at the Landscape scr
 ![image](https://renanfranca.github.io/img/stepping-into-vue/patch-module-property.jpg)
 <figcaption>Patch screen has the same property 'My Super App' highlighted with a blue rectangle load automatically</figcaption>
 
-
 ## My First Steps with Vue
 
 To address this issue, I found myself working with Vue.js for the first time. I embarked on this journey while creating the [Pull Request #6091](https://github.com/jhipster/jhipster-lite/pull/6091), titled "Share module properties between landscape and patch screens". I made numerous code changes to enable the module properties to be shared between screens.
@@ -36,13 +35,13 @@ My first foray into Vue was both exciting and challenging. Vue's reactivity mode
 
 ## Hexagonal Architecture Challenges
 
-An interesting challenge I faced during this development was maintaining the principles of Hexagonal Architecture while programming the front-end. There were instances where I made mistakes that contradicted the architectural concepts, but I was fortunate to have a code reviewer who pointed out these discrepancies and clearly guided me on what should be done.
+An interesting challenge I faced during this development was maintaining the principles of [Hexagonal Architecture](https://renanfranca.github.io/how-did-i-earn-money-to-fix-an-issue-from-an-open-source-software.html#study-hexagonal-architecture) while programming the front-end. There were instances where I made mistakes that contradicted the architectural concepts, but I was fortunate to have a code reviewer who pointed out these discrepancies and clearly guided me on what should be done.
 
 I have come to appreciate the value of Hexagonal Architecture in isolating the application's core logic from external concerns. The experience also underscored the importance of clear and open communication in collaborative development.
 
 ## Making Improvements
 
-These following changes have significantly improved the user experience by maintaining the state of module properties across different pages. The use of a repository for managing module parameters has also enhanced the efficiency and reliability of the code.
+The following changes have significantly improved the user experience by maintaining the state of module properties across different pages. The use of a repository for managing module parameters has also enhanced the efficiency and reliability of the code.
 
 ### Part I: ModuleParametersRepository.ts and LocalStorageModuleParametersRepository.ts
 
@@ -208,14 +207,8 @@ moduleParametersValues,
 
 These changes have the potential to significantly enhance the user experience in JHipster Lite. With the module properties now persisting across pages, users no longer need to redefine their preferences every time they navigate to a different page.
 
-However, please note that these changes are still under review and may not be final. I eagerly look forward to feedback from the community and am ready to make any necessary adjustments.
+However, please note that these changes generated the following bug [Local properties storage do no reset #6279](https://github.com/jhipster/jhipster-lite/issues/6279) which I have already fixed it. I eagerly look forward to feedback from the community and I am ready to make any necessary adjustments.
 
 For a comprehensive understanding of the changes, I recommend reviewing the code directly on GitHub. Stay tuned for more updates on JHipster Lite's development!
 
----
-
 I hope you found this post useful and interesting. If you have any questions or comments, please feel free to drop them below. Until next time, happy coding!
-
-```
-
-```
