@@ -95,7 +95,7 @@ The `store` method takes a map of `ModuleParameterType`, converts it into a stri
 
 ### Part II: Main.ts
 
-The first change I made was to add a new import at the top of the `main.ts` file. I imported the `LocalStorageModuleParametersRepository` class from the './module/secondary/LocalStorageModuleParametersRepository' file. This class is responsible for storing the module properties in the browser's local storage.
+The first change I made was to add a new import at the top of the `main.ts` file. I imported the `LocalStorageModuleParametersRepository` which is responsible for storing the module properties in the browser's local storage.
 
 ```javascript
 import { LocalStorageModuleParametersRepository } from "./module/secondary/LocalStorageModuleParametersRepository";
