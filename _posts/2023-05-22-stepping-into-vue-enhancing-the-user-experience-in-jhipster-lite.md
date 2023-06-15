@@ -8,7 +8,7 @@ image: img/postbanners/vue_jhipster_hexagonal_architecture_cover.jpeg
 permalink: /:categories/:title:output_ext
 ---
 
-![cover image](https://yourwebsite.github.io/img/postbanners/2023-06-13-cover-stepping-into-vue.jpg)
+![cover image](https://renanfranca.github.io/img/postbanners/2023-06-13-cover-stepping-into-vue.jpg)
 
 Greetings everyone! Today I'm thrilled to delve into my recent adventure into the world of Vue.js while working on the [JHipster Lite](https://renanfranca.github.io/how-did-i-earn-money-to-fix-an-issue-from-an-open-source-software.html#learn-about-the-jhipster-lite-project) project on GitHub. I took the plunge into this popular JavaScript framework to solve an issue, and in the process, learned a great deal about the framework and Hexagonal Architecture. So, let's dive right in!
 
