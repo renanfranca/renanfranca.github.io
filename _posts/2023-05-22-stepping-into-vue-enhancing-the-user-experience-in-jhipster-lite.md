@@ -4,7 +4,7 @@ title: Stepping into Vue - Enhancing the User Experience in JHipster Lite
 description: My journey into Vue.js and Hexagonal Architecture while enhancing the user experience in JHipster Lite
 date: 2023-06-13 08:00:48 -0300
 tags: jhipster-lite
-image: img/postbanners/vue_jhipster_hexagonal_architecture_cover.jpeg
+image: img/postbanners/2023-06-13-cover-stepping-into-vue.jpg
 permalink: /:categories/:title:output_ext
 ---
 
