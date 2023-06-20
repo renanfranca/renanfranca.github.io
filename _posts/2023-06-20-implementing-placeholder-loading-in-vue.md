@@ -55,7 +55,7 @@ In the above example, `.ph-item`, `.ph-col-*`, `.ph-picture`, and `.ph-row` are 
 
 To better illustrate the use of placeholder loading in Vue.js, let's examine a real-world example from a pull request I recently made to the `jhipster/jhipster-lite` repository on GitHub: [Pull Request #6247](https://github.com/jhipster/jhipster-lite/pull/6247).
 
-In this pull request, I added placeholder loading to the `LandscapeLoader` and `ModulesPatchLoader` components. Those component are responsible for displaying a placeholder while the actual content is loading. To achieve this, I used the `placeholder-loading` library along with Vue.js components for rows, pictures, and lists.
+In this pull request, I added placeholder loading to the `LandscapeLoader` and `ModulesPatchLoader` components. Those components are responsible for displaying a placeholder while the actual content is loading. To achieve this, I used the `placeholder-loading` library along with Vue.js components for rows, pictures, and lists.
 
 Let's take a look at the Landscape screen using the `LandscapeLoader`:
 
@@ -73,7 +73,7 @@ Here is the ModulePatch screen using the `ModulesPatchLoader`:
 ![image](https://renanfranca.github.io/img/implementing-placeholder-loading/modulepatch-screen.jpg)
 <figcaption>ModulePatch screen loaded</figcaption>
 
-I choose to detail the implementation of the `ModulesPatchLoader` because it is easy to undestand. Follow me through 8 steps to implementing it!
+I choose to detail the implementation of the `ModulesPatchLoader` because it is easy to understand. Follow me through 8 steps to implementing it!
 
 ### Part I: package.json
 
@@ -164,7 +164,7 @@ export default defineComponent({
 });
 ```
 
-Starting from the top, the imports section of the code remained largely the same, but with the addition of one crucial line: `import { ModulesPatchLoaderVue } from '../modules-patch-loader';`. This line imports the `ModulesPatchLoaderVue` component, which was added as part of the solution to improve the page loading experience【14†source】.
+Starting from the top, the imports section of the code remained largely the same, but with the addition of one crucial line: `import { ModulesPatchLoaderVue } from '../modules-patch-loader';`. This line imports the `ModulesPatchLoaderVue` component, which was added as part of the solution to improve the page loading experience.
 
 In the `defineComponent` function, the new `ModulesPatchLoaderVue` component was added to the `components` object. This means that the `ModulesPatchLoaderVue` component is now accessible within the `ModulesPatchVue` component, and can be used to display a more aesthetically pleasing loading placeholder when the page is loading.
 
@@ -370,4 +370,4 @@ Whether you're building a simple blog or a complex web application, incorporatin
 
 I hope this post has shed light on the importance of placeholder loading and how to use the `placeholder-loading` library in your Vue.js applications. Should you have any questions or need further clarification, feel free to reach out.
 
-Lastly, let me extend an invitation to join me on my journey in the realm of software development. I share my insights, experiences, and valuable resources on Twitter [@renan_afranca](https://www.twitter.com/renan_afranca) and [LinkedIn](https://www.linkedin.com/in/renan-af). Following me on these platforms not only keeps you updated on my latest posts and projects, but also opens doors to vibrant discussions and learning opportunities. I look forward to connecting with you!
+Lastly, let me extend an invitation to join me on my journey in the realm of software development. I share my insights, experiences, and valuable resources on Twitter [@renan_afranca](https://www.twitter.com/renan_afranca) and [LinkedIn](https://www.linkedin.com/in/renan-af). Following me on these platforms not only keeps you updated on my latest posts and projects but also opens doors to vibrant discussions and learning opportunities. I look forward to connecting with you!
