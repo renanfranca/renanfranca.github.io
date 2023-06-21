@@ -209,4 +209,10 @@ However, please note that these changes generated the following bug [Local prope
 
 For a comprehensive understanding of the changes, I recommend reviewing the code directly on GitHub. Stay tuned for more updates on JHipster Lite's development!
 
-I hope you found this post useful and interesting. If you have any questions or comments, please feel free to drop them below. Until next time, happy coding!
+That's it for now, folks! I hope you've enjoyed my journey into Vue.js, the challenges of Hexagonal Architecture, and the solutions I've implemented to improve JHipster Lite's user experience. The software development world is full of exciting challenges and adventures, and I would be more than happy to have you follow along with me.
+
+If you want to stay updated with my latest projects and insights, follow me on Twitter at [@renan_afranca](https://www.twitter.com/renan_afranca) and connect with me on LinkedIn at <https://www.linkedin.com/in/renan-af>. Let's explore this tech-filled universe together!
+
+I'd love to hear your thoughts on our exploration of Vue.js and Hexagonal Architecture. How could these principles be applied to your projects? Is there another JavaScript framework you're considering using with Hexagonal Architecture?
+
+Your input is incredibly valuable. Please share your thoughts in the comments below. Your insights will contribute significantly to our ongoing discussion and learning. I'm looking forward to hearing from you! Happy coding!
