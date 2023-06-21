@@ -75,7 +75,7 @@ Here is the ModulePatch screen using the `ModulesPatchLoader`:
 
 I choose to detail the implementation of the `ModulesPatchLoader` because it is easy to understand. Follow me through 8 steps to implementing it!
 
-### Part I: package.json
+### Step I: package.json
 
 Here, I'd like to discuss a key change I made to the `package.json` file in a Node.js project. This file is crucial as it contains project metadata and the dependencies required for the project to function correctly.
 
@@ -99,7 +99,7 @@ The key change was the addition of a new dependency - `placeholder-loading`. Thi
 
 By adding the `placeholder-loading` package to the project's dependencies, it allows the project to use the functionality provided by this package, which was critical to the enhancement I was working on.
 
-### Part II: vite.config.ts
+### Step II: vite.config.ts
 
 Let's break down the changes I made in the code, line by line:
 
@@ -122,7 +122,7 @@ The `@import` statement is used to import the styles from other SCSS files. The 
 
 The new line I introduced imports the `placeholder-loading.min.css` from the placeholder-loading package, which is a framework for creating a placeholder loading effect. The path to the `placeholder-loading.min.css` file is resolved using Node's `path.resolve` method, which resolves a sequence of paths into an absolute path.
 
-### Part III: ModulesPatch.html
+### Step III: ModulesPatch.html
 
 In the initial state of the code, a `div` element with classes "jhipster-modules" and "jhlite-loader-container" was used to display the loading state. This display was conditioned on the `isLoading` method of the `content` object. Inside this `div`, there was another `div` with the class "jhlite-loader" that presumably handled the actual display of the loading state.
 
@@ -144,7 +144,7 @@ In the improved version of the code, the `div` has been replaced with a Vue comp
     <div class="jhipster-modules-filters">
 ```
 
-### Part IV: ModulesPatch.component.ts
+### Step IV: ModulesPatch.component.ts
 
 Here's the modified code snippet:
 
@@ -170,7 +170,7 @@ In the `defineComponent` function, the new `ModulesPatchLoaderVue` component was
 
 The `setup` function remained untouched, but it's worth noting that it injects instances of `alertBus` and `modules` for use within the component.
 
-### Part V: modules-patch-loader/index.ts
+### Step V: modules-patch-loader/index.ts
 
 The changes is straightforward - it imports the Vue component `ModulesPatchLoaderVue` from `ModulesPatchLoader.vue` and then exports it. Here's the code:
 
@@ -194,7 +194,7 @@ import ModulesPatchLoaderVue from '../modules-patch-loader/ModulesPatchLoader.vu
 
 By streamlining the way we import the `ModulesPatchLoaderVue`, we make our code more maintainable and intuitive to navigate, thereby enhancing our overall code quality.
 
-### Part VI:  modules-patch-loader/ModulesPatchLoader.vue
+### Step VI:  modules-patch-loader/ModulesPatchLoader.vue
 
 I made certain improvements that are worth discussing. One key file at the heart of these changes is the `ModulesPatchLoader.vue`. This file is a Vue Single File Component (SFC), essentially an all-in-one file containing a `<template>`, a `<script>`, and a `<style>` tag, each referring to an external HTML, TypeScript, and SCSS file respectively.
 
@@ -209,8 +209,6 @@ Next, the `<script>` tag links to the `ModulesPatchLoader.component.ts` TypeScri
 ```html
 <script lang="ts" src="./ModulesPatchLoader.component.ts"></script>
 ```
-
-Both the HTML and TypeScript files remain the same as in the original, with no modifications applied.
 
 The `<style>` tag introduces SCSS styles that define the appearance of the component:
 
@@ -258,7 +256,9 @@ The `<style>` tag introduces SCSS styles that define the appearance of the compo
 
 The `.jhlite-modules-loader-content` class sets a background color and a text color, while also adjusting the border and background color of items with the `.ph-item` class. The `.ph-jhlite-modules-container-content` class dictates the flexbox properties for layout control, and adjusts the height of the `.modules-filter` subelement and the overflow properties of the `.modules-list` subelement. Lastly, the `.ph-jhlite-modules-sidemenu` class manages the flexbox properties of the side menu, and manipulates the height and flexbox properties of its `-top` and `-bottom` subelements.
 
-### Part VII: modules-patch-loader/ModulesPatchLoader.html
+Basically, this SCSS mimics the positions of the elements from the ModulePatch screen.
+
+### Step VII: modules-patch-loader/ModulesPatchLoader.html
 
 The `ModulesPatchLoader.html` is an HTML file that serves as a template for a Vue.js component. It sets up the structure of the component and uses Vue.js directives to create dynamic logic, like loops (`v-for`) and class bindings (`:class`).
 
@@ -314,7 +314,7 @@ The final section defines a side menu, which is broken down into a top and botto
 </div>
 ```
 
-### Part VIII: modules-patch-loader/ModulesPatchLoader.component.ts
+### Step VIII: modules-patch-loader/ModulesPatchLoader.component.ts
 
 The `ModulesPatchLoader.component.ts` is a TypeScript file that exports a Vue.js component, which includes a `setup` function for creating reactive data. Additionally, several helper functions are used to generate columns and rows for the component.
 
@@ -368,6 +368,10 @@ By implementing placeholder loading in this way, we significantly enhance the us
 
 Whether you're building a simple blog or a complex web application, incorporating placeholder loading in your Vue.js applications can greatly improve user experience by providing immediate feedback during content loading. The `placeholder-loading` library is a flexible, easy-to-use tool for implementing this technique, as demonstrated by the pull request example.
 
-I hope this post has shed light on the importance of placeholder loading and how to use the `placeholder-loading` library in your Vue.js applications. Should you have any questions or need further clarification, feel free to reach out.
+I hope this post has shed light on the importance of placeholder loading and how to use the `placeholder-loading` library in your Vue.js applications. I hope you enjoyed this insightful guide on implementing Vue placeholder loading! To continue the conversation, we'd love to hear from you.
+
+Do you have experience using the placeholder-loading library in your own Vue.js applications? How has it improved the user experience? Or maybe you've faced challenges while implementing this technique, and you're seeking solutions or alternative methods. Share your stories, ask your questions, and let's learn together!
+
+Drop your thoughts in the comment section below and let's foster a healthy discussion around enhancing user experiences in web development. Looking forward to your valuable input!
 
 Lastly, let me extend an invitation to join me on my journey in the realm of software development. I share my insights, experiences, and valuable resources on Twitter [@renan_afranca](https://www.twitter.com/renan_afranca) and [LinkedIn](https://www.linkedin.com/in/renan-af). Following me on these platforms not only keeps you updated on my latest posts and projects but also opens doors to vibrant discussions and learning opportunities. I look forward to connecting with you!
