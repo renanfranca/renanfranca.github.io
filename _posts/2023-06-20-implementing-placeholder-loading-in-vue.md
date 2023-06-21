@@ -27,7 +27,7 @@ npm install placeholder-loading --save
 @import "~/node_modules/placeholder-loading/src/scss/placeholder-loading";
 ```
 
-This library allows you to modify various SASS variables to suit your project's aesthetics, such as direction, background color, border properties, grid configuration, and animation duration【16†source】.
+This library allows you to modify various SASS variables to suit your project's aesthetics, such as direction, background color, border properties, grid configuration, and animation duration.
 
 Using `placeholder-loading` is as simple as including specific classes in your HTML markup. Here's an example of how you can use it:
 
