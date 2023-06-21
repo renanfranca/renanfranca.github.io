@@ -93,11 +93,11 @@ Here is the modified code:
 }
 ```
 
-Line by line, let's break this down. The `axios` and `mitt` dependencies remained unchanged at versions "1.4.0" and "3.0.0" respectively. The `vue` and `vue-router` dependencies also remained consistent at versions "3.3.4" and "4.2.1".
+Line by line, let's break this down. The `axios` and `mitt` dependencies remained unchanged at versions "1.4.0" and "3.0.0" respectively. The `vue` and `vue-router` dependencies also remained consistent in versions "3.3.4" and "4.2.1".
 
 The key change was the addition of a new dependency - `placeholder-loading`. This was introduced with a version specifier of "^0.6.0". This syntax is specific to npm, the Node.js package manager, and it indicates that npm will install the latest minor version that is greater than or equal to `0.6.0`. For instance, if there are versions `0.6.1`, `0.6.2`, `0.7.0` available, npm will install `0.7.0`. However, if there's `0.8.0`, it would not install this as `0.8.0` would be considered a major version.
 
-By adding the `placeholder-loading` package to the project's dependencies, it allows the project to use the functionality provided by this package, which was critical to the enhancement I was working on.
+Adding the `placeholder-loading` package to the project's dependencies, allows the project to use the functionality provided by this package, which was critical to the enhancement I was working on.
 
 ### Step II: vite.config.ts
 
@@ -172,7 +172,7 @@ The `setup` function remained untouched, but it's worth noting that it injects i
 
 ### Step V: modules-patch-loader/index.ts
 
-The changes is straightforward - it imports the Vue component `ModulesPatchLoaderVue` from `ModulesPatchLoader.vue` and then exports it. Here's the code:
+The changes are straightforward - it imports the Vue component `ModulesPatchLoaderVue` from `ModulesPatchLoader.vue` and then exports it. Here's the code:
 
 ```ts
 import ModulesPatchLoaderVue from './ModulesPatchLoader.vue';
@@ -196,7 +196,7 @@ By streamlining the way we import the `ModulesPatchLoaderVue`, we make our code 
 
 ### Step VI:  modules-patch-loader/ModulesPatchLoader.vue
 
-I made certain improvements that are worth discussing. One key file at the heart of these changes is the `ModulesPatchLoader.vue`. This file is a Vue Single File Component (SFC), essentially an all-in-one file containing a `<template>`, a `<script>`, and a `<style>` tag, each referring to an external HTML, TypeScript, and SCSS file respectively.
+The `ModulesPatchLoader.vue` file is a Vue Single File Component (SFC), essentially an all-in-one file containing a `<template>`, a `<script>`, and a `<style>` tag, each referring to an external HTML, TypeScript, and SCSS file respectively.
 
 The `<template>` tag in this component points to the external `ModulesPatchLoader.html` file:
 
@@ -262,6 +262,64 @@ Basically, this SCSS mimics the positions of the elements from the ModulePatch s
 
 The `ModulesPatchLoader.html` is an HTML file that serves as a template for a Vue.js component. It sets up the structure of the component and uses Vue.js directives to create dynamic logic, like loops (`v-for`) and class bindings (`:class`).
 
+```html
+div class="jhlite-modules-loader-content jhlite-menu-content-template" data-selector="modules-loader">
+  <div class="ph-jhlite-modules-container-content jhlite-menu-content-template--content">
+    <div class="modules-filter">
+      <div class="ph-item">
+        <div class="ph-col-12">
+          <div class="ph-row">
+            <div class="ph-col-12 big"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modules-list">
+      <div class="ph-item">
+        <div class="ph-col-12">
+          <div class="ph-row" v-for="(row, index) in rows" :key="index">
+            <div :class="`ph-col-${col.size} ${col.classes}`" v-for="(col, index) in row.columns" :key="index"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="jhlite-menu-content-template--menu">
+    <div class="ph-jhlite-modules-sidemenu">
+      <div class="ph-jhlite-modules-sidemenu-top">
+        <div class="ph-item">
+          <div class="ph-col-12">
+            <div class="ph-row">
+              <div class="ph-col-12 empty"></div>
+              <div class="ph-col-6 big"></div>
+              <div class="ph-col-6 empty big"></div>
+              <div class="ph-col-12 empty"></div>
+            </div>
+            <div class="ph-row">
+              <div class="ph-col-6"></div>
+              <div class="ph-col-6 empty"></div>
+              <div class="ph-col-12 big"></div>
+              <div class="ph-col-10"></div>
+              <div class="ph-col-10 empty"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ph-jhlite-modules-sidemenu-bottom">
+        <div class="ph-item">
+          <div class="ph-col-12">
+            <div class="ph-row">
+              <div class="ph-col-12 big"></div>
+              <div class="ph-col-12 big"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
 Let's go through the given code line by line:
 
 ```html
@@ -318,6 +376,34 @@ The final section defines a side menu, which is broken down into a top and botto
 
 The `ModulesPatchLoader.component.ts` is a TypeScript file that exports a Vue.js component, which includes a `setup` function for creating reactive data. Additionally, several helper functions are used to generate columns and rows for the component.
 
+```typescript
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'ModulesPatchLoaderVue',
+  setup() {
+    return {
+      rows: [createCategory(4), createCategory(1), createCategory(3), createCategory(1), createCategory(2), createCategory(2)],
+    };
+  },
+});
+
+const createCategory = (modulesCount: number) => {
+  const baseColumns = [createBigColumn(2), createBigColumn(10, true), createNormalEmptyColumn(12), createBigColumn(12)];
+  const additionalColumns = Array(modulesCount - 1).fill(createBigColumn(12));
+  const lastColumn = createBigColumn(12, true);
+  return createRow(...baseColumns, ...additionalColumns, lastColumn);
+};
+
+const createColumn = (size: number, classes: string) => ({ size, classes });
+
+const createBigColumn = (size: number, isEmpty: boolean = false) => createColumn(size, `${isEmpty ? 'empty ' : ''}big`);
+
+const createNormalEmptyColumn = (size: number) => createColumn(size, 'empty');
+
+const createRow = (...columns: any[]) => ({ columns });
+```
+
 Below is the breakdown of the code:
 
 ```typescript
@@ -344,7 +430,7 @@ const createCategory = (modulesCount: number) => {
 };
 ```
 
-Here, `createCategory` is a function that takes a `modulesCount` argument. It creates an array of `baseColumns` and another array of `additionalColumns` which holds a number of `createBigColumn` instances based on the `modulesCount`. It then combines these arrays into a single row using the `createRow` function.
+Here, `createCategory` is a function that takes a `modulesCount` argument. It creates an array of `baseColumns` and another array of `additionalColumns` which holds several `createBigColumn` instances based on the `modulesCount`. It then combines these arrays into a single row using the `createRow` function.
 
 ```typescript
 const createColumn = (size: number, classes: string) => ({ size, classes });
