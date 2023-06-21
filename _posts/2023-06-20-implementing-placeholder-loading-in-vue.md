@@ -6,7 +6,6 @@ date: 2023-06-20 08:00:00 -0300
 tags: jhipster-lite
 image: img/postbanners/2023-06-20-cover-placeholder-loading.jpg
 permalink: /:categories/:title:output_ext
-draft: true
 ---
 
 ![cover image](https://renanfranca.github.io/img/postbanners/2023-06-20-cover-placeholder-loading.jpg)
