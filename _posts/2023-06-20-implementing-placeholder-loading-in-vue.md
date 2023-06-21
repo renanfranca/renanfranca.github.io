@@ -4,11 +4,11 @@ title: Your Guide to Implementing Vue Placeholder Loading
 description: Implementing placeholder loading in Vue.js has never been easier. Click for a step-by-step guide.
 date: 2023-06-20 08:00:00 -0300
 tags: jhipster-lite
-image: img/postbanners/2023-06-20-cover-placeholder-loading.jpg
+image: img/postbanners/2023-06-20-cover-placeholder-loading.jpeg
 permalink: /:categories/:title:output_ext
 ---
 
-![cover image](https://renanfranca.github.io/img/postbanners/2023-06-20-cover-placeholder-loading.jpg)
+![cover image](https://renanfranca.github.io/img/postbanners/2023-06-20-cover-placeholder-loading.jpeg)
 <span class="image-references"> Image crafted by <a target="_blank" href="https://www.instagram.com/design.marca/">Geyzon Amaral</a> </span>
 
 In today's fast-paced digital world, user experience is paramount. As developers, we're always looking for ways to make our applications more responsive and enjoyable. One effective strategy to enhance the user experience is by using placeholder loading, or skeleton loading, in our Vue.js applications.
