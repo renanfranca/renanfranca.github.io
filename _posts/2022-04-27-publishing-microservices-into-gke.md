@@ -147,6 +147,8 @@ Google cloud platform is easy to use and I set things up quickly. I could learn 
 I think Google Cloud should have a real free plan for small microservices applications, so the user will pay when the product gain traction and started to be used ☺
 
 ### Now it's your turn! How was your experience with Google Cloud?
-I will enjoy to read your comments 🤗
+I will enjoy reading your comments 🤗
 
-If you have any question feel free to ask me anything here or Direct Message (DM) me on Twitter  [@renan_afranca](https://www.twitter.com/renan_afranca) (follow me and I will follow you back to unlock the DM option).
+If you have any questions feel free to ask me anything here or Direct Message (DM) me on Twitter  [@renan_afranca](https://www.twitter.com/renan_afranca) (follow me and I will follow you back to unlock the DM option).
+
+Lastly, let me extend an invitation to join me on my journey 🚀 in the realm of software development. I share my insights, experiences, and valuable resources on Twitter [@renan_afranca](https://www.twitter.com/renan_afranca) 🐦 and [LinkedIn](https://www.linkedin.com/in/renan-af) 📎. Following me on these platforms not only keeps you updated on my latest posts and projects 📬 but also opens doors to vibrant discussions and learning opportunities. I look forward to connecting with you! 💼

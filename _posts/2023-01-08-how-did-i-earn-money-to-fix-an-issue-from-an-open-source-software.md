@@ -147,3 +147,5 @@ Thanks to [Pascal Grimaud](https://twitter.com/pascalgrimaud) for being around a
 I am planning to continue to contribute to the jhlite project by fixing issues and keep writing blog posts about my experience with jhipster.
 
 One day, I wish to be part of the [jhipster core team](https://www.jhipster.tech/team/) 😊!
+
+Lastly, let me extend an invitation to join me on my journey 🚀 in the realm of software development. I share my insights, experiences, and valuable resources on Twitter [@renan_afranca](https://www.twitter.com/renan_afranca) 🐦 and [LinkedIn](https://www.linkedin.com/in/renan-af) 📎. Following me on these platforms not only keeps you updated on my latest posts and projects 📬 but also opens doors to vibrant discussions and learning opportunities. I look forward to connecting with you! 💼

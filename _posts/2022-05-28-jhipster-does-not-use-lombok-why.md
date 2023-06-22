@@ -213,3 +213,5 @@ I enjoyed this implementation and that's enough for me to keep my code less verb
 I gave up to customize JHipster generated code.
 I realized that I should accept the jhipster generated code pattern because If I try to customize everything I am creating my own JHipster and I am going to lose the productivity which JHipster could bring to my workflow.
 It isn't a trivial job to maintain a blueprint up to date with the latest jhipster generator version. So I advise you to only create a blueprint if it is extremely necessary.
+
+Lastly, let me extend an invitation to join me on my journey 🚀 in the realm of software development. I share my insights, experiences, and valuable resources on Twitter [@renan_afranca](https://www.twitter.com/renan_afranca) 🐦 and [LinkedIn](https://www.linkedin.com/in/renan-af) 📎. Following me on these platforms not only keeps you updated on my latest posts and projects 📬 but also opens doors to vibrant discussions and learning opportunities. I look forward to connecting with you! 💼

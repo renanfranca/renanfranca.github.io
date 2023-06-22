@@ -162,3 +162,5 @@ That is my first time open sourcing a project. I am looking forward to seeing yo
 - What did I do wrong and how can I make it right?
 
 Please, ask me anything in the comment section and I am available to support your journey to mastery jhipster on Twitter ([@renan_afranca](https://twitter.com/renan_afranca)) by tag or Direct Message (DM) me (follow me and I will follow you back to unlock the DM option).
+
+Lastly, let me extend an invitation to join me on my journey 🚀 in the realm of software development. I share my insights, experiences, and valuable resources on Twitter [@renan_afranca](https://www.twitter.com/renan_afranca) 🐦 and [LinkedIn](https://www.linkedin.com/in/renan-af) 📎. Following me on these platforms not only keeps you updated on my latest posts and projects 📬 but also opens doors to vibrant discussions and learning opportunities. I look forward to connecting with you! 💼

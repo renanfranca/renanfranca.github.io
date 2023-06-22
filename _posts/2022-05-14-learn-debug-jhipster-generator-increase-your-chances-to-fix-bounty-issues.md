@@ -119,3 +119,5 @@ All steps I mentioned above are described at the [CONTRIBUTING.md](https://githu
 In my opinion, the [CONTRIBUTING.md](https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md#use-a-debugger) do the job, but we have to study to understand it.
 
 # Thank you JHipster!
+
+Lastly, let me extend an invitation to join me on my journey 🚀 in the realm of software development. I share my insights, experiences, and valuable resources on Twitter [@renan_afranca](https://www.twitter.com/renan_afranca) 🐦 and [LinkedIn](https://www.linkedin.com/in/renan-af) 📎. Following me on these platforms not only keeps you updated on my latest posts and projects 📬 but also opens doors to vibrant discussions and learning opportunities. I look forward to connecting with you! 💼

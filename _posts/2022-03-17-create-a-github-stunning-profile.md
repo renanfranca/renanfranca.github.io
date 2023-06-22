@@ -57,3 +57,5 @@ The final file will be like this
 <script src="https://gist.github.com/renanfranca/8fe7bf5c34cbc28e849c0bc14fea2437.js"></script>
 
 A special thanks to [@Rahuldkjain](https://twitter.com/Rahuldkjain) and [@gautamkrishnar](https://twitter.com/gautamkrishnar) for building the awesome open source projects that I used on this post. Please, visit [rahuldkjain's project repository](https://github.com/rahuldkjain/github-profile-readme-generator) and [gautamkrishnar's project repository](https://github.com/gautamkrishnar/blog-post-workflow) and give it a star 🤩
+
+Lastly, let me extend an invitation to join me on my journey 🚀 in the realm of software development. I share my insights, experiences, and valuable resources on Twitter [@renan_afranca](https://www.twitter.com/renan_afranca) 🐦 and [LinkedIn](https://www.linkedin.com/in/renan-af) 📎. Following me on these platforms not only keeps you updated on my latest posts and projects 📬 but also opens doors to vibrant discussions and learning opportunities. I look forward to connecting with you! 💼

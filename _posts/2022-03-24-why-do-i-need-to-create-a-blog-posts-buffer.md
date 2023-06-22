@@ -54,3 +54,5 @@ My first blog post was on Tuesday, the next week was on Wednesday, then Thursday
 So I decided that before I come back to publish again I am going to build up a buffer. I don't know if I will buffer 3 or 5 blog posts before publishing again.
 
 I do know that with that buffer I won't feel the pressure to create another post immediately.
+
+Lastly, let me extend an invitation to join me on my journey 🚀 in the realm of software development. I share my insights, experiences, and valuable resources on Twitter [@renan_afranca](https://www.twitter.com/renan_afranca) 🐦 and [LinkedIn](https://www.linkedin.com/in/renan-af) 📎. Following me on these platforms not only keeps you updated on my latest posts and projects 📬 but also opens doors to vibrant discussions and learning opportunities. I look forward to connecting with you! 💼

@@ -216,3 +216,5 @@ If you want to stay updated with my latest projects and insights, follow me on T
 I'd love to hear your thoughts on our exploration of Vue.js and Hexagonal Architecture. How could these principles be applied to your projects? Is there another JavaScript framework you're considering using with Hexagonal Architecture?
 
 Your input is incredibly valuable. Please share your thoughts in the comments below. Your insights will contribute significantly to our ongoing discussion and learning. I'm looking forward to hearing from you! Happy coding!
+
+Lastly, let me extend an invitation to join me on my journey 🚀 in the realm of software development. I share my insights, experiences, and valuable resources on Twitter [@renan_afranca](https://www.twitter.com/renan_afranca) 🐦 and [LinkedIn](https://www.linkedin.com/in/renan-af) 📎. Following me on these platforms not only keeps you updated on my latest posts and projects 📬 but also opens doors to vibrant discussions and learning opportunities. I look forward to connecting with you! 💼

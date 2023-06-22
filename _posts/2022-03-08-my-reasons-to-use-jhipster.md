@@ -40,3 +40,5 @@ You are going to have a bootstrap project with a lot of features and functionali
 16. Created a useful Readme.md file with instructions to explore and run your generated project.
 
 **I hope you have the time to try out [JHipster](https://www.jhipster.tech/)**. If you have any questions or just want to say something, please, use the comment section 😊
+
+Lastly, let me extend an invitation to join me on my journey 🚀 in the realm of software development. I share my insights, experiences, and valuable resources on Twitter [@renan_afranca](https://www.twitter.com/renan_afranca) 🐦 and [LinkedIn](https://www.linkedin.com/in/renan-af) 📎. Following me on these platforms not only keeps you updated on my latest posts and projects 📬 but also opens doors to vibrant discussions and learning opportunities. I look forward to connecting with you! 💼
