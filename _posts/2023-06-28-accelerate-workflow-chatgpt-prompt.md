@@ -6,7 +6,6 @@ date: 2023-07-11 08:00:00 -0300
 tags: chatgpt
 image: img/postbanners/2023-06-28-cover-chatgpt-prompts.jpeg
 permalink: /:categories/:title:output_ext
-draft: true
 ---
 
 ![cover image](https://renanfranca.github.io/img/postbanners/2023-06-28-cover-chatgpt-prompts.jpeg)
