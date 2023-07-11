@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Accelerate Your Workflow with ChatGPT Prompts - Ditch the Boilerplate and Eliminate Duplicates
+title: 💨🚀 Accelerate Your Workflow with ChatGPT Prompts 📝 - Ditch the Boilerplate 📃✖️ and Eliminate Duplicates 🔄🚫
 description: Discover how ChatGPT prompts can streamline your workflow, eliminate boilerplate code and tackle code duplication. Join the discussion.
 date: 2023-07-11 08:00:00 -0300
 tags: chatgpt
