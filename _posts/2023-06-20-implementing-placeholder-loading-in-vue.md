@@ -52,7 +52,7 @@ In the above example, `.ph-item`, `.ph-col-*`, `.ph-picture`, and `.ph-row` are 
 
 ## A Practical Example
 
-To better illustrate the use of placeholder loading in Vue.js, let's examine a real-world example from a pull request I recently made to the `jhipster/jhipster-lite` repository on GitHub: [Pull Request #6247](https://github.com/jhipster/jhipster-lite/pull/6247).
+To better illustrate the use of placeholder loading in Vue.js, let's examine a real-world example from a pull request I recently made to the [jhipster-lite](https://renanfranca.github.io/how-did-i-earn-money-to-fix-an-issue-from-an-open-source-software.html#learn-about-the-jhipster-lite-project) repository on GitHub: [add placeholder during load #6247](https://github.com/jhipster/jhipster-lite/pull/6247).
 
 In this pull request, I added placeholder loading to the `LandscapeLoader` and `ModulesPatchLoader` components. Those components are responsible for displaying a placeholder while the actual content is loading. To achieve this, I used the `placeholder-loading` library along with Vue.js components for rows, pictures, and lists.
 
