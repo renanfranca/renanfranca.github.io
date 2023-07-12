@@ -23,11 +23,11 @@ This is where the beauty of ChatGPT prompts comes into play.
 
 ChatGPT prompts can drastically speed up the development process by automating the generation of boilerplate code. This not only reduces manual typing but also minimizes the risk of errors that often creep in during repetitive tasks like copying and pasting code. I will show you some examples using chatGPT-4.
 
-### A Practical Example: From JSON to Java Class
+### A Practical Example: From JSON to Typescript object
 
 As the first example, I will introduce a simple prompt for you to get used to it before going to complex prompts.
 
-Imagine you have a JSON that needs to be converted to a Java class. Here's a sample prompt you could use:
+Imagine you have a JSON that needs to be converted to a Typescript object. Here's a sample prompt you could use:
 
 **Prompt:** Convert the following JSON to a Typescript object:
 
