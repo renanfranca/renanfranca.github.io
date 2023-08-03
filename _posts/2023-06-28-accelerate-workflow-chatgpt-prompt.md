@@ -290,9 +290,7 @@ This prompt is available here: [Remove Duplication in Java](https://chat.openai.
 
 ## Let's Connect and Continue the Discussion 🚀
 
-My journey as a developer is marked by the constant
-
- pursuit of knowledge and efficiency. I've found the usage of ChatGPT prompts to be a powerful tool for achieving these goals, and I'm excited to share these insights with the community.
+My journey as a developer is marked by the constant pursuit of knowledge and efficiency. I've found the usage of ChatGPT prompts to be a powerful tool for achieving these goals, and I'm excited to share these insights with the community.
 
 To continue this journey together, I extend an invitation to connect with me on Twitter [@renan_afranca](https://www.twitter.com/renan_afranca)🐦 and [LinkedIn](https://www.linkedin.com/in/renan-af)📎. Not only will you stay updated with my latest posts and insights, but it will also pave the way for fruitful discussions and learning opportunities.
 
