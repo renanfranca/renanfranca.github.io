@@ -1,0 +1,97 @@
+/*! @import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  @apply flex w-full justify-center bg-brand-main;
+  height: 700px;
+}
+
+.header-content {
+  @apply flex flex-col w-4/5 max-w-6xl;
+}
+.content {
+  @apply flex flex-col w-full items-center bg-white py-10;
+}
+
+.footer {
+  @apply flex justify-center bg-brand-gray py-5;
+}
+
+@media (min-width: 640px) {
+  .header-content {
+    background-image: url('../images/blue_balloons.png');
+    background-size: 628px;
+    background-position: 90% 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+.content-loader {
+  position: relative;
+  vertical-align: middle;
+  overflow: hidden;
+  background: #f6f7f8;
+}
+.content-loader--fx {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  background-position: 0 0;
+  background-size: 1000 100;
+  animation: shimmer infinite alternate ease-in-out;
+  animation-duration: 1.6s;
+}
+
+.filter {
+  .count {
+    @apply font-medium text-gray-400;
+  }
+  &--selected {
+    @apply bg-gray-200 rounded-md animate-pulse animate-duration-500 animate-fill-backwards;
+    .count.all {
+      @apply font-black text-mediumslateblue-400;
+    }
+    .count.issue {
+      @apply font-black text-tomato-400;
+    }
+    .count.idea {
+      @apply font-black text-goldenrod-400;
+    }
+    .count.other {
+      @apply font-black text-brand-graydark;
+    }
+  }
+}
+
+.feedback {
+  @apply animate-fadeIn animate-duration-500 animate-fill-forwards;
+
+  .type {
+    &--ISSUE {
+      @apply bg-brand-danger;
+    }
+    &--IDEA {
+      @apply bg-brand-warning;
+    }
+    &--OTHER {
+      @apply bg-brand-graydark;
+    }
+  }
+}
