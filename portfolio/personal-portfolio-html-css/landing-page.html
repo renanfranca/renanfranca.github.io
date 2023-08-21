@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio HTML + CSS</title>
+    <link href="assets/css/fonts.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
+  <body class="bg-lightgray dark:bg-darkgray">
+    <div
+      id="menu"
+      role="dialog"
+      class="hidden fixed top-0 left-0 z-50 flex w-full h-full justify-end bg-opacity-50 backdrop-blur-sm transition-all ease-in-out duration-100"
+    >
+      <div
+        id="menu-content"
+        class="flex flex-col w-full max-w-xs py-2 bg-lightgray dark:bg-darkgray shadow-2xl animate-slideInRight animate-faster transition-all ease-in-out duration-100"
+      >
+        <div class="flex justify-between p-4 border-b border-lightgray-100 dark:border-darkgray-100">
+          <h3 class="font-bold text-2xl text-lightgray-900 dark:text-darkgray-900">&lt;SS /&gt;</h3>
+          <button id="close-menu" class="p-1 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
+            <svg
+              class="stroke-lightgray-600 dark:stroke-darkgray-600"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M18 6L6 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <ul class="flex flex-col w-full p-4 gap-4 border-b border-lightgray-100 dark:border-darkgray-100">
+          <li class="flex">
+            <a class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#about">About</a>
+          </li>
+          <li class="flex">
+            <a class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#work">Work</a>
+          </li>
+          <li class="flex">
+            <a class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#testimonials">Testimonials</a>
+          </li>
+          <li class="flex">
+            <a class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#contact">Contact</a>
+          </li>
+        </ul>
+        <div class="flex flex-col p-4 gap-4">
+          <div class="flex justify-between">
+            <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Switch Theme</p>
+            <button id="switch-theme-mobile" class="p-1 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
+              <svg
+                class="stroke-lightgray-600 flex dark:hidden animate-bounce"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 3C10.8065 4.19347 10.136 5.81217 10.136 7.5C10.136 9.18783 10.8065 10.8065 12 12C13.1935 13.1935 14.8122 13.864 16.5 13.864C18.1878 13.864 19.8065 13.1935 21 12C21 13.78 20.4722 15.5201 19.4832 17.0001C18.4943 18.4802 17.0887 19.6337 15.4442 20.3149C13.7996 20.9961 11.99 21.1743 10.2442 20.8271C8.49836 20.4798 6.89472 19.6226 5.63604 18.364C4.37737 17.1053 3.5202 15.5016 3.17294 13.7558C2.82567 12.01 3.0039 10.2004 3.68509 8.55585C4.36628 6.91131 5.51983 5.50571 6.99987 4.51677C8.47991 3.52784 10.22 3 12 3Z"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M19 3V7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M21 5H17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <svg
+                class="stroke-darkgray-600 hidden dark:flex animate-bounce"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M12 2V4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 20V22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M4.93018 4.92999L6.34018 6.33999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17.6602 17.66L19.0702 19.07" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M2 12H4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M20 12H22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6.34018 17.66L4.93018 19.07" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M19.0702 4.92999L17.6602 6.33999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <button
+            class="w-full font-medium text-base text-center text-lightgray-50 dark:text-darkgray-50 bg-lightgray-900 dark:bg-darkgray-900 rounded-xl py-1.5 hover:bg-lightgray-700 dark:hover:bg-darkgray-700 active:bg-lightgray-800 dark:active:bg-darkgray-800 transition-all ease-in-out duration-200"
+          >
+            Download CV
+          </button>
+        </div>
+      </div>
+    </div>
+    <header class="sticky top-0 z-30 w-full bg-lightgray/90 dark:bg-darkgray/90">
+      <div class="flex w-full max-w-7xl mx-auto items-center justify-between p-4 md:px-8 xl:px-20">
+        <a href="#">
+          <h3 class="font-bold text-2xl lg:text-3xl text-lightgray-900 dark:text-darkgray-900">&lt;SS /&gt;</h3>
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#about">About</a>
+          <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#work">Work</a>
+          <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#testimonials">Testimonials</a>
+          <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#contact">Contact</a>
+          <span class="h-6 w-0.5 bg-lightgray-100 dark:bg-darkgray-100"></span>
+          <button id="switch-theme" class="p-1 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
+            <svg
+              class="stroke-lightgray-600 flex dark:hidden animate-bounce"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 3C10.8065 4.19347 10.136 5.81217 10.136 7.5C10.136 9.18783 10.8065 10.8065 12 12C13.1935 13.1935 14.8122 13.864 16.5 13.864C18.1878 13.864 19.8065 13.1935 21 12C21 13.78 20.4722 15.5201 19.4832 17.0001C18.4943 18.4802 17.0887 19.6337 15.4442 20.3149C13.7996 20.9961 11.99 21.1743 10.2442 20.8271C8.49836 20.4798 6.89472 19.6226 5.63604 18.364C4.37737 17.1053 3.5202 15.5016 3.17294 13.7558C2.82567 12.01 3.0039 10.2004 3.68509 8.55585C4.36628 6.91131 5.51983 5.50571 6.99987 4.51677C8.47991 3.52784 10.22 3 12 3Z"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path d="M19 3V7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M21 5H17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <svg
+              class="stroke-darkgray-600 hidden dark:flex animate-bounce"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path d="M12 2V4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M12 20V22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M4.93018 4.92999L6.34018 6.33999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M17.6602 17.66L19.0702 19.07" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M2 12H4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M20 12H22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M6.34018 17.66L4.93018 19.07" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M19.0702 4.92999L17.6602 6.33999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <button
+            class="w-full font-medium text-base text-center text-lightgray-50 dark:text-darkgray-50 bg-lightgray-900 dark:bg-darkgray-900 rounded-xl py-1.5 px-4 hover:bg-lightgray-700 dark:hover:bg-darkgray-700 active:bg-lightgray-800 dark:active:bg-darkgray-800 transition-all ease-in-out duration-200"
+          >
+            Download CV
+          </button>
+        </div>
+        <button id="hamburger" class="flex md:hidden z-20 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
+          <svg
+            class="stroke-lightgray-600 dark:stroke-darkgray-600"
+            width="36"
+            height="36"
+            viewBox="0 0 36 36"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M10 18H26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M10 12H26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M10 24H26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main class="flex flex-col min-h-screen w-full">
+      <section class="flex flex-col w-full py-16 md:py-24">
+        <div class="flex flex-col md:flex-row-reverse w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-12">
+          <div class="flex justify-center">
+            <div class="relative flex w-[240px] md:w-[320px] h-[280px] md:h-[320px] justify-center">
+              <image
+                class="absolute z-10 w-[240px] md:w-[280px] h-[280px] md:h-[320px] border-8 border-lightgray dark:border-darkgray"
+                src="assets/images/picture_head.png"
+                alt="portrait picture"
+              />
+              <div
+                class="absolute z-9 w-[256px] md:w-[240px] h-[260px] md:h-[280px] border-8 border-transparent mt-7 md:mt-12 md:ml-14 bg-lightgray-200 dark:bg-darkgray-200"
+              ></div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-12">
+            <div class="flex flex-col gap-2">
+              <h1 class="font-semibold md:font-bold text-4xl md:text-5xl lg:text-6xl text-left text-lightgray-900 dark:text-darkgray-900">
+                Hi, I'm Sagar 👋
+              </h1>
+              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
+                I'm a full stack developer (React.js & Node.js) with a focus on creating (and occasionally designing) exceptional digital
+                experiences that are fast, accessible, visually appealing, and responsive. Even though I have been creating web applications
+                for over 7 years, I still love it as if it was something new.
+              </p>
+            </div>
+            <div class="flex flex-col gap-2">
+              <div class="flex gap-2">
+                <svg
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 10C20 16 12 22 12 22C12 22 4 16 4 10C4 7.87827 4.84285 5.84344 6.34315 4.34315C7.84344 2.84285 9.87827 2 12 2C14.1217 2 16.1566 2.84285 17.6569 4.34315C19.1571 5.84344 20 7.87827 20 10Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Ahmedabad, India</p>
+              </div>
+              <div class="flex gap-2">
+                <div class="relative flex items-center justify-center h-6 w-6">
+                  <div class="absolute w-3 h-3 bg-transparent border-4 border-emerald rounded-full animate-twPing animate-infinite"></div>
+                  <div class="absolute inline-flex w-3 h-3 bg-emerald rounded-full"></div>
+                </div>
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Available for new projects</p>
+              </div>
+            </div>
+            <div class="flex">
+              <a href="#">
+                <svg
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 28V24C21.1392 22.7473 20.78 21.4901 20 20.5C23 20.5 26 18.5 26 15C26.08 13.75 25.73 12.52 25 11.5C25.28 10.35 25.28 9.15 25 8C25 8 24 8 22 9.5C19.36 9 16.64 9 14 9.5C12 8 11 8 11 8C10.7 9.15 10.7 10.35 11 11.5C10.2719 12.5159 9.91851 13.7528 10 15C10 18.5 13 20.5 16 20.5C15.61 20.99 15.32 21.55 15.15 22.15C14.98 22.75 14.93 23.38 15 24V28"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path d="M15 24C10.49 26 10 22 8 22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a href="#">
+                <svg
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M28 9.99999C28 9.99999 27.3 12.1 26 13.4C27.6 23.4 16.6 30.7 8 25C10.2 25.1 12.4 24.4 14 23C9 21.5 6.5 15.6 9 11C11.2 13.6 14.6 15.1 18 15C17.1 10.8 22 8.39999 25 11.2C26.1 11.2 28 9.99999 28 9.99999Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a href="#">
+                <svg
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 11.5C11 10.5717 11.3687 9.6815 12.0251 9.02513C12.6815 8.36875 13.5717 8 14.5 8H18V15H14.5C13.5717 15 12.6815 14.6313 12.0251 13.9749C11.3687 13.3185 11 12.4283 11 11.5Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M18 8H21.5C21.9596 8 22.4148 8.09053 22.8394 8.26642C23.264 8.44231 23.6499 8.70012 23.9749 9.02513C24.2999 9.35013 24.5577 9.73597 24.7336 10.1606C24.9095 10.5852 25 11.0404 25 11.5C25 11.9596 24.9095 12.4148 24.7336 12.8394C24.5577 13.264 24.2999 13.6499 23.9749 13.9749C23.6499 14.2999 23.264 14.5577 22.8394 14.7336C22.4148 14.9095 21.9596 15 21.5 15H18V8Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M18 18.5C18 18.0404 18.0905 17.5852 18.2664 17.1606C18.4423 16.736 18.7001 16.3501 19.0251 16.0251C19.3501 15.7001 19.736 15.4423 20.1606 15.2664C20.5852 15.0905 21.0404 15 21.5 15C21.9596 15 22.4148 15.0905 22.8394 15.2664C23.264 15.4423 23.6499 15.7001 23.9749 16.0251C24.2999 16.3501 24.5577 16.736 24.7336 17.1606C24.9095 17.5852 25 18.0404 25 18.5C25 18.9596 24.9095 19.4148 24.7336 19.8394C24.5577 20.264 24.2999 20.6499 23.9749 20.9749C23.6499 21.2999 23.264 21.5577 22.8394 21.7336C22.4148 21.9095 21.9596 22 21.5 22C21.0404 22 20.5852 21.9095 20.1606 21.7336C19.736 21.5577 19.3501 21.2999 19.0251 20.9749C18.7001 20.6499 18.4423 20.264 18.2664 19.8394C18.0905 19.4148 18 18.9596 18 18.5Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M11 25.5C11 24.5717 11.3687 23.6815 12.0251 23.0251C12.6815 22.3687 13.5717 22 14.5 22H18V25.5C18 26.4283 17.6313 27.3185 16.9749 27.9749C16.3185 28.6313 15.4283 29 14.5 29C13.5717 29 12.6815 28.6313 12.0251 27.9749C11.3687 27.3185 11 26.4283 11 25.5Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M11 18.5C11 17.5717 11.3687 16.6815 12.0251 16.0251C12.6815 15.3687 13.5717 15 14.5 15H18V22H14.5C13.5717 22 12.6815 21.6313 12.0251 20.9749C11.3687 20.3185 11 19.4283 11 18.5Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="flex flex-col w-full py-16 md:py-24 bg-lightgray-50 dark:bg-darkgray-50">
+        <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
+          <div class="flex flex-col gap-6">
+            <div class="flex justify-center">
+              <p
+                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+              >
+                About me
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row w-full justify-between gap-12">
+            <div class="flex justify-center lg:justify-start lg:w-1/2">
+              <div class="relative flex w-[280px] h-[360px] md:w-[400px] md:h-[480px] justify-center">
+                <image
+                  class="flex absolute z-10 w-[280px] h-[360px] md:w-[400px] md:h-[480px] border-8 border-lightgray dark:border-darkgray"
+                  src="assets/images/about_me.png"
+                  alt="about me"
+                />
+                <div
+                  class="absolute z-9 w-[296px] h-[340px] md:w-[392px] md:h-[460px] mt-7 md:mr-7 border-8 border-transparent bg-lightgray-200 dark:bg-darkgray-200"
+                ></div>
+              </div>
+            </div>
+            <div class="flex lg:w-1/2">
+              <div class="flex flex-col gap-6">
+                <h3 class="font-semibold text-2xl lg:text-3xl text-left text-lightgray-900 dark:text-darkgray-900">
+                  Curious about me? Here you have it:
+                </h3>
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
+                  I'm a passionate, self-proclaimed designer who specializes in full stack development (React.js & Node.js). I am very
+                  enthusiastic about bringing the technical and visual aspects of digital products to life. User experience, pixel perfect
+                  design, and writing clear, readable, highly performant code matters to me.
+                </p>
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
+                  I began my journey as a web developer in 2015, and since then, I've continued to grow and evolve as a developer, taking on
+                  new challenges and learning the latest technologies along the way. Now, in my early thirties, 7 years after starting my
+                  web development journey, I'm building cutting-edge web applications using modern technologies such as Next.js, TypeScript,
+                  Nestjs, Tailwindcss, Supabase and much more.
+                </p>
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
+                  I am very much a progressive thinker and enjoy working on products end to end, from ideation all the way to development.
+                </p>
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
+                  When I'm not in full-on developer mode, you can find me hovering around on twitter or on indie hacker, witnessing the
+                  journey of early startups or enjoying some free time. You can follow me on Twitter where I share tech-related bites and
+                  build in public, or you can follow me on GitHub.
+                </p>
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Finally, some quick bits about me.</p>
+                <div class="flex gap-2">
+                  <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5 gap-2">
+                    <li>B.E. in Computer Engineering</li>
+                    <li>Full time freelancer</li>
+                  </ul>
+                  <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5 gap-2">
+                    <li>Avid learner</li>
+                    <li>Aspiring indie hacker</li>
+                  </ul>
+                </div>
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
+                  One last thing, I'm available for freelance work, so feel free to reach out and say hello! I promise I don't bite 😉
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="skills" class="flex flex-col w-full py-16 md:py-24">
+        <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
+          <div class="flex flex-col gap-4 md:gap-6">
+            <div class="flex justify-center">
+              <p
+                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+              >
+                Skills
+              </p>
+            </div>
+            <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
+              The skills, tools and technologies I am really good at:
+            </p>
+            <div class="grid grid-cols-3 gap-y-4 md:grid-cols-6 md:gap-y-8 lg:grid-cols-8 lg:gap-y-12">
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-javscript.svg" alt="Javascript" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Javascript</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-typescript.svg" alt="Typescript" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Typescript</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-react.svg" alt="React" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">React</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-nextjs.svg" alt="Nextjs" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Nextjs</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-nodejs.svg" alt="Node.js" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Node.js</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="flex dark:hidden w-16 h-16" src="assets/icons/icon-express.svg" alt="React" />
+                <img class="hidden dark:flex w-16 h-16" src="assets/icons/icon-express_darkmode.svg" alt="React" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Express.js</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-nest.svg" alt="Nest.js" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Nest.js</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="flex dark:hidden w-16 h-16" src="assets/icons/icon-socket.svg" alt="Socket.io" />
+                <img class="hidden dark:flex w-16 h-16" src="assets/icons/icon-socket_darkmode.svg" alt="Socket.io" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Socket.io</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-postgresql.svg" alt="PostgreSQL" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">PostgreSQL</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-mongodb.svg" alt="MongoDB" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">MongoDB</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-sass.svg" alt="Sass/Scss" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Sass/Scss</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-tailwindcss.svg" alt="Tailwindcss" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Tailwindcss</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-figma.svg" alt="Figma" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Figma</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="flex dark:hidden w-16 h-16" src="assets/icons/icon-cypress.svg" alt="Cypress" />
+                <img class="hidden dark:flex w-16 h-16" src="assets/icons/icon-cypress_darkmode.svg" alt="Cypress" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Cypress</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-storybook.svg" alt="Storybook" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Storybook</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-git.svg" alt="Git" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Git</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="experience" class="flex flex-col w-full py-16 md:py-24 gap-6 bg-lightgray-50 dark:bg-darkgray-50">
+        <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
+          <div class="flex flex-col gap-4">
+            <div class="flex justify-center">
+              <p
+                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+              >
+                Experience
+              </p>
+            </div>
+            <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
+              Here is a quick summary of my most recent experiences:
+            </p>
+          </div>
+          <div
+            class="flex flex-col md:flex-row md:justify-between p-8 gap-4 md:gap-12 shadow-md dark:shadow-xl rounded-xl bg-lightgray dark:bg-darkgray-100"
+          >
+            <div class="flex md:w-1/4">
+              <img class="w-[102px] h-[28px]" src="assets/images/logo-upwork.png" alt="logo upwork" />
+            </div>
+            <p class="font-normal text-base md:w-1/4 text-right text-lightgray-700 dark:text-darkgray-700 md:order-last">
+              Nov 2021 - Present
+            </p>
+            <div class="flex flex-col md:w-2/4 gap-4">
+              <p class="font-semibold text-lg md:text-xl text-lightgray-900 dark:text-darkgray-900">Sr. Frontend Developer</p>
+              <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5">
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>Ut pretium arcu et massa semper, id fringilla leo semper.</li>
+                <li>Sed quis justo ac magna.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row md:justify-between p-8 gap-4 md:gap-12 shadow-md dark:shadow-xl rounded-xl bg-lightgray dark:bg-darkgray-100"
+          >
+            <div class="flex md:w-1/4">
+              <img class="w-[102px] h-[28px]" src="assets/images/logo-upwork.png" alt="logo upwork" />
+            </div>
+            <p class="font-normal text-base md:w-1/4 text-right text-lightgray-700 dark:text-darkgray-700 md:order-last">
+              Jul 2017 - Oct 2021
+            </p>
+            <div class="flex flex-col md:w-2/4 gap-4">
+              <p class="font-semibold text-lg md:text-xl text-lightgray-900 dark:text-darkgray-900">Team Lead</p>
+              <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5">
+                <li>Sed quis justo ac magna.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>Sed quis justo ac magna.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row md:justify-between p-8 gap-4 md:gap-12 shadow-md dark:shadow-xl rounded-xl bg-lightgray dark:bg-darkgray-100"
+          >
+            <div class="flex md:w-1/4">
+              <img class="w-[102px] h-[28px]" src="assets/images/logo-upwork.png" alt="logo upwork" />
+            </div>
+            <p class="font-normal text-base md:w-1/4 text-right text-lightgray-700 dark:text-darkgray-700 md:order-last">
+              Dec 2015 - May 2017
+            </p>
+            <div class="flex flex-col md:w-2/4 gap-4">
+              <p class="font-semibold text-lg md:text-xl text-lightgray-900 dark:text-darkgray-900">Full Stack Developer</p>
+              <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5">
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="work" class="flex flex-col w-full py-16 md:py-24 gap-6">
+        <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
+          <div class="flex flex-col gap-4">
+            <div class="flex justify-center">
+              <p
+                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 rounded-xl bg-lightgray-200 dark:bg-darkgray-200"
+              >
+                Work
+              </p>
+            </div>
+            <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
+              Some of the noteworthy projects I have built:
+            </p>
+          </div>
+          <div class="flex flex-col md:flex-row rounded-b-xl shadow-md dark:shadow-xl">
+            <div
+              class="flex w-full md:w-1/2 items-center justify-center p-8 rounded-t-xl md:rounded-tr-none md:rounded-l-xl bg-lightgray-50 dark:bg-darkgray-200"
+            >
+              <div class="flex w-[224px] h-[192px] md:w-[304px] md:h-[284px] lg:w-full lg:h-[384px]">
+                <img class="rounded-xl shadow-lg" src="assets/images/work-picture.png" alt="Work Picture" />
+              </div>
+            </div>
+            <div class="flex flex-col md:w-1/2 p-8 gap-6 dark:bg-darkgray-100">
+              <p class="font-semibold text-lg text-left text-lightgray-900 dark:text-darkgray-900">Fiskil</p>
+              <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum
+                primis in faucibus orci luctus et ultrices posuere cubilia curae.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  React
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  Next.js
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  Typescript
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  Nest.js
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  PostgreSQL
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  Tailwindcss
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  Figma
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  Cypress
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  Storybook
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  Git
+                </p>
+              </div>
+              <a href="#" target="_blank">
+                <svg
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 19V25C24 25.5304 23.7893 26.0391 23.4142 26.4142C23.0391 26.7893 22.5304 27 22 27H11C10.4696 27 9.96086 26.7893 9.58579 26.4142C9.21071 26.0391 9 25.5304 9 25V14C9 13.4696 9.21071 12.9609 9.58579 12.5858C9.96086 12.2107 10.4696 12 11 12H17"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path d="M21 9H27V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M16 20L27 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="testimonials" class="flex flex-col w-full py-16 md:py-24 gap-6 bg-lightgray-50 dark:bg-darkgray-50">
+        <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
+          <div class="flex flex-col gap-4">
+            <div class="flex justify-center">
+              <p
+                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 rounded-xl bg-lightgray-200 dark:bg-darkgray-200"
+              >
+                Testimonials
+              </p>
+            </div>
+            <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
+              Nice things people have said about me:
+            </p>
+          </div>
+          <div class="flex flex-col md:flex-row gap-6 md:gap-12">
+            <div class="flex flex-col items-center p-8 gap-6 shadow-md dark:shadow-xl rounded-xl bg-lightgray dark:bg-darkgray-100">
+              <div class="flex items-center justify-center w-16 h-16 rounded-full bg-lightgray-400 dark:bg-darkgray-400">
+                <img src="assets/icons/icon-user.svg" alt="IconUser" />
+              </div>
+              <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">
+                “Job well done! I am really impressed. He is very very good at what he does:) I would recommend Sagar and will rehire in the
+                future for Frontend development.”
+              </p>
+              <div class="flex flex-col items-center">
+                <p class="font-semibold text-lg lg:text-xl text-lightgray-900 dark:text-darkgray-900">John Doe</p>
+                <p class="font-normal text-sm text-lightgray-600 dark:text-darkgray-600">Founder - xyz.com</p>
+              </div>
+            </div>
+            <div class="flex flex-col items-center p-8 gap-6 shadow-md dark:shadow-xl rounded-xl bg-lightgray dark:bg-darkgray-100">
+              <div class="flex items-center justify-center w-16 h-16 rounded-full bg-lightgray-400 dark:bg-darkgray-400">
+                <img src="assets/icons/icon-user.svg" alt="IconUser" />
+              </div>
+              <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">
+                “Job well done! I am really impressed. He is very very good at what he does:) I would recommend Sagar and will rehire in the
+                future for Frontend development.”
+              </p>
+              <div class="flex flex-col items-center">
+                <p class="font-semibold text-lg text-lightgray-900 dark:text-darkgray-900">John Doe</p>
+                <p class="font-normal text-sm text-lightgray-600 dark:text-darkgray-600">Founder - xyz.com</p>
+              </div>
+            </div>
+            <div class="flex flex-col items-center p-8 gap-6 shadow-md dark:shadow-xl rounded-xl bg-lightgray dark:bg-darkgray-100">
+              <div class="flex items-center justify-center w-16 h-16 rounded-full bg-lightgray-400 dark:bg-darkgray-400">
+                <img src="assets/icons/icon-user.svg" alt="IconUser" />
+              </div>
+              <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">
+                “Job well done! I am really impressed. He is very very good at what he does:) I would recommend Sagar and will rehire in the
+                future for Frontend development.”
+              </p>
+              <div class="flex flex-col items-center">
+                <p class="font-semibold text-lg text-lightgray-900 dark:text-darkgray-900">John Doe</p>
+                <p class="font-normal text-sm text-lightgray-600 dark:text-darkgray-600">Founder - xyz.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="flex flex-col w-full py-16 md:py-24 gap-6">
+        <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
+          <div class="flex flex-col gap-4">
+            <div class="flex justify-center">
+              <p
+                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 rounded-xl bg-lightgray-200 dark:bg-darkgray-200"
+              >
+                Get in touch
+              </p>
+            </div>
+            <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
+              What's next? Feel free to reach out to me if you're looking for a developer, have a query, or simply want to connect.
+            </p>
+          </div>
+          <div class="flex flex-col lg:gap-4">
+            <div class="flex items-center justify-center gap-4">
+              <svg
+                class="w-6 h-6 lg:w-8 lg:h-8 stroke-lightgray-600 dark:stroke-darkgray-600"
+                width="24"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.5 4H4.5C3.39543 4 2.5 4.89543 2.5 6V18C2.5 19.1046 3.39543 20 4.5 20H20.5C21.6046 20 22.5 19.1046 22.5 18V6C22.5 4.89543 21.6046 4 20.5 4Z"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M22.5 7L13.53 12.7C13.2213 12.8934 12.8643 12.996 12.5 12.996C12.1357 12.996 11.7787 12.8934 11.47 12.7L2.5 7"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <h2 class="font-semibold text-lg lg:text-4xl text-lightgray-900 dark:text-darkgray-900">reachsagarshah@gmail.com</h2>
+              <svg
+                class="w-9 h-9 lg:w-11 lg:h-11 stroke-lightgray-600 dark:stroke-darkgray-600"
+                width="36"
+                height="36"
+                viewBox="0 0 37 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M26.5 14H16.5C15.3954 14 14.5 14.8954 14.5 16V26C14.5 27.1046 15.3954 28 16.5 28H26.5C27.6046 28 28.5 27.1046 28.5 26V16C28.5 14.8954 27.6046 14 26.5 14Z"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M10.5 22C9.4 22 8.5 21.1 8.5 20V10C8.5 8.9 9.4 8 10.5 8H20.5C21.6 8 22.5 8.9 22.5 10"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div class="flex items-center justify-center gap-4">
+              <svg
+                class="w-6 h-6 lg:w-8 lg:h-8 stroke-lightgray-600 dark:stroke-darkgray-600"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21.9999 16.9201V19.9201C22.0011 20.1986 21.944 20.4743 21.8324 20.7294C21.7209 20.9846 21.5572 21.2137 21.352 21.402C21.1468 21.5902 20.9045 21.7336 20.6407 21.8228C20.3769 21.912 20.0973 21.9452 19.8199 21.9201C16.7428 21.5857 13.7869 20.5342 11.1899 18.8501C8.77376 17.3148 6.72527 15.2663 5.18993 12.8501C3.49991 10.2413 2.44818 7.27109 2.11993 4.1801C2.09494 3.90356 2.12781 3.62486 2.21643 3.36172C2.30506 3.09859 2.4475 2.85679 2.6347 2.65172C2.82189 2.44665 3.04974 2.28281 3.30372 2.17062C3.55771 2.05843 3.83227 2.00036 4.10993 2.0001H7.10993C7.59524 1.99532 8.06572 2.16718 8.43369 2.48363C8.80166 2.80008 9.04201 3.23954 9.10993 3.7201C9.23656 4.68016 9.47138 5.62282 9.80993 6.5301C9.94448 6.88802 9.9736 7.27701 9.89384 7.65098C9.81408 8.02494 9.6288 8.36821 9.35993 8.6401L8.08993 9.9101C9.51349 12.4136 11.5864 14.4865 14.0899 15.9101L15.3599 14.6401C15.6318 14.3712 15.9751 14.1859 16.3491 14.1062C16.723 14.0264 17.112 14.0556 17.4699 14.1901C18.3772 14.5286 19.3199 14.7635 20.2799 14.8901C20.7657 14.9586 21.2093 15.2033 21.5265 15.5776C21.8436 15.9519 22.0121 16.4297 21.9999 16.9201Z"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p class="font-semibold text-lg lg:text-4xl text-lightgray-900 dark:text-darkgray-900">+91 8980500565</p>
+              <svg
+                class="w-9 h-9 lg:w-11 lg:h-11 stroke-lightgray-600 dark:stroke-darkgray-600"
+                width="36"
+                height="36"
+                viewBox="0 0 37 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M26.5 14H16.5C15.3954 14 14.5 14.8954 14.5 16V26C14.5 27.1046 15.3954 28 16.5 28H26.5C27.6046 28 28.5 27.1046 28.5 26V16C28.5 14.8954 27.6046 14 26.5 14Z"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M10.5 22C9.4 22 8.5 21.1 8.5 20V10C8.5 8.9 9.4 8 10.5 8H20.5C21.6 8 22.5 8.9 22.5 10"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <p class="font-normal text-base text-center text-lightgray-600 dark:text-darkgray-600">
+              You may also find me on these platforms!
+            </p>
+            <div class="flex justify-center">
+              <a href="#">
+                <svg
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 28V24C21.1392 22.7473 20.78 21.4901 20 20.5C23 20.5 26 18.5 26 15C26.08 13.75 25.73 12.52 25 11.5C25.28 10.35 25.28 9.15 25 8C25 8 24 8 22 9.5C19.36 9 16.64 9 14 9.5C12 8 11 8 11 8C10.7 9.15 10.7 10.35 11 11.5C10.2719 12.5159 9.91851 13.7528 10 15C10 18.5 13 20.5 16 20.5C15.61 20.99 15.32 21.55 15.15 22.15C14.98 22.75 14.93 23.38 15 24V28"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path d="M15 24C10.49 26 10 22 8 22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a href="#">
+                <svg
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M28 9.99999C28 9.99999 27.3 12.1 26 13.4C27.6 23.4 16.6 30.7 8 25C10.2 25.1 12.4 24.4 14 23C9 21.5 6.5 15.6 9 11C11.2 13.6 14.6 15.1 18 15C17.1 10.8 22 8.39999 25 11.2C26.1 11.2 28 9.99999 28 9.99999Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a href="#">
+                <svg
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 11.5C11 10.5717 11.3687 9.6815 12.0251 9.02513C12.6815 8.36875 13.5717 8 14.5 8H18V15H14.5C13.5717 15 12.6815 14.6313 12.0251 13.9749C11.3687 13.3185 11 12.4283 11 11.5Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M18 8H21.5C21.9596 8 22.4148 8.09053 22.8394 8.26642C23.264 8.44231 23.6499 8.70012 23.9749 9.02513C24.2999 9.35013 24.5577 9.73597 24.7336 10.1606C24.9095 10.5852 25 11.0404 25 11.5C25 11.9596 24.9095 12.4148 24.7336 12.8394C24.5577 13.264 24.2999 13.6499 23.9749 13.9749C23.6499 14.2999 23.264 14.5577 22.8394 14.7336C22.4148 14.9095 21.9596 15 21.5 15H18V8Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M18 18.5C18 18.0404 18.0905 17.5852 18.2664 17.1606C18.4423 16.736 18.7001 16.3501 19.0251 16.0251C19.3501 15.7001 19.736 15.4423 20.1606 15.2664C20.5852 15.0905 21.0404 15 21.5 15C21.9596 15 22.4148 15.0905 22.8394 15.2664C23.264 15.4423 23.6499 15.7001 23.9749 16.0251C24.2999 16.3501 24.5577 16.736 24.7336 17.1606C24.9095 17.5852 25 18.0404 25 18.5C25 18.9596 24.9095 19.4148 24.7336 19.8394C24.5577 20.264 24.2999 20.6499 23.9749 20.9749C23.6499 21.2999 23.264 21.5577 22.8394 21.7336C22.4148 21.9095 21.9596 22 21.5 22C21.0404 22 20.5852 21.9095 20.1606 21.7336C19.736 21.5577 19.3501 21.2999 19.0251 20.9749C18.7001 20.6499 18.4423 20.264 18.2664 19.8394C18.0905 19.4148 18 18.9596 18 18.5Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M11 25.5C11 24.5717 11.3687 23.6815 12.0251 23.0251C12.6815 22.3687 13.5717 22 14.5 22H18V25.5C18 26.4283 17.6313 27.3185 16.9749 27.9749C16.3185 28.6313 15.4283 29 14.5 29C13.5717 29 12.6815 28.6313 12.0251 27.9749C11.3687 27.3185 11 26.4283 11 25.5Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M11 18.5C11 17.5717 11.3687 16.6815 12.0251 16.0251C12.6815 15.3687 13.5717 15 14.5 15H18V22H14.5C13.5717 22 12.6815 21.6313 12.0251 20.9749C11.3687 20.3185 11 19.4283 11 18.5Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="flex flex-col w-full max-w-7xl mx-auto py-6 gap-6 bg-lightgray-50 dark:bg-darkgray-50">
+        <div class="flex items-center justify-center gap-2">
+          <svg
+            class="stroke-lightgray-600 dark:stroke-darkgray-600"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_327_2490)">
+              <path
+                d="M7.99967 14.6663C11.6816 14.6663 14.6663 11.6816 14.6663 7.99967C14.6663 4.31778 11.6816 1.33301 7.99967 1.33301C4.31778 1.33301 1.33301 4.31778 1.33301 7.99967C1.33301 11.6816 4.31778 14.6663 7.99967 14.6663Z"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9.99953 6.23567C9.64123 5.82948 9.16774 5.54201 8.64205 5.41154C8.11637 5.28106 7.56341 5.31376 7.05676 5.50528C6.55011 5.69679 6.1138 6.03805 5.80587 6.48365C5.49794 6.92924 5.33301 7.45804 5.33301 7.99967C5.33301 8.54131 5.49794 9.07011 5.80587 9.5157C6.1138 9.9613 6.55011 10.3026 7.05676 10.4941C7.56341 10.6856 8.11637 10.7183 8.64205 10.5878C9.16774 10.4573 9.64123 10.1699 9.99953 9.76367"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_327_2490">
+                <rect width="16" height="16" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+          <p class="font-normal text-sm text-lightgray-600 dark:text-darkgray-600">
+            2023 | Designed and coded with <span class="text-red-500">❤️</span> by Sagar Shah
+          </p>
+        </div>
+      </footer>
+    </main>
+    <!-- The following code is only for demonstrating the features -->
+    <script>
+      const hamburger = document.querySelector('#hamburger');
+      const menu = document.querySelector('#menu');
+      const menuContent = document.querySelector('#menu-content');
+      const closeMenu = document.querySelector('#close-menu');
+      const switchThemeMobile = document.querySelector('#switch-theme-mobile');
+      const switchTheme = document.querySelector('#switch-theme');
+
+      hamburger.addEventListener('click', function () {
+        menu.classList.toggle('hidden');
+      });
+      menu.addEventListener('click', function () {
+        menuContent.classList.toggle('animate-slideOutRight');
+        setTimeout(function () {
+          menuContent.classList.toggle('animate-slideOutRight');
+          menu.classList.toggle('hidden');
+        }, 250);
+      });
+      menuContent.addEventListener('click', function (event) {
+        event.stopPropagation();
+      });
+      closeMenu.addEventListener('click', function () {
+        menuContent.classList.toggle('animate-slideOutRight');
+        setTimeout(function () {
+          menuContent.classList.toggle('animate-slideOutRight');
+          menu.classList.toggle('hidden');
+        }, 250);
+      });
+      switchThemeMobile.addEventListener('click', function () {
+        document.documentElement.classList.toggle('dark');
+      });
+      switchTheme.addEventListener('click', function () {
+        document.documentElement.classList.toggle('dark');
+      });
+    </script>
+  </body>
+</html>
