@@ -957,6 +957,22 @@ body {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
+@media (min-width: 640px) {
+  .sm\:flex-col {
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) {
+  .md\:ml-16 {
+    margin-left: 4rem;
+  }
+  .md\:w-3\/4 {
+    width: 75%;
+  }
+  .md\:flex-row {
+    flex-direction: row;
+  }
+}
 @media (min-width: 1024px) {
   .lg\:inline-block {
     display: inline-block;
