@@ -35,16 +35,18 @@
         </div>
         <ul class="flex flex-col w-full p-4 gap-4 border-b border-lightgray-100 dark:border-darkgray-100">
           <li class="flex">
-            <a class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#about">About</a>
+            <a id="menu-about" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#about">About</a>
           </li>
           <li class="flex">
-            <a class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#work">Work</a>
+            <a id="menu-work" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#work">Work</a>
           </li>
           <li class="flex">
-            <a class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#testimonials">Testimonials</a>
+            <a id="menu-testimonials" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#testimonials"
+              >Testimonials</a
+            >
           </li>
           <li class="flex">
-            <a class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#contact">Contact</a>
+            <a id="menu-contact" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#contact">Contact</a>
           </li>
         </ul>
         <div class="flex flex-col p-4 gap-4">
@@ -714,7 +716,7 @@
           <div class="flex flex-col lg:gap-4">
             <div class="flex items-center justify-center gap-4">
               <svg
-                class="w-6 h-6 lg:w-8 lg:h-8 stroke-lightgray-600 dark:stroke-darkgray-600"
+                class="shrink-0 w-6 h-6 lg:w-8 lg:h-8 stroke-lightgray-600 dark:stroke-darkgray-600"
                 width="24"
                 height="24"
                 viewBox="0 0 25 24"
@@ -734,32 +736,36 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <h2 class="font-semibold text-lg lg:text-4xl text-lightgray-900 dark:text-darkgray-900">reachsagarshah@gmail.com</h2>
-              <svg
-                class="w-9 h-9 lg:w-11 lg:h-11 stroke-lightgray-600 dark:stroke-darkgray-600"
-                width="36"
-                height="36"
-                viewBox="0 0 37 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M26.5 14H16.5C15.3954 14 14.5 14.8954 14.5 16V26C14.5 27.1046 15.3954 28 16.5 28H26.5C27.6046 28 28.5 27.1046 28.5 26V16C28.5 14.8954 27.6046 14 26.5 14Z"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M10.5 22C9.4 22 8.5 21.1 8.5 20V10C8.5 8.9 9.4 8 10.5 8H20.5C21.6 8 22.5 8.9 22.5 10"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <h2 id="contact-email" class="font-semibold text-lg lg:text-4xl text-lightgray-900 dark:text-darkgray-900">
+                reachsagarshah@gmail.com
+              </h2>
+              <button id="contact-copy-email-icon" class="relative">
+                <svg
+                  class="shrink-0 w-9 h-9 lg:w-11 lg:h-11 stroke-lightgray-600 dark:stroke-darkgray-600"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 37 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M26.5 14H16.5C15.3954 14 14.5 14.8954 14.5 16V26C14.5 27.1046 15.3954 28 16.5 28H26.5C27.6046 28 28.5 27.1046 28.5 26V16C28.5 14.8954 27.6046 14 26.5 14Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M10.5 22C9.4 22 8.5 21.1 8.5 20V10C8.5 8.9 9.4 8 10.5 8H20.5C21.6 8 22.5 8.9 22.5 10"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
             </div>
             <div class="flex items-center justify-center gap-4">
               <svg
-                class="w-6 h-6 lg:w-8 lg:h-8 stroke-lightgray-600 dark:stroke-darkgray-600"
+                class="shrink-0 w-6 h-6 lg:w-8 lg:h-8 stroke-lightgray-600 dark:stroke-darkgray-600"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -773,28 +779,30 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <p class="font-semibold text-lg lg:text-4xl text-lightgray-900 dark:text-darkgray-900">+91 8980500565</p>
-              <svg
-                class="w-9 h-9 lg:w-11 lg:h-11 stroke-lightgray-600 dark:stroke-darkgray-600"
-                width="36"
-                height="36"
-                viewBox="0 0 37 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M26.5 14H16.5C15.3954 14 14.5 14.8954 14.5 16V26C14.5 27.1046 15.3954 28 16.5 28H26.5C27.6046 28 28.5 27.1046 28.5 26V16C28.5 14.8954 27.6046 14 26.5 14Z"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M10.5 22C9.4 22 8.5 21.1 8.5 20V10C8.5 8.9 9.4 8 10.5 8H20.5C21.6 8 22.5 8.9 22.5 10"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <p id="contact-phone" class="font-semibold text-lg lg:text-4xl text-lightgray-900 dark:text-darkgray-900">+91 8980500565</p>
+              <button id="contact-copy-phone-icon" class="relative">
+                <svg
+                  class="shrink-0 w-9 h-9 lg:w-11 lg:h-11 stroke-lightgray-600 dark:stroke-darkgray-600"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 37 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M26.5 14H16.5C15.3954 14 14.5 14.8954 14.5 16V26C14.5 27.1046 15.3954 28 16.5 28H26.5C27.6046 28 28.5 27.1046 28.5 26V16C28.5 14.8954 27.6046 14 26.5 14Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M10.5 22C9.4 22 8.5 21.1 8.5 20V10C8.5 8.9 9.4 8 10.5 8H20.5C21.6 8 22.5 8.9 22.5 10"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
           <div class="flex flex-col">
@@ -920,39 +928,94 @@
     </main>
     <!-- The following code is only for demonstrating the features -->
     <script>
+      // DOM Elements
       const hamburger = document.querySelector('#hamburger');
       const menu = document.querySelector('#menu');
       const menuContent = document.querySelector('#menu-content');
-      const closeMenu = document.querySelector('#close-menu');
-      const switchThemeMobile = document.querySelector('#switch-theme-mobile');
-      const switchTheme = document.querySelector('#switch-theme');
+      const closeMenuButton = document.querySelector('#close-menu');
+      const switchButtons = document.querySelectorAll('#switch-theme-mobile, #switch-theme');
 
-      hamburger.addEventListener('click', function () {
+      // Event Listeners
+      hamburger.addEventListener('click', toggleMenu);
+      closeMenuButton.addEventListener('click', closeMenuContent);
+      switchButtons.forEach(button => button.addEventListener('click', toggleTheme));
+
+      menu.addEventListener('click', closeMenuDirectClick);
+      menuContent.addEventListener('click', closeMenuOnSpecificContent);
+
+      // For both email and phone copy functions
+      document.addEventListener('DOMContentLoaded', function () {
+        setupCopyFunctionality('contact-email', 'contact-copy-email-icon');
+        setupCopyFunctionality('contact-phone', 'contact-copy-phone-icon');
+      });
+
+      // Functions
+      function toggleMenu() {
         menu.classList.toggle('hidden');
-      });
-      menu.addEventListener('click', function () {
+      }
+
+      function toggleTheme() {
+        document.documentElement.classList.toggle('dark');
+      }
+
+      function closeMenuDirectClick(event) {
+        if (event.target === menu) {
+          closeMenuContent();
+        }
+      }
+
+      function closeMenuOnSpecificContent(event) {
+        if (event.target.closest('#menu-about, #menu-work, #menu-testimonials, #menu-contact')) {
+          setTimeout(closeMenuContent, 500);
+        } else {
+          event.stopPropagation();
+        }
+      }
+
+      function closeMenuContent() {
         menuContent.classList.toggle('animate-slideOutRight');
-        setTimeout(function () {
+        setTimeout(() => {
           menuContent.classList.toggle('animate-slideOutRight');
           menu.classList.toggle('hidden');
         }, 250);
-      });
-      menuContent.addEventListener('click', function (event) {
-        event.stopPropagation();
-      });
-      closeMenu.addEventListener('click', function () {
-        menuContent.classList.toggle('animate-slideOutRight');
-        setTimeout(function () {
-          menuContent.classList.toggle('animate-slideOutRight');
-          menu.classList.toggle('hidden');
-        }, 250);
-      });
-      switchThemeMobile.addEventListener('click', function () {
-        document.documentElement.classList.toggle('dark');
-      });
-      switchTheme.addEventListener('click', function () {
-        document.documentElement.classList.toggle('dark');
-      });
+      }
+
+      function setupCopyFunctionality(targetID, iconID) {
+        const targetElem = document.getElementById(targetID);
+        const copyIcon = document.getElementById(iconID);
+        const tooltip = createTooltip();
+
+        copyIcon.appendChild(tooltip);
+        copyIcon.addEventListener('click', function () {
+          copyToClipboard(targetElem.textContent);
+          showTooltip(tooltip);
+        });
+      }
+
+      function createTooltip() {
+        const tooltip = document.createElement('div');
+        tooltip.innerText = 'Copied!';
+        tooltip.className =
+          'absolute transform -translate-x-1/2 px-3 py-1 bg-gray-600 text-white text-sm rounded-md opacity-0 transition-opacity';
+        tooltip.style.top = '-80%'; // Position above the icon
+        return tooltip;
+      }
+
+      function copyToClipboard(text) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+      }
+
+      function showTooltip(tooltip) {
+        tooltip.style.opacity = '1';
+        setTimeout(() => {
+          tooltip.style.opacity = '0';
+        }, 2000);
+      }
     </script>
   </body>
 </html>
