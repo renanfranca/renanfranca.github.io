@@ -31,7 +31,7 @@
   {%- if jekyll.environment == 'production' -%}
   <!-- dark theme using DarkReader -->
   <!-- <script src="//unpkg.com/darkreader@4.9.40/darkreader.js"></script> -->
-    {%- if page.darkreader == true -%}
+    {%- if page.darkreader != false -%}
       {%- include dark-reader.html -%}
     {%- endif -%}
 
