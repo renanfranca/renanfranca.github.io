@@ -31,7 +31,10 @@
   {%- if jekyll.environment == 'production' -%}
   <!-- dark theme using DarkReader -->
   <!-- <script src="//unpkg.com/darkreader@4.9.40/darkreader.js"></script> -->
-  {%- include dark-reader.html -%}
+    {%- if page.darkreader == true -%}
+      {%- include dark-reader.html -%}
+    {%- endif -%}
+
   {%- endif -%}
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <!-- <link href="/css/font-awesome.css" rel="stylesheet"> -->
