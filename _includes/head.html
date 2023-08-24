@@ -3,7 +3,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- seo -%}
-  {% unless disable_maincss %}
+  {% unless page.disable_maincss %}
     <link rel="stylesheet" href="{{ " /assets/main.css" | relative_url }}">
   {%- endunless -%}
   {%- feed_meta -%}
@@ -33,7 +33,7 @@
   {%- if jekyll.environment == 'production' -%}
   <!-- dark theme using DarkReader -->
   <!-- <script src="//unpkg.com/darkreader@4.9.40/darkreader.js"></script> -->
-    {% unless disable_darkreader %}
+    {% unless page.disable_darkreader %}
       {%- include dark-reader.html -%}
     {%- endunless -%}
 
