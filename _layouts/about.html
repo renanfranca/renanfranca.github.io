@@ -537,13 +537,25 @@
                 <ul class="flex flex-col list-decimal font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5">
                   <li>
                     Landing page with 4 sections:
-					<span class="font-bold text-red-600 dark:text-red-400 line-through">$200</span> Now at <strong>$100!</strong> <br />
+					<span class="font-bold text-red-600 dark:text-red-400 line-through">$200</span> Now at <strong>$100!</strong>
+					<br />
 					- Add sections for just <strong>$20</strong> (Originally
 					<span class="font-bold text-red-600 dark:text-red-400 line-through">$40</span>) each.
                   </li>
                   <li class="mt-2">
 					Multipage: <span class="font-bold text-red-600 dark:text-red-400 line-through">$300</span> Now at
-					<strong>$150</strong> for the first page!<br />
+					<strong>$150</strong> for the first page!
+					<button id="multipage-price-help" class="group relative">
+						<svg class="inline-flex stroke-lightgray-600 dark:stroke-darkgray-600 cursor-pointer animate-twPulse animate-infinite"
+							xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+							stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<circle cx="12" cy="12" r="10" />
+							<path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+							<path d="M12 17h.01" />
+						</svg>
+						<span
+							class="group-hover:opacity-100 absolute top-6 transform -translate-x-1/2 px-3 py-1 bg-gray-600 text-white text-sm rounded-md opacity-0 transition-opacity duration-500">Understand
+							the price calculation by an example!</span></button><br />
 					- Every inner page at <strong>$35</strong> (Originally
 					<span class="font-bold text-red-600 dark:text-red-400 line-through">$70</span>).
                   </li>
@@ -573,7 +585,7 @@
               Some of the noteworthy projects I have built:
             </p>
           </div>
-          <div class="flex flex-col md:flex-row rounded-b-xl shadow-md dark:shadow-xl">
+		<div class="flex flex-col md:flex-row rounded-xl shadow-md dark:shadow-xl">
             <div
               class="flex w-full md:w-1/2 items-center justify-center p-8 rounded-t-xl md:rounded-tr-none md:rounded-l-xl bg-lightgray-50 dark:bg-darkgray-200"
             >
@@ -584,7 +596,7 @@
                 </div>
               </a>
             </div>
-            <div class="flex flex-col md:w-1/2 p-8 gap-6 dark:bg-darkgray-100">
+			<div class="flex flex-col md:w-1/2 p-8 gap-6 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
               <p class="font-semibold text-lg text-left text-lightgray-900 dark:text-darkgray-900">Feedbacker</p>
               <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">
                 I meticulously converted a Figma design into interactive HTML & CSS, leveraging the power of TailwindCSS. This project was
@@ -640,7 +652,7 @@
               </a>
             </div>
           </div>
-          <div class="flex flex-col md:flex-row rounded-b-xl shadow-md dark:shadow-xl">
+		<div class="flex flex-col md:flex-row rounded-xl shadow-md dark:shadow-xl">
             <div
               class="flex w-full md:w-1/2 items-center justify-center p-8 rounded-t-xl md:rounded-tr-none md:rounded-l-xl bg-lightgray-50 dark:bg-darkgray-200"
             >
@@ -651,7 +663,7 @@
                 </div>
               </a>
             </div>
-            <div class="flex flex-col md:w-1/2 p-8 gap-6 dark:bg-darkgray-100">
+			<div class="flex flex-col md:w-1/2 p-8 gap-6 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
               <p class="font-semibold text-lg text-left text-lightgray-900 dark:text-darkgray-900">Personal Portfolio</p>
               <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">
                 I've transformed a Figma design by
@@ -885,40 +897,134 @@
 	</main>
 	<footer class="flex flex-col w-full max-w-7xl mx-auto py-6 gap-6 bg-lightgray-50 dark:bg-darkgray-50">
 		<div class="flex items-center justify-center gap-2">
-			<svg class="stroke-lightgray-600 dark:stroke-darkgray-600" width="16" height="16" viewBox="0 0 16 16"
-				fill="none" xmlns="http://www.w3.org/2000/svg">
-				<g clip-path="url(#clip0_327_2490)">
-					<path
-						d="M7.99967 14.6663C11.6816 14.6663 14.6663 11.6816 14.6663 7.99967C14.6663 4.31778 11.6816 1.33301 7.99967 1.33301C4.31778 1.33301 1.33301 4.31778 1.33301 7.99967C1.33301 11.6816 4.31778 14.6663 7.99967 14.6663Z"
-						stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-					<path
-						d="M9.99953 6.23567C9.64123 5.82948 9.16774 5.54201 8.64205 5.41154C8.11637 5.28106 7.56341 5.31376 7.05676 5.50528C6.55011 5.69679 6.1138 6.03805 5.80587 6.48365C5.49794 6.92924 5.33301 7.45804 5.33301 7.99967C5.33301 8.54131 5.49794 9.07011 5.80587 9.5157C6.1138 9.9613 6.55011 10.3026 7.05676 10.4941C7.56341 10.6856 8.11637 10.7183 8.64205 10.5878C9.16774 10.4573 9.64123 10.1699 9.99953 9.76367"
-						stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-				</g>
-				<defs>
-					<clipPath id="clip0_327_2490">
-						<rect width="16" height="16" fill="white" />
-					</clipPath>
-				</defs>
-			</svg>
-			<p class="font-normal text-sm text-lightgray-600 dark:text-darkgray-600">
-				2023 |
-				<a target="_blank"
-					class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-					href="https://www.figma.com/community/file/1262992249991763120/Personal-Portfolio-Website-Template-%7C-Mobile-%26-Desktop">Designed</a>
-				by
-				<a class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-					href="https://sagarshah.dev/" target="_blank" rel="noopener noreferrer">Sagar Shah</a>
-				and
-				<a class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-					href="https://github.com/renanfranca/personal-portfolio-html-css" target="_blank"
-					rel="noopener noreferrer">Coded</a>
-				with <span class="text-red-500">❤️</span> by
-				<a class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-					href="#" rel="noopener noreferrer">Renan Franca</a>
-			</p>
+		<svg class="stroke-lightgray-600 dark:stroke-darkgray-600" width="16" height="16" viewBox="0 0 16 16" fill="none"
+			xmlns="http://www.w3.org/2000/svg">
+			<g clip-path="url(#clip0_327_2490)">
+				<path
+					d="M7.99967 14.6663C11.6816 14.6663 14.6663 11.6816 14.6663 7.99967C14.6663 4.31778 11.6816 1.33301 7.99967 1.33301C4.31778 1.33301 1.33301 4.31778 1.33301 7.99967C1.33301 11.6816 4.31778 14.6663 7.99967 14.6663Z"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M9.99953 6.23567C9.64123 5.82948 9.16774 5.54201 8.64205 5.41154C8.11637 5.28106 7.56341 5.31376 7.05676 5.50528C6.55011 5.69679 6.1138 6.03805 5.80587 6.48365C5.49794 6.92924 5.33301 7.45804 5.33301 7.99967C5.33301 8.54131 5.49794 9.07011 5.80587 9.5157C6.1138 9.9613 6.55011 10.3026 7.05676 10.4941C7.56341 10.6856 8.11637 10.7183 8.64205 10.5878C9.16774 10.4573 9.64123 10.1699 9.99953 9.76367"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_327_2490">
+              <rect width="16" height="16" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+        <p class="font-normal text-sm text-lightgray-600 dark:text-darkgray-600">
+          2023 |
+		<a target="_blank"
+			class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
+            href="https://www.figma.com/community/file/1262992249991763120/Personal-Portfolio-Website-Template-%7C-Mobile-%26-Desktop"
+            >Designed</a
+          >
+          by
+		<a class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
+			href="https://sagarshah.dev/" target="_blank" rel="noopener noreferrer">Sagar Shah</a>
+		and
+		<a class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
+			href="https://github.com/renanfranca/personal-portfolio-html-css" target="_blank"
+			rel="noopener noreferrer">Coded</a>
+		with <span class="text-red-500">❤️</span> by
+		<a class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
+			href="#" rel="noopener noreferrer">Renan Franca</a>
+		</p>
 		</div>
-	</footer>
+		</footer>
+	<div id="multipage-price-dialog" role="dialog"
+		class="hidden fixed top-0 left-0 z-50 flex w-full h-full justify-end bg-opacity-50 backdrop-blur-sm transition-all ease-in-out duration-100">
+		<div id="multipage-price-content"
+			class="top-52 max-w-xs h-screen overflow-y-auto flex flex-col py-2 bg-lightgray dark:bg-darkgray-100 shadow-2xl animate-slideInUp animate-faster transition-all ease-in-out duration-100">
+			<div class="flex justify-between p-4 border-b">
+				<h3 class="font-bold text-2xl text-lightgray-900 dark:text-darkgray-900">Price Details</h3>
+				<button id="close-multipage-price" class="p-1 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
+					<svg class="stroke-lightgray-600 dark:stroke-darkgray-600" width="24" height="24" viewBox="0 0 24 24"
+						fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M18 6L6 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+			</div>
+			<div
+				class="flex flex-col w-full items-center p-4 gap-4 border-b border-lightgray-100 dark:border-darkgray-100 bg-lightgray dark:bg-darkgray-100">
+				<p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
+					Multipage: <span class="font-bold text-red-600 dark:text-red-400 line-through">$300</span> Now at
+					<strong>$150</strong> for the
+					first page!<br />
+					- Every inner page at <strong>$35</strong> (Originally
+					<span class="font-bold text-red-600 dark:text-red-400 line-through">$70</span>).
+				</p>
+				<div class="flex flex-col rounded-xl shadow-md dark:shadow-xl">
+					<div
+						class="flex w-full items-center justify-center p-2 rounded-t-xl bg-lightgray-50 dark:bg-darkgray-200">
+						<div class="flex w-[242px]">
+							<img class="rounded-xl shadow-lg transition-transform"
+								src="assets/images/feedbacker-portfolio.png" alt="Feedbacker Layout" loading="lazy" />
+						</div>
+					</div>
+					<div class="flex flex-col p-1 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
+						<p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">First Page
+							- Cost $150</p>
+					</div>
+				</div>
+				<svg class="stroke-lightgray-600 dark:stroke-darkgray-600" xmlns="http://www.w3.org/2000/svg" width="24"
+					height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+					stroke-linecap="round" stroke-linejoin="round">
+					<path
+						d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z" />
+				</svg>
+				<div class="flex flex-col rounded-xl shadow-md dark:shadow-xl">
+					<div
+						class="flex w-full items-center justify-center p-2 rounded-t-xl bg-lightgray-50 dark:bg-darkgray-200">
+						<div class="flex w-[242px]">
+							<img class="rounded-xl shadow-lg transition-transform"
+								src="assets/images/feedbacker-first-innerpage.png" alt="Feedbacker Layout" loading="lazy" />
+						</div>
+					</div>
+					<div class="flex flex-col p-1 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
+						<p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">Inner Page
+							- Cost $35</p>
+					</div>
+				</div>
+				<svg class="stroke-lightgray-600 dark:stroke-darkgray-600" xmlns="http://www.w3.org/2000/svg" width="24"
+					height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+					stroke-linecap="round" stroke-linejoin="round">
+					<path
+						d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z" />
+				</svg>
+				<div class="flex flex-col rounded-xl shadow-md dark:shadow-xl">
+					<div
+						class="flex w-full items-center justify-center p-2 rounded-t-xl bg-lightgray-50 dark:bg-darkgray-200">
+						<div class="flex w-[242px]">
+							<img class="rounded-xl shadow-lg transition-transform"
+								src="assets/images/feedbacker-second-innerpage.png" alt="Feedbacker Layout"
+								loading="lazy" />
+						</div>
+					</div>
+					<div class="flex flex-col p-1 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
+						<p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">Inner Page
+							- Cost $35</p>
+					</div>
+				</div>
+				<svg class="stroke-lightgray-600 dark:stroke-darkgray-600" xmlns="http://www.w3.org/2000/svg" width="24"
+					height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+					stroke-linecap="round" stroke-linejoin="round">
+					<line x1="5" x2="19" y1="9" y2="9" />
+					<line x1="5" x2="19" y1="15" y2="15" />
+				</svg>
+				<p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">Final Cost: $220
+				</p>
+			</div>
+		</div>
+	</div>
     <!-- The following code is only for demonstrating the features -->
     <script>
       // DOM Elements
@@ -927,6 +1033,10 @@
       const menuContent = document.querySelector('#menu-content');
       const closeMenuButton = document.querySelector('#close-menu');
       const switchButtons = document.querySelectorAll('#switch-theme-mobile, #switch-theme');
+		const multipagePriceDialog = document.querySelector('#multipage-price-dialog');
+		const multipagePriceContent = document.querySelector('#multipage-price-content');
+		const closeMultipagePriceButton = document.querySelector('#close-multipage-price');
+		const multipagePriceHelpButton = document.querySelector('#multipage-price-help');
 
       // Event Listeners
       hamburger.addEventListener('click', toggleMenu);
@@ -935,6 +1045,28 @@
 
       menu.addEventListener('click', closeMenuDirectClick);
       menuContent.addEventListener('click', closeMenuOnSpecificContent);
+
+		multipagePriceDialog.addEventListener('click', closeMultipagePriceDirectClick);
+		closeMultipagePriceButton.addEventListener('click', closeMultipagePriceDialog);
+		multipagePriceHelpButton.addEventListener('click', toggleMultipagePriceDialog);
+
+		function closeMultipagePriceDirectClick(event) {
+			if (event.target === multipagePriceDialog) {
+				closeMultipagePriceDialog();
+			}
+		}
+
+		function closeMultipagePriceDialog() {
+			multipagePriceContent.classList.toggle('animate-slideOutDown');
+			setTimeout(() => {
+				multipagePriceContent.classList.toggle('animate-slideOutDown');
+				multipagePriceDialog.classList.toggle('hidden');
+			}, 250);
+		}
+
+		function toggleMultipagePriceDialog() {
+			multipagePriceDialog.classList.toggle('hidden');
+		}
 
       // For both email and phone copy functions
       document.addEventListener('DOMContentLoaded', function () {
