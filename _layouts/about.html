@@ -537,27 +537,30 @@
                 <ul class="flex flex-col list-decimal font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5">
                   <li>
                     Landing page with 4 sections:
-					<span class="font-bold text-red-600 dark:text-red-400 line-through">$200</span> Now at <strong>$100!</strong>
+					<span class="font-semibold line-through">$200</span> Now at
+					<span class="font-bold text-red-600 dark:text-red-400">$100!</span>
 					<br />
-					- Add sections for just <strong>$20</strong> (Originally
-					<span class="font-bold text-red-600 dark:text-red-400 line-through">$40</span>) each.
+					- Add sections for just <span class="font-bold text-red-600 dark:text-red-400">$20</span> (Originally
+					<span class="font-semibold line-through">$40</span>) each.
                   </li>
                   <li class="mt-2">
-					Multipage: <span class="font-bold text-red-600 dark:text-red-400 line-through">$300</span> Now at
-					<strong>$150</strong> for the first page!
+					Multipage: <span class="font-semibold line-through">$300</span> Now at
+					<span class="font-bold text-red-600 dark:text-red-400">$150</span> for the first page!
 					<button id="multipage-price-help" class="group relative">
-						<svg class="inline-flex stroke-lightgray-600 dark:stroke-darkgray-600 cursor-pointer animate-twPulse animate-infinite"
-							xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-							stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-							<circle cx="12" cy="12" r="10" />
-							<path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-							<path d="M12 17h.01" />
-						</svg>
-						<span
-							class="group-hover:opacity-100 absolute top-6 transform -translate-x-1/2 px-3 py-1 bg-gray-600 text-white text-sm rounded-md opacity-0 transition-opacity duration-500">Understand
-							the price calculation by an example!</span></button><br />
-					- Every inner page at <strong>$35</strong> (Originally
-					<span class="font-bold text-red-600 dark:text-red-400 line-through">$70</span>).
+					<svg class="inline-flex stroke-purple-600 dark:stroke-purple-300 cursor-pointer animate-twBounce animate-infinite"
+						xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+						stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<circle cx="12" cy="12" r="10" />
+						<path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+						<path d="M12 17h.01" />
+					</svg>
+					<span
+                        class="group-hover:opacity-100 absolute top-6 transform -translate-x-1/2 px-3 py-1 bg-gray-600 text-white text-sm rounded-md opacity-0 transition-opacity duration-500"
+                        >Understand the price calculation by an example!</span
+                      ></button
+                    ><br />
+                    - Every inner page at <span class="font-semibold line-through">$35</span> (Originally
+                    <span class="font-bold text-red-600 dark:text-red-400">$70</span>).
                   </li>
                 </ul>
               </div>
@@ -946,85 +949,80 @@
 			<div class="flex justify-between p-4 border-b">
 				<h3 class="font-bold text-2xl text-lightgray-900 dark:text-darkgray-900">Price Details</h3>
 				<button id="close-multipage-price" class="p-1 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
-					<svg class="stroke-lightgray-600 dark:stroke-darkgray-600" width="24" height="24" viewBox="0 0 24 24"
-						fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M18 6L6 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-						<path d="M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-				</button>
+			<svg class="stroke-lightgray-600 dark:stroke-darkgray-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
+				xmlns="http://www.w3.org/2000/svg">
+				<path d="M18 6L6 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+			</svg>
+			</button>
 			</div>
 			<div
-				class="flex flex-col w-full items-center p-4 gap-4 border-b border-lightgray-100 dark:border-darkgray-100 bg-lightgray dark:bg-darkgray-100">
-				<p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
-					Multipage: <span class="font-bold text-red-600 dark:text-red-400 line-through">$300</span> Now at
-					<strong>$150</strong> for the
-					first page!<br />
-					- Every inner page at <strong>$35</strong> (Originally
-					<span class="font-bold text-red-600 dark:text-red-400 line-through">$70</span>).
-				</p>
-				<div class="flex flex-col rounded-xl shadow-md dark:shadow-xl">
-					<div
-						class="flex w-full items-center justify-center p-2 rounded-t-xl bg-lightgray-50 dark:bg-darkgray-200">
-						<div class="flex w-[242px]">
-							<img class="rounded-xl shadow-lg transition-transform"
-								src="assets/images/feedbacker-portfolio.png" alt="Feedbacker Layout" loading="lazy" />
-						</div>
-					</div>
-					<div class="flex flex-col p-1 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
-						<p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">First Page
-							- Cost $150</p>
-					</div>
+          class="flex flex-col w-full items-center p-4 gap-4 border-b border-lightgray-100 dark:border-darkgray-100 bg-lightgray dark:bg-darkgray-100"
+        >
+          <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
+			Multipage: <span class="font-bold text-red-600 dark:text-red-400 line-through">$300</span> Now at <strong>$150</strong>
+			for the
+			first page!<br />
+			- Every inner page at <strong>$35</strong> (Originally
+			<span class="font-bold text-red-600 dark:text-red-400 line-through">$70</span>).
+			</p>
+			<div class="flex flex-col rounded-xl shadow-md dark:shadow-xl">
+			<div class="flex w-full items-center justify-center p-2 rounded-t-xl bg-lightgray-50 dark:bg-darkgray-200">
+				<div class="flex w-[242px]">
+				<img class="rounded-xl shadow-lg transition-transform" src="assets/images/feedbacker-portfolio.png"
+					alt="Feedbacker Layout" loading="lazy" />
 				</div>
-				<svg class="stroke-lightgray-600 dark:stroke-darkgray-600" xmlns="http://www.w3.org/2000/svg" width="24"
-					height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-					stroke-linecap="round" stroke-linejoin="round">
-					<path
-						d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z" />
-				</svg>
-				<div class="flex flex-col rounded-xl shadow-md dark:shadow-xl">
-					<div
-						class="flex w-full items-center justify-center p-2 rounded-t-xl bg-lightgray-50 dark:bg-darkgray-200">
-						<div class="flex w-[242px]">
-							<img class="rounded-xl shadow-lg transition-transform"
-								src="assets/images/feedbacker-first-innerpage.png" alt="Feedbacker Layout" loading="lazy" />
-						</div>
-					</div>
-					<div class="flex flex-col p-1 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
-						<p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">Inner Page
-							- Cost $35</p>
-					</div>
 				</div>
-				<svg class="stroke-lightgray-600 dark:stroke-darkgray-600" xmlns="http://www.w3.org/2000/svg" width="24"
-					height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-					stroke-linecap="round" stroke-linejoin="round">
-					<path
-						d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z" />
-				</svg>
-				<div class="flex flex-col rounded-xl shadow-md dark:shadow-xl">
-					<div
-						class="flex w-full items-center justify-center p-2 rounded-t-xl bg-lightgray-50 dark:bg-darkgray-200">
-						<div class="flex w-[242px]">
-							<img class="rounded-xl shadow-lg transition-transform"
-								src="assets/images/feedbacker-second-innerpage.png" alt="Feedbacker Layout"
-								loading="lazy" />
-						</div>
-					</div>
-					<div class="flex flex-col p-1 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
-						<p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">Inner Page
-							- Cost $35</p>
-					</div>
-				</div>
-				<svg class="stroke-lightgray-600 dark:stroke-darkgray-600" xmlns="http://www.w3.org/2000/svg" width="24"
-					height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-					stroke-linecap="round" stroke-linejoin="round">
-					<line x1="5" x2="19" y1="9" y2="9" />
-					<line x1="5" x2="19" y1="15" y2="15" />
-				</svg>
-				<p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">Final Cost: $220
-				</p>
+				<div class="flex flex-col p-1 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
+			<p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">First Page - Cost $150</p>
 			</div>
+			</div>
+		<svg class="stroke-lightgray-600 dark:stroke-darkgray-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+			viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+			stroke-linejoin="round">
+			<path
+              d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"
+            />
+          </svg>
+          <div class="flex flex-col rounded-xl shadow-md dark:shadow-xl">
+			<div class="flex w-full items-center justify-center p-2 rounded-t-xl bg-lightgray-50 dark:bg-darkgray-200">
+				<div class="flex w-[242px]">
+				<img class="rounded-xl shadow-lg transition-transform" src="assets/images/feedbacker-first-innerpage.png"
+					alt="Feedbacker Layout" loading="lazy" />
+				</div>
+				</div>
+				<div class="flex flex-col p-1 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
+			<p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">Inner Page - Cost $35</p>
+			</div>
+			</div>
+		<svg class="stroke-lightgray-600 dark:stroke-darkgray-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+			viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+			stroke-linejoin="round">
+			<path
+              d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"
+            />
+          </svg>
+          <div class="flex flex-col rounded-xl shadow-md dark:shadow-xl">
+			<div class="flex w-full items-center justify-center p-2 rounded-t-xl bg-lightgray-50 dark:bg-darkgray-200">
+				<div class="flex w-[242px]">
+				<img class="rounded-xl shadow-lg transition-transform" src="assets/images/feedbacker-second-innerpage.png"
+					alt="Feedbacker Layout" loading="lazy" />
+				</div>
+				</div>
+				<div class="flex flex-col p-1 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
+			<p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">Inner Page - Cost $35</p>
+			</div>
+			</div>
+		<svg class="stroke-lightgray-600 dark:stroke-darkgray-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+			viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+			stroke-linejoin="round">
+			<line x1="5" x2="19" y1="9" y2="9" />
+			<line x1="5" x2="19" y1="15" y2="15" />
+		</svg>
+		<p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">Final Cost: $220</p>
 		</div>
-	</div>
+		</div>
+		</div>
     <!-- The following code is only for demonstrating the features -->
     <script>
       // DOM Elements
