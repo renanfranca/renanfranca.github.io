@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Portfolio HTML + CSS</title>
-  </head>
-  <body class="bg-lightgray dark:bg-darkgray">
     <link href="assets/css/fonts.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
+  <body class="bg-lightgray dark:bg-darkgray">
     <div
       id="menu"
       role="dialog"
@@ -18,7 +18,7 @@
         class="flex flex-col w-full max-w-xs py-2 bg-lightgray dark:bg-darkgray shadow-2xl animate-slideInRight animate-faster transition-all ease-in-out duration-100"
       >
         <div class="flex justify-between p-4 border-b border-lightgray-100 dark:border-darkgray-100">
-          <h3 class="font-bold text-2xl text-lightgray-900 dark:text-darkgray-900">&lt;RF /&gt;</h3>
+          <h3 class="font-bold text-2xl text-lightgray-900 dark:text-darkgray-900">&lt;SS /&gt;</h3>
           <button id="close-menu" class="p-1 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
             <svg
               class="stroke-lightgray-600 dark:stroke-darkgray-600"
@@ -38,12 +38,12 @@
             <a id="menu-about" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#about">About</a>
           </li>
           <li class="flex">
-            <a id="menu-services" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#services"
-              >Services</a
-            >
+            <a id="menu-work" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#work">Work</a>
           </li>
           <li class="flex">
-            <a id="menu-work" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#work">Portfolio</a>
+            <a id="menu-testimonials" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#testimonials"
+              >Testimonials</a
+            >
           </li>
           <li class="flex">
             <a id="menu-contact" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#contact">Contact</a>
@@ -95,41 +95,23 @@
               </svg>
             </button>
           </div>
-          <a href="https://renanfranca.github.io" target="_blank" rel="noopener noreferrer">
-            <button
-              class="flex w-full items-center justify-center font-medium text-base text-center text-lightgray-50 dark:text-darkgray-50 bg-lightgray-900 dark:bg-darkgray-900 rounded-xl py-1.5 px-4 gap-2 hover:bg-lightgray-700 dark:hover:bg-darkgray-700 active:bg-lightgray-800 dark:active:bg-darkgray-800 transition-all ease-in-out duration-200"
-            >
-              <span> Blog</span>
-              <svg
-                class="stroke-lightgray-600 dark:stroke-darkgray-600"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M24 19V25C24 25.5304 23.7893 26.0391 23.4142 26.4142C23.0391 26.7893 22.5304 27 22 27H11C10.4696 27 9.96086 26.7893 9.58579 26.4142C9.21071 26.0391 9 25.5304 9 25V14C9 13.4696 9.21071 12.9609 9.58579 12.5858C9.96086 12.2107 10.4696 12 11 12H17"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path d="M21 9H27V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M16 20L27 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
-          </a>
+          <button
+            class="w-full font-medium text-base text-center text-lightgray-50 dark:text-darkgray-50 bg-lightgray-900 dark:bg-darkgray-900 rounded-xl py-1.5 hover:bg-lightgray-700 dark:hover:bg-darkgray-700 active:bg-lightgray-800 dark:active:bg-darkgray-800 transition-all ease-in-out duration-200"
+          >
+            Download CV
+          </button>
         </div>
       </div>
     </div>
     <header class="sticky top-0 z-30 w-full bg-lightgray/90 dark:bg-darkgray/90">
       <div class="flex w-full max-w-7xl mx-auto items-center justify-between p-4 md:px-8 xl:px-20">
         <a href="#">
-          <h3 class="font-bold text-2xl lg:text-3xl text-lightgray-900 dark:text-darkgray-900">&lt;RF /&gt;</h3>
+          <h3 class="font-bold text-2xl lg:text-3xl text-lightgray-900 dark:text-darkgray-900">&lt;SS /&gt;</h3>
         </a>
         <div class="hidden md:flex items-center gap-6">
           <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#about">About</a>
-          <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#services">Services</a>
-          <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#work">Portfolio</a>
+          <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#work">Work</a>
+          <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#testimonials">Testimonials</a>
           <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#contact">Contact</a>
           <span class="h-6 w-0.5 bg-lightgray-100 dark:bg-darkgray-100"></span>
           <button id="switch-theme" class="p-1 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
@@ -174,29 +156,11 @@
               <path d="M19.0702 4.92999L17.6602 6.33999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </button>
-          <a href="https://renanfranca.github.io" target="_blank" rel="noopener noreferrer">
-            <button
-              class="flex w-full items-center font-medium text-base text-center text-lightgray-50 dark:text-darkgray-50 bg-lightgray-900 dark:bg-darkgray-900 rounded-xl py-1.5 px-4 gap-2 hover:bg-lightgray-700 dark:hover:bg-darkgray-700 active:bg-lightgray-800 dark:active:bg-darkgray-800 transition-all ease-in-out duration-200"
-            >
-              <span> Blog</span>
-              <svg
-                class="stroke-lightgray-600 dark:stroke-darkgray-600"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M24 19V25C24 25.5304 23.7893 26.0391 23.4142 26.4142C23.0391 26.7893 22.5304 27 22 27H11C10.4696 27 9.96086 26.7893 9.58579 26.4142C9.21071 26.0391 9 25.5304 9 25V14C9 13.4696 9.21071 12.9609 9.58579 12.5858C9.96086 12.2107 10.4696 12 11 12H17"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path d="M21 9H27V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M16 20L27 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
-          </a>
+          <button
+            class="w-full font-medium text-base text-center text-lightgray-50 dark:text-darkgray-50 bg-lightgray-900 dark:bg-darkgray-900 rounded-xl py-1.5 px-4 hover:bg-lightgray-700 dark:hover:bg-darkgray-700 active:bg-lightgray-800 dark:active:bg-darkgray-800 transition-all ease-in-out duration-200"
+          >
+            Download CV
+          </button>
         </div>
         <button id="hamburger" class="flex md:hidden z-20 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
           <svg
@@ -219,9 +183,9 @@
         <div class="flex flex-col md:flex-row-reverse w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-12">
           <div class="flex justify-center">
             <div class="relative flex w-[240px] md:w-[320px] h-[280px] md:h-[320px] justify-center">
-              <img
+              <image
                 class="absolute z-10 w-[240px] md:w-[280px] h-[280px] md:h-[320px] border-8 border-lightgray dark:border-darkgray"
-                src="assets/images/picture_head.jpeg"
+                src="assets/images/picture_head.png"
                 alt="portrait picture"
               />
               <div
@@ -232,13 +196,12 @@
           <div class="flex flex-col gap-12">
             <div class="flex flex-col gap-2">
               <h1 class="font-semibold md:font-bold text-4xl md:text-5xl lg:text-6xl text-left text-lightgray-900 dark:text-darkgray-900">
-                Hi, I'm Renan<span class="inline-flex text-4xl md:text-5xl lg:text-6xl animate-headShake animate-slower">👋</span>
+                Hi, I'm Sagar 👋
               </h1>
               <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
-                I'm a seasoned software engineer, having stepped into the realm of programming back in 2008 🗓️. Over the years, I've donned
-                multiple hats - from being a versatile full-stack developer to a proficient backend engineer. My disciplined ✅ and
-                organized 🗂️ approach has always been at the core of my work. Lately, I've been particularly drawn to the intricate art of
-                transforming Figma layouts into pixel-perfect HTML and CSS 🎨.
+                I'm a full stack developer (React.js & Node.js) with a focus on creating (and occasionally designing) exceptional digital
+                experiences that are fast, accessible, visually appealing, and responsive. Even though I have been creating web applications
+                for over 7 years, I still love it as if it was something new.
               </p>
             </div>
             <div class="flex flex-col gap-2">
@@ -264,26 +227,20 @@
                     stroke-linejoin="round"
                   />
                 </svg>
-                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Brazil</p>
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Ahmedabad, India</p>
               </div>
               <div class="flex gap-2">
                 <div class="relative flex items-center justify-center h-6 w-6">
                   <div class="absolute w-3 h-3 bg-transparent border-4 border-emerald rounded-full animate-twPing animate-infinite"></div>
                   <div class="absolute inline-flex w-3 h-3 bg-emerald rounded-full"></div>
                 </div>
-                <a href="#services" class="">
-                  <p
-                    class="font-normal text-base text-lightgray-600 dark:text-darkgray-600 underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-                  >
-                    Available for new projects
-                  </p>
-                </a>
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Available for new projects</p>
               </div>
             </div>
             <div class="flex">
-              <a href="https://github.com/renanfranca" target="_blank" rel="noopener noreferrer">
+              <a href="#">
                 <svg
-                  class="stroke-lightgray-600 dark:stroke-darkgray-600 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100"
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600"
                   width="36"
                   height="36"
                   viewBox="0 0 36 36"
@@ -299,9 +256,9 @@
                   <path d="M15 24C10.49 26 10 22 8 22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </a>
-              <a href="https://www.twitter.com/renan_afranca" target="_blank" rel="noopener noreferrer">
+              <a href="#">
                 <svg
-                  class="stroke-lightgray-600 dark:stroke-darkgray-600 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100"
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600"
                   width="36"
                   height="36"
                   viewBox="0 0 36 36"
@@ -316,26 +273,45 @@
                   />
                 </svg>
               </a>
-              <a
-                class="flex w-9 h-9 items-center justify-center rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100"
-                href="https://linkedin.com/in/renan-af"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="#">
                 <svg
                   class="stroke-lightgray-600 dark:stroke-darkgray-600"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
                   fill="none"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                  <rect width="4" height="12" x="2" y="9" />
-                  <circle cx="4" cy="4" r="2" />
+                  <path
+                    d="M11 11.5C11 10.5717 11.3687 9.6815 12.0251 9.02513C12.6815 8.36875 13.5717 8 14.5 8H18V15H14.5C13.5717 15 12.6815 14.6313 12.0251 13.9749C11.3687 13.3185 11 12.4283 11 11.5Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M18 8H21.5C21.9596 8 22.4148 8.09053 22.8394 8.26642C23.264 8.44231 23.6499 8.70012 23.9749 9.02513C24.2999 9.35013 24.5577 9.73597 24.7336 10.1606C24.9095 10.5852 25 11.0404 25 11.5C25 11.9596 24.9095 12.4148 24.7336 12.8394C24.5577 13.264 24.2999 13.6499 23.9749 13.9749C23.6499 14.2999 23.264 14.5577 22.8394 14.7336C22.4148 14.9095 21.9596 15 21.5 15H18V8Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M18 18.5C18 18.0404 18.0905 17.5852 18.2664 17.1606C18.4423 16.736 18.7001 16.3501 19.0251 16.0251C19.3501 15.7001 19.736 15.4423 20.1606 15.2664C20.5852 15.0905 21.0404 15 21.5 15C21.9596 15 22.4148 15.0905 22.8394 15.2664C23.264 15.4423 23.6499 15.7001 23.9749 16.0251C24.2999 16.3501 24.5577 16.736 24.7336 17.1606C24.9095 17.5852 25 18.0404 25 18.5C25 18.9596 24.9095 19.4148 24.7336 19.8394C24.5577 20.264 24.2999 20.6499 23.9749 20.9749C23.6499 21.2999 23.264 21.5577 22.8394 21.7336C22.4148 21.9095 21.9596 22 21.5 22C21.0404 22 20.5852 21.9095 20.1606 21.7336C19.736 21.5577 19.3501 21.2999 19.0251 20.9749C18.7001 20.6499 18.4423 20.264 18.2664 19.8394C18.0905 19.4148 18 18.9596 18 18.5Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M11 25.5C11 24.5717 11.3687 23.6815 12.0251 23.0251C12.6815 22.3687 13.5717 22 14.5 22H18V25.5C18 26.4283 17.6313 27.3185 16.9749 27.9749C16.3185 28.6313 15.4283 29 14.5 29C13.5717 29 12.6815 28.6313 12.0251 27.9749C11.3687 27.3185 11 26.4283 11 25.5Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M11 18.5C11 17.5717 11.3687 16.6815 12.0251 16.0251C12.6815 15.3687 13.5717 15 14.5 15H18V22H14.5C13.5717 22 12.6815 21.6313 12.0251 20.9749C11.3687 20.3185 11 19.4283 11 18.5Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </a>
             </div>
@@ -355,15 +331,14 @@
           </div>
           <div class="flex flex-col md:flex-row w-full justify-between gap-12">
             <div class="flex justify-center lg:justify-start lg:w-1/2">
-              <div class="relative flex w-[304px] h-[360px] md:w-[400px] md:h-[480px] justify-center">
-                <img
-                  class="flex absolute z-10 w-[304px] h-[360px] md:w-[400px] md:h-[480px] border-8 border-lightgray dark:border-darkgray"
+              <div class="relative flex w-[280px] h-[360px] md:w-[400px] md:h-[480px] justify-center">
+                <image
+                  class="flex absolute z-10 w-[280px] h-[360px] md:w-[400px] md:h-[480px] border-8 border-lightgray dark:border-darkgray"
                   src="assets/images/about_me.png"
                   alt="about me"
-                  loading="lazy"
                 />
                 <div
-                  class="absolute z-9 w-[320px] h-[340px] md:w-[392px] md:h-[460px] mt-7 md:mr-7 border-8 border-transparent bg-lightgray-200 dark:bg-darkgray-200"
+                  class="absolute z-9 w-[296px] h-[340px] md:w-[392px] md:h-[460px] mt-7 md:mr-7 border-8 border-transparent bg-lightgray-200 dark:bg-darkgray-200"
                 ></div>
               </div>
             </div>
@@ -373,35 +348,37 @@
                   Curious about me? Here you have it:
                 </h3>
                 <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
-                  I've been in the realm of software engineering since 2008, making my way through various roles and responsibilities. With
-                  expertise in full stack development using Vue.js & Spring Boot, I've recently honed my skills to a more specialized
-                  domain. While I'm well-versed in handling both frontend and backend, I've realized that dedicating my focus singularly to
-                  either frontend or backend enhances my productivity.
+                  I'm a passionate, self-proclaimed designer who specializes in full stack development (React.js & Node.js). I am very
+                  enthusiastic about bringing the technical and visual aspects of digital products to life. User experience, pixel perfect
+                  design, and writing clear, readable, highly performant code matters to me.
                 </p>
                 <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
-                  At present, I've immersed myself in backend development, working part-time with Java and Spring Boot. I employ a plethora
-                  of modern tools and technologies like Docker, OpenShift, Redis, and Kubernetes to craft microservices that stand the test
-                  of time.
+                  I began my journey as a web developer in 2015, and since then, I've continued to grow and evolve as a developer, taking on
+                  new challenges and learning the latest technologies along the way. Now, in my early thirties, 7 years after starting my
+                  web development journey, I'm building cutting-edge web applications using modern technologies such as Next.js, TypeScript,
+                  Nestjs, Tailwindcss, Supabase and much more.
                 </p>
                 <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
-                  Previously, I was deeply immersed in frontend development. Converting intricate designs into dynamic HTML + CSS, coupled
-                  with JavaScript's task of interfacing with backend APIs, was a formidable challenge. As I grappled with the nuances of
-                  frameworks like AngularJS, React, and Vue.js, I identified a niche I deeply resonated with: translating Figma layouts into
-                  sleek HTML + CSS designs using TailwindCSS.
+                  I am very much a progressive thinker and enjoy working on products end to end, from ideation all the way to development.
                 </p>
                 <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
-                  My academic journey commenced with a Bachelor's in Computer Science from 2005 to 2009. Elevating my knowledge base, I
-                  pursued a Postgraduate Degree in Information Security between 2018 and 2020, arming myself with the expertise to navigate
-                  the constantly evolving digital landscape.
+                  When I'm not in full-on developer mode, you can find me hovering around on twitter or on indie hacker, witnessing the
+                  journey of early startups or enjoying some free time. You can follow me on Twitter where I share tech-related bites and
+                  build in public, or you can follow me on GitHub.
                 </p>
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Finally, some quick bits about me.</p>
+                <div class="flex gap-2">
+                  <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5 gap-2">
+                    <li>B.E. in Computer Engineering</li>
+                    <li>Full time freelancer</li>
+                  </ul>
+                  <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5 gap-2">
+                    <li>Avid learner</li>
+                    <li>Aspiring indie hacker</li>
+                  </ul>
+                </div>
                 <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
-                  Beyond the lines of code and intricate algorithms, I'm a fervent movie enthusiast. There's nothing I relish more than
-                  watching cinematic masterpieces. Moreover, traveling with my family serves as the perfect palette cleanser, giving me a
-                  fresh perspective and rejuvenating my spirits.
-                </p>
-                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
-                  That's a snapshot of my journey so far. Here's to many more lines of code, family vacations, and movies in the days to
-                  come!
+                  One last thing, I'm available for freelance work, so feel free to reach out and say hello! I promise I don't bite 😉
                 </p>
               </div>
             </div>
@@ -423,142 +400,143 @@
             </p>
             <div class="grid grid-cols-3 gap-y-4 md:grid-cols-6 md:gap-y-8 lg:grid-cols-8 lg:gap-y-12">
               <div class="flex flex-col items-center gap-2">
-                <img class="w-16 h-16" src="assets/icons/icon-java.svg" alt="Java" loading="lazy" />
-                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Java</p>
-              </div>
-              <div class="flex flex-col items-center gap-2">
-                <img class="w-16 h-16" src="assets/icons/icon-spring.svg" alt="Spring" loading="lazy" />
-                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Spring</p>
-              </div>
-              <div class="flex flex-col items-center gap-2">
-                <img class="w-16 h-16" src="assets/icons/icon-docker.svg" alt="Docker" loading="lazy" />
-                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Docker</p>
-              </div>
-              <div class="flex flex-col items-center gap-2">
-                <img class="w-16 h-16" src="assets/icons/icon-kubernetes.svg" alt="Kubernetes" loading="lazy" />
-                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Kubernetes</p>
-              </div>
-              <div class="flex flex-col items-center gap-2">
-                <img class="w-16 h-16" src="assets/icons/icon-redis.svg" alt="Redis" loading="lazy" />
-                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Redis</p>
-              </div>
-              <div class="flex flex-col items-center gap-2">
-                <img class="w-16 h-16" src="assets/icons/icon-postgresql.svg" alt="PostgreSQL" loading="lazy" />
-                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">PostgreSQL</p>
-              </div>
-              <div class="flex flex-col items-center gap-2">
-                <img class="w-16 h-16" src="assets/icons/icon-mysql.svg" alt="MySQL" loading="lazy" />
-                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">MySQL</p>
-              </div>
-              <div class="flex flex-col items-center gap-2">
-                <img class="w-16 h-16" src="assets/icons/icon-javscript.svg" alt="Javascript" loading="lazy" />
+                <img class="w-16 h-16" src="assets/icons/icon-javscript.svg" alt="Javascript" />
                 <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Javascript</p>
               </div>
               <div class="flex flex-col items-center gap-2">
-                <img class="w-16 h-16" src="assets/icons/icon-typescript.svg" alt="Typescript" loading="lazy" />
+                <img class="w-16 h-16" src="assets/icons/icon-typescript.svg" alt="Typescript" />
                 <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Typescript</p>
               </div>
               <div class="flex flex-col items-center gap-2">
-                <img class="w-16 h-16" src="assets/icons/icon-vuejs.png" alt="Vuejs" loading="lazy" />
-                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Vuejs</p>
+                <img class="w-16 h-16" src="assets/icons/icon-react.svg" alt="React" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">React</p>
               </div>
               <div class="flex flex-col items-center gap-2">
-                <img class="w-16 h-16" src="assets/icons/icon-html5.svg" alt="Html5" loading="lazy" />
-                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Html5</p>
+                <img class="w-16 h-16" src="assets/icons/icon-nextjs.svg" alt="Nextjs" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Nextjs</p>
               </div>
               <div class="flex flex-col items-center gap-2">
-                <img class="w-16 h-16" src="assets/icons/icon-css3.svg" alt="CSS3" loading="lazy" />
-                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">CSS3</p>
+                <img class="w-16 h-16" src="assets/icons/icon-nodejs.svg" alt="Node.js" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Node.js</p>
               </div>
               <div class="flex flex-col items-center gap-2">
-                <img class="w-16 h-16" src="assets/icons/icon-sass.svg" alt="Sass/Scss" loading="lazy" />
+                <img class="flex dark:hidden w-16 h-16" src="assets/icons/icon-express.svg" alt="React" />
+                <img class="hidden dark:flex w-16 h-16" src="assets/icons/icon-express_darkmode.svg" alt="React" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Express.js</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-nest.svg" alt="Nest.js" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Nest.js</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="flex dark:hidden w-16 h-16" src="assets/icons/icon-socket.svg" alt="Socket.io" />
+                <img class="hidden dark:flex w-16 h-16" src="assets/icons/icon-socket_darkmode.svg" alt="Socket.io" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Socket.io</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-postgresql.svg" alt="PostgreSQL" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">PostgreSQL</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-mongodb.svg" alt="MongoDB" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">MongoDB</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-sass.svg" alt="Sass/Scss" />
                 <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Sass/Scss</p>
               </div>
               <div class="flex flex-col items-center gap-2">
-                <img class="w-16 h-16" src="assets/icons/icon-tailwindcss.svg" alt="Tailwindcss" loading="lazy" />
+                <img class="w-16 h-16" src="assets/icons/icon-tailwindcss.svg" alt="Tailwindcss" />
                 <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Tailwindcss</p>
               </div>
               <div class="flex flex-col items-center gap-2">
-                <img class="w-16 h-16" src="assets/icons/icon-postman.svg" alt="Git" loading="lazy" />
-                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Postman</p>
+                <img class="w-16 h-16" src="assets/icons/icon-figma.svg" alt="Figma" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Figma</p>
               </div>
               <div class="flex flex-col items-center gap-2">
-                <img class="w-16 h-16" src="assets/icons/icon-git.svg" alt="Git" loading="lazy" />
+                <img class="flex dark:hidden w-16 h-16" src="assets/icons/icon-cypress.svg" alt="Cypress" />
+                <img class="hidden dark:flex w-16 h-16" src="assets/icons/icon-cypress_darkmode.svg" alt="Cypress" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Cypress</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-storybook.svg" alt="Storybook" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Storybook</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-git.svg" alt="Git" />
                 <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Git</p>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section id="services" class="flex flex-col w-full py-16 md:py-24 gap-6 bg-lightgray-50 dark:bg-darkgray-50">
+      <section id="experience" class="flex flex-col w-full py-16 md:py-24 gap-6 bg-lightgray-50 dark:bg-darkgray-50">
         <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
           <div class="flex flex-col gap-4">
             <div class="flex justify-center">
               <p
                 class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
               >
-                Services
+                Experience
               </p>
             </div>
             <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
-              Here is a quick summary of my services as freelancer:
+              Here is a quick summary of my most recent experiences:
             </p>
           </div>
-          <div class="flex flex-col p-8 gap-4 md:gap-12 shadow-md dark:shadow-xl rounded-xl bg-lightgray dark:bg-darkgray-100">
-            <h2 class="font-bold text-xl md:text-2xl text-center text-lightgray-900 dark:text-darkgray-900 mb-3">
-              Convert Your Figma Design to a Live Page
-            </h2>
-            <div class="flex flex-col md:flex-row md:justify-between">
-              <div class="flex flex-col md:w-3/5 gap-4">
-                <h3 class="font-semibold text-lg md:text-xl text-lightgray-800 dark:text-darkgray-800 mb-2">Service Features:</h3>
-                <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5">
-                  <li><strong>Responsive Design:</strong> Perfect viewing on any device - mobile, tablet, or desktop.</li>
-                  <li>
-                    <strong>Engaging Scroll Animations:</strong> Guide and captivate your visitors with smooth animations as they navigate.
-                  </li>
-                  <li><strong>Pixel Perfect:</strong> Your website will look exactly like your Figma design.</li>
-                  <li><strong>Strategic Animations:</strong> Enhance user experience with subtle animations where they matter.</li>
-                  <li><strong>Vanilla JavaScript:</strong> Clean, efficient, and easily maintainable code for page interactivity.</li>
-                  <li>
-                    <strong>Private GitHub Repository:</strong> Access your source code anytime. Enhance or learn from the development
-                    process in a developer-friendly environment.
-                  </li>
-                  <li><strong>Use TailwindCSS</strong> to style your website in the best way possible.</li>
-                  <li><strong>100% Satisfaction:</strong> If you're not satisfied with my work, I'll make it right.</li>
-                </ul>
-                <h3 class="font-semibold text-lg md:text-xl text-lightgray-800 dark:text-darkgray-800 mb-2">Why TailwindCSS?</h3>
-                <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5 mb-3">
-                  <li><strong>Utility-first:</strong> Enables rapid UI development with reusable classes.</li>
-                  <li><strong>Highly Customizable:</strong> Tailor-made configurations to suit your design needs.</li>
-                  <li><strong>Performance Optimized:</strong> Only includes the CSS you use, ensuring lightweight pages.</li>
-                  <li><strong>Responsive:</strong> Built-in responsiveness to make sure your design looks great on all devices.</li>
-                  <li><strong>Maintainability:</strong> Easy to update and maintain with clear and concise class naming.</li>
-                </ul>
-              </div>
-              <div class="flex flex-col md:w-2/5 gap-4">
-                <h3 class="font-bold text-xl md:text-2xl text-lightgray-900 dark:text-darkgray-900 mb-3">Special Pricing</h3>
-                <ul class="flex flex-col list-decimal font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5">
-                  <li>
-                    Landing page with 4 sections:
-                    <span class="font-bold text-red-600 dark:text-red-400 line-through">$200</span> Now at <strong>$100!</strong> <br />
-                    - Add sections for just <strong>$20</strong> (Originally
-                    <span class="font-bold text-red-600 dark:text-red-400 line-through">$40</span>) each.
-                  </li>
-                  <li class="mt-2">
-                    Multipage: <span class="font-bold text-red-600 dark:text-red-400 line-through">$300</span> Now at
-                    <strong>$150</strong> for the first page!<br />
-                    - Every inner page at <strong>$35</strong> (Originally
-                    <span class="font-bold text-red-600 dark:text-red-400 line-through">$70</span>).
-                  </li>
-                </ul>
-              </div>
+          <div
+            class="flex flex-col md:flex-row md:justify-between p-8 gap-4 md:gap-12 shadow-md dark:shadow-xl rounded-xl bg-lightgray dark:bg-darkgray-100"
+          >
+            <div class="flex md:w-1/4">
+              <img class="w-[102px] h-[28px]" src="assets/images/logo-upwork.png" alt="logo upwork" />
             </div>
-            <a
-              href="#contact"
-              class="font-bold text-lg text-center text-lightgray-50 dark:text-darkgray-50 bg-lightgray-900 dark:bg-darkgray-900 rounded-xl py-2 px-4 hover:bg-lightgray-700 dark:hover:bg-darkgray-700 active:bg-lightgray-800 dark:active:bg-darkgray-800 transition-all ease-in-out duration-200 mt-4"
-            >
-              Grab This Offer Now!
-            </a>
+            <p class="font-normal text-base md:w-1/4 md:text-right text-lightgray-700 dark:text-darkgray-700 md:order-last">
+              Nov 2021 - Present
+            </p>
+            <div class="flex flex-col md:w-2/4 gap-4">
+              <p class="font-semibold text-lg md:text-xl text-lightgray-900 dark:text-darkgray-900">Sr. Frontend Developer</p>
+              <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5">
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>Ut pretium arcu et massa semper, id fringilla leo semper.</li>
+                <li>Sed quis justo ac magna.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row md:justify-between p-8 gap-4 md:gap-12 shadow-md dark:shadow-xl rounded-xl bg-lightgray dark:bg-darkgray-100"
+          >
+            <div class="flex md:w-1/4">
+              <img class="w-[102px] h-[28px]" src="assets/images/logo-upwork.png" alt="logo upwork" />
+            </div>
+            <p class="font-normal text-base md:w-1/4 md:text-right text-lightgray-700 dark:text-darkgray-700 md:order-last">
+              Jul 2017 - Oct 2021
+            </p>
+            <div class="flex flex-col md:w-2/4 gap-4">
+              <p class="font-semibold text-lg md:text-xl text-lightgray-900 dark:text-darkgray-900">Team Lead</p>
+              <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5">
+                <li>Sed quis justo ac magna.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>Sed quis justo ac magna.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row md:justify-between p-8 gap-4 md:gap-12 shadow-md dark:shadow-xl rounded-xl bg-lightgray dark:bg-darkgray-100"
+          >
+            <div class="flex md:w-1/4">
+              <img class="w-[102px] h-[28px]" src="assets/images/logo-upwork.png" alt="logo upwork" />
+            </div>
+            <p class="font-normal text-base md:w-1/4 md:text-right text-lightgray-700 dark:text-darkgray-700 md:order-last">
+              Dec 2015 - May 2017
+            </p>
+            <div class="flex flex-col md:w-2/4 gap-4">
+              <p class="font-semibold text-lg md:text-xl text-lightgray-900 dark:text-darkgray-900">Full Stack Developer</p>
+              <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5">
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -569,7 +547,7 @@
               <p
                 class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 rounded-xl bg-lightgray-200 dark:bg-darkgray-200"
               >
-                Portfolio
+                Work
               </p>
             </div>
             <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
@@ -580,41 +558,41 @@
             <div
               class="flex w-full md:w-1/2 items-center justify-center p-8 rounded-t-xl md:rounded-tr-none md:rounded-l-xl bg-lightgray-50 dark:bg-darkgray-200"
             >
-              <a href="https://renanfranca.github.io/portfolio/feedbacker-html-css/" target="_blank" rel="noopener noreferrer">
-                <div class="flex w-[242px] h-[192px] md:w-[334px] md:h-[284px] lg:w-[434px] lg:h-[384px]">
-                  <img
-                    class="rounded-xl shadow-lg transition-transform duration-500 md:hover:scale-105"
-                    src="assets/images/feedbacker-portfolio.png"
-                    alt="Feedbacker Layout"
-                    loading="lazy"
-                  />
-                </div>
-              </a>
+              <div class="flex w-[224px] h-[192px] md:w-[304px] md:h-[284px] lg:w-full lg:h-[384px]">
+                <img class="rounded-xl shadow-lg" src="assets/images/work-picture.png" alt="Work Picture" />
+              </div>
             </div>
             <div class="flex flex-col md:w-1/2 p-8 gap-6 dark:bg-darkgray-100">
-              <p class="font-semibold text-lg text-left text-lightgray-900 dark:text-darkgray-900">Feedbacker</p>
+              <p class="font-semibold text-lg text-left text-lightgray-900 dark:text-darkgray-900">Fiskil</p>
               <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">
-                I meticulously converted a Figma design into interactive HTML & CSS, leveraging the power of TailwindCSS. This project was
-                showcased in the
-                <a
-                  class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-                  href="https://treinamento.vuejsbrasil.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Vue.js Brazilian Community course</a
-                >
-                as a prime example of an application crafted during their training sessions.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum
+                primis in faucibus orci luctus et ultrices posuere cubilia curae.
               </p>
               <div class="flex flex-wrap gap-2">
                 <p
                   class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
                 >
-                  HTML5
+                  React
                 </p>
                 <p
                   class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
                 >
-                  CSS3
+                  Next.js
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  Typescript
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  Nest.js
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  PostgreSQL
                 </p>
                 <p
                   class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
@@ -624,10 +602,25 @@
                 <p
                   class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
                 >
+                  Figma
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  Cypress
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  Storybook
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
                   Git
                 </p>
               </div>
-              <a href="https://renanfranca.github.io/portfolio/feedbacker-html-css/" target="_blank" rel="noopener noreferrer">
+              <a href="#" target="_blank">
                 <svg
                   class="stroke-lightgray-600 dark:stroke-darkgray-600"
                   height="36"
@@ -647,76 +640,61 @@
               </a>
             </div>
           </div>
-          <div class="flex flex-col md:flex-row rounded-b-xl shadow-md dark:shadow-xl">
-            <div
-              class="flex w-full md:w-1/2 items-center justify-center p-8 rounded-t-xl md:rounded-tr-none md:rounded-l-xl bg-lightgray-50 dark:bg-darkgray-200"
-            >
-              <a href="https://renanfranca.github.io/portfolio/personal-portfolio-html-css/" target="_blank" rel="noopener noreferrer">
-                <div class="flex w-[191px] h-[192px] md:w-[283px] md:h-[284px] lg:w-[382px] lg:h-[384px]">
-                  <img
-                    class="rounded-xl shadow-lg transition-transform duration-500 md:hover:scale-105"
-                    src="assets/images/personal-portfolio-portfolio.png"
-                    alt="Personal Portfolio"
-                    loading="lazy"
-                  />
-                </div>
-              </a>
-            </div>
-            <div class="flex flex-col md:w-1/2 p-8 gap-6 dark:bg-darkgray-100">
-              <p class="font-semibold text-lg text-left text-lightgray-900 dark:text-darkgray-900">Personal Portfolio</p>
-              <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">
-                I've transformed a Figma design by
-                <a
-                  class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-                  href="https://sagarshah.dev/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Sagar Shah</a
-                >
-                into a dynamic HTML & CSS interface utilizing TailwindCSS. The design boasts a responsive layout, seamless light and dark
-                mode transitions, and captivating animations, all meticulously curated to ensure an immersive and effortless user
-                experience.
+        </div>
+      </section>
+      <section id="testimonials" class="flex flex-col w-full py-16 md:py-24 gap-6 bg-lightgray-50 dark:bg-darkgray-50">
+        <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
+          <div class="flex flex-col gap-4">
+            <div class="flex justify-center">
+              <p
+                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 rounded-xl bg-lightgray-200 dark:bg-darkgray-200"
+              >
+                Testimonials
               </p>
-              <div class="flex flex-wrap gap-2">
-                <p
-                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-                >
-                  HTML5
-                </p>
-                <p
-                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-                >
-                  CSS3
-                </p>
-                <p
-                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-                >
-                  Tailwindcss
-                </p>
-                <p
-                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-                >
-                  Git
-                </p>
+            </div>
+            <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
+              Nice things people have said about me:
+            </p>
+          </div>
+          <div class="flex flex-col md:flex-row gap-6 md:gap-12">
+            <div class="flex flex-col items-center p-8 gap-6 shadow-md dark:shadow-xl rounded-xl bg-lightgray dark:bg-darkgray-100">
+              <div class="flex items-center justify-center w-16 h-16 rounded-full bg-lightgray-400 dark:bg-darkgray-400">
+                <img src="assets/icons/icon-user.svg" alt="IconUser" />
               </div>
-              <a href="https://renanfranca.github.io/portfolio/personal-portfolio-html-css/" target="_blank" rel="noopener noreferrer">
-                <svg
-                  class="stroke-lightgray-600 dark:stroke-darkgray-600"
-                  height="36"
-                  viewBox="0 0 36 36"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M24 19V25C24 25.5304 23.7893 26.0391 23.4142 26.4142C23.0391 26.7893 22.5304 27 22 27H11C10.4696 27 9.96086 26.7893 9.58579 26.4142C9.21071 26.0391 9 25.5304 9 25V14C9 13.4696 9.21071 12.9609 9.58579 12.5858C9.96086 12.2107 10.4696 12 11 12H17"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path d="M21 9H27V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M16 20L27 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </a>
+              <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">
+                “Job well done! I am really impressed. He is very very good at what he does:) I would recommend Sagar and will rehire in the
+                future for Frontend development.”
+              </p>
+              <div class="flex flex-col items-center">
+                <p class="font-semibold text-lg lg:text-xl text-lightgray-900 dark:text-darkgray-900">John Doe</p>
+                <p class="font-normal text-sm text-lightgray-600 dark:text-darkgray-600">Founder - xyz.com</p>
+              </div>
+            </div>
+            <div class="flex flex-col items-center p-8 gap-6 shadow-md dark:shadow-xl rounded-xl bg-lightgray dark:bg-darkgray-100">
+              <div class="flex items-center justify-center w-16 h-16 rounded-full bg-lightgray-400 dark:bg-darkgray-400">
+                <img src="assets/icons/icon-user.svg" alt="IconUser" />
+              </div>
+              <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">
+                “Job well done! I am really impressed. He is very very good at what he does:) I would recommend Sagar and will rehire in the
+                future for Frontend development.”
+              </p>
+              <div class="flex flex-col items-center">
+                <p class="font-semibold text-lg text-lightgray-900 dark:text-darkgray-900">John Doe</p>
+                <p class="font-normal text-sm text-lightgray-600 dark:text-darkgray-600">Founder - xyz.com</p>
+              </div>
+            </div>
+            <div class="flex flex-col items-center p-8 gap-6 shadow-md dark:shadow-xl rounded-xl bg-lightgray dark:bg-darkgray-100">
+              <div class="flex items-center justify-center w-16 h-16 rounded-full bg-lightgray-400 dark:bg-darkgray-400">
+                <img src="assets/icons/icon-user.svg" alt="IconUser" />
+              </div>
+              <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">
+                “Job well done! I am really impressed. He is very very good at what he does:) I would recommend Sagar and will rehire in the
+                future for Frontend development.”
+              </p>
+              <div class="flex flex-col items-center">
+                <p class="font-semibold text-lg text-lightgray-900 dark:text-darkgray-900">John Doe</p>
+                <p class="font-normal text-sm text-lightgray-600 dark:text-darkgray-600">Founder - xyz.com</p>
+              </div>
             </div>
           </div>
         </div>
@@ -738,7 +716,7 @@
           <div class="flex flex-col lg:gap-4">
             <div class="flex items-center justify-center gap-4">
               <svg
-                class="hidden sm:flex shrink-0 w-6 h-6 lg:w-8 lg:h-8 stroke-lightgray-600 dark:stroke-darkgray-600"
+                class="shrink-0 w-6 h-6 lg:w-8 lg:h-8 stroke-lightgray-600 dark:stroke-darkgray-600"
                 width="24"
                 height="24"
                 viewBox="0 0 25 24"
@@ -759,7 +737,7 @@
                 />
               </svg>
               <h2 id="contact-email" class="font-semibold text-lg lg:text-4xl text-lightgray-900 dark:text-darkgray-900">
-                renan.andradefranca@gmail.com
+                reachsagarshah@gmail.com
               </h2>
               <button id="contact-copy-email-icon" class="relative">
                 <svg
@@ -785,7 +763,7 @@
                 </svg>
               </button>
             </div>
-            <div class="hidden flex items-center justify-center gap-4">
+            <div class="flex items-center justify-center gap-4">
               <svg
                 class="shrink-0 w-6 h-6 lg:w-8 lg:h-8 stroke-lightgray-600 dark:stroke-darkgray-600"
                 width="24"
@@ -832,9 +810,9 @@
               You may also find me on these platforms!
             </p>
             <div class="flex justify-center">
-              <a href="https://github.com/renanfranca" target="_blank" rel="noopener noreferrer">
+              <a href="#">
                 <svg
-                  class="stroke-lightgray-600 dark:stroke-darkgray-600 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100"
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600"
                   width="36"
                   height="36"
                   viewBox="0 0 36 36"
@@ -850,9 +828,9 @@
                   <path d="M15 24C10.49 26 10 22 8 22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </a>
-              <a href="https://www.twitter.com/renan_afranca" target="_blank" rel="noopener noreferrer">
+              <a href="#">
                 <svg
-                  class="stroke-lightgray-600 dark:stroke-darkgray-600 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100"
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600"
                   width="36"
                   height="36"
                   viewBox="0 0 36 36"
@@ -867,97 +845,87 @@
                   />
                 </svg>
               </a>
-              <a
-                class="flex w-9 h-9 items-center justify-center rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100"
-                href="https://linkedin.com/in/renan-af"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="#">
                 <svg
                   class="stroke-lightgray-600 dark:stroke-darkgray-600"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
                   fill="none"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                  <rect width="4" height="12" x="2" y="9" />
-                  <circle cx="4" cy="4" r="2" />
+                  <path
+                    d="M11 11.5C11 10.5717 11.3687 9.6815 12.0251 9.02513C12.6815 8.36875 13.5717 8 14.5 8H18V15H14.5C13.5717 15 12.6815 14.6313 12.0251 13.9749C11.3687 13.3185 11 12.4283 11 11.5Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M18 8H21.5C21.9596 8 22.4148 8.09053 22.8394 8.26642C23.264 8.44231 23.6499 8.70012 23.9749 9.02513C24.2999 9.35013 24.5577 9.73597 24.7336 10.1606C24.9095 10.5852 25 11.0404 25 11.5C25 11.9596 24.9095 12.4148 24.7336 12.8394C24.5577 13.264 24.2999 13.6499 23.9749 13.9749C23.6499 14.2999 23.264 14.5577 22.8394 14.7336C22.4148 14.9095 21.9596 15 21.5 15H18V8Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M18 18.5C18 18.0404 18.0905 17.5852 18.2664 17.1606C18.4423 16.736 18.7001 16.3501 19.0251 16.0251C19.3501 15.7001 19.736 15.4423 20.1606 15.2664C20.5852 15.0905 21.0404 15 21.5 15C21.9596 15 22.4148 15.0905 22.8394 15.2664C23.264 15.4423 23.6499 15.7001 23.9749 16.0251C24.2999 16.3501 24.5577 16.736 24.7336 17.1606C24.9095 17.5852 25 18.0404 25 18.5C25 18.9596 24.9095 19.4148 24.7336 19.8394C24.5577 20.264 24.2999 20.6499 23.9749 20.9749C23.6499 21.2999 23.264 21.5577 22.8394 21.7336C22.4148 21.9095 21.9596 22 21.5 22C21.0404 22 20.5852 21.9095 20.1606 21.7336C19.736 21.5577 19.3501 21.2999 19.0251 20.9749C18.7001 20.6499 18.4423 20.264 18.2664 19.8394C18.0905 19.4148 18 18.9596 18 18.5Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M11 25.5C11 24.5717 11.3687 23.6815 12.0251 23.0251C12.6815 22.3687 13.5717 22 14.5 22H18V25.5C18 26.4283 17.6313 27.3185 16.9749 27.9749C16.3185 28.6313 15.4283 29 14.5 29C13.5717 29 12.6815 28.6313 12.0251 27.9749C11.3687 27.3185 11 26.4283 11 25.5Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M11 18.5C11 17.5717 11.3687 16.6815 12.0251 16.0251C12.6815 15.3687 13.5717 15 14.5 15H18V22H14.5C13.5717 22 12.6815 21.6313 12.0251 20.9749C11.3687 20.3185 11 19.4283 11 18.5Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </a>
             </div>
           </div>
         </div>
       </section>
+      <footer class="flex flex-col w-full max-w-7xl mx-auto py-6 gap-6 bg-lightgray-50 dark:bg-darkgray-50">
+        <div class="flex items-center justify-center gap-2">
+          <svg
+            class="stroke-lightgray-600 dark:stroke-darkgray-600"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_327_2490)">
+              <path
+                d="M7.99967 14.6663C11.6816 14.6663 14.6663 11.6816 14.6663 7.99967C14.6663 4.31778 11.6816 1.33301 7.99967 1.33301C4.31778 1.33301 1.33301 4.31778 1.33301 7.99967C1.33301 11.6816 4.31778 14.6663 7.99967 14.6663Z"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9.99953 6.23567C9.64123 5.82948 9.16774 5.54201 8.64205 5.41154C8.11637 5.28106 7.56341 5.31376 7.05676 5.50528C6.55011 5.69679 6.1138 6.03805 5.80587 6.48365C5.49794 6.92924 5.33301 7.45804 5.33301 7.99967C5.33301 8.54131 5.49794 9.07011 5.80587 9.5157C6.1138 9.9613 6.55011 10.3026 7.05676 10.4941C7.56341 10.6856 8.11637 10.7183 8.64205 10.5878C9.16774 10.4573 9.64123 10.1699 9.99953 9.76367"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_327_2490">
+                <rect width="16" height="16" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+          <p class="font-normal text-sm text-lightgray-600 dark:text-darkgray-600">
+            2023 | Designed and coded with <span class="text-red-500">❤️</span> by Sagar Shah
+          </p>
+        </div>
+      </footer>
     </main>
-    <footer class="flex flex-col w-full max-w-7xl mx-auto py-6 gap-6 bg-lightgray-50 dark:bg-darkgray-50">
-      <div class="flex items-center justify-center gap-2">
-        <svg
-          class="stroke-lightgray-600 dark:stroke-darkgray-600"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g clip-path="url(#clip0_327_2490)">
-            <path
-              d="M7.99967 14.6663C11.6816 14.6663 14.6663 11.6816 14.6663 7.99967C14.6663 4.31778 11.6816 1.33301 7.99967 1.33301C4.31778 1.33301 1.33301 4.31778 1.33301 7.99967C1.33301 11.6816 4.31778 14.6663 7.99967 14.6663Z"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M9.99953 6.23567C9.64123 5.82948 9.16774 5.54201 8.64205 5.41154C8.11637 5.28106 7.56341 5.31376 7.05676 5.50528C6.55011 5.69679 6.1138 6.03805 5.80587 6.48365C5.49794 6.92924 5.33301 7.45804 5.33301 7.99967C5.33301 8.54131 5.49794 9.07011 5.80587 9.5157C6.1138 9.9613 6.55011 10.3026 7.05676 10.4941C7.56341 10.6856 8.11637 10.7183 8.64205 10.5878C9.16774 10.4573 9.64123 10.1699 9.99953 9.76367"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </g>
-          <defs>
-            <clipPath id="clip0_327_2490">
-              <rect width="16" height="16" fill="white" />
-            </clipPath>
-          </defs>
-        </svg>
-        <p class="font-normal text-sm text-lightgray-600 dark:text-darkgray-600">
-          2023 |
-          <a
-            target="_blank"
-            class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-            href="https://www.figma.com/community/file/1262992249991763120/Personal-Portfolio-Website-Template-%7C-Mobile-%26-Desktop"
-            >Designed</a
-          >
-          by
-          <a
-            class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-            href="https://sagarshah.dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Sagar Shah</a
-          >
-          and
-          <a
-            class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-            href="https://github.com/renanfranca/personal-portfolio-html-css"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Coded</a
-          >
-          with <span class="text-red-500">❤️</span> by
-          <a
-            class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-            href="#"
-            rel="noopener noreferrer"
-            >Renan Franca</a
-          >
-        </p>
-      </div>
-    </footer>
     <!-- The following code is only for demonstrating the features -->
     <script>
       // DOM Elements
@@ -997,7 +965,7 @@
       }
 
       function closeMenuOnSpecificContent(event) {
-        if (event.target.closest('#menu-about, #menu-services, #menu-work, #menu-contact')) {
+        if (event.target.closest('#menu-about, #menu-work, #menu-testimonials, #menu-contact')) {
           setTimeout(closeMenuContent, 500);
         } else {
           event.stopPropagation();
