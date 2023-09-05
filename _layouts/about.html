@@ -536,18 +536,11 @@
             <div class="flex flex-col md:w-2/5 gap-4">
               <h3 class="font-bold text-xl md:text-2xl text-lightgray-900 dark:text-darkgray-900 mb-3">Special Pricing</h3>
               <ul class="flex flex-col list-decimal font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5">
-                <li>
+                <li class="group">
                   Landing page with 4 sections:
                   <span class="font-semibold line-through">$200</span> Now at
-                  <span class="font-bold text-red-600 dark:text-red-400">$100!</span>
-                  <br />
-                  - Add sections for just <span class="font-bold text-red-600 dark:text-red-400">$20</span> (Originally
-                  <span class="font-semibold line-through">$40</span>) each.
-                </li>
-                <li class="mt-2">
-                  Multipage: <span class="font-semibold line-through">$300</span> Now at
-                  <span class="font-bold text-red-600 dark:text-red-400">$150</span> for the first page!
-                  <button id="multipage-price-help" class="group relative">
+                  <span class="font-bold text-red-600 dark:text-red-400">$100!</span
+                  ><button id="landingpage-price-help" class="relative">
                     <svg
                       class="inline-flex stroke-purple-600 dark:stroke-purple-300 cursor-pointer animate-twBounce animate-infinite"
                       xmlns="http://www.w3.org/2000/svg"
@@ -565,7 +558,36 @@
                       <path d="M12 17h.01" />
                     </svg>
                     <span
-                      class="group-hover:opacity-100 absolute top-6 transform -translate-x-1/2 px-3 py-1 bg-gray-600 text-white text-sm rounded-md opacity-0 transition-opacity duration-500"
+                      class="group-hover:opacity-100 group-hover:h-auto group-hover:py-1 absolute z-50 bottom-6 overflow-hidden h-0 transform -translate-x-1/2 px-3 py-0 bg-gray-600 text-white text-sm rounded-md opacity-0 transition-opacity duration-500"
+                      >Understand the price calculation by an example!</span
+                    >
+                  </button>
+                  <br />
+                  - Add sections for just <span class="font-bold text-red-600 dark:text-red-400">$20</span> (Originally
+                  <span class="font-semibold line-through">$40</span>) each.
+                </li>
+                <li class="group mt-2">
+                  Multipage: <span class="font-semibold line-through">$300</span> Now at
+                  <span class="font-bold text-red-600 dark:text-red-400">$150</span> for the first page!
+                  <button id="multipage-price-help" class="relative">
+                    <svg
+                      class="inline-flex stroke-purple-600 dark:stroke-purple-300 cursor-pointer animate-twBounce animate-infinite"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                      <path d="M12 17h.01" />
+                    </svg>
+                    <span
+                      class="group-hover:opacity-100 group-hover:h-auto group-hover:py-1 absolute bottom-6 overflow-hidden h-0 transform -translate-x-1/2 px-3 py-0 bg-gray-600 text-white text-sm rounded-md opacity-0 transition-opacity duration-500"
                       >Understand the price calculation by an example!</span
                     ></button
                   ><br />
@@ -743,7 +765,7 @@
         </div>
       </div>
     </section>
-    <section id="contact" class="flex flex-col w-full py-16 md:py-24 gap-6">
+    <section id="contact" class="flex flex-col w-full py-16 md:py-24 gap-6 bg-lightgray-50 dark:bg-darkgray-50">
       <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
         <div class="flex flex-col gap-4">
           <div class="flex justify-center">
@@ -916,7 +938,7 @@
       </div>
     </section>
   </main>
-  <footer class="flex flex-col w-full max-w-7xl mx-auto py-6 gap-6 bg-lightgray-50 dark:bg-darkgray-50">
+  <footer class="flex flex-col w-full max-w-7xl mx-auto py-6 gap-6">
     <div class="flex items-center justify-center gap-2">
       <svg
         class="stroke-lightgray-600 dark:stroke-darkgray-600"
@@ -1110,6 +1132,83 @@
       </div>
     </div>
   </div>
+  <div
+    id="landingpage-price-dialog"
+    role="dialog"
+    class="hidden fixed top-0 left-0 z-50 flex w-full h-full justify-end bg-opacity-50 backdrop-blur-sm transition-all ease-in-out duration-100"
+  >
+    <div
+      id="landingpage-price-content"
+      class="top-52 max-w-xs h-screen overflow-y-auto flex flex-col py-2 bg-lightgray dark:bg-darkgray-100 shadow-2xl animate-slideInUp animate-faster transition-all ease-in-out duration-100"
+    >
+      <div class="flex justify-between p-4 border-b">
+        <h3 class="font-bold text-2xl text-lightgray-900 dark:text-darkgray-900">Price Example</h3>
+        <button id="close-landingpage-price" class="p-1 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
+          <svg
+            class="stroke-lightgray-600 dark:stroke-darkgray-600"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M18 6L6 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="flex flex-col w-full items-center p-4 gap-4 border-b border-lightgray-100 dark:border-darkgray-100 bg-lightgray dark:bg-darkgray-100"
+      >
+        <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
+          Landing page with 4 sections:
+          <span class="font-semibold line-through">$200</span> Now at
+          <span class="font-bold text-red-600 dark:text-red-400">$100!</span>
+          <br />
+          - Add sections for just <span class="font-bold text-red-600 dark:text-red-400">$20</span> (Originally
+          <span class="font-semibold line-through">$40</span>) each.
+        </p>
+        <p class="font-semibold text-base text-left text-lightgray-900 dark:text-darkgray-900">
+          The following layout has 8 sections (including header and footer):
+        </p>
+        <p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">4 Sections - Cost $100</p>
+        <svg
+          class="stroke-lightgray-600 dark:stroke-darkgray-600"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"
+          />
+        </svg>
+        <p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">+4 Sections ($20 each) - Cost $80</p>
+        <svg
+          class="stroke-lightgray-600 dark:stroke-darkgray-600"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="5" x2="19" y1="9" y2="9" />
+          <line x1="5" x2="19" y1="15" y2="15" />
+        </svg>
+        <p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">Final Cost: $180</p>
+        <img class="transition-transform" src="assets/images/landingpage-example-mobile.jpg" alt="Renan About Layout" loading="lazy" />
+      </div>
+    </div>
+  </div>
   <!-- The following code is only for demonstrating the features -->
   <script>
     // DOM Elements
@@ -1122,6 +1221,10 @@
     const multipagePriceContent = document.querySelector('#multipage-price-content');
     const closeMultipagePriceButton = document.querySelector('#close-multipage-price');
     const multipagePriceHelpButton = document.querySelector('#multipage-price-help');
+    const landingpagePriceDialog = document.querySelector('#landingpage-price-dialog');
+    const landingpagePriceContent = document.querySelector('#landingpage-price-content');
+    const closeLandingpagePriceButton = document.querySelector('#close-landingpage-price');
+    const landingpagePriceHelpButton = document.querySelector('#landingpage-price-help');
 
     // Event Listeners
     hamburger.addEventListener('click', toggleMenu);
@@ -1134,6 +1237,10 @@
     multipagePriceDialog.addEventListener('click', closeMultipagePriceDirectClick);
     closeMultipagePriceButton.addEventListener('click', closeMultipagePriceDialog);
     multipagePriceHelpButton.addEventListener('click', toggleMultipagePriceDialog);
+
+    landingpagePriceDialog.addEventListener('click', closeLandingpagePriceDirectClick);
+    closeLandingpagePriceButton.addEventListener('click', closeLandingpagePriceDialog);
+    landingpagePriceHelpButton.addEventListener('click', toggleLandingpagePriceDialog);
 
     function closeMultipagePriceDirectClick(event) {
       if (event.target === multipagePriceDialog) {
@@ -1151,6 +1258,24 @@
 
     function toggleMultipagePriceDialog() {
       multipagePriceDialog.classList.toggle('hidden');
+    }
+
+    function closeLandingpagePriceDirectClick(event) {
+      if (event.target === landingpagePriceDialog) {
+        closeLandingpagePriceDialog();
+      }
+    }
+
+    function closeLandingpagePriceDialog() {
+      landingpagePriceContent.classList.toggle('animate-slideOutDown');
+      setTimeout(() => {
+        landingpagePriceContent.classList.toggle('animate-slideOutDown');
+        landingpagePriceDialog.classList.toggle('hidden');
+      }, 250);
+    }
+
+    function toggleLandingpagePriceDialog() {
+      landingpagePriceDialog.classList.toggle('hidden');
     }
 
     // For both email and phone copy functions
