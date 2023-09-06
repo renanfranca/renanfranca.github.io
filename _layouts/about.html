@@ -1209,110 +1209,111 @@
       </div>
     </div>
   </div>
-  <!-- The following code is only for demonstrating the features -->
   <script>
-    // DOM Elements
-    const hamburger = document.querySelector('#hamburger');
-    const menu = document.querySelector('#menu');
-    const menuContent = document.querySelector('#menu-content');
-    const closeMenuButton = document.querySelector('#close-menu');
-    const switchButtons = document.querySelectorAll('#switch-theme-mobile, #switch-theme');
-    const multipagePriceDialog = document.querySelector('#multipage-price-dialog');
-    const multipagePriceContent = document.querySelector('#multipage-price-content');
-    const closeMultipagePriceButton = document.querySelector('#close-multipage-price');
-    const multipagePriceHelpButton = document.querySelector('#multipage-price-help');
-    const landingpagePriceDialog = document.querySelector('#landingpage-price-dialog');
-    const landingpagePriceContent = document.querySelector('#landingpage-price-content');
-    const closeLandingpagePriceButton = document.querySelector('#close-landingpage-price');
-    const landingpagePriceHelpButton = document.querySelector('#landingpage-price-help');
+    document.addEventListener('DOMContentLoaded', initialize);
 
-    // Event Listeners
-    hamburger.addEventListener('click', toggleMenu);
-    closeMenuButton.addEventListener('click', closeMenuContent);
-    switchButtons.forEach(button => button.addEventListener('click', toggleTheme));
-
-    menu.addEventListener('click', closeMenuDirectClick);
-    menuContent.addEventListener('click', closeMenuOnSpecificContent);
-
-    multipagePriceDialog.addEventListener('click', closeMultipagePriceDirectClick);
-    closeMultipagePriceButton.addEventListener('click', closeMultipagePriceDialog);
-    multipagePriceHelpButton.addEventListener('click', toggleMultipagePriceDialog);
-
-    landingpagePriceDialog.addEventListener('click', closeLandingpagePriceDirectClick);
-    closeLandingpagePriceButton.addEventListener('click', closeLandingpagePriceDialog);
-    landingpagePriceHelpButton.addEventListener('click', toggleLandingpagePriceDialog);
-
-    function closeMultipagePriceDirectClick(event) {
-      if (event.target === multipagePriceDialog) {
-        closeMultipagePriceDialog();
-      }
+    async function initialize() {
+      setupMenuActions();
+      setupPriceDialogActions();
+      setupThemeActions();
+      setupCopyActions();
     }
 
-    function closeMultipagePriceDialog() {
-      multipagePriceContent.classList.toggle('animate-slideOutDown');
-      setTimeout(() => {
-        multipagePriceContent.classList.toggle('animate-slideOutDown');
-        multipagePriceDialog.classList.toggle('hidden');
-      }, 250);
+    function setupMenuActions() {
+      const hamburger = document.querySelector('#hamburger');
+      const menu = document.querySelector('#menu');
+      const menuContent = document.querySelector('#menu-content');
+      const closeMenuButton = document.querySelector('#close-menu');
+
+      hamburger.addEventListener('click', toggleElementVisibility.bind(null, menu));
+      closeMenuButton.addEventListener('click', closeMenuContent);
+
+      menu.addEventListener('click', closeIfDirectClick.bind(null, menu, closeMenuContent));
+      menuContent.addEventListener('click', closeIfMenuSectionClicked.bind(null, closeMenuContent));
     }
 
-    function toggleMultipagePriceDialog() {
-      multipagePriceDialog.classList.toggle('hidden');
+    function setupPriceDialogActions() {
+      // Multi-page
+      setupSingleDialog('#multipage-price-dialog', '#multipage-price-content', '#close-multipage-price', '#multipage-price-help');
+      // Landing page
+      setupSingleDialog('#landingpage-price-dialog', '#landingpage-price-content', '#close-landingpage-price', '#landingpage-price-help');
     }
 
-    function closeLandingpagePriceDirectClick(event) {
-      if (event.target === landingpagePriceDialog) {
-        closeLandingpagePriceDialog();
-      }
+    function setupSingleDialog(dialogSelector, contentSelector, closeButtonSelector, helpButtonSelector) {
+      const dialog = document.querySelector(dialogSelector);
+      const content = document.querySelector(contentSelector);
+      const closeButton = document.querySelector(closeButtonSelector);
+      const helpButton = document.querySelector(helpButtonSelector);
+
+      dialog.addEventListener('click', closeIfDirectClick.bind(null, dialog, closeDialog.bind(null, content, dialog)));
+      closeButton.addEventListener('click', closeDialog.bind(null, content, dialog));
+      helpButton.addEventListener('click', toggleElementVisibility.bind(null, dialog));
     }
 
-    function closeLandingpagePriceDialog() {
-      landingpagePriceContent.classList.toggle('animate-slideOutDown');
-      setTimeout(() => {
-        landingpagePriceContent.classList.toggle('animate-slideOutDown');
-        landingpagePriceDialog.classList.toggle('hidden');
-      }, 250);
+    function setupThemeActions() {
+      const switchButtons = document.querySelectorAll('#switch-theme-mobile, #switch-theme');
+
+      switchButtons.forEach(button => button.addEventListener('click', toggleTheme));
+      loadTheme();
     }
 
-    function toggleLandingpagePriceDialog() {
-      landingpagePriceDialog.classList.toggle('hidden');
-    }
-
-    // For both email and phone copy functions
-    document.addEventListener('DOMContentLoaded', function () {
+    function setupCopyActions() {
       setupCopyFunctionality('contact-email', 'contact-copy-email-icon');
       setupCopyFunctionality('contact-phone', 'contact-copy-phone-icon');
-    });
-
-    // Functions
-    function toggleMenu() {
-      menu.classList.toggle('hidden');
     }
 
-    function toggleTheme() {
-      document.documentElement.classList.toggle('dark');
+    async function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    function closeMenuDirectClick(event) {
-      if (event.target === menu) {
-        closeMenuContent();
-      }
+    async function animateAndClose(content, className, dialog) {
+      content.classList.add(className);
+      await sleep(250);
+      content.classList.remove(className);
+      dialog.classList.add('hidden');
     }
 
-    function closeMenuOnSpecificContent(event) {
+    function closeDialog(content, dialog) {
+      animateAndClose(content, 'animate-slideOutDown', dialog);
+    }
+
+    function toggleElementVisibility(element) {
+      element.classList.toggle('hidden');
+    }
+
+    function closeIfDirectClick(element, closeFunction, event) {
+      if (event.target === element) closeFunction();
+    }
+
+    function closeIfMenuSectionClicked(closeFunction, event) {
       if (event.target.closest('#menu-about, #menu-services, #menu-work, #menu-contact')) {
-        setTimeout(closeMenuContent, 500);
+        setTimeout(closeFunction, 500);
       } else {
         event.stopPropagation();
       }
     }
 
-    function closeMenuContent() {
-      menuContent.classList.toggle('animate-slideOutRight');
-      setTimeout(() => {
-        menuContent.classList.toggle('animate-slideOutRight');
-        menu.classList.toggle('hidden');
-      }, 250);
+    async function closeMenuContent() {
+      const menu = document.querySelector('#menu');
+      const menuContent = document.querySelector('#menu-content');
+
+      await animateAndClose(menuContent, 'animate-slideOutRight', menu);
+    }
+
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+      const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+      setTheme(theme);
+    }
+
+    function loadTheme() {
+      const theme = localStorage.theme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      setTheme(theme);
+    }
+
+    function setTheme(theme) {
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+      localStorage.theme = theme;
     }
 
     function setupCopyFunctionality(targetID, iconID) {
@@ -1321,8 +1322,8 @@
       const tooltip = createTooltip();
 
       copyIcon.appendChild(tooltip);
-      copyIcon.addEventListener('click', function () {
-        copyToClipboard(targetElem.textContent);
+      copyIcon.addEventListener('click', async () => {
+        await navigator.clipboard.writeText(targetElem.textContent);
         showTooltip(tooltip);
       });
     }
@@ -1332,17 +1333,8 @@
       tooltip.innerText = 'Copied!';
       tooltip.className =
         'absolute transform -translate-x-1/2 px-3 py-1 bg-gray-600 text-white text-sm rounded-md opacity-0 transition-opacity';
-      tooltip.style.top = '-80%'; // Position above the icon
+      tooltip.style.top = '-80%';
       return tooltip;
-    }
-
-    function copyToClipboard(text) {
-      const textArea = document.createElement('textarea');
-      textArea.value = text;
-      document.body.appendChild(textArea);
-      textArea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textArea);
     }
 
     function showTooltip(tooltip) {
