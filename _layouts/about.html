@@ -3,54 +3,134 @@
 
 {%- include head.html -%}
 
-<body class="bg-lightgray dark:bg-darkgray">
-  <link href="assets/css/fonts.css" rel="stylesheet" />
-  <link href="assets/css/style.css" rel="stylesheet" />
-  <div
-    id="menu"
-    role="dialog"
-    class="hidden fixed top-0 left-0 z-50 flex w-full h-full justify-end bg-opacity-50 backdrop-blur-sm transition-all ease-in-out duration-100"
-  >
+  <body class="bg-lightgray dark:bg-darkgray">
+    <link href="assets/css/fonts.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
     <div
-      id="menu-content"
-      class="flex flex-col w-full max-w-xs py-2 bg-lightgray dark:bg-darkgray shadow-2xl animate-slideInRight animate-faster transition-all ease-in-out duration-100"
+      id="menu"
+      role="dialog"
+      class="hidden fixed top-0 left-0 z-50 flex w-full h-full justify-end bg-opacity-50 backdrop-blur-sm transition-all ease-in-out duration-100"
     >
-      <div class="flex justify-between p-4 border-b border-lightgray-100 dark:border-darkgray-100">
-        <h3 class="font-bold text-2xl text-lightgray-900 dark:text-darkgray-900">&lt;RF /&gt;</h3>
-        <button id="close-menu" class="p-1 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
-          <svg
-            class="stroke-lightgray-600 dark:stroke-darkgray-600"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M18 6L6 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </button>
+      <div
+        id="menu-content"
+        class="flex flex-col w-full max-w-xs py-2 bg-lightgray dark:bg-darkgray shadow-2xl animate-slideInRight animate-faster transition-all ease-in-out duration-100"
+      >
+        <div class="flex justify-between p-4 border-b border-lightgray-100 dark:border-darkgray-100">
+          <h3 class="font-bold text-2xl text-lightgray-900 dark:text-darkgray-900">&lt;RF /&gt;</h3>
+          <button id="close-menu" class="p-1 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
+            <svg
+              class="stroke-lightgray-600 dark:stroke-darkgray-600"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M18 6L6 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <ul class="flex flex-col w-full p-4 gap-4 border-b border-lightgray-100 dark:border-darkgray-100">
+          <li class="flex">
+            <a id="menu-about" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#about">About</a>
+          </li>
+          <li class="flex">
+            <a id="menu-services" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#services"
+              >Services</a
+            >
+          </li>
+          <li class="flex">
+            <a id="menu-work" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#work">Portfolio</a>
+          </li>
+          <li class="flex">
+            <a id="menu-contact" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#contact">Contact</a>
+          </li>
+        </ul>
+        <div class="flex flex-col p-4 gap-4">
+          <div class="flex justify-between">
+            <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Switch Theme</p>
+            <button id="switch-theme-mobile" class="p-1 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
+              <svg
+                class="stroke-lightgray-600 flex dark:hidden animate-bounce"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 3C10.8065 4.19347 10.136 5.81217 10.136 7.5C10.136 9.18783 10.8065 10.8065 12 12C13.1935 13.1935 14.8122 13.864 16.5 13.864C18.1878 13.864 19.8065 13.1935 21 12C21 13.78 20.4722 15.5201 19.4832 17.0001C18.4943 18.4802 17.0887 19.6337 15.4442 20.3149C13.7996 20.9961 11.99 21.1743 10.2442 20.8271C8.49836 20.4798 6.89472 19.6226 5.63604 18.364C4.37737 17.1053 3.5202 15.5016 3.17294 13.7558C2.82567 12.01 3.0039 10.2004 3.68509 8.55585C4.36628 6.91131 5.51983 5.50571 6.99987 4.51677C8.47991 3.52784 10.22 3 12 3Z"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M19 3V7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M21 5H17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <svg
+                class="stroke-darkgray-600 hidden dark:flex animate-bounce"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M12 2V4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 20V22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M4.93018 4.92999L6.34018 6.33999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17.6602 17.66L19.0702 19.07" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M2 12H4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M20 12H22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6.34018 17.66L4.93018 19.07" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M19.0702 4.92999L17.6602 6.33999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <a href="https://renanfranca.github.io" target="_blank" rel="noopener noreferrer">
+            <button
+              class="flex w-full items-center justify-center font-medium text-base text-center text-lightgray-50 dark:text-darkgray-50 bg-lightgray-900 dark:bg-darkgray-900 rounded-xl py-1.5 px-4 gap-2 hover:bg-lightgray-700 dark:hover:bg-darkgray-700 active:bg-lightgray-800 dark:active:bg-darkgray-800 transition-all ease-in-out duration-200"
+            >
+              <span> Blog</span>
+              <svg
+                class="stroke-lightgray-600 dark:stroke-darkgray-600"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 19V25C24 25.5304 23.7893 26.0391 23.4142 26.4142C23.0391 26.7893 22.5304 27 22 27H11C10.4696 27 9.96086 26.7893 9.58579 26.4142C9.21071 26.0391 9 25.5304 9 25V14C9 13.4696 9.21071 12.9609 9.58579 12.5858C9.96086 12.2107 10.4696 12 11 12H17"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M21 9H27V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16 20L27 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </a>
+        </div>
       </div>
-      <ul class="flex flex-col w-full p-4 gap-4 border-b border-lightgray-100 dark:border-darkgray-100">
-        <li class="flex">
-          <a id="menu-about" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#about">About</a>
-        </li>
-        <li class="flex">
-          <a id="menu-services" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#services"
-            >Services</a
-          >
-        </li>
-        <li class="flex">
-          <a id="menu-work" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#work">Portfolio</a>
-        </li>
-        <li class="flex">
-          <a id="menu-contact" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#contact">Contact</a>
-        </li>
-      </ul>
-      <div class="flex flex-col p-4 gap-4">
-        <div class="flex justify-between">
-          <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Switch Theme</p>
-          <button id="switch-theme-mobile" class="p-1 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
+    </div>
+    <header class="sticky top-0 z-30 w-full bg-lightgray/90 dark:bg-darkgray/90">
+      <div class="flex w-full max-w-7xl mx-auto items-center justify-between p-4 md:px-8 xl:px-20">
+        <a href="#">
+          <h3 class="font-bold text-2xl lg:text-3xl text-lightgray-900 dark:text-darkgray-900">&lt;RF /&gt;</h3>
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#about">About</a>
+          <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#services">Services</a>
+          <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#work">Portfolio</a>
+          <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#contact">Contact</a>
+          <span class="h-6 w-0.5 bg-lightgray-100 dark:bg-darkgray-100"></span>
+          <button id="switch-theme" class="p-1 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
             <svg
               class="stroke-lightgray-600 flex dark:hidden animate-bounce"
               width="24"
@@ -92,1318 +172,1242 @@
               <path d="M19.0702 4.92999L17.6602 6.33999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </button>
-        </div>
-        <a href="https://renanfranca.github.io" target="_blank" rel="noopener noreferrer">
-          <button
-            class="flex w-full items-center justify-center font-medium text-base text-center text-lightgray-50 dark:text-darkgray-50 bg-lightgray-900 dark:bg-darkgray-900 rounded-xl py-1.5 px-4 gap-2 hover:bg-lightgray-700 dark:hover:bg-darkgray-700 active:bg-lightgray-800 dark:active:bg-darkgray-800 transition-all ease-in-out duration-200"
-          >
-            <span> Blog</span>
-            <svg
-              class="stroke-lightgray-600 dark:stroke-darkgray-600"
-              height="36"
-              viewBox="0 0 36 36"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          <a href="https://renanfranca.github.io" target="_blank" rel="noopener noreferrer">
+            <button
+              class="flex w-full items-center font-medium text-base text-center text-lightgray-50 dark:text-darkgray-50 bg-lightgray-900 dark:bg-darkgray-900 rounded-xl py-1.5 px-4 gap-2 hover:bg-lightgray-700 dark:hover:bg-darkgray-700 active:bg-lightgray-800 dark:active:bg-darkgray-800 transition-all ease-in-out duration-200"
             >
-              <path
-                d="M24 19V25C24 25.5304 23.7893 26.0391 23.4142 26.4142C23.0391 26.7893 22.5304 27 22 27H11C10.4696 27 9.96086 26.7893 9.58579 26.4142C9.21071 26.0391 9 25.5304 9 25V14C9 13.4696 9.21071 12.9609 9.58579 12.5858C9.96086 12.2107 10.4696 12 11 12H17"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path d="M21 9H27V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M16 20L27 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-        </a>
-      </div>
-    </div>
-  </div>
-  <header class="sticky top-0 z-30 w-full bg-lightgray/90 dark:bg-darkgray/90">
-    <div class="flex w-full max-w-7xl mx-auto items-center justify-between p-4 md:px-8 xl:px-20">
-      <a href="#">
-        <h3 class="font-bold text-2xl lg:text-3xl text-lightgray-900 dark:text-darkgray-900">&lt;RF /&gt;</h3>
-      </a>
-      <div class="hidden md:flex items-center gap-6">
-        <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#about">About</a>
-        <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#services">Services</a>
-        <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#work">Portfolio</a>
-        <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#contact">Contact</a>
-        <span class="h-6 w-0.5 bg-lightgray-100 dark:bg-darkgray-100"></span>
-        <button id="switch-theme" class="p-1 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
+              <span> Blog</span>
+              <svg
+                class="stroke-lightgray-600 dark:stroke-darkgray-600"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 19V25C24 25.5304 23.7893 26.0391 23.4142 26.4142C23.0391 26.7893 22.5304 27 22 27H11C10.4696 27 9.96086 26.7893 9.58579 26.4142C9.21071 26.0391 9 25.5304 9 25V14C9 13.4696 9.21071 12.9609 9.58579 12.5858C9.96086 12.2107 10.4696 12 11 12H17"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M21 9H27V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16 20L27 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </a>
+        </div>
+        <button id="hamburger" class="flex md:hidden z-20 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
           <svg
-            class="stroke-lightgray-600 flex dark:hidden animate-bounce"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
+            class="stroke-lightgray-600 dark:stroke-darkgray-600"
+            width="36"
+            height="36"
+            viewBox="0 0 36 36"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M12 3C10.8065 4.19347 10.136 5.81217 10.136 7.5C10.136 9.18783 10.8065 10.8065 12 12C13.1935 13.1935 14.8122 13.864 16.5 13.864C18.1878 13.864 19.8065 13.1935 21 12C21 13.78 20.4722 15.5201 19.4832 17.0001C18.4943 18.4802 17.0887 19.6337 15.4442 20.3149C13.7996 20.9961 11.99 21.1743 10.2442 20.8271C8.49836 20.4798 6.89472 19.6226 5.63604 18.364C4.37737 17.1053 3.5202 15.5016 3.17294 13.7558C2.82567 12.01 3.0039 10.2004 3.68509 8.55585C4.36628 6.91131 5.51983 5.50571 6.99987 4.51677C8.47991 3.52784 10.22 3 12 3Z"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path d="M19 3V7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M21 5H17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-          <svg
-            class="stroke-darkgray-600 hidden dark:flex animate-bounce"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path d="M12 2V4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M12 20V22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M4.93018 4.92999L6.34018 6.33999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M17.6602 17.66L19.0702 19.07" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M2 12H4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M20 12H22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M6.34018 17.66L4.93018 19.07" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M19.0702 4.92999L17.6602 6.33999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M10 18H26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M10 12H26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M10 24H26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </button>
-        <a href="https://renanfranca.github.io" target="_blank" rel="noopener noreferrer">
-          <button
-            class="flex w-full items-center font-medium text-base text-center text-lightgray-50 dark:text-darkgray-50 bg-lightgray-900 dark:bg-darkgray-900 rounded-xl py-1.5 px-4 gap-2 hover:bg-lightgray-700 dark:hover:bg-darkgray-700 active:bg-lightgray-800 dark:active:bg-darkgray-800 transition-all ease-in-out duration-200"
-          >
-            <span> Blog</span>
-            <svg
-              class="stroke-lightgray-600 dark:stroke-darkgray-600"
-              height="36"
-              viewBox="0 0 36 36"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 19V25C24 25.5304 23.7893 26.0391 23.4142 26.4142C23.0391 26.7893 22.5304 27 22 27H11C10.4696 27 9.96086 26.7893 9.58579 26.4142C9.21071 26.0391 9 25.5304 9 25V14C9 13.4696 9.21071 12.9609 9.58579 12.5858C9.96086 12.2107 10.4696 12 11 12H17"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path d="M21 9H27V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M16 20L27 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-        </a>
       </div>
-      <button id="hamburger" class="flex md:hidden z-20 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
-        <svg
-          class="stroke-lightgray-600 dark:stroke-darkgray-600"
-          width="36"
-          height="36"
-          viewBox="0 0 36 36"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M10 18H26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M10 12H26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M10 24H26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </button>
-    </div>
-  </header>
-  <main class="flex flex-col min-h-screen w-full">
-    <section class="flex flex-col w-full py-16 md:py-24">
-      <div class="flex flex-col md:flex-row-reverse w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-12">
-        <div class="flex justify-center">
-          <div class="relative flex w-[240px] md:w-[320px] h-[280px] md:h-[320px] justify-center">
-            <img
-              class="absolute z-10 w-[240px] md:w-[280px] h-[280px] md:h-[320px] border-8 border-lightgray dark:border-darkgray"
-              src="assets/images/picture_head.jpeg"
-              alt="portrait picture"
-            />
-            <div
-              class="absolute z-9 w-[256px] md:w-[240px] h-[260px] md:h-[280px] border-8 border-transparent mt-7 md:mt-12 md:ml-14 bg-lightgray-200 dark:bg-darkgray-200"
-            ></div>
-          </div>
-        </div>
-        <div class="flex flex-col gap-12">
-          <div class="flex flex-col gap-2">
-            <h1 class="font-semibold md:font-bold text-4xl md:text-5xl lg:text-6xl text-left text-lightgray-900 dark:text-darkgray-900">
-              Hi, I'm Renan<span class="inline-flex text-4xl md:text-5xl lg:text-6xl animate-headShake animate-slower">👋</span>
-            </h1>
-            <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
-              I'm a seasoned software engineer, having stepped into the realm of programming back in 2008 🗓️. Over the years, I've donned
-              multiple hats - from being a versatile full-stack developer to a proficient backend engineer. My disciplined ✅ and
-              organized 🗂️ approach has always been at the core of my work. Lately, I've been particularly drawn to the intricate art of
-              transforming Figma layouts into pixel-perfect HTML and CSS 🎨.
-            </p>
-          </div>
-          <div class="flex flex-col gap-2">
-            <div class="flex gap-2">
-              <svg
-                class="stroke-lightgray-600 dark:stroke-darkgray-600"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M20 10C20 16 12 22 12 22C12 22 4 16 4 10C4 7.87827 4.84285 5.84344 6.34315 4.34315C7.84344 2.84285 9.87827 2 12 2C14.1217 2 16.1566 2.84285 17.6569 4.34315C19.1571 5.84344 20 7.87827 20 10Z"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Brazil</p>
-            </div>
-            <div class="flex gap-2">
-              <div class="relative flex items-center justify-center h-6 w-6">
-                <div class="absolute w-3 h-3 bg-transparent border-4 border-emerald rounded-full animate-twPing animate-infinite"></div>
-                <div class="absolute inline-flex w-3 h-3 bg-emerald rounded-full"></div>
-              </div>
-              <a href="#services" class="">
-                <p
-                  class="font-normal text-base text-lightgray-600 dark:text-darkgray-600 underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-                >
-                  Available for new projects
-                </p>
-              </a>
-            </div>
-          </div>
-          <div class="flex">
-            <a href="https://github.com/renanfranca" target="_blank" rel="noopener noreferrer">
-              <svg
-                class="stroke-lightgray-600 dark:stroke-darkgray-600 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100"
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M21 28V24C21.1392 22.7473 20.78 21.4901 20 20.5C23 20.5 26 18.5 26 15C26.08 13.75 25.73 12.52 25 11.5C25.28 10.35 25.28 9.15 25 8C25 8 24 8 22 9.5C19.36 9 16.64 9 14 9.5C12 8 11 8 11 8C10.7 9.15 10.7 10.35 11 11.5C10.2719 12.5159 9.91851 13.7528 10 15C10 18.5 13 20.5 16 20.5C15.61 20.99 15.32 21.55 15.15 22.15C14.98 22.75 14.93 23.38 15 24V28"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path d="M15 24C10.49 26 10 22 8 22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </a>
-            <a href="https://www.twitter.com/renan_afranca" target="_blank" rel="noopener noreferrer">
-              <svg
-                class="stroke-lightgray-600 dark:stroke-darkgray-600 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100"
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M28 9.99999C28 9.99999 27.3 12.1 26 13.4C27.6 23.4 16.6 30.7 8 25C10.2 25.1 12.4 24.4 14 23C9 21.5 6.5 15.6 9 11C11.2 13.6 14.6 15.1 18 15C17.1 10.8 22 8.39999 25 11.2C26.1 11.2 28 9.99999 28 9.99999Z"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
-            <a
-              class="flex w-9 h-9 items-center justify-center rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100"
-              href="https://linkedin.com/in/renan-af"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg
-                class="stroke-lightgray-600 dark:stroke-darkgray-600"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                <rect width="4" height="12" x="2" y="9" />
-                <circle cx="4" cy="4" r="2" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="about" class="flex flex-col w-full py-16 md:py-24 bg-lightgray-50 dark:bg-darkgray-50">
-      <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
-        <div class="flex flex-col gap-6">
+    </header>
+    <main class="flex flex-col min-h-screen w-full">
+      <section class="flex flex-col w-full py-16 md:py-24">
+        <div class="flex flex-col md:flex-row-reverse w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-12">
           <div class="flex justify-center">
-            <p
-              class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-            >
-              About me
-            </p>
-          </div>
-        </div>
-        <div class="flex flex-col md:flex-row w-full justify-between gap-12">
-          <div class="flex justify-center lg:justify-start lg:w-1/2">
-            <div class="relative flex w-[304px] h-[360px] md:w-[400px] md:h-[480px] justify-center">
+            <div class="relative flex w-[240px] md:w-[320px] h-[280px] md:h-[320px] justify-center">
               <img
-                class="flex absolute z-10 w-[304px] h-[360px] md:w-[400px] md:h-[480px] border-8 border-lightgray dark:border-darkgray"
-                src="assets/images/about_me.png"
-                alt="about me"
-                loading="lazy"
+                class="absolute z-10 w-[240px] md:w-[280px] h-[280px] md:h-[320px] border-8 border-lightgray dark:border-darkgray"
+                src="assets/images/picture_head.jpeg"
+                alt="portrait picture"
               />
               <div
-                class="absolute z-9 w-[320px] h-[340px] md:w-[392px] md:h-[460px] mt-7 md:mr-7 border-8 border-transparent bg-lightgray-200 dark:bg-darkgray-200"
+                class="absolute z-9 w-[256px] md:w-[240px] h-[260px] md:h-[280px] border-8 border-transparent mt-7 md:mt-12 md:ml-14 bg-lightgray-200 dark:bg-darkgray-200"
               ></div>
             </div>
           </div>
-          <div class="flex lg:w-1/2">
-            <div class="flex flex-col gap-6">
-              <h3 class="font-semibold text-2xl lg:text-3xl text-left text-lightgray-900 dark:text-darkgray-900">
-                Curious about me? Here you have it:
-              </h3>
+          <div class="flex flex-col gap-12">
+            <div class="flex flex-col gap-2">
+              <h1 class="font-semibold md:font-bold text-4xl md:text-5xl lg:text-6xl text-left text-lightgray-900 dark:text-darkgray-900">
+                Hi, I'm Renan<span class="inline-flex text-4xl md:text-5xl lg:text-6xl animate-headShake animate-slower">👋</span>
+              </h1>
               <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
-                I've been in the realm of software engineering since 2008, making my way through various roles and responsibilities. With
-                expertise in full stack development using Vue.js & Spring Boot, I've recently honed my skills to a more specialized
-                domain. While I'm well-versed in handling both frontend and backend, I've realized that dedicating my focus singularly to
-                either frontend or backend enhances my productivity.
-              </p>
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
-                At present, I've immersed myself in backend development, working part-time with Java and Spring Boot. I employ a plethora
-                of modern tools and technologies like Docker, OpenShift, Redis, and Kubernetes to craft microservices that stand the test
-                of time.
-              </p>
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
-                Previously, I was deeply immersed in frontend development. Converting intricate designs into dynamic HTML + CSS, coupled
-                with JavaScript's task of interfacing with backend APIs, was a formidable challenge. As I grappled with the nuances of
-                frameworks like AngularJS, React, and Vue.js, I identified a niche I deeply resonated with: translating Figma layouts into
-                sleek HTML + CSS designs using TailwindCSS.
-              </p>
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
-                My academic journey commenced with a Bachelor's in Computer Science from 2005 to 2009. Elevating my knowledge base, I
-                pursued a Postgraduate Degree in Information Security between 2018 and 2020, arming myself with the expertise to navigate
-                the constantly evolving digital landscape.
-              </p>
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
-                Beyond the lines of code and intricate algorithms, I'm a fervent movie enthusiast. There's nothing I relish more than
-                watching cinematic masterpieces. Moreover, traveling with my family serves as the perfect palette cleanser, giving me a
-                fresh perspective and rejuvenating my spirits.
-              </p>
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
-                That's a snapshot of my journey so far. Here's to many more lines of code, family vacations, and movies in the days to
-                come!
+                I'm a seasoned software engineer, having stepped into the realm of programming back in 2008 🗓️. Over the years, I've donned
+                multiple hats - from being a versatile full-stack developer to a proficient backend engineer. My disciplined ✅ and
+                organized 🗂️ approach has always been at the core of my work. Lately, I've been particularly drawn to the intricate art of
+                transforming Figma layouts into pixel-perfect HTML and CSS 🎨.
               </p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="skills" class="flex flex-col w-full py-16 md:py-24">
-      <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
-        <div class="flex flex-col gap-4 md:gap-6">
-          <div class="flex justify-center">
-            <p
-              class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-            >
-              Skills
-            </p>
-          </div>
-          <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
-            The skills, tools and technologies I am really good at:
-          </p>
-          <div class="grid grid-cols-3 gap-y-4 md:grid-cols-6 md:gap-y-8 lg:grid-cols-8 lg:gap-y-12">
-            <div class="flex flex-col items-center gap-2">
-              <img class="w-16 h-16" src="assets/icons/icon-java.svg" alt="Java" loading="lazy" />
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Java</p>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <img class="w-16 h-16" src="assets/icons/icon-spring.svg" alt="Spring" loading="lazy" />
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Spring</p>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <img class="w-16 h-16" src="assets/icons/icon-junit5.png" alt="JUnit 5" loading="lazy" />
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">JUnit 5</p>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <img class="w-16 h-16" src="assets/icons/icon-cucumber.png" alt="Cucumber" loading="lazy" />
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Cucumber</p>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <img class="w-16 h-16" src="assets/icons/icon-docker.svg" alt="Docker" loading="lazy" />
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Docker</p>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <img class="w-16 h-16" src="assets/icons/icon-kubernetes.svg" alt="Kubernetes" loading="lazy" />
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Kubernetes</p>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <img class="w-16 h-16" src="assets/icons/icon-redis.svg" alt="Redis" loading="lazy" />
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Redis</p>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <img class="w-16 h-16" src="assets/icons/icon-postgresql.svg" alt="PostgreSQL" loading="lazy" />
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">PostgreSQL</p>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <img class="w-16 h-16" src="assets/icons/icon-mysql.svg" alt="MySQL" loading="lazy" />
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">MySQL</p>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <img class="w-16 h-16" src="assets/icons/icon-javscript.svg" alt="Javascript" loading="lazy" />
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Javascript</p>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <img class="w-16 h-16" src="assets/icons/icon-typescript.svg" alt="Typescript" loading="lazy" />
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Typescript</p>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <img class="w-16 h-16" src="assets/icons/icon-vuejs.png" alt="Vuejs" loading="lazy" />
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Vuejs</p>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <img class="w-16 h-16" src="assets/icons/icon-html5.svg" alt="Html5" loading="lazy" />
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Html5</p>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <img class="w-16 h-16" src="assets/icons/icon-css3.svg" alt="CSS3" loading="lazy" />
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">CSS3</p>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <img class="w-16 h-16" src="assets/icons/icon-sass.svg" alt="Sass/Scss" loading="lazy" />
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Sass/Scss</p>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <img class="w-16 h-16" src="assets/icons/icon-tailwindcss.svg" alt="Tailwindcss" loading="lazy" />
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Tailwindcss</p>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <img class="w-16 h-16" src="assets/icons/icon-postman.svg" alt="Git" loading="lazy" />
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Postman</p>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <img class="w-16 h-16" src="assets/icons/icon-git.svg" alt="Git" loading="lazy" />
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Git</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="services" class="flex flex-col w-full py-16 md:py-24 gap-6 bg-lightgray-50 dark:bg-darkgray-50">
-      <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
-        <div class="flex flex-col gap-4">
-          <div class="flex justify-center">
-            <p
-              class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-            >
-              Services
-            </p>
-          </div>
-          <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
-            Here is a quick summary of my services as freelancer:
-          </p>
-        </div>
-        <div class="flex flex-col p-8 gap-4 md:gap-12 shadow-md dark:shadow-xl rounded-xl bg-lightgray dark:bg-darkgray-100">
-          <h2 class="font-bold text-xl md:text-2xl text-center text-lightgray-900 dark:text-darkgray-900 mb-3">
-            Convert Your Figma Design to a Live Page
-          </h2>
-          <div class="flex flex-col md:flex-row md:justify-between">
-            <div class="flex flex-col md:w-3/5 gap-4">
-              <h3 class="font-semibold text-lg md:text-xl text-lightgray-800 dark:text-darkgray-800 mb-2">Service Features:</h3>
-              <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5">
-                <li><strong>Responsive Design:</strong> Perfect viewing on any device - mobile, tablet, or desktop.</li>
-                <li>
-                  <strong>Engaging Scroll Animations:</strong> Guide and captivate your visitors with smooth animations as they navigate.
-                </li>
-                <li><strong>Pixel Perfect:</strong> Your website will look exactly like your Figma design.</li>
-                <li><strong>Strategic Animations:</strong> Enhance user experience with subtle animations where they matter.</li>
-                <li><strong>Vanilla JavaScript:</strong> Clean, efficient, and easily maintainable code for page interactivity.</li>
-                <li>
-                  <strong>Private GitHub Repository:</strong> Access your source code anytime. Enhance or learn from the development
-                  process in a developer-friendly environment.
-                </li>
-                <li><strong>Use TailwindCSS</strong> to style your website in the best way possible.</li>
-                <li><strong>100% Satisfaction:</strong> If you're not satisfied with my work, I'll make it right.</li>
-              </ul>
-              <h3 class="font-semibold text-lg md:text-xl text-lightgray-800 dark:text-darkgray-800 mb-2">Why TailwindCSS?</h3>
-              <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5 mb-3">
-                <li><strong>Utility-first:</strong> Enables rapid UI development with reusable classes.</li>
-                <li><strong>Highly Customizable:</strong> Tailor-made configurations to suit your design needs.</li>
-                <li><strong>Performance Optimized:</strong> Only includes the CSS you use, ensuring lightweight pages.</li>
-                <li><strong>Responsive:</strong> Built-in responsiveness to make sure your design looks great on all devices.</li>
-                <li><strong>Maintainability:</strong> Easy to update and maintain with clear and concise class naming.</li>
-              </ul>
-            </div>
-            <div class="flex flex-col md:w-2/5 gap-4">
-              <h3 class="font-bold text-xl md:text-2xl text-lightgray-900 dark:text-darkgray-900 mb-3">Special Pricing</h3>
-              <ul class="flex flex-col list-decimal font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5">
-                <li class="group">
-                  Landing page with 4 sections:
-                  <span class="font-semibold line-through">$200</span> Now at
-                  <span class="font-bold text-red-600 dark:text-red-400">$100!</span
-                  ><button id="landingpage-price-help" class="relative">
-                    <svg
-                      class="inline-flex stroke-purple-600 dark:stroke-purple-300 cursor-pointer animate-twBounce animate-infinite"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                      <path d="M12 17h.01" />
-                    </svg>
-                    <span
-                      class="group-hover:opacity-100 group-hover:h-auto group-hover:py-1 absolute z-50 bottom-6 overflow-hidden h-0 transform -translate-x-1/2 px-3 py-0 bg-gray-600 text-white text-sm rounded-md opacity-0 transition-opacity duration-500"
-                      >Understand the price calculation by an example!</span
-                    >
-                  </button>
-                  <br />
-                  - Add sections for just <span class="font-bold text-red-600 dark:text-red-400">$20</span> (Originally
-                  <span class="font-semibold line-through">$40</span>) each.
-                </li>
-                <li class="group mt-2">
-                  Multipage: <span class="font-semibold line-through">$300</span> Now at
-                  <span class="font-bold text-red-600 dark:text-red-400">$150</span> for the first page!
-                  <button id="multipage-price-help" class="relative">
-                    <svg
-                      class="inline-flex stroke-purple-600 dark:stroke-purple-300 cursor-pointer animate-twBounce animate-infinite"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                      <path d="M12 17h.01" />
-                    </svg>
-                    <span
-                      class="group-hover:opacity-100 group-hover:h-auto group-hover:py-1 absolute bottom-6 overflow-hidden h-0 transform -translate-x-1/2 px-3 py-0 bg-gray-600 text-white text-sm rounded-md opacity-0 transition-opacity duration-500"
-                      >Understand the price calculation by an example!</span
-                    ></button
-                  ><br />
-                  - Every inner page at <span class="font-bold text-red-600 dark:text-red-400">$35</span> (Originally
-                  <span class="font-semibold line-through">$70</span>).
-                </li>
-              </ul>
-            </div>
-          </div>
-          <a
-            href="#contact"
-            class="font-bold text-lg text-center text-lightgray-50 dark:text-darkgray-50 bg-lightgray-900 dark:bg-darkgray-900 rounded-xl py-2 px-4 hover:bg-lightgray-700 dark:hover:bg-darkgray-700 active:bg-lightgray-800 dark:active:bg-darkgray-800 transition-all ease-in-out duration-200 mt-4"
-          >
-            Grab This Offer Now!
-          </a>
-        </div>
-      </div>
-    </section>
-    <section id="work" class="flex flex-col w-full py-16 md:py-24 gap-6">
-      <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
-        <div class="flex flex-col gap-4">
-          <div class="flex justify-center">
-            <p
-              class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 rounded-xl bg-lightgray-200 dark:bg-darkgray-200"
-            >
-              Portfolio
-            </p>
-          </div>
-          <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
-            Some of the noteworthy projects I have built:
-          </p>
-        </div>
-        <div class="flex flex-col md:flex-row rounded-xl shadow-md dark:shadow-xl">
-          <div
-            class="flex w-full md:w-1/2 items-center justify-center p-8 rounded-t-xl md:rounded-tr-none md:rounded-l-xl bg-lightgray-50 dark:bg-darkgray-200"
-          >
-            <a href="https://renanfranca.github.io/portfolio/feedbacker-html-css/" target="_blank" rel="noopener noreferrer">
-              <div class="flex w-[242px] h-[192px] md:w-[334px] md:h-[284px] lg:w-[434px] lg:h-[384px]">
-                <img
-                  class="rounded-xl shadow-lg transition-transform duration-500 md:hover:scale-105"
-                  src="assets/images/feedbacker-portfolio.png"
-                  alt="Feedbacker Layout"
-                  loading="lazy"
-                />
+            <div class="flex flex-col gap-2">
+              <div class="flex gap-2">
+                <svg
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 10C20 16 12 22 12 22C12 22 4 16 4 10C4 7.87827 4.84285 5.84344 6.34315 4.34315C7.84344 2.84285 9.87827 2 12 2C14.1217 2 16.1566 2.84285 17.6569 4.34315C19.1571 5.84344 20 7.87827 20 10Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Brazil</p>
               </div>
-            </a>
-          </div>
-          <div class="flex flex-col md:w-1/2 p-8 gap-6 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
-            <p class="font-semibold text-lg text-left text-lightgray-900 dark:text-darkgray-900">Feedbacker</p>
-            <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">
-              I meticulously converted a Figma design into interactive HTML & CSS, leveraging the power of TailwindCSS. This project was
-              showcased in the
+              <div class="flex gap-2">
+                <div class="relative flex items-center justify-center h-6 w-6">
+                  <div class="absolute w-3 h-3 bg-transparent border-4 border-emerald rounded-full animate-twPing animate-infinite"></div>
+                  <div class="absolute inline-flex w-3 h-3 bg-emerald rounded-full"></div>
+                </div>
+                <a href="#services" class="">
+                  <p
+                    class="font-normal text-base text-lightgray-600 dark:text-darkgray-600 underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
+                  >
+                    Available for new projects
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div class="flex">
+              <a href="https://github.com/renanfranca" target="_blank" rel="noopener noreferrer">
+                <svg
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 28V24C21.1392 22.7473 20.78 21.4901 20 20.5C23 20.5 26 18.5 26 15C26.08 13.75 25.73 12.52 25 11.5C25.28 10.35 25.28 9.15 25 8C25 8 24 8 22 9.5C19.36 9 16.64 9 14 9.5C12 8 11 8 11 8C10.7 9.15 10.7 10.35 11 11.5C10.2719 12.5159 9.91851 13.7528 10 15C10 18.5 13 20.5 16 20.5C15.61 20.99 15.32 21.55 15.15 22.15C14.98 22.75 14.93 23.38 15 24V28"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path d="M15 24C10.49 26 10 22 8 22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a href="https://www.twitter.com/renan_afranca" target="_blank" rel="noopener noreferrer">
+                <svg
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M28 9.99999C28 9.99999 27.3 12.1 26 13.4C27.6 23.4 16.6 30.7 8 25C10.2 25.1 12.4 24.4 14 23C9 21.5 6.5 15.6 9 11C11.2 13.6 14.6 15.1 18 15C17.1 10.8 22 8.39999 25 11.2C26.1 11.2 28 9.99999 28 9.99999Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
               <a
-                class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-                href="https://treinamento.vuejsbrasil.org"
+                class="flex w-9 h-9 items-center justify-center rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100"
+                href="https://linkedin.com/in/renan-af"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Vue.js Brazilian Community course</a
               >
-              as a prime example of an application crafted during their training sessions.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <p
-                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-              >
-                HTML5
-              </p>
-              <p
-                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-              >
-                CSS3
-              </p>
-              <p
-                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-              >
-                Tailwindcss
-              </p>
-              <p
-                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-              >
-                Git
-              </p>
-            </div>
-            <a href="https://renanfranca.github.io/portfolio/feedbacker-html-css/" target="_blank" rel="noopener noreferrer">
-              <svg
-                class="stroke-lightgray-600 dark:stroke-darkgray-600"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M24 19V25C24 25.5304 23.7893 26.0391 23.4142 26.4142C23.0391 26.7893 22.5304 27 22 27H11C10.4696 27 9.96086 26.7893 9.58579 26.4142C9.21071 26.0391 9 25.5304 9 25V14C9 13.4696 9.21071 12.9609 9.58579 12.5858C9.96086 12.2107 10.4696 12 11 12H17"
+                <svg
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                />
-                <path d="M21 9H27V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M16 20L27 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </a>
+                >
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect width="4" height="12" x="2" y="9" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
-        <div class="flex flex-col md:flex-row rounded-xl shadow-md dark:shadow-xl">
-          <div
-            class="flex w-full md:w-1/2 items-center justify-center p-8 rounded-t-xl md:rounded-tr-none md:rounded-l-xl bg-lightgray-50 dark:bg-darkgray-200"
-          >
-            <a href="https://renanfranca.github.io/portfolio/personal-portfolio-html-css/" target="_blank" rel="noopener noreferrer">
-              <div class="flex w-[191px] h-[192px] md:w-[283px] md:h-[284px] lg:w-[382px] lg:h-[384px]">
-                <img
-                  class="rounded-xl shadow-lg transition-transform duration-500 md:hover:scale-105"
-                  src="assets/images/personal-portfolio-portfolio.png"
-                  alt="Personal Portfolio"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-          </div>
-          <div class="flex flex-col md:w-1/2 p-8 gap-6 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
-            <p class="font-semibold text-lg text-left text-lightgray-900 dark:text-darkgray-900">Personal Portfolio</p>
-            <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">
-              I've transformed a Figma design by
-              <a
-                class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-                href="https://sagarshah.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Sagar Shah</a
-              >
-              into a dynamic HTML & CSS interface utilizing TailwindCSS. The design boasts a responsive layout, seamless light and dark
-              mode transitions, and captivating animations, all meticulously curated to ensure an immersive and effortless user
-              experience.
-            </p>
-            <div class="flex flex-wrap gap-2">
+      </section>
+      <section id="about" class="flex flex-col w-full py-16 md:py-24 bg-lightgray-50 dark:bg-darkgray-50">
+        <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
+          <div class="flex flex-col gap-6">
+            <div class="flex justify-center">
               <p
                 class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
               >
-                HTML5
-              </p>
-              <p
-                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-              >
-                CSS3
-              </p>
-              <p
-                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-              >
-                Tailwindcss
-              </p>
-              <p
-                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-              >
-                Git
+                About me
               </p>
             </div>
-            <a href="https://renanfranca.github.io/portfolio/personal-portfolio-html-css/" target="_blank" rel="noopener noreferrer">
-              <svg
-                class="stroke-lightgray-600 dark:stroke-darkgray-600"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M24 19V25C24 25.5304 23.7893 26.0391 23.4142 26.4142C23.0391 26.7893 22.5304 27 22 27H11C10.4696 27 9.96086 26.7893 9.58579 26.4142C9.21071 26.0391 9 25.5304 9 25V14C9 13.4696 9.21071 12.9609 9.58579 12.5858C9.96086 12.2107 10.4696 12 11 12H17"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+          </div>
+          <div class="flex flex-col md:flex-row w-full justify-between gap-12">
+            <div class="flex justify-center lg:justify-start lg:w-1/2">
+              <div class="relative flex w-[304px] h-[360px] md:w-[400px] md:h-[480px] justify-center">
+                <img
+                  class="flex absolute z-10 w-[304px] h-[360px] md:w-[400px] md:h-[480px] border-8 border-lightgray dark:border-darkgray"
+                  src="assets/images/about_me.png"
+                  alt="about me"
+                  loading="lazy"
                 />
-                <path d="M21 9H27V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M16 20L27 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </a>
+                <div
+                  class="absolute z-9 w-[320px] h-[340px] md:w-[392px] md:h-[460px] mt-7 md:mr-7 border-8 border-transparent bg-lightgray-200 dark:bg-darkgray-200"
+                ></div>
+              </div>
+            </div>
+            <div class="flex lg:w-1/2">
+              <div class="flex flex-col gap-6">
+                <h3 class="font-semibold text-2xl lg:text-3xl text-left text-lightgray-900 dark:text-darkgray-900">
+                  Curious about me? Here you have it:
+                </h3>
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
+                  I've been in the realm of software engineering since 2008, making my way through various roles and responsibilities. With
+                  expertise in full stack development using Vue.js & Spring Boot, I've recently honed my skills to a more specialized
+                  domain. While I'm well-versed in handling both frontend and backend, I've realized that dedicating my focus singularly to
+                  either frontend or backend enhances my productivity.
+                </p>
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
+                  At present, I've immersed myself in backend development, working part-time with Java and Spring Boot. I employ a plethora
+                  of modern tools and technologies like Docker, OpenShift, Redis, and Kubernetes to craft microservices that stand the test
+                  of time.
+                </p>
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
+                  Previously, I was deeply immersed in frontend development. Converting intricate designs into dynamic HTML + CSS, coupled
+                  with JavaScript's task of interfacing with backend APIs, was a formidable challenge. As I grappled with the nuances of
+                  frameworks like AngularJS, React, and Vue.js, I identified a niche I deeply resonated with: translating Figma layouts into
+                  sleek HTML + CSS designs using TailwindCSS.
+                </p>
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
+                  My academic journey commenced with a Bachelor's in Computer Science from 2005 to 2009. Elevating my knowledge base, I
+                  pursued a Postgraduate Degree in Information Security between 2018 and 2020, arming myself with the expertise to navigate
+                  the constantly evolving digital landscape.
+                </p>
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
+                  Beyond the lines of code and intricate algorithms, I'm a fervent movie enthusiast. There's nothing I relish more than
+                  watching cinematic masterpieces. Moreover, traveling with my family serves as the perfect palette cleanser, giving me a
+                  fresh perspective and rejuvenating my spirits.
+                </p>
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
+                  That's a snapshot of my journey so far. Here's to many more lines of code, family vacations, and movies in the days to
+                  come!
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section id="contact" class="flex flex-col w-full py-16 md:py-24 gap-6 bg-lightgray-50 dark:bg-darkgray-50">
-      <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
-        <div class="flex flex-col gap-4">
-          <div class="flex justify-center">
-            <p
-              class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 rounded-xl bg-lightgray-200 dark:bg-darkgray-200"
-            >
-              Get in touch
+      </section>
+      <section id="skills" class="flex flex-col w-full py-16 md:py-24">
+        <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
+          <div class="flex flex-col gap-4 md:gap-6">
+            <div class="flex justify-center">
+              <p
+                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+              >
+                Skills
+              </p>
+            </div>
+            <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
+              The skills, tools and technologies I am really good at:
+            </p>
+            <div class="grid grid-cols-3 gap-y-4 md:grid-cols-6 md:gap-y-8 lg:grid-cols-8 lg:gap-y-12">
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-java.svg" alt="Java" loading="lazy" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Java</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-spring.svg" alt="Spring" loading="lazy" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Spring</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-junit5.png" alt="JUnit 5" loading="lazy" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">JUnit 5</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-cucumber.png" alt="Cucumber" loading="lazy" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Cucumber</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-docker.svg" alt="Docker" loading="lazy" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Docker</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-kubernetes.svg" alt="Kubernetes" loading="lazy" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Kubernetes</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-redis.svg" alt="Redis" loading="lazy" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Redis</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-postgresql.svg" alt="PostgreSQL" loading="lazy" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">PostgreSQL</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-mysql.svg" alt="MySQL" loading="lazy" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">MySQL</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-javscript.svg" alt="Javascript" loading="lazy" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Javascript</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-typescript.svg" alt="Typescript" loading="lazy" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Typescript</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-vuejs.png" alt="Vuejs" loading="lazy" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Vuejs</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-html5.svg" alt="Html5" loading="lazy" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Html5</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-css3.svg" alt="CSS3" loading="lazy" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">CSS3</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-sass.svg" alt="Sass/Scss" loading="lazy" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Sass/Scss</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-tailwindcss.svg" alt="Tailwindcss" loading="lazy" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Tailwindcss</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-postman.svg" alt="Git" loading="lazy" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Postman</p>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="w-16 h-16" src="assets/icons/icon-git.svg" alt="Git" loading="lazy" />
+                <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Git</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="services" class="flex flex-col w-full py-16 md:py-24 gap-6 bg-lightgray-50 dark:bg-darkgray-50">
+        <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
+          <div class="flex flex-col gap-4">
+            <div class="flex justify-center">
+              <p
+                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+              >
+                Services
+              </p>
+            </div>
+            <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
+              Here is a quick summary of my services as freelancer:
             </p>
           </div>
-          <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
-            What's next? Feel free to reach out to me if you're looking for a developer, have a query, or simply want to connect.
-          </p>
-        </div>
-        <div class="flex flex-col lg:gap-4">
-          <div class="flex items-center justify-center gap-4">
-            <svg
-              class="hidden sm:flex shrink-0 w-6 h-6 lg:w-8 lg:h-8 stroke-lightgray-600 dark:stroke-darkgray-600"
-              width="24"
-              height="24"
-              viewBox="0 0 25 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20.5 4H4.5C3.39543 4 2.5 4.89543 2.5 6V18C2.5 19.1046 3.39543 20 4.5 20H20.5C21.6046 20 22.5 19.1046 22.5 18V6C22.5 4.89543 21.6046 4 20.5 4Z"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M22.5 7L13.53 12.7C13.2213 12.8934 12.8643 12.996 12.5 12.996C12.1357 12.996 11.7787 12.8934 11.47 12.7L2.5 7"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <h2 id="contact-email" class="font-semibold text-lg lg:text-4xl text-lightgray-900 dark:text-darkgray-900">
-              renan.andradefranca@gmail.com
+          <div class="flex flex-col p-8 gap-4 md:gap-12 shadow-md dark:shadow-xl rounded-xl bg-lightgray dark:bg-darkgray-100">
+            <h2 class="font-bold text-xl md:text-2xl text-center text-lightgray-900 dark:text-darkgray-900 mb-3">
+              Convert Your Figma Design to a Live Page
             </h2>
-            <button id="contact-copy-email-icon" class="relative">
+            <div class="flex flex-col md:flex-row md:justify-between">
+              <div class="flex flex-col md:w-3/5 gap-4">
+                <h3 class="font-semibold text-lg md:text-xl text-lightgray-800 dark:text-darkgray-800 mb-2">Service Features:</h3>
+                <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5">
+                  <li><strong>Responsive Design:</strong> Perfect viewing on any device - mobile, tablet, or desktop.</li>
+                  <li>
+                    <strong>Engaging Scroll Animations:</strong> Guide and captivate your visitors with smooth animations as they navigate.
+                  </li>
+                  <li><strong>Pixel Perfect:</strong> Your website will look exactly like your Figma design.</li>
+                  <li><strong>Strategic Animations:</strong> Enhance user experience with subtle animations where they matter.</li>
+                  <li><strong>Vanilla JavaScript:</strong> Clean, efficient, and easily maintainable code for page interactivity.</li>
+                  <li>
+                    <strong>Private GitHub Repository:</strong> Access your source code anytime. Enhance or learn from the development
+                    process in a developer-friendly environment.
+                  </li>
+                  <li><strong>Use TailwindCSS</strong> to style your website in the best way possible.</li>
+                  <li><strong>100% Satisfaction:</strong> If you're not satisfied with my work, I'll make it right.</li>
+                </ul>
+                <h3 class="font-semibold text-lg md:text-xl text-lightgray-800 dark:text-darkgray-800 mb-2">Why TailwindCSS?</h3>
+                <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5 mb-3">
+                  <li><strong>Utility-first:</strong> Enables rapid UI development with reusable classes.</li>
+                  <li><strong>Highly Customizable:</strong> Tailor-made configurations to suit your design needs.</li>
+                  <li><strong>Performance Optimized:</strong> Only includes the CSS you use, ensuring lightweight pages.</li>
+                  <li><strong>Responsive:</strong> Built-in responsiveness to make sure your design looks great on all devices.</li>
+                  <li><strong>Maintainability:</strong> Easy to update and maintain with clear and concise class naming.</li>
+                </ul>
+              </div>
+              <div class="flex flex-col md:w-2/5 gap-4">
+                <h3 class="font-bold text-xl md:text-2xl text-lightgray-900 dark:text-darkgray-900 mb-3">Special Pricing</h3>
+                <ul class="flex flex-col list-decimal font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5">
+                  <li class="group">
+                    Landing page with 4 sections:
+                    <span class="font-semibold line-through">$200</span> Now at
+                    <span class="font-bold text-red-600 dark:text-red-400">$100!</span
+                    ><button id="landingpage-price-help" class="relative">
+                      <svg
+                        class="inline-flex stroke-purple-600 dark:stroke-purple-300 cursor-pointer animate-twBounce animate-infinite"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                        <path d="M12 17h.01" />
+                      </svg>
+                      <span
+                        class="group-hover:opacity-100 group-hover:h-auto group-hover:py-1 absolute z-50 bottom-6 overflow-hidden h-0 transform -translate-x-1/2 px-3 py-0 bg-gray-600 text-white text-sm rounded-md opacity-0 transition-opacity duration-500"
+                        >Understand the price calculation by an example!</span
+                      >
+                    </button>
+                    <br />
+                    - Add sections for just <span class="font-bold text-red-600 dark:text-red-400">$20</span> (Originally
+                    <span class="font-semibold line-through">$40</span>) each.
+                  </li>
+                  <li class="group mt-2">
+                    Multiple Pages: <span class="font-bold text-red-600 dark:text-red-400">$150</span> (<span
+                      class="font-semibold line-through"
+                      >$300</span
+                    >) for the first page!
+                    <button id="multipage-price-help" class="relative">
+                      <svg
+                        class="inline-flex stroke-purple-600 dark:stroke-purple-300 cursor-pointer animate-twBounce animate-infinite"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                        <path d="M12 17h.01" />
+                      </svg>
+                      <span
+                        class="group-hover:opacity-100 group-hover:h-auto group-hover:py-1 absolute bottom-6 overflow-hidden h-0 transform -translate-x-1/2 px-3 py-0 bg-gray-600 text-white text-sm rounded-md opacity-0 transition-opacity duration-500"
+                        >Understand the price calculation by an example!</span
+                      ></button
+                    ><br />
+                    - Add inner page for <span class="font-bold text-red-600 dark:text-red-400">$35</span> (Originally
+                    <span class="font-semibold line-through">$70</span>) each.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <a
+              href="https://www.fiverr.com/renan_franca/convert-figma-to-html-using-tailwindcss"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-bold text-lg text-center text-lightgray-50 dark:text-darkgray-50 bg-lightgray-900 dark:bg-darkgray-900 rounded-xl py-2 px-4 hover:bg-lightgray-700 dark:hover:bg-darkgray-700 active:bg-lightgray-800 dark:active:bg-darkgray-800 transition-all ease-in-out duration-200 mt-4"
+            >
+              Grab This Offer Now!
+            </a>
+          </div>
+        </div>
+      </section>
+      <section id="work" class="flex flex-col w-full py-16 md:py-24 gap-6">
+        <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
+          <div class="flex flex-col gap-4">
+            <div class="flex justify-center">
+              <p
+                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 rounded-xl bg-lightgray-200 dark:bg-darkgray-200"
+              >
+                Portfolio
+              </p>
+            </div>
+            <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
+              Some of the noteworthy projects I have built:
+            </p>
+          </div>
+          <div class="flex flex-col md:flex-row rounded-xl shadow-md dark:shadow-xl">
+            <div
+              class="flex w-full md:w-1/2 items-center justify-center p-8 rounded-t-xl md:rounded-tr-none md:rounded-l-xl bg-lightgray-50 dark:bg-darkgray-200"
+            >
+              <a href="https://renanfranca.github.io/portfolio/feedbacker-html-css/" target="_blank" rel="noopener noreferrer">
+                <div class="flex w-[242px] h-[192px] md:w-[334px] md:h-[284px] lg:w-[434px] lg:h-[384px]">
+                  <img
+                    class="rounded-xl shadow-lg transition-transform duration-500 md:hover:scale-105"
+                    src="assets/images/feedbacker-portfolio.png"
+                    alt="Feedbacker Layout"
+                    loading="lazy"
+                  />
+                </div>
+              </a>
+            </div>
+            <div class="flex flex-col md:w-1/2 p-8 gap-6 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
+              <p class="font-semibold text-lg text-left text-lightgray-900 dark:text-darkgray-900">Feedbacker</p>
+              <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">
+                I meticulously converted a Figma design into interactive HTML & CSS, leveraging the power of TailwindCSS. This project was
+                showcased in the
+                <a
+                  class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
+                  href="https://treinamento.vuejsbrasil.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Vue.js Brazilian Community course</a
+                >
+                as a prime example of an application crafted during their training sessions.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  HTML5
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  CSS3
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  Tailwindcss
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  Git
+                </p>
+              </div>
+              <a href="https://renanfranca.github.io/portfolio/feedbacker-html-css/" target="_blank" rel="noopener noreferrer">
+                <svg
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 19V25C24 25.5304 23.7893 26.0391 23.4142 26.4142C23.0391 26.7893 22.5304 27 22 27H11C10.4696 27 9.96086 26.7893 9.58579 26.4142C9.21071 26.0391 9 25.5304 9 25V14C9 13.4696 9.21071 12.9609 9.58579 12.5858C9.96086 12.2107 10.4696 12 11 12H17"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path d="M21 9H27V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M16 20L27 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row rounded-xl shadow-md dark:shadow-xl">
+            <div
+              class="flex w-full md:w-1/2 items-center justify-center p-8 rounded-t-xl md:rounded-tr-none md:rounded-l-xl bg-lightgray-50 dark:bg-darkgray-200"
+            >
+              <a href="https://renanfranca.github.io/portfolio/personal-portfolio-html-css/" target="_blank" rel="noopener noreferrer">
+                <div class="flex w-[191px] h-[192px] md:w-[283px] md:h-[284px] lg:w-[382px] lg:h-[384px]">
+                  <img
+                    class="rounded-xl shadow-lg transition-transform duration-500 md:hover:scale-105"
+                    src="assets/images/personal-portfolio-portfolio.png"
+                    alt="Personal Portfolio"
+                    loading="lazy"
+                  />
+                </div>
+              </a>
+            </div>
+            <div class="flex flex-col md:w-1/2 p-8 gap-6 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
+              <p class="font-semibold text-lg text-left text-lightgray-900 dark:text-darkgray-900">Personal Portfolio</p>
+              <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">
+                I've transformed a Figma design by
+                <a
+                  class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
+                  href="https://sagarshah.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Sagar Shah</a
+                >
+                into a dynamic HTML & CSS interface utilizing TailwindCSS. The design boasts a responsive layout, seamless light and dark
+                mode transitions, and captivating animations, all meticulously curated to ensure an immersive and effortless user
+                experience.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  HTML5
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  CSS3
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  Tailwindcss
+                </p>
+                <p
+                  class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+                >
+                  Git
+                </p>
+              </div>
+              <a href="https://renanfranca.github.io/portfolio/personal-portfolio-html-css/" target="_blank" rel="noopener noreferrer">
+                <svg
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 19V25C24 25.5304 23.7893 26.0391 23.4142 26.4142C23.0391 26.7893 22.5304 27 22 27H11C10.4696 27 9.96086 26.7893 9.58579 26.4142C9.21071 26.0391 9 25.5304 9 25V14C9 13.4696 9.21071 12.9609 9.58579 12.5858C9.96086 12.2107 10.4696 12 11 12H17"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path d="M21 9H27V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M16 20L27 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="flex flex-col w-full py-16 md:py-24 gap-6 bg-lightgray-50 dark:bg-darkgray-50">
+        <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
+          <div class="flex flex-col gap-4">
+            <div class="flex justify-center">
+              <p
+                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 rounded-xl bg-lightgray-200 dark:bg-darkgray-200"
+              >
+                Get in touch
+              </p>
+            </div>
+            <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
+              What's next? Feel free to reach out to me if you're looking for a developer, have a query, or simply want to connect.
+            </p>
+          </div>
+          <div class="flex flex-col lg:gap-4">
+            <div class="flex items-center justify-center gap-4">
               <svg
-                class="shrink-0 w-9 h-9 lg:w-11 lg:h-11 stroke-lightgray-600 dark:stroke-darkgray-600"
-                width="36"
-                height="36"
-                viewBox="0 0 37 36"
+                class="hidden sm:flex shrink-0 w-6 h-6 lg:w-8 lg:h-8 stroke-lightgray-600 dark:stroke-darkgray-600"
+                width="24"
+                height="24"
+                viewBox="0 0 25 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M26.5 14H16.5C15.3954 14 14.5 14.8954 14.5 16V26C14.5 27.1046 15.3954 28 16.5 28H26.5C27.6046 28 28.5 27.1046 28.5 26V16C28.5 14.8954 27.6046 14 26.5 14Z"
+                  d="M20.5 4H4.5C3.39543 4 2.5 4.89543 2.5 6V18C2.5 19.1046 3.39543 20 4.5 20H20.5C21.6046 20 22.5 19.1046 22.5 18V6C22.5 4.89543 21.6046 4 20.5 4Z"
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />
                 <path
-                  d="M10.5 22C9.4 22 8.5 21.1 8.5 20V10C8.5 8.9 9.4 8 10.5 8H20.5C21.6 8 22.5 8.9 22.5 10"
+                  d="M22.5 7L13.53 12.7C13.2213 12.8934 12.8643 12.996 12.5 12.996C12.1357 12.996 11.7787 12.8934 11.47 12.7L2.5 7"
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />
               </svg>
-            </button>
+              <h2 id="contact-email" class="font-semibold text-lg lg:text-4xl text-lightgray-900 dark:text-darkgray-900">
+                renan.andradefranca@gmail.com
+              </h2>
+              <button id="contact-copy-email-icon" class="relative">
+                <svg
+                  class="shrink-0 w-9 h-9 lg:w-11 lg:h-11 stroke-lightgray-600 dark:stroke-darkgray-600"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 37 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M26.5 14H16.5C15.3954 14 14.5 14.8954 14.5 16V26C14.5 27.1046 15.3954 28 16.5 28H26.5C27.6046 28 28.5 27.1046 28.5 26V16C28.5 14.8954 27.6046 14 26.5 14Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M10.5 22C9.4 22 8.5 21.1 8.5 20V10C8.5 8.9 9.4 8 10.5 8H20.5C21.6 8 22.5 8.9 22.5 10"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="hidden flex items-center justify-center gap-4">
+              <svg
+                class="shrink-0 w-6 h-6 lg:w-8 lg:h-8 stroke-lightgray-600 dark:stroke-darkgray-600"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21.9999 16.9201V19.9201C22.0011 20.1986 21.944 20.4743 21.8324 20.7294C21.7209 20.9846 21.5572 21.2137 21.352 21.402C21.1468 21.5902 20.9045 21.7336 20.6407 21.8228C20.3769 21.912 20.0973 21.9452 19.8199 21.9201C16.7428 21.5857 13.7869 20.5342 11.1899 18.8501C8.77376 17.3148 6.72527 15.2663 5.18993 12.8501C3.49991 10.2413 2.44818 7.27109 2.11993 4.1801C2.09494 3.90356 2.12781 3.62486 2.21643 3.36172C2.30506 3.09859 2.4475 2.85679 2.6347 2.65172C2.82189 2.44665 3.04974 2.28281 3.30372 2.17062C3.55771 2.05843 3.83227 2.00036 4.10993 2.0001H7.10993C7.59524 1.99532 8.06572 2.16718 8.43369 2.48363C8.80166 2.80008 9.04201 3.23954 9.10993 3.7201C9.23656 4.68016 9.47138 5.62282 9.80993 6.5301C9.94448 6.88802 9.9736 7.27701 9.89384 7.65098C9.81408 8.02494 9.6288 8.36821 9.35993 8.6401L8.08993 9.9101C9.51349 12.4136 11.5864 14.4865 14.0899 15.9101L15.3599 14.6401C15.6318 14.3712 15.9751 14.1859 16.3491 14.1062C16.723 14.0264 17.112 14.0556 17.4699 14.1901C18.3772 14.5286 19.3199 14.7635 20.2799 14.8901C20.7657 14.9586 21.2093 15.2033 21.5265 15.5776C21.8436 15.9519 22.0121 16.4297 21.9999 16.9201Z"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <p id="contact-phone" class="font-semibold text-lg lg:text-4xl text-lightgray-900 dark:text-darkgray-900">+91 8980500565</p>
+              <button id="contact-copy-phone-icon" class="relative">
+                <svg
+                  class="shrink-0 w-9 h-9 lg:w-11 lg:h-11 stroke-lightgray-600 dark:stroke-darkgray-600"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 37 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M26.5 14H16.5C15.3954 14 14.5 14.8954 14.5 16V26C14.5 27.1046 15.3954 28 16.5 28H26.5C27.6046 28 28.5 27.1046 28.5 26V16C28.5 14.8954 27.6046 14 26.5 14Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M10.5 22C9.4 22 8.5 21.1 8.5 20V10C8.5 8.9 9.4 8 10.5 8H20.5C21.6 8 22.5 8.9 22.5 10"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
-          <div class="hidden flex items-center justify-center gap-4">
+          <div class="flex flex-col">
+            <p class="font-normal text-base text-center text-lightgray-600 dark:text-darkgray-600">
+              You may also find me on these platforms!
+            </p>
+            <div class="flex justify-center">
+              <a href="https://github.com/renanfranca" target="_blank" rel="noopener noreferrer">
+                <svg
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 28V24C21.1392 22.7473 20.78 21.4901 20 20.5C23 20.5 26 18.5 26 15C26.08 13.75 25.73 12.52 25 11.5C25.28 10.35 25.28 9.15 25 8C25 8 24 8 22 9.5C19.36 9 16.64 9 14 9.5C12 8 11 8 11 8C10.7 9.15 10.7 10.35 11 11.5C10.2719 12.5159 9.91851 13.7528 10 15C10 18.5 13 20.5 16 20.5C15.61 20.99 15.32 21.55 15.15 22.15C14.98 22.75 14.93 23.38 15 24V28"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path d="M15 24C10.49 26 10 22 8 22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a href="https://www.twitter.com/renan_afranca" target="_blank" rel="noopener noreferrer">
+                <svg
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M28 9.99999C28 9.99999 27.3 12.1 26 13.4C27.6 23.4 16.6 30.7 8 25C10.2 25.1 12.4 24.4 14 23C9 21.5 6.5 15.6 9 11C11.2 13.6 14.6 15.1 18 15C17.1 10.8 22 8.39999 25 11.2C26.1 11.2 28 9.99999 28 9.99999Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                class="flex w-9 h-9 items-center justify-center rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100"
+                href="https://linkedin.com/in/renan-af"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  class="stroke-lightgray-600 dark:stroke-darkgray-600"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect width="4" height="12" x="2" y="9" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="flex flex-col w-full max-w-7xl mx-auto py-6 gap-6">
+      <div class="flex items-center justify-center gap-2">
+        <svg
+          class="stroke-lightgray-600 dark:stroke-darkgray-600"
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0_327_2490)">
+            <path
+              d="M7.99967 14.6663C11.6816 14.6663 14.6663 11.6816 14.6663 7.99967C14.6663 4.31778 11.6816 1.33301 7.99967 1.33301C4.31778 1.33301 1.33301 4.31778 1.33301 7.99967C1.33301 11.6816 4.31778 14.6663 7.99967 14.6663Z"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M9.99953 6.23567C9.64123 5.82948 9.16774 5.54201 8.64205 5.41154C8.11637 5.28106 7.56341 5.31376 7.05676 5.50528C6.55011 5.69679 6.1138 6.03805 5.80587 6.48365C5.49794 6.92924 5.33301 7.45804 5.33301 7.99967C5.33301 8.54131 5.49794 9.07011 5.80587 9.5157C6.1138 9.9613 6.55011 10.3026 7.05676 10.4941C7.56341 10.6856 8.11637 10.7183 8.64205 10.5878C9.16774 10.4573 9.64123 10.1699 9.99953 9.76367"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_327_2490">
+              <rect width="16" height="16" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+        <p class="font-normal text-sm text-lightgray-600 dark:text-darkgray-600">
+          2023 |
+          <a
+            target="_blank"
+            class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
+            href="https://www.figma.com/community/file/1262992249991763120/Personal-Portfolio-Website-Template-%7C-Mobile-%26-Desktop"
+            >Designed</a
+          >
+          by
+          <a
+            class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
+            href="https://sagarshah.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Sagar Shah</a
+          >
+          and
+          <a
+            class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
+            href="https://github.com/renanfranca/personal-portfolio-html-css"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Coded</a
+          >
+          with <span class="text-red-500">❤️</span> by
+          <a
+            class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
+            href="#"
+            rel="noopener noreferrer"
+            >Renan Franca</a
+          >
+        </p>
+      </div>
+    </footer>
+    <div
+      id="multipage-price-dialog"
+      role="dialog"
+      class="hidden fixed top-0 left-0 z-50 flex w-full h-full justify-end bg-opacity-50 backdrop-blur-sm transition-all ease-in-out duration-100"
+    >
+      <div
+        id="multipage-price-content"
+        class="top-52 max-w-xs h-screen overflow-y-auto flex flex-col py-2 bg-lightgray dark:bg-darkgray-100 shadow-2xl animate-slideInUp animate-faster transition-all ease-in-out duration-100"
+      >
+        <div class="flex justify-between p-4 border-b">
+          <h3 class="font-bold text-2xl text-lightgray-900 dark:text-darkgray-900">Price Example</h3>
+          <button id="close-multipage-price" class="p-1 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
             <svg
-              class="shrink-0 w-6 h-6 lg:w-8 lg:h-8 stroke-lightgray-600 dark:stroke-darkgray-600"
+              class="stroke-lightgray-600 dark:stroke-darkgray-600"
               width="24"
               height="24"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M21.9999 16.9201V19.9201C22.0011 20.1986 21.944 20.4743 21.8324 20.7294C21.7209 20.9846 21.5572 21.2137 21.352 21.402C21.1468 21.5902 20.9045 21.7336 20.6407 21.8228C20.3769 21.912 20.0973 21.9452 19.8199 21.9201C16.7428 21.5857 13.7869 20.5342 11.1899 18.8501C8.77376 17.3148 6.72527 15.2663 5.18993 12.8501C3.49991 10.2413 2.44818 7.27109 2.11993 4.1801C2.09494 3.90356 2.12781 3.62486 2.21643 3.36172C2.30506 3.09859 2.4475 2.85679 2.6347 2.65172C2.82189 2.44665 3.04974 2.28281 3.30372 2.17062C3.55771 2.05843 3.83227 2.00036 4.10993 2.0001H7.10993C7.59524 1.99532 8.06572 2.16718 8.43369 2.48363C8.80166 2.80008 9.04201 3.23954 9.10993 3.7201C9.23656 4.68016 9.47138 5.62282 9.80993 6.5301C9.94448 6.88802 9.9736 7.27701 9.89384 7.65098C9.81408 8.02494 9.6288 8.36821 9.35993 8.6401L8.08993 9.9101C9.51349 12.4136 11.5864 14.4865 14.0899 15.9101L15.3599 14.6401C15.6318 14.3712 15.9751 14.1859 16.3491 14.1062C16.723 14.0264 17.112 14.0556 17.4699 14.1901C18.3772 14.5286 19.3199 14.7635 20.2799 14.8901C20.7657 14.9586 21.2093 15.2033 21.5265 15.5776C21.8436 15.9519 22.0121 16.4297 21.9999 16.9201Z"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
+              <path d="M18 6L6 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            <p id="contact-phone" class="font-semibold text-lg lg:text-4xl text-lightgray-900 dark:text-darkgray-900">+91 8980500565</p>
-            <button id="contact-copy-phone-icon" class="relative">
-              <svg
-                class="shrink-0 w-9 h-9 lg:w-11 lg:h-11 stroke-lightgray-600 dark:stroke-darkgray-600"
-                width="36"
-                height="36"
-                viewBox="0 0 37 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M26.5 14H16.5C15.3954 14 14.5 14.8954 14.5 16V26C14.5 27.1046 15.3954 28 16.5 28H26.5C27.6046 28 28.5 27.1046 28.5 26V16C28.5 14.8954 27.6046 14 26.5 14Z"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M10.5 22C9.4 22 8.5 21.1 8.5 20V10C8.5 8.9 9.4 8 10.5 8H20.5C21.6 8 22.5 8.9 22.5 10"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-          </div>
+          </button>
         </div>
-        <div class="flex flex-col">
-          <p class="font-normal text-base text-center text-lightgray-600 dark:text-darkgray-600">
-            You may also find me on these platforms!
+        <div
+          class="flex flex-col w-full items-center p-4 gap-4 border-b border-lightgray-100 dark:border-darkgray-100 bg-lightgray dark:bg-darkgray-100"
+        >
+          <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
+            Multiple Pages: <span class="font-semibold line-through">$300</span> Now at
+            <span class="font-bold text-red-600 dark:text-red-400">$150</span> for the first page!<br />
+            - Add inner page for <span class="font-bold text-red-600 dark:text-red-400">$35</span> (Originally
+            <span class="font-semibold line-through">$70</span>) each.
           </p>
-          <div class="flex justify-center">
-            <a href="https://github.com/renanfranca" target="_blank" rel="noopener noreferrer">
-              <svg
-                class="stroke-lightgray-600 dark:stroke-darkgray-600 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100"
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M21 28V24C21.1392 22.7473 20.78 21.4901 20 20.5C23 20.5 26 18.5 26 15C26.08 13.75 25.73 12.52 25 11.5C25.28 10.35 25.28 9.15 25 8C25 8 24 8 22 9.5C19.36 9 16.64 9 14 9.5C12 8 11 8 11 8C10.7 9.15 10.7 10.35 11 11.5C10.2719 12.5159 9.91851 13.7528 10 15C10 18.5 13 20.5 16 20.5C15.61 20.99 15.32 21.55 15.15 22.15C14.98 22.75 14.93 23.38 15 24V28"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+          <div class="flex flex-col rounded-xl shadow-md dark:shadow-xl">
+            <div class="flex w-full items-center justify-center p-2 rounded-t-xl bg-lightgray-50 dark:bg-darkgray-200">
+              <div class="flex w-[242px]">
+                <img
+                  class="rounded-xl shadow-lg transition-transform"
+                  src="assets/images/feedbacker-portfolio.png"
+                  alt="Feedbacker Layout"
+                  loading="lazy"
                 />
-                <path d="M15 24C10.49 26 10 22 8 22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </a>
-            <a href="https://www.twitter.com/renan_afranca" target="_blank" rel="noopener noreferrer">
-              <svg
-                class="stroke-lightgray-600 dark:stroke-darkgray-600 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100"
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M28 9.99999C28 9.99999 27.3 12.1 26 13.4C27.6 23.4 16.6 30.7 8 25C10.2 25.1 12.4 24.4 14 23C9 21.5 6.5 15.6 9 11C11.2 13.6 14.6 15.1 18 15C17.1 10.8 22 8.39999 25 11.2C26.1 11.2 28 9.99999 28 9.99999Z"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
-            <a
-              class="flex w-9 h-9 items-center justify-center rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100"
-              href="https://linkedin.com/in/renan-af"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg
-                class="stroke-lightgray-600 dark:stroke-darkgray-600"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                <rect width="4" height="12" x="2" y="9" />
-                <circle cx="4" cy="4" r="2" />
-              </svg>
-            </a>
+              </div>
+            </div>
+            <div class="flex flex-col p-1 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
+              <p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">First Page - Cost $150</p>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="flex flex-col w-full max-w-7xl mx-auto py-6 gap-6">
-    <div class="flex items-center justify-center gap-2">
-      <svg
-        class="stroke-lightgray-600 dark:stroke-darkgray-600"
-        width="16"
-        height="16"
-        viewBox="0 0 16 16"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g clip-path="url(#clip0_327_2490)">
-          <path
-            d="M7.99967 14.6663C11.6816 14.6663 14.6663 11.6816 14.6663 7.99967C14.6663 4.31778 11.6816 1.33301 7.99967 1.33301C4.31778 1.33301 1.33301 4.31778 1.33301 7.99967C1.33301 11.6816 4.31778 14.6663 7.99967 14.6663Z"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M9.99953 6.23567C9.64123 5.82948 9.16774 5.54201 8.64205 5.41154C8.11637 5.28106 7.56341 5.31376 7.05676 5.50528C6.55011 5.69679 6.1138 6.03805 5.80587 6.48365C5.49794 6.92924 5.33301 7.45804 5.33301 7.99967C5.33301 8.54131 5.49794 9.07011 5.80587 9.5157C6.1138 9.9613 6.55011 10.3026 7.05676 10.4941C7.56341 10.6856 8.11637 10.7183 8.64205 10.5878C9.16774 10.4573 9.64123 10.1699 9.99953 9.76367"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </g>
-        <defs>
-          <clipPath id="clip0_327_2490">
-            <rect width="16" height="16" fill="white" />
-          </clipPath>
-        </defs>
-      </svg>
-      <p class="font-normal text-sm text-lightgray-600 dark:text-darkgray-600">
-        2023 |
-        <a
-          target="_blank"
-          class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-          href="https://www.figma.com/community/file/1262992249991763120/Personal-Portfolio-Website-Template-%7C-Mobile-%26-Desktop"
-          >Designed</a
-        >
-        by
-        <a
-          class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-          href="https://sagarshah.dev/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Sagar Shah</a
-        >
-        and
-        <a
-          class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-          href="https://github.com/renanfranca/personal-portfolio-html-css"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Coded</a
-        >
-        with <span class="text-red-500">❤️</span> by
-        <a
-          class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-          href="#"
-          rel="noopener noreferrer"
-          >Renan Franca</a
-        >
-      </p>
-    </div>
-  </footer>
-  <div
-    id="multipage-price-dialog"
-    role="dialog"
-    class="hidden fixed top-0 left-0 z-50 flex w-full h-full justify-end bg-opacity-50 backdrop-blur-sm transition-all ease-in-out duration-100"
-  >
-    <div
-      id="multipage-price-content"
-      class="top-52 max-w-xs h-screen overflow-y-auto flex flex-col py-2 bg-lightgray dark:bg-darkgray-100 shadow-2xl animate-slideInUp animate-faster transition-all ease-in-out duration-100"
-    >
-      <div class="flex justify-between p-4 border-b">
-        <h3 class="font-bold text-2xl text-lightgray-900 dark:text-darkgray-900">Price Example</h3>
-        <button id="close-multipage-price" class="p-1 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
           <svg
             class="stroke-lightgray-600 dark:stroke-darkgray-600"
+            xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
             viewBox="0 0 24 24"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
-            <path d="M18 6L6 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"
+            />
           </svg>
-        </button>
-      </div>
-      <div
-        class="flex flex-col w-full items-center p-4 gap-4 border-b border-lightgray-100 dark:border-darkgray-100 bg-lightgray dark:bg-darkgray-100"
-      >
-        <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
-          Multipage: <span class="font-semibold line-through">$300</span> Now at
-          <span class="font-bold text-red-600 dark:text-red-400">$150</span> for the first page!<br />
-          - Every inner page at <span class="font-bold text-red-600 dark:text-red-400">$35</span> (Originally
-          <span class="font-semibold line-through">$70</span>).
-        </p>
-        <div class="flex flex-col rounded-xl shadow-md dark:shadow-xl">
-          <div class="flex w-full items-center justify-center p-2 rounded-t-xl bg-lightgray-50 dark:bg-darkgray-200">
-            <div class="flex w-[242px]">
-              <img
-                class="rounded-xl shadow-lg transition-transform"
-                src="assets/images/feedbacker-portfolio.png"
-                alt="Feedbacker Layout"
-                loading="lazy"
-              />
+          <div class="flex flex-col rounded-xl shadow-md dark:shadow-xl">
+            <div class="flex w-full items-center justify-center p-2 rounded-t-xl bg-lightgray-50 dark:bg-darkgray-200">
+              <div class="flex w-[242px]">
+                <img
+                  class="rounded-xl shadow-lg transition-transform"
+                  src="assets/images/feedbacker-first-innerpage.png"
+                  alt="Feedbacker Layout"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div class="flex flex-col p-1 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
+              <p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">Inner Page - Cost $35</p>
             </div>
           </div>
-          <div class="flex flex-col p-1 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
-            <p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">First Page - Cost $150</p>
-          </div>
-        </div>
-        <svg
-          class="stroke-lightgray-600 dark:stroke-darkgray-600"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path
-            d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"
-          />
-        </svg>
-        <div class="flex flex-col rounded-xl shadow-md dark:shadow-xl">
-          <div class="flex w-full items-center justify-center p-2 rounded-t-xl bg-lightgray-50 dark:bg-darkgray-200">
-            <div class="flex w-[242px]">
-              <img
-                class="rounded-xl shadow-lg transition-transform"
-                src="assets/images/feedbacker-first-innerpage.png"
-                alt="Feedbacker Layout"
-                loading="lazy"
-              />
-            </div>
-          </div>
-          <div class="flex flex-col p-1 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
-            <p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">Inner Page - Cost $35</p>
-          </div>
-        </div>
-        <svg
-          class="stroke-lightgray-600 dark:stroke-darkgray-600"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path
-            d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"
-          />
-        </svg>
-        <div class="flex flex-col rounded-xl shadow-md dark:shadow-xl">
-          <div class="flex w-full items-center justify-center p-2 rounded-t-xl bg-lightgray-50 dark:bg-darkgray-200">
-            <div class="flex w-[242px]">
-              <img
-                class="rounded-xl shadow-lg transition-transform"
-                src="assets/images/feedbacker-second-innerpage.png"
-                alt="Feedbacker Layout"
-                loading="lazy"
-              />
-            </div>
-          </div>
-          <div class="flex flex-col p-1 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
-            <p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">Inner Page - Cost $35</p>
-          </div>
-        </div>
-        <svg
-          class="stroke-lightgray-600 dark:stroke-darkgray-600"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <line x1="5" x2="19" y1="9" y2="9" />
-          <line x1="5" x2="19" y1="15" y2="15" />
-        </svg>
-        <p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">Final Cost: $220</p>
-      </div>
-    </div>
-  </div>
-  <div
-    id="landingpage-price-dialog"
-    role="dialog"
-    class="hidden fixed top-0 left-0 z-50 flex w-full h-full justify-end bg-opacity-50 backdrop-blur-sm transition-all ease-in-out duration-100"
-  >
-    <div
-      id="landingpage-price-content"
-      class="top-52 max-w-xs h-screen overflow-y-auto flex flex-col py-2 bg-lightgray dark:bg-darkgray-100 shadow-2xl animate-slideInUp animate-faster transition-all ease-in-out duration-100"
-    >
-      <div class="flex justify-between p-4 border-b">
-        <h3 class="font-bold text-2xl text-lightgray-900 dark:text-darkgray-900">Price Example</h3>
-        <button id="close-landingpage-price" class="p-1 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
           <svg
             class="stroke-lightgray-600 dark:stroke-darkgray-600"
+            xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
             viewBox="0 0 24 24"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
-            <path d="M18 6L6 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"
+            />
           </svg>
-        </button>
-      </div>
-      <div
-        class="flex flex-col w-full items-center p-4 gap-4 border-b border-lightgray-100 dark:border-darkgray-100 bg-lightgray dark:bg-darkgray-100"
-      >
-        <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
-          Landing page with 4 sections:
-          <span class="font-semibold line-through">$200</span> Now at
-          <span class="font-bold text-red-600 dark:text-red-400">$100!</span>
-          <br />
-          - Add sections for just <span class="font-bold text-red-600 dark:text-red-400">$20</span> (Originally
-          <span class="font-semibold line-through">$40</span>) each.
-        </p>
-        <div>
-          <p class="font-semibold text-base text-left text-lightgray-900 dark:text-darkgray-900">
-            The example layout consists of eight sections, indicated by the numbers:
-            <span class="font-bold text-xs text-darkgray inline-flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full"
-              >1</span
-            >
-            <span class="font-bold text-xs text-darkgray inline-flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full"
-              >2</span
-            >
-            <span class="font-bold text-xs text-darkgray inline-flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full"
-              >3</span
-            >
-            <span class="font-bold text-xs text-darkgray inline-flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full"
-              >4</span
-            >
-            <span class="font-bold text-xs text-darkgray inline-flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full"
-              >5</span
-            >
-            <span class="font-bold text-xs text-darkgray inline-flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full"
-              >6</span
-            >
-            <span class="font-bold text-xs text-darkgray inline-flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full"
-              >7</span
-            >
-            <span class="font-bold text-xs text-darkgray inline-flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full"
-              >8</span
-            >
-          </p>
+          <div class="flex flex-col rounded-xl shadow-md dark:shadow-xl">
+            <div class="flex w-full items-center justify-center p-2 rounded-t-xl bg-lightgray-50 dark:bg-darkgray-200">
+              <div class="flex w-[242px]">
+                <img
+                  class="rounded-xl shadow-lg transition-transform"
+                  src="assets/images/feedbacker-second-innerpage.png"
+                  alt="Feedbacker Layout"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div class="flex flex-col p-1 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
+              <p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">Inner Page - Cost $35</p>
+            </div>
+          </div>
+          <svg
+            class="stroke-lightgray-600 dark:stroke-darkgray-600"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="5" x2="19" y1="9" y2="9" />
+            <line x1="5" x2="19" y1="15" y2="15" />
+          </svg>
+          <p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">Final Cost: $220</p>
         </div>
-        <p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">4 Sections - Cost $100</p>
-        <svg
-          class="stroke-lightgray-600 dark:stroke-darkgray-600"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+      </div>
+    </div>
+    <div
+      id="landingpage-price-dialog"
+      role="dialog"
+      class="hidden fixed top-0 left-0 z-50 flex w-full h-full justify-end bg-opacity-50 backdrop-blur-sm transition-all ease-in-out duration-100"
+    >
+      <div
+        id="landingpage-price-content"
+        class="top-52 max-w-xs h-screen overflow-y-auto flex flex-col py-2 bg-lightgray dark:bg-darkgray-100 shadow-2xl animate-slideInUp animate-faster transition-all ease-in-out duration-100"
+      >
+        <div class="flex justify-between p-4 border-b">
+          <h3 class="font-bold text-2xl text-lightgray-900 dark:text-darkgray-900">Price Example</h3>
+          <button id="close-landingpage-price" class="p-1 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
+            <svg
+              class="stroke-lightgray-600 dark:stroke-darkgray-600"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M18 6L6 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="flex flex-col w-full items-center p-4 gap-4 border-b border-lightgray-100 dark:border-darkgray-100 bg-lightgray dark:bg-darkgray-100"
         >
-          <path
-            d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"
-          />
-        </svg>
-        <p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">+4 Sections ($20 each) - Cost $80</p>
-        <svg
-          class="stroke-lightgray-600 dark:stroke-darkgray-600"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <line x1="5" x2="19" y1="9" y2="9" />
-          <line x1="5" x2="19" y1="15" y2="15" />
-        </svg>
-        <p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">Final Cost: $180</p>
-        <div class="relative flex h-[3924px]">
-          <img class="transition-transform" src="assets/images/landingpage-example-mobile.jpg" alt="Renan About Layout" loading="lazy" />
-          <div class="absolute top-0 z-50 flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full">
-            <span class="font-bold text-xs text-darkgray">1</span>
+          <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
+            Landing page with 4 sections:
+            <span class="font-semibold line-through">$200</span> Now at
+            <span class="font-bold text-red-600 dark:text-red-400">$100!</span>
+            <br />
+            - Add sections for just <span class="font-bold text-red-600 dark:text-red-400">$20</span> (Originally
+            <span class="font-semibold line-through">$40</span>) each.
+          </p>
+          <div>
+            <p class="font-semibold text-base text-left text-lightgray-900 dark:text-darkgray-900">
+              The example layout consists of eight sections, indicated by the numbers:
+              <span class="font-bold text-xs text-darkgray inline-flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full"
+                >1</span
+              >
+              <span class="font-bold text-xs text-darkgray inline-flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full"
+                >2</span
+              >
+              <span class="font-bold text-xs text-darkgray inline-flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full"
+                >3</span
+              >
+              <span class="font-bold text-xs text-darkgray inline-flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full"
+                >4</span
+              >
+              <span class="font-bold text-xs text-darkgray inline-flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full"
+                >5</span
+              >
+              <span class="font-bold text-xs text-darkgray inline-flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full"
+                >6</span
+              >
+              <span class="font-bold text-xs text-darkgray inline-flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full"
+                >7</span
+              >
+              <span class="font-bold text-xs text-darkgray inline-flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full"
+                >8</span
+              >
+            </p>
           </div>
-          <div class="absolute top-10 z-50 flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full">
-            <span class="font-bold text-xs text-darkgray">2</span>
-          </div>
-          <div class="absolute top-[550px] z-50 flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full">
-            <span class="font-bold text-xs text-darkgray">3</span>
-          </div>
-          <div class="absolute top-[1450px] z-50 flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full">
-            <span class="font-bold text-xs text-darkgray">4</span>
-          </div>
-          <div class="absolute top-[1950px] z-50 flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full">
-            <span class="font-bold text-xs text-darkgray">5</span>
-          </div>
-          <div class="absolute top-[2770px] z-50 flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full">
-            <span class="font-bold text-xs text-darkgray">6</span>
-          </div>
-          <div class="absolute top-[3630px] z-50 flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full">
-            <span class="font-bold text-xs text-darkgray">7</span>
-          </div>
-          <div class="absolute top-[3870px] z-50 flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full">
-            <span class="font-bold text-xs text-darkgray">8</span>
+          <p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">4 Sections - Cost $100</p>
+          <svg
+            class="stroke-lightgray-600 dark:stroke-darkgray-600"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"
+            />
+          </svg>
+          <p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">+4 Sections ($20 each) - Cost $80</p>
+          <svg
+            class="stroke-lightgray-600 dark:stroke-darkgray-600"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="5" x2="19" y1="9" y2="9" />
+            <line x1="5" x2="19" y1="15" y2="15" />
+          </svg>
+          <p class="font-semibold text-base text-center text-lightgray-900 dark:text-darkgray-900">Final Cost: $180</p>
+          <div class="relative flex h-[3924px]">
+            <img class="transition-transform" src="assets/images/landingpage-example-mobile.jpg" alt="Renan About Layout" loading="lazy" />
+            <div class="absolute top-0 z-50 flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full">
+              <span class="font-bold text-xs text-darkgray">1</span>
+            </div>
+            <div class="absolute top-10 z-50 flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full">
+              <span class="font-bold text-xs text-darkgray">2</span>
+            </div>
+            <div class="absolute top-[550px] z-50 flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full">
+              <span class="font-bold text-xs text-darkgray">3</span>
+            </div>
+            <div class="absolute top-[1450px] z-50 flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full">
+              <span class="font-bold text-xs text-darkgray">4</span>
+            </div>
+            <div class="absolute top-[1950px] z-50 flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full">
+              <span class="font-bold text-xs text-darkgray">5</span>
+            </div>
+            <div class="absolute top-[2770px] z-50 flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full">
+              <span class="font-bold text-xs text-darkgray">6</span>
+            </div>
+            <div class="absolute top-[3630px] z-50 flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full">
+              <span class="font-bold text-xs text-darkgray">7</span>
+            </div>
+            <div class="absolute top-[3870px] z-50 flex w-4 h-4 items-center justify-center bg-lightgray-300 rounded-full">
+              <span class="font-bold text-xs text-darkgray">8</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', initialize);
+    <script>
+      document.addEventListener('DOMContentLoaded', initialize);
 
-    async function initialize() {
-      setupMenuActions();
-      setupPriceDialogActions();
-      setupThemeActions();
-      setupCopyActions();
-    }
-
-    function setupMenuActions() {
-      const hamburger = document.querySelector('#hamburger');
-      const menu = document.querySelector('#menu');
-      const menuContent = document.querySelector('#menu-content');
-      const closeMenuButton = document.querySelector('#close-menu');
-
-      hamburger.addEventListener('click', toggleElementVisibility.bind(null, menu));
-      closeMenuButton.addEventListener('click', closeMenuContent);
-
-      menu.addEventListener('click', closeIfDirectClick.bind(null, menu, closeMenuContent));
-      menuContent.addEventListener('click', closeIfMenuSectionClicked.bind(null, closeMenuContent));
-    }
-
-    function setupPriceDialogActions() {
-      // Multi-page
-      setupSingleDialog('#multipage-price-dialog', '#multipage-price-content', '#close-multipage-price', '#multipage-price-help');
-      // Landing page
-      setupSingleDialog('#landingpage-price-dialog', '#landingpage-price-content', '#close-landingpage-price', '#landingpage-price-help');
-    }
-
-    function setupSingleDialog(dialogSelector, contentSelector, closeButtonSelector, helpButtonSelector) {
-      const dialog = document.querySelector(dialogSelector);
-      const content = document.querySelector(contentSelector);
-      const closeButton = document.querySelector(closeButtonSelector);
-      const helpButton = document.querySelector(helpButtonSelector);
-
-      dialog.addEventListener('click', closeIfDirectClick.bind(null, dialog, closeDialog.bind(null, content, dialog)));
-      closeButton.addEventListener('click', closeDialog.bind(null, content, dialog));
-      helpButton.addEventListener('click', toggleElementVisibility.bind(null, dialog));
-    }
-
-    function setupThemeActions() {
-      const switchButtons = document.querySelectorAll('#switch-theme-mobile, #switch-theme');
-
-      switchButtons.forEach(button => button.addEventListener('click', toggleTheme));
-      loadTheme();
-    }
-
-    function setupCopyActions() {
-      setupCopyFunctionality('contact-email', 'contact-copy-email-icon');
-      setupCopyFunctionality('contact-phone', 'contact-copy-phone-icon');
-    }
-
-    async function sleep(ms) {
-      return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
-    async function animateAndClose(content, className, dialog) {
-      content.classList.add(className);
-      await sleep(250);
-      content.classList.remove(className);
-      dialog.classList.add('hidden');
-    }
-
-    function closeDialog(content, dialog) {
-      animateAndClose(content, 'animate-slideOutDown', dialog);
-    }
-
-    function toggleElementVisibility(element) {
-      element.classList.toggle('hidden');
-    }
-
-    function closeIfDirectClick(element, closeFunction, event) {
-      if (event.target === element) closeFunction();
-    }
-
-    function closeIfMenuSectionClicked(closeFunction, event) {
-      if (event.target.closest('#menu-about, #menu-services, #menu-work, #menu-contact')) {
-        setTimeout(closeFunction, 500);
-      } else {
-        event.stopPropagation();
+      async function initialize() {
+        setupMenuActions();
+        setupPriceDialogActions();
+        setupThemeActions();
+        setupCopyActions();
       }
-    }
 
-    async function closeMenuContent() {
-      const menu = document.querySelector('#menu');
-      const menuContent = document.querySelector('#menu-content');
+      function setupMenuActions() {
+        const hamburger = document.querySelector('#hamburger');
+        const menu = document.querySelector('#menu');
+        const menuContent = document.querySelector('#menu-content');
+        const closeMenuButton = document.querySelector('#close-menu');
 
-      await animateAndClose(menuContent, 'animate-slideOutRight', menu);
-    }
+        hamburger.addEventListener('click', toggleElementVisibility.bind(null, menu));
+        closeMenuButton.addEventListener('click', closeMenuContent);
 
-    function toggleTheme() {
-      document.documentElement.classList.toggle('dark');
-      const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-      setTheme(theme);
-    }
+        menu.addEventListener('click', closeIfDirectClick.bind(null, menu, closeMenuContent));
+        menuContent.addEventListener('click', closeIfMenuSectionClicked.bind(null, closeMenuContent));
+      }
 
-    function loadTheme() {
-      const theme = localStorage.theme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      setTheme(theme);
-    }
+      function setupPriceDialogActions() {
+        // Multi-page
+        setupSingleDialog('#multipage-price-dialog', '#multipage-price-content', '#close-multipage-price', '#multipage-price-help');
+        // Landing page
+        setupSingleDialog('#landingpage-price-dialog', '#landingpage-price-content', '#close-landingpage-price', '#landingpage-price-help');
+      }
 
-    function setTheme(theme) {
-      document.documentElement.classList.toggle('dark', theme === 'dark');
-      localStorage.theme = theme;
-    }
+      function setupSingleDialog(dialogSelector, contentSelector, closeButtonSelector, helpButtonSelector) {
+        const dialog = document.querySelector(dialogSelector);
+        const content = document.querySelector(contentSelector);
+        const closeButton = document.querySelector(closeButtonSelector);
+        const helpButton = document.querySelector(helpButtonSelector);
 
-    function setupCopyFunctionality(targetID, iconID) {
-      const targetElem = document.getElementById(targetID);
-      const copyIcon = document.getElementById(iconID);
-      const tooltip = createTooltip();
+        dialog.addEventListener('click', closeIfDirectClick.bind(null, dialog, closeDialog.bind(null, content, dialog)));
+        closeButton.addEventListener('click', closeDialog.bind(null, content, dialog));
+        helpButton.addEventListener('click', toggleElementVisibility.bind(null, dialog));
+      }
 
-      copyIcon.appendChild(tooltip);
-      copyIcon.addEventListener('click', async () => {
-        await navigator.clipboard.writeText(targetElem.textContent);
-        showTooltip(tooltip);
-      });
-    }
+      function setupThemeActions() {
+        const switchButtons = document.querySelectorAll('#switch-theme-mobile, #switch-theme');
 
-    function createTooltip() {
-      const tooltip = document.createElement('div');
-      tooltip.innerText = 'Copied!';
-      tooltip.className =
-        'absolute transform -translate-x-1/2 px-3 py-1 bg-gray-600 text-white text-sm rounded-md opacity-0 transition-opacity';
-      tooltip.style.top = '-80%';
-      return tooltip;
-    }
+        switchButtons.forEach(button => button.addEventListener('click', toggleTheme));
+        loadTheme();
+      }
 
-    function showTooltip(tooltip) {
-      tooltip.style.opacity = '1';
-      setTimeout(() => {
-        tooltip.style.opacity = '0';
-      }, 2000);
-    }
-  </script>
-</body>
+      function setupCopyActions() {
+        setupCopyFunctionality('contact-email', 'contact-copy-email-icon');
+        setupCopyFunctionality('contact-phone', 'contact-copy-phone-icon');
+      }
+
+      async function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      async function animateAndClose(content, className, dialog) {
+        content.classList.add(className);
+        await sleep(250);
+        content.classList.remove(className);
+        dialog.classList.add('hidden');
+      }
+
+      function closeDialog(content, dialog) {
+        animateAndClose(content, 'animate-slideOutDown', dialog);
+      }
+
+      function toggleElementVisibility(element) {
+        element.classList.toggle('hidden');
+      }
+
+      function closeIfDirectClick(element, closeFunction, event) {
+        if (event.target === element) closeFunction();
+      }
+
+      function closeIfMenuSectionClicked(closeFunction, event) {
+        if (event.target.closest('#menu-about, #menu-services, #menu-work, #menu-contact')) {
+          setTimeout(closeFunction, 500);
+        } else {
+          event.stopPropagation();
+        }
+      }
+
+      async function closeMenuContent() {
+        const menu = document.querySelector('#menu');
+        const menuContent = document.querySelector('#menu-content');
+
+        await animateAndClose(menuContent, 'animate-slideOutRight', menu);
+      }
+
+      function toggleTheme() {
+        document.documentElement.classList.toggle('dark');
+        const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+        setTheme(theme);
+      }
+
+      function loadTheme() {
+        const theme = localStorage.theme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        setTheme(theme);
+      }
+
+      function setTheme(theme) {
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+        localStorage.theme = theme;
+      }
+
+      function setupCopyFunctionality(targetID, iconID) {
+        const targetElem = document.getElementById(targetID);
+        const copyIcon = document.getElementById(iconID);
+        const tooltip = createTooltip();
+
+        copyIcon.appendChild(tooltip);
+        copyIcon.addEventListener('click', async () => {
+          await navigator.clipboard.writeText(targetElem.textContent);
+          showTooltip(tooltip);
+        });
+      }
+
+      function createTooltip() {
+        const tooltip = document.createElement('div');
+        tooltip.innerText = 'Copied!';
+        tooltip.className =
+          'absolute transform -translate-x-1/2 px-3 py-1 bg-gray-600 text-white text-sm rounded-md opacity-0 transition-opacity';
+        tooltip.style.top = '-80%';
+        return tooltip;
+      }
+
+      function showTooltip(tooltip) {
+        tooltip.style.opacity = '1';
+        setTimeout(() => {
+          tooltip.style.opacity = '0';
+        }, 2000);
+      }
+    </script>
+  </body>
 
 </html>
