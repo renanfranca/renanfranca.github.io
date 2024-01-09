@@ -2,4 +2,4 @@ As a software engineer and member of the [JHipster Core Team](https://www.jhipst
 
 Additionally, I'll offer some helpful tips and tricks related to various other technologies and tools.
 
-Enjoy ✌
+Enjoy ✌!
