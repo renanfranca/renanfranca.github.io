@@ -1,6 +1,6 @@
 title: Renan Hipster
 author: Renan Franca
-description: I enjoy java☕ spring boot🍃 and Kubernetes☸️ to build awesome microservices • I love implementing automated tests😊 • @jhipster lover🤓 • Proud dad 🍼 # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
+description: @jhipster Core Team Member 💙 • Enjoy java☕ spring boot🍃 and OSS 💯 • I love implementing automated tests 😊 • Proud dad 🍼 # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
 google_analytics: G-BLB41NFCTQ
 # The github repo that is to be used for looking up comments
 comments_repo: renanfranca/renanfranca.github.io
@@ -40,7 +40,7 @@ rss: rss
 kramdown:
   syntax_highlighter_opts:
     disable: true
-    
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
