@@ -2,6 +2,6 @@ As a software engineer and member of the [JHipster Core Team](https://www.jhipst
 
 Additionally, I'll offer some helpful tips and tricks related to various other technologies and tools.
 
-[Ask me anything about JHipster Lite](https://www.fiverr.com/renan_franca/answer-any-questions-about-jhipster-lite)
+[Expert JHipster Lite Advice: Ask Me Anything!](https://www.fiverr.com/renan_franca/answer-any-questions-about-jhipster-lite)
 
 Enjoy ✌!
