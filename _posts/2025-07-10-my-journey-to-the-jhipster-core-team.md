@@ -46,6 +46,18 @@ Looking back at my contributions before joining the core team:
 
 This CLI project was the first major project I built using jhipster-lite to assist me, marking my first coding experience with it.
 
+## From Wishful Thinking to Reality
+
+Back in January 2023, I wrote a post about [how I earned money by fixing an issue in JHipster Lite](https://renanfranca.github.io/how-did-i-earn-money-to-fix-an-issue-from-an-open-source-software.html). At the end of that post, I shared a goal that was close to my heart:
+
+> "I am planning to continue to contribute to the jhlite project by fixing issues and keep writing blog posts about my experience with jhipster.
+>
+> One day, I wish to be part of the [jhipster core team](https://www.jhipster.tech/team/) 😊!"
+
+It's incredible how aspirations can become reality when you're persistent and passionate about what you do. Just one year after writing those words, what seemed like a distant dream became true when I was elected to join the core team! 
+
+This journey shows the power of setting goals and consistently working toward them. Through each pull request, each blog post, and each interaction with the community, I was building the path that would eventually lead me to where I am today.
+
 ## 18 Months of Growth
 
 The past year and a half as a core team member has been filled with learning, collaboration, and growth. I've had the opportunity to work alongside incredibly talented developers, contribute to major releases, and help shape the future of JHipster.
