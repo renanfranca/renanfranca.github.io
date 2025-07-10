@@ -36,7 +36,7 @@ When I joined the core team in January 2024, here's how I introduced myself:
 
 ## My Contribution Journey
 
-Looking back at my contributions before joining the core team:
+My contributions until today (2025-07-10):
 
 - I contributed with more than [73 merged Pull Requests](https://github.com/jhipster/jhipster-lite/pulls?q=is%3Apr+author%3Arenanfranca+is%3Amerged+) at [JHipster Lite Project](https://github.com/jhipster/jhipster-lite)
 
