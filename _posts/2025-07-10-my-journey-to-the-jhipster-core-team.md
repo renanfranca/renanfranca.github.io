@@ -71,3 +71,14 @@ As I look ahead to the future, I'm excited about the continued evolution of JHip
 I'm grateful for the trust placed in me by the JHipster community, and I remain committed to contributing my best work to this project that has become such an important part of my professional journey.
 
 Lastly, let me extend an invitation to join me on my journey 🚀 in the realm of software development. I share my insights, experiences, and valuable resources on [LinkedIn](https://www.linkedin.com/in/renan-af) 📎. Following me on these platforms not only keeps you updated on my latest posts and projects 📬 but also opens doors to vibrant discussions and learning opportunities. I look forward to connecting with you! 💼
+
+## Feedback
+
+**If you like those projects, please, considering give it a star 🌟 to support me and enhanced both repository's visibility 🤩!**
+
+<!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/jhipster/jhipster-lite" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" data-size="large" aria-label="Star jhipster-jhipster-lite on GitHub">•⭐ jhipster-lite</a>
+
+<!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/jhipster/jhipster-lite-cli" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" data-size="large" aria-label="Star jhipster/jhipster-lite-cli on GitHub">•⭐ jhipster-lite-cli</a>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
