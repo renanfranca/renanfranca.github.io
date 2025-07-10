@@ -38,13 +38,13 @@ When I joined the core team in January 2024, here's how I introduced myself:
 
 Looking back at my contributions before joining the core team:
 
-- I contributed with more than 73 merged Pull Requests at [JHipster Lite Project](https://github.com/jhipster/jhipster-lite/pulls?q=is%3Apr+author%3Arenanfranca+is%3Amerged+)
+- I contributed with more than [73 merged Pull Requests](https://github.com/jhipster/jhipster-lite/pulls?q=is%3Apr+author%3Arenanfranca+is%3Amerged+) at [JHipster Lite Project](https://github.com/jhipster/jhipster-lite)
 
 - I also contributed to the [JHipster Lite Extension project](https://github.com/jhipster/jhipster-lite-extension) with [7 merged Pull Requests](https://github.com/jhipster/jhipster-lite-extension/pulls?q=is%3Apr+author%3Arenanfranca+is%3Amerged+)
 
-- I worked on the CLI version of JHLite called [JHipster Lite CLI Project](https://github.com/jhipster/jhipster-lite-cli), with [9 Pull Requests merged](https://github.com/jhipster/jhipster-lite-cli/pulls?q=is%3Apr+author%3Arenanfranca+is%3Amerged+)
+- I am currently working on the CLI version of JHLite called [JHipster Lite CLI Project](https://github.com/jhipster/jhipster-lite-cli), with [9 Pull Requests merged](https://github.com/jhipster/jhipster-lite-cli/pulls?q=is%3Apr+author%3Arenanfranca+is%3Amerged+)
 
-This CLI project was the first major project I built using jhipster-lite, marking my first coding experience with it.
+This CLI project was the first major project I built using jhipster-lite to assist me, marking my first coding experience with it.
 
 ## 18 Months of Growth
 
@@ -58,4 +58,4 @@ As I look ahead to the future, I'm excited about the continued evolution of JHip
 
 I'm grateful for the trust placed in me by the JHipster community, and I remain committed to contributing my best work to this project that has become such an important part of my professional journey.
 
-Lastly, let me extend an invitation to join me on my journey 🚀 in the realm of software development. I share my insights, experiences, and valuable resources on Twitter [@renan_afranca](https://www.twitter.com/renan_afranca) 🐦 and [LinkedIn](https://www.linkedin.com/in/renan-af) 📎. Following me on these platforms not only keeps you updated on my latest posts and projects 📬 but also opens doors to vibrant discussions and learning opportunities. I look forward to connecting with you! 💼
+Lastly, let me extend an invitation to join me on my journey 🚀 in the realm of software development. I share my insights, experiences, and valuable resources on [LinkedIn](https://www.linkedin.com/in/renan-af) 📎. Following me on these platforms not only keeps you updated on my latest posts and projects 📬 but also opens doors to vibrant discussions and learning opportunities. I look forward to connecting with you! 💼
