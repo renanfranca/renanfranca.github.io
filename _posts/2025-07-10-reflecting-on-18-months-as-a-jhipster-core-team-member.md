@@ -2,13 +2,13 @@
 layout: post
 title: My Journey to the JHipster Core Team
 description: Reflecting on 18 months as a JHipster Core Team member and how my journey began in January 2024
-date: 2025-07-10 15:45:00 -0300
-tags: jhipster
-image: img/postbanners/2025-07-10-jhipster-core-team-journey.jpeg
+date: 2025-07-10 10:45:00 -0300
+tags: jhipster-lite
+image: img/postbanners/2025-07-10-cover-my-journey-to-the-jhipster-core-team.jpg
 permalink: /:categories/:title:output_ext
 ---
 
-![cover image](https://renanfranca.github.io/img/postbanners/2025-07-10-jhipster-core-team-journey.jpeg)
+![cover image](https://renanfranca.github.io/img/postbanners/2025-07-10-cover-my-journey-to-the-jhipster-core-team.jpg)
 
 It's been 18 months since I joined the JHipster core team, and what an incredible journey it has been! Today I want to reflect on how it all started back in January 2024 when I was elected to join the team after a successful vote by the members. 🎉
 
