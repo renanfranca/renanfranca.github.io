@@ -2,7 +2,7 @@
 
 - 🚀 It quickly turned into my main side project, where I get to apply the techniques I’m learning.
 
-- 🛠️ Here, I truly discovered the power of Test-Driven Development (TDD).
+- 🛠️ Here, I truly discovered the power of Test-Driven Development (TDD).``
 
 - 📚 Always growing and learning with this amazing community! 😊
 
@@ -16,7 +16,7 @@ Below is how I introduced myself to the JHipster core team members in January/20
 > 
 > My first contribution to the jhipster-generator was on 07/2021: https://github.com/jhipster/generator-jhipster/pull/15724. After blogging for a while, I decided to contribute to the JHipster Lite project and wrote about the experience here: https://renanfranca.github.io/how-did-i-earn-money-to-fix-an-issue-from-an-open-source-software.html. Then, I made 10 contributions to the JHipster Lite project (https://github.com/jhipster/jhipster-lite/pulls?q=is%3Apr+author%3A%40me+is%3Aclosed).
 > 
-> I'd like to join the core team because I truly love this project and the community. Recently, I realized my ambition isn't to create new side projects anymore. Now, my goal is to adopt the JHipster project as my primary side project.
+> I'd like to join the core te````am because I truly love this project and the community. Recently, I realized my ambition isn't to create new side projects anymore. Now, my goal is to adopt the JHipster project as my primary side project.
 
 ## Today
 I ve already contributed with more than 73 merged Pull Request at [Jhipster Lite Project](https://github.com/jhipster/jhipster-lite/pulls?q=is%3Apr+author%3Arenanfranca+is%3Amerged+).
