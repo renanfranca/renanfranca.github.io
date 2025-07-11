@@ -74,7 +74,7 @@ Lastly, let me extend an invitation to join me on my journey 🚀 in the realm o
 
 ## Feedback
 
-**If you like those projects, please, considering give it a star 🌟 to support jhipster and enhanced both repository's visibility 🤩!**
+**If you like those projects, please, considering give it a star 🌟 to support us and enhanced both repository's visibility 🤩!**
 
 <!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/jhipster/jhipster-lite" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" data-size="large" aria-label="Star jhipster-jhipster-lite on GitHub">•⭐ jhipster-lite</a>
 
