@@ -31,9 +31,9 @@ I created a loading animation module that follows the hexagonal architecture pri
 
 Before implementing my own solution, I explored existing libraries:
 
-1. **magic-progress**: I tried using this library but encountered errors when running the `jhlite` command. Looking at the source code, I found no tests, and the project hadn't been maintained since August 2020.
+1. **[magic-progress](https://github.com/lukfor/magic-progress)**: I tried using this library but encountered errors when running the `jhlite` command. Looking at the source code, I found no tests, and the project hadn't been maintained since August 2020.
 
-2. **progressbar**: This library didn't have spinner animations, which was a key requirement for our user experience.
+2. **[progressbar](https://github.com/ctongfei/progressbar)**: This library didn't have spinner animations, which was a key requirement for our user experience.
 
 Given these limitations, I decided to implement a custom solution that would perfectly fit our needs.
 
