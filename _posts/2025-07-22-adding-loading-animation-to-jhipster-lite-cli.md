@@ -6,7 +6,6 @@ date: 2025-07-22 10:30:00 -0300
 tags: java-cli
 image: img/postbanners/2025-07-22-cover-adding-loading-animation-jhlite-cli.jpg
 permalink: /:categories/:title:output_ext
-draft: true
 ---
 
 ![cover image](https://renanfranca.github.io/img/postbanners/2025-07-22-cover-adding-loading-animation-jhlite-cli.jpg)
