@@ -1,0 +1,5 @@
+/drop
+/read-only .aider/Add Load Animation to a Java CLI Application.md
+/read-only .aider/CONVENTIONS.md
+/read-only _posts/2023-01-08-how-did-i-earn-money-to-fix-an-issue-from-an-open-source-software.md
+/read-only _posts/2025-07-10-my-journey-to-the-jhipster-core-team.md
