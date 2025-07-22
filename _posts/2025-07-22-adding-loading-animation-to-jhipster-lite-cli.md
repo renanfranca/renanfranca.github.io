@@ -6,7 +6,7 @@ date: 2025-07-22 10:30:00 -0300
 tags: java-cli
 image: img/postbanners/2023-08-15-cover-adding-loading-animation-jhlite-cli.jpg
 permalink: /:categories/:title:output_ext
-published: false
+draft: true
 ---
 
 ![cover image](https://renanfranca.github.io/img/postbanners/2023-08-15-cover-adding-loading-animation-jhlite-cli.jpg)
@@ -25,13 +25,7 @@ I wanted to fix [this issue](https://github.com/jhipster/jhipster-lite-cli/issue
 
 I created a loading animation module that follows the hexagonal architecture principles that JHipster Lite is known for. Here's a demo of what I implemented:
 
-[<img width="421" height="52" alt="Image" src="https://github.com/user-attachments/assets/7564de88-da35-4d42-880c-3163c421e6f7" />](https://youtu.be/BNsp-5JTHkA)
-
-[<img width="431" height="68" alt="Image" src="https://github.com/user-attachments/assets/79db4461-f6d2-4e84-b780-34f96ef18f43" />](https://youtu.be/BNsp-5JTHkA)
-
-[<img width="428" height="97" alt="Image" src="https://github.com/user-attachments/assets/58f65bcc-c62e-4253-9951-8285959d59f4" />](https://youtu.be/BNsp-5JTHkA)
-
-You can see the full demo video [here](https://youtu.be/BNsp-5JTHkA).
+![no animation](https://renanfranca.github.io/img/adding-loading-animation-jhlite-cli/jhlite-version-loading-animation.gif)
 
 ## Exploring Available Libraries
 
