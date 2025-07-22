@@ -107,6 +107,7 @@ At the end, I felt the loading time isn't as bothersome as before. The user expe
 Here's how you can use the SpinnerProgress in your own code:
 
 ```java
+// Maybe you will initialize using dependency injection
 SpinnerProgress spinner = new ConsoleSpinnerProgress();
 
 spinner.show("Loading application...");
