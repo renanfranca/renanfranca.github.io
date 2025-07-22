@@ -18,13 +18,13 @@ When running commands in the JHipster Lite CLI, users had no visual feedback dur
 
 I wanted to fix [this issue](https://github.com/jhipster/jhipster-lite-cli/issues/13) by adding a loading animation that would provide visual feedback during command execution.
 
-![no animation](https://renanfranca.github.io/img/adding-loading-animation-jhlite-cli/jhlite-version-no-animation.gif)
+![jhlite --version without animation](https://renanfranca.github.io/img/adding-loading-animation-jhlite-cli/jhlite-version-no-animation.gif)
 
 ## The Solution: A Hexagonal Spinner
 
 I created a loading animation module that follows the hexagonal architecture principles that JHipster Lite is known for. Here's a demo of what I implemented:
 
-![no animation](https://renanfranca.github.io/img/adding-loading-animation-jhlite-cli/jhlite-version-loading-animation.gif)
+![jhlite --version loading animation](https://renanfranca.github.io/img/adding-loading-animation-jhlite-cli/jhlite-version-loading-animation.gif)
 
 ## Exploring Available Libraries
 
