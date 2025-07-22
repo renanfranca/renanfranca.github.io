@@ -4,7 +4,7 @@ title: Adding a Loading Animation to JHipster Lite CLI
 description: How I implemented a spinner animation for the JHipster Lite CLI to enhance the user experience
 date: 2025-07-22 10:30:00 -0300
 tags: java-cli
-image: img/postbanners/2023-08-15-cover-adding-loading-animation-jhlite-cli.jpg
+image: img/postbanners/2025-07-22-cover-adding-loading-animation-jhlite-cli.jpg
 permalink: /:categories/:title:output_ext
 draft: true
 ---
