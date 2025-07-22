@@ -9,7 +9,7 @@ permalink: /:categories/:title:output_ext
 draft: true
 ---
 
-![cover image](https://renanfranca.github.io/img/postbanners/2023-08-15-cover-adding-loading-animation-jhlite-cli.jpg)
+![cover image](https://renanfranca.github.io/img/postbanners/2025-07-22-cover-adding-loading-animation-jhlite-cli.jpg)
 
 Have you ever run a command-line application and found yourself staring at a blank screen, wondering if it's still working or if it's frozen? That's exactly the problem I set out to solve for the JHipster Lite CLI project. In this post, I'll share how I implemented a loading animation to enhance the user experience while commands are executing.
 
