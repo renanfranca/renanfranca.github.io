@@ -53,7 +53,7 @@ I created a `ProgressStatus` module following hexagonal architecture principles:
 The code follows a clean hexagonal architecture pattern:
 
 1. **Domain Layer (Port)** - The `ProgressStatus` interface defines the core contract
- <details>
+   <details>
     
     <summary>ProgressStatus.java - (click to expand)</summary>
     
@@ -69,7 +69,7 @@ The code follows a clean hexagonal architecture pattern:
     void failure(String message);
     }
     ```
- </details>
+   </details>
 
 2. **Infrastructure Layer (Adapter)** - The `SpinnerProgressStatus` class implements the interface for spinner animation
     <details>
