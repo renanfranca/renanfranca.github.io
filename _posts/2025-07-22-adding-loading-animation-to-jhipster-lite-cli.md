@@ -181,7 +181,7 @@ I am going to share how I integrated the ProgressStatus module into the JHipster
 2. **Command Execution**: Displays progress during command running
 3. **Command Completion**: Shows success or failure messages with appropriate colors
 
-The animation is now active for all major commands:
+The animation is going to be active for all major commands:
 - Version command (--version)
 - List command (list)
 - Apply command (apply)
