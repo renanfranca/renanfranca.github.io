@@ -468,19 +468,6 @@ class ProgressStatusTest {
 
 </details>
 
-## Implementation in JHipster Lite CLI
-
-I integrated the SpinnerProgress module into the JHipster Lite CLI for:
-
-1. **Application Startup**: Shows "Loading JHipster Lite CLI" during initialization
-2. **Command Execution**: Displays progress during command running
-3. **Command Completion**: Shows success or failure messages with appropriate colors
-
-The animation is now active for all major commands:
-- Version command (--version)
-- List command (list)
-- Apply command (apply)
-
 ## Benefits Beyond Aesthetics
 
 This implementation provides several benefits:
@@ -497,6 +484,19 @@ Adding a loading animation to the JHipster Lite CLI might seem like a small enha
 This project demonstrates how proper architectural design can benefit even UI components. The next time you're working on a command-line application, consider how you might enhance the user experience with similar feedback mechanisms.
 
 Lastly, let me extend an invitation to join me on my journey 🚀 in the realm of software development. I share my insights, experiences, and valuable resources on [LinkedIn](https://www.linkedin.com/in/renan-af) 📎. Following me on these platforms not only keeps you updated on my latest posts and projects 📬 but also opens doors to vibrant discussions and learning opportunities. I look forward to connecting with you! 💼
+
+## What next?
+
+I am going to share how I integrated the ProgressStatus module into the JHipster Lite CLI for:
+
+1. **Application Startup**: Shows "Loading JHipster Lite CLI" during initialization
+2. **Command Execution**: Displays progress during command running
+3. **Command Completion**: Shows success or failure messages with appropriate colors
+
+The animation is now active for all major commands:
+- Version command (--version)
+- List command (list)
+- Apply command (apply)
 
 ## Feedback
 
