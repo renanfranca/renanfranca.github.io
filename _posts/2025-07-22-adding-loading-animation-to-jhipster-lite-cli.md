@@ -20,7 +20,7 @@ I wanted to fix [this issue](https://github.com/jhipster/jhipster-lite-cli/issue
 
 ![jhlite --version without animation](https://renanfranca.github.io/img/adding-loading-animation-jhlite-cli/jhlite-version-no-animation.gif)
 
-## The Solution: A Hexagonal Spinner
+## The Solution: A Hexagonal ProgressStatus
 
 I created a loading animation module that follows the hexagonal architecture principles that JHipster Lite is known for. Here's a demo of what I implemented:
 
@@ -36,19 +36,204 @@ Before implementing my own solution, I explored existing libraries:
 
 Given these limitations, I decided to implement a custom solution that would perfectly fit our needs.
 
-## The SpinnerProgress Module
+## The ProgressStatus Module
 
-I created a `SpinnerProgress` module following hexagonal architecture principles:
+I created a `ProgressStatus` module following hexagonal architecture principles:
 
 ### Hexagonal Architecture Implementation
 
+```bash
+├── domain
+│   └── ProgressStatus.java
+├── infrastructure
+│   └── primary
+│       └── SpinnerProgressStatus.java
+└── package-info.java
+```
 The code follows a clean hexagonal architecture pattern:
 
-1. **Domain Layer (Port)** - The `SpinnerProgress` interface defines the core contract
-2. **Infrastructure Layer (Adapter)** - The `ConsoleSpinnerProgress` class implements the interface for console environments
+1. **Domain Layer (Port)** - The `ProgressStatus` interface defines the core contract
+    <details>
+    
+    <summary>ProgressStatus.java - (click to expand)</summary>
+    
+    ```java
+    package tech.jhipster.lite.cli.shared.progressstatus.domain;
+    
+    public interface ProgressStatus {
+    void show();
+    void show(String message);
+    void update(String message);
+    void hide();
+    void success(String message);
+    void failure(String message);
+    }
+    ```
+    </details>
+
+2. **Infrastructure Layer (Adapter)** - The `SpinnerProgressStatus` class implements the interface for spinner animation
+    <details>
+    
+    <summary>SpinnerProgressStatus.java - (click to expand)</summary>
+    
+    ```java
+    package tech.jhipster.lite.cli.shared.progressstatus.infrastructure.primary;
+    
+    import java.util.Arrays;
+    import java.util.concurrent.Executors;
+    import java.util.concurrent.ScheduledExecutorService;
+    import java.util.concurrent.TimeUnit;
+    import java.util.concurrent.atomic.AtomicBoolean;
+    import java.util.stream.Stream;
+    import tech.jhipster.lite.cli.shared.generation.domain.ExcludeFromGeneratedCodeCoverage;
+    import tech.jhipster.lite.cli.shared.progressstatus.domain.ProgressStatus;
+    
+    class SpinnerProgressStatus implements ProgressStatus {
+    
+        private static final String ANSI_RESET = "\u001B[0m";
+        private static final String ANSI_GREEN = "\u001B[32m";
+        private static final String ANSI_RED = "\u001B[31m";
+        private static final String ANSI_CYAN = "\u001B[36m";
+        private static final String CLEAR_LINE = "\r\033[K";
+        private static final String[] SPINNER_FRAMES = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" };
+        private static final String DOT = ". ";
+        private static final String DOUBLE_DOT = ".. ";
+        private static final String TRIPLE_DOT = "... ";
+        private static final String EMPTY = " ";
+        private static final String LIGHTNING = "...%s⧓%s⚡ ".formatted(ANSI_CYAN, ANSI_RESET);
+        private static final String LIGHTNING_DIAMOND = "...%s⧓%s⚡ 💎 ".formatted(ANSI_CYAN, ANSI_RESET);
+        private static final String LIGHTNING_DIAMOND_LEAF = "...%s⧓%s⚡ 💎 🍃 ".formatted(ANSI_CYAN, ANSI_RESET);
+    
+        private static final String[] SUFFIX_ANIMATION_FRAMES = createSuffixAnimationFrames();
+    
+        private ScheduledExecutorService executor;
+        private final AtomicBoolean running = new AtomicBoolean(false);
+        private String currentMessage = "";
+        private int frameIndex = 0;
+        private int suffixFrameIndex = 0;
+    
+        private static String[] createSuffixAnimationFrames() {
+            // @formatter:off
+            String[] firstSequence = {
+                    DOT, DOT,
+                    DOUBLE_DOT, DOUBLE_DOT,
+                    TRIPLE_DOT, TRIPLE_DOT,
+                    LIGHTNING, LIGHTNING, LIGHTNING, LIGHTNING,
+                    TRIPLE_DOT, TRIPLE_DOT,
+                    DOUBLE_DOT, DOUBLE_DOT,
+                    DOT, DOT,
+                    EMPTY, EMPTY
+            };
+    
+            String[] secondSequence = {
+                    DOT, DOT,
+                    DOUBLE_DOT, DOUBLE_DOT,
+                    TRIPLE_DOT, TRIPLE_DOT,
+                    LIGHTNING, LIGHTNING,
+                    LIGHTNING_DIAMOND, LIGHTNING_DIAMOND,
+                    LIGHTNING_DIAMOND_LEAF, LIGHTNING_DIAMOND_LEAF, LIGHTNING_DIAMOND_LEAF, LIGHTNING_DIAMOND_LEAF,
+                    TRIPLE_DOT, TRIPLE_DOT,
+                    DOUBLE_DOT, DOUBLE_DOT,
+                    DOT, DOT,
+                    EMPTY, EMPTY
+            };
+    
+            return Stream.concat(Arrays.stream(firstSequence), Arrays.stream(secondSequence))
+                    .toArray(String[]::new);
+            // @formatter:on
+        }
+    
+        @Override
+        public void show() {
+            show("Processing");
+        }
+    
+        @Override
+        public void show(String message) {
+            if (running.compareAndSet(false, true)) {
+                currentMessage = message;
+    
+                renderFrameSync();
+    
+                executor = Executors.newSingleThreadScheduledExecutor(r -> {
+                    Thread thread = new Thread(r, "spinner-animation");
+                    thread.setDaemon(true);
+                    return thread;
+                });
+                executor.scheduleAtFixedRate(this::renderFrame, 0, 120, TimeUnit.MILLISECONDS);
+            } else {
+                update(message);
+            }
+        }
+    
+        @Override
+        public void update(String message) {
+            currentMessage = message;
+    
+            renderFrameSync();
+        }
+    
+        @Override
+        public void hide() {
+            stopSpinner();
+        }
+    
+        private boolean stopSpinner() {
+            if (running.compareAndSet(true, false)) {
+                executor.shutdown();
+                System.out.print(CLEAR_LINE);
+                frameIndex = 0;
+                suffixFrameIndex = 0;
+                return true;
+            }
+            return false;
+        }
+    
+        @Override
+        public void success(String message) {
+            displayResult(ANSI_GREEN, "✓", message);
+        }
+    
+        private void displayResult(String color, String symbol, String message) {
+            if (stopSpinner()) {
+                System.out.println(color + symbol + ANSI_RESET + " " + message);
+            }
+        }
+    
+        @Override
+        public void failure(String message) {
+            displayResult(ANSI_RED, "✗", message);
+        }
+    
+        @ExcludeFromGeneratedCodeCoverage(reason = "Rendering logic is difficult to test")
+        private void renderFrameSync() {
+            renderSpinner(false);
+        }
+    
+        @ExcludeFromGeneratedCodeCoverage(reason = "Rendering logic is difficult to test")
+        private void renderSpinner(boolean updateFrame) {
+            if (running.get()) {
+                if (updateFrame) {
+                    frameIndex = (frameIndex + 1) % SPINNER_FRAMES.length;
+                    suffixFrameIndex = (suffixFrameIndex + 1) % SUFFIX_ANIMATION_FRAMES.length;
+                }
+                String frame = SPINNER_FRAMES[frameIndex];
+                String suffix = SUFFIX_ANIMATION_FRAMES[suffixFrameIndex];
+                System.out.print(CLEAR_LINE + ANSI_CYAN + frame + ANSI_RESET + " " + currentMessage + suffix);
+            }
+        }
+    
+        @ExcludeFromGeneratedCodeCoverage(reason = "Rendering logic is difficult to test")
+        private void renderFrame() {
+            renderSpinner(true);
+        }
+    }
+    ```
+    
+    </details>
 
 This separation allows us to:
-- Keep the core logic independent of UI implementation
+- Keep the core logic independent of visual animation implementation
 - Easily test with mock implementations
 - Add new progress indicator types without changing core logic
 
