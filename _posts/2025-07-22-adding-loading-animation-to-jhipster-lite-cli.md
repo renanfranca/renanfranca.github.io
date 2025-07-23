@@ -143,7 +143,7 @@ At the end, I felt the loading time isn't as bothersome as before. The user expe
 
 ## Usage Example
 
-Here's you can see a test case on how ProgressStatus works:
+Here's a test case on how ProgressStatus works:
 
 ```java
 @Test
