@@ -261,6 +261,7 @@ executor = Executors.newSingleThreadScheduledExecutor(r -> {
   thread.setDaemon(true);
   return thread;
 });
+executor.scheduleAtFixedRate(this::renderFrame, 0, 120, TimeUnit.MILLISECONDS);
 ```
 
 #### 4. Thread-Safe Operation
@@ -276,6 +277,22 @@ I added sophisticated animation cycles including:
 - JHipster-lite symbols (⧓⚡)
 - Hexagonal architecture symbol (💎)
 - Spring Boot symbol (🍃)
+
+#### 6. Rendering Animation Logic
+
+```java
+private void renderSpinner(boolean updateFrame) {
+ if (running.get()) {
+   if (updateFrame) {
+     frameIndex = (frameIndex + 1) % SPINNER_FRAMES.length;
+     suffixFrameIndex = (suffixFrameIndex + 1) % SUFFIX_ANIMATION_FRAMES.length;
+   }
+   String frame = SPINNER_FRAMES[frameIndex];
+   String suffix = SUFFIX_ANIMATION_FRAMES[suffixFrameIndex];
+   System.out.print(CLEAR_LINE + ANSI_CYAN + frame + ANSI_RESET + " " + currentMessage + suffix);
+ }
+}
+```
 
 ## The Little Details That Matter
 
