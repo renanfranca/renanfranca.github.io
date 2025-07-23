@@ -173,7 +173,7 @@ This implementation provides several benefits:
 3. **Clear Operation Status**: Success and failure states are clearly indicated
 4. **Architectural Consistency**: The solution follows JHipster's hexagonal architecture principles
 
-## What next?
+## What’s next?
 
 I am going to share how I integrated the ProgressStatus module into the JHipster Lite CLI for:
 
