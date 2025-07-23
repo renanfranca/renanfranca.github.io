@@ -477,14 +477,6 @@ This implementation provides several benefits:
 3. **Clear Operation Status**: Success and failure states are clearly indicated
 4. **Architectural Consistency**: The solution follows JHipster's hexagonal architecture principles
 
-## Conclusion
-
-Adding a loading animation to the JHipster Lite CLI might seem like a small enhancement, but it significantly improves the user experience. By following hexagonal architecture principles, I was able to create a solution that's not only visually appealing but also maintainable, testable, and extensible.
-
-This project demonstrates how proper architectural design can benefit even UI components. The next time you're working on a command-line application, consider how you might enhance the user experience with similar feedback mechanisms.
-
-Lastly, let me extend an invitation to join me on my journey 🚀 in the realm of software development. I share my insights, experiences, and valuable resources on [LinkedIn](https://www.linkedin.com/in/renan-af) 📎. Following me on these platforms not only keeps you updated on my latest posts and projects 📬 but also opens doors to vibrant discussions and learning opportunities. I look forward to connecting with you! 💼
-
 ## What next?
 
 I am going to share how I integrated the ProgressStatus module into the JHipster Lite CLI for:
@@ -497,6 +489,14 @@ The animation is now active for all major commands:
 - Version command (--version)
 - List command (list)
 - Apply command (apply)
+
+## Conclusion
+
+Adding a loading animation to the JHipster Lite CLI might seem like a small enhancement, but it significantly improves the user experience. By following hexagonal architecture principles, I was able to create a solution that's not only visually appealing but also maintainable, testable, and extensible.
+
+This project demonstrates how proper architectural design can benefit even UI components. The next time you're working on a command-line application, consider how you might enhance the user experience with similar feedback mechanisms.
+
+Lastly, let me extend an invitation to join me on my journey 🚀 in the realm of software development. I share my insights, experiences, and valuable resources on [LinkedIn](https://www.linkedin.com/in/renan-af) 📎. Following me on these platforms not only keeps you updated on my latest posts and projects 📬 but also opens doors to vibrant discussions and learning opportunities. I look forward to connecting with you! 💼
 
 ## Feedback
 
