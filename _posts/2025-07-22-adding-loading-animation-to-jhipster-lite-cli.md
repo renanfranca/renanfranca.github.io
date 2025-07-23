@@ -57,17 +57,18 @@ The code follows a clean hexagonal architecture pattern:
     
     <summary>ProgressStatus.java - (click to expand)</summary>
     
-       package tech.jhipster.lite.cli.shared.progressstatus.domain;
-       
-       public interface ProgressStatus {
-          void show();
-          void show(String message);
-          void update(String message);
-          void hide();
-          void success(String message);
-          void failure(String message);
-       }
-
+    ```java
+    package tech.jhipster.lite.cli.shared.progressstatus.domain;
+    
+    public interface ProgressStatus {
+       void show();
+       void show(String message);
+       void update(String message);
+       void hide();
+       void success(String message);
+       void failure(String message);
+    }
+    ```
    </details>
 
 2. **Infrastructure Layer (Adapter)** - The `SpinnerProgressStatus` class implements the interface for spinner animation
