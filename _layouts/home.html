@@ -1,109 +1,36 @@
 ---
 layout: default
 ---
-<link href="assets/css/fonts.css" rel="stylesheet" />
-<link href="assets/css/home-blog.css" rel="stylesheet" />
-<div class="home bg-lightgray dark:bg-darkgray min-h-screen">
-    <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 py-16 md:py-24">
 
-        {%- if page.title -%}
-        <div class="flex flex-col gap-6 mb-12">
-            <h1 class="font-bold text-4xl md:text-5xl lg:text-6xl text-center text-lightgray-900 dark:text-darkgray-900">
-                {{ page.title }}
-            </h1>
-        </div>
-        {%- endif -%}
+<div class="home">
+	{%- if page.title -%}
+	<h1 class="page-heading">{{ page.title }}</h1>
+	{%- endif -%}
 
-        <div class="flex flex-col gap-8 mb-12">
-            {{ content }}
-        </div>
+	{{ content }}
 
-        {%- if site.posts.size > 0 -%}
-        <section class="flex flex-col w-full gap-6 md:gap-12">
-            <div class="flex flex-col gap-4">
-                <div class="flex justify-center">
-                    <p class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl">
-                        {{ page.list_title | default: "Recent Posts" }}
-                    </p>
-                </div>
-                <h2 class="font-semibold text-2xl lg:text-3xl text-center text-lightgray-900 dark:text-darkgray-900">
-                    Latest Articles & Insights
-                </h2>
-            </div>
+	{%- if site.posts.size > 0 -%}
+	<h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+	<ul class="post-list">
+		{%- for post in site.posts -%}
+		{% unless post.draft %}
+		<li>
+			{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+			<span class="post-meta">{{ post.date | date: date_format }}</span>
+			<h3>
+				<a class="post-link" href="{{ post.url | relative_url }}">
+					{{ post.title | escape }}
+				</a>
+			</h3>
+			{%- if site.show_excerpts -%}
+			{{ post.excerpt }}
+			{%- endif -%}
+		</li>
+		{% endunless %}
+		{%- endfor -%}
+	</ul>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                {%- for post in site.posts limit:6 -%}
-                {% unless post.draft %}
-                <article class="flex flex-col rounded-xl shadow-md dark:shadow-xl bg-lightgray dark:bg-darkgray-100 hover:shadow-lg dark:hover:shadow-2xl transition-all duration-300">
-                    <div class="flex flex-col p-6 gap-4 h-full">
-                        <div class="flex flex-col gap-3">
-                            <div class="flex items-center gap-2">
-                                {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-                                <svg class="w-4 h-4 stroke-lightgray-600 dark:stroke-darkgray-600" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <line x1="16" y1="2" x2="16" y2="6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <line x1="8" y1="2" x2="8" y2="6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <line x1="3" y1="10" x2="21" y2="10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span class="font-normal text-sm text-lightgray-600 dark:text-darkgray-600">
-                  {{ post.date | date: date_format }}
-                </span>
-                            </div>
+	<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+	{%- endif -%}
 
-                            <h3 class="font-semibold text-lg text-lightgray-900 dark:text-darkgray-900 leading-tight">
-                                <a class="hover:text-lightgray-700 dark:hover:text-darkgray-700 transition-colors duration-200" href="{{ post.url | relative_url }}">
-                                    {{ post.title | escape }}
-                                </a>
-                            </h3>
-                        </div>
-
-                        {%- if site.show_excerpts and post.excerpt -%}
-                        <div class="flex-grow">
-                            <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600 line-clamp-3">
-                                {{ post.excerpt | strip_html | truncatewords: 25 }}
-                            </p>
-                        </div>
-                        {%- endif -%}
-
-                        <div class="mt-auto pt-4">
-                            <a href="{{ post.url | relative_url }}"
-                               class="inline-flex items-center font-medium text-sm text-lightgray-900 dark:text-darkgray-900 hover:text-lightgray-700 dark:hover:text-darkgray-700 transition-colors duration-200">
-                                Read more
-                                <svg class="ml-2 w-4 h-4 stroke-current" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12h14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-                {% endunless %}
-                {%- endfor -%}
-            </div>
-
-            {%- if site.posts.size > 6 -%}
-            <div class="flex justify-center mt-8">
-                <a href="/posts"
-                   class="font-medium text-base text-center text-lightgray-50 dark:text-darkgray-50 bg-lightgray-900 dark:bg-darkgray-900 rounded-xl py-3 px-6 hover:bg-lightgray-700 dark:hover:bg-darkgray-700 active:bg-lightgray-800
-dark:active:bg-darkgray-800 transition-all ease-in-out duration-200">
-                    View All Posts
-                </a>
-            </div>
-            {%- endif -%}
-
-            <div class="flex justify-center mt-12">
-                <div class="flex items-center gap-2 bg-lightgray-50 dark:bg-darkgray-50 rounded-xl py-3 px-6">
-                    <svg class="w-5 h-5 stroke-lightgray-600 dark:stroke-darkgray-600" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 11a9 9 0 0 1 9 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M4 4a16 16 0 0 1 16 16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <circle cx="5" cy="19" r="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <p class="font-normal text-sm text-lightgray-600 dark:text-darkgray-600">
-                        Subscribe <a href="{{ "/feed.xml" | relative_url }}" class="underline underline-offset-4 hover:text-lightgray-900 dark:hover:text-darkgray-900 transition-colors duration-200">via RSS</a>
-                    </p>
-                </div>
-            </div>
-        </section>
-        {%- endif -%}
-    </div>
 </div>
