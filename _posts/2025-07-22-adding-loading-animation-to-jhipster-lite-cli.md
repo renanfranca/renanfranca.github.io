@@ -16,7 +16,7 @@ Have you ever run a command-line application and found yourself staring at a bla
 
 When running commands in the JHipster Lite CLI, users had no visual feedback during operations that took more than a few seconds. This led to uncertainty - is the application still running? Is it stuck? Should I cancel and try again?
 
-I wanted to fix [this issue](https://github.com/jhipster/jhipster-lite-cli/issues/13) by adding a loading animation that would provide visual feedback during command execution.
+I wanted to fix [this issue](https://github.com/seed4j/seed4j-cli/issues/13) by adding a loading animation that would provide visual feedback during command execution.
 
 ![jhlite --version without animation](https://renanfranca.github.io/img/adding-loading-animation-jhlite-cli/jhlite-version-no-animation.gif)
 
@@ -198,8 +198,8 @@ Lastly, let me extend an invitation to join me on my journey 🚀 in the realm o
 
 **If you like those projects, please, considering give it a star 🌟 to support us and enhanced both repository's visibility 🤩!**
 
-<!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/jhipster/jhipster-lite" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" data-size="large" aria-label="Star jhipster-jhipster-lite on GitHub">•⭐ jhipster-lite</a>
+<!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/seed4j/seed4j" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" data-size="large" aria-label="Star jhipster-jhipster-lite on GitHub">•⭐ jhipster-lite</a>
 
-<!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/jhipster/jhipster-lite-cli" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" data-size="large" aria-label="Star jhipster/jhipster-lite-cli on GitHub">•⭐ jhipster-lite-cli</a>
+<!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/seed4j/seed4j-cli" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" data-size="large" aria-label="Star jhipster/jhipster-lite-cli on GitHub">•⭐ jhipster-lite-cli</a>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>

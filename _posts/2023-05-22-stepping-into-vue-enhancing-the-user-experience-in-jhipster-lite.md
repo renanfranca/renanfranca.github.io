@@ -15,7 +15,7 @@ Greetings everyone! Today I'm thrilled to delve into my recent adventure into th
 
 ## The Issue at Hand
 
-Firstly, I would like to address the problem that kick-started my Vue journey. The [Issue #3371](https://github.com/jhipster/jhipster-lite/issues/3371) describes that module properties were resetting every time a user navigated to another page. This could prove tiresome for users as they would need to redefine their preferences every time they switched pages. This proposed solution was to persist the module properties across pages using local storage.
+Firstly, I would like to address the problem that kick-started my Vue journey. The [Issue #3371](https://github.com/seed4j/seed4j/issues/3371) describes that module properties were resetting every time a user navigated to another page. This could prove tiresome for users as they would need to redefine their preferences every time they switched pages. This proposed solution was to persist the module properties across pages using local storage.
 
 So the issue will be considered fixed when a property typed at the Landscape screen will be loaded at the Patch screen without the need to type it again. Let's take a look at the images below that show the same property 'Project full name' shared between the Landscape and the Patch menu options.
 
@@ -27,7 +27,7 @@ So the issue will be considered fixed when a property typed at the Landscape scr
 
 ## My First Steps with Vue
 
-To address this issue, I found myself working with Vue.js for the first time. I embarked on this journey while creating the [Pull Request #6091](https://github.com/jhipster/jhipster-lite/pull/6091), titled "Share module properties between landscape and patch screens". I made numerous code changes to enable the module properties to be shared between screens.
+To address this issue, I found myself working with Vue.js for the first time. I embarked on this journey while creating the [Pull Request #6091](https://github.com/seed4j/seed4j/pull/6091), titled "Share module properties between landscape and patch screens". I made numerous code changes to enable the module properties to be shared between screens.
 
 My first foray into Vue was both exciting and challenging. Vue's reactivity model and component architecture were different from what I was used to, but I quickly found them to be powerful tools for creating interactive user interfaces. I learned how to use Vue directives, computed properties, and component lifecycle hooks to create responsive and efficient components.
 
@@ -205,7 +205,7 @@ moduleParametersValues,
 
 These changes have the potential to significantly enhance the user experience in JHipster Lite. With the module properties now persisting across pages, users no longer need to redefine their preferences every time they navigate to a different page.
 
-However, please note that these changes generated the following bug [Local properties storage do no reset #6279](https://github.com/jhipster/jhipster-lite/issues/6279) which I have already fixed it. I eagerly look forward to feedback from the community and I am ready to make any necessary adjustments.
+However, please note that these changes generated the following bug [Local properties storage do no reset #6279](https://github.com/seed4j/seed4j/issues/6279) which I have already fixed it. I eagerly look forward to feedback from the community and I am ready to make any necessary adjustments.
 
 For a comprehensive understanding of the changes, I recommend reviewing the code directly on GitHub. Stay tuned for more updates on JHipster Lite's development!
 

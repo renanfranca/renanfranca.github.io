@@ -10,18 +10,18 @@ permalink: /:categories/:title:output_ext
 ---
 ![cover image](https://renanfranca.github.io/img/postbanners/2023-01-08-cover-how-did-i-earn-money.jpeg)
 
-I am going to share my approach and my own experience and opinion about fixing a bounty issue from the [jhipster-lite Open Source Software (OSS)](https://github.com/jhipster/jhipster-lite).
+I am going to share my approach and my own experience and opinion about fixing a bounty issue from the [jhipster-lite Open Source Software (OSS)](https://github.com/seed4j/seed4j).
 
 ## Wich issue to choose
 
 I got stuck for a long time because I couldn't decide which issue I should fix and I didn't have much time to spend fixing an issue. I could only be coding while my baby girl was sleeping.
 
-At first, I created [an issue to fix](https://github.com/jhipster/jhipster-lite/issues/4401) because I was afraid to fail to fix an existing issue. Then I realized that isn't a good idea to implement a front-end feature because my strength is back-end code using spring boot!
+At first, I created [an issue to fix](https://github.com/seed4j/seed4j/issues/4401) because I was afraid to fail to fix an existing issue. Then I realized that isn't a good idea to implement a front-end feature because my strength is back-end code using spring boot!
 
-After some time, I decided to join together my goal to help the jhipster-lite (jhlite) project by solving an issue with my need to earn money beyond my paycheck. So I started to read the [bounty issues list](https://github.com/jhipster/jhipster-lite/labels/%24%24%20bug-bounty%20%24%24), looking for an issue that demands only backend skills to fix.
+After some time, I decided to join together my goal to help the jhipster-lite (jhlite) project by solving an issue with my need to earn money beyond my paycheck. So I started to read the [bounty issues list](https://github.com/seed4j/seed4j/labels/%24%24%20bug-bounty%20%24%24), looking for an issue that demands only backend skills to fix.
 
 In the end, I decided to try to fix this issue: [Add the possibility to comment spring properties in modules
-](https://github.com/jhipster/jhipster-lite/issues/2106).
+](https://github.com/seed4j/seed4j/issues/2106).
 
 ## How should I start to fix an issue?
 
@@ -48,7 +48,7 @@ Here I will try to share some of my abilities and background knowledge which giv
 In my case, I need to understand the project to be motivated to contribute to it. Below, I will list some interesting resources to fall in love with jhlite 😊.
 
 - [What is JHipster Lite?](https://www.jhipster.tech/jhipster-lite/)
-- Read everything at the jhipster-lite [contributing guide](https://github.com/jhipster/jhipster-lite/blob/main/CONTRIBUTING.md)
+- Read everything at the jhipster-lite [contributing guide](https://github.com/seed4j/seed4j/blob/main/CONTRIBUTING.md)
 - [What is JHipster Lite and why should you care?](https://www.youtube.com/watch?v=dTzGQNOKWug) by [Julien Dubois](https://twitter.com/juliendubois)
   - Excelente content showing how to use jhipster-lite and Julien will guide you through jhlite options. In the end, you will create the demo project and could explore it by yourself! That was so cool!
 - [How to contribute to JHipster](https://www.youtube.com/watch?v=O-P58uCWrfI) by [Anthony Viard](https://twitter.com/avdev4j) and [Sohini Pattanayak](https://twitter.com/TheSohini)
@@ -58,7 +58,7 @@ In my case, I need to understand the project to be motivated to contribute to it
 
 ### Study Hexagonal Architecture
 
-- [Hexagonal architecture (application service flavor)](https://github.com/jhipster/jhipster-lite/blob/main/documentation/hexagonal-architecture.md)
+- [Hexagonal architecture (application service flavor)](https://github.com/seed4j/seed4j/blob/main/documentation/hexagonal-architecture.md)
 - I cloned the jhipster-lite project and run it in debug mode to learn more about the code base which I am going to change.
 - Then I realized that a better approach is to run the implemented tests in debug mode. The test works as a documentation of the functionalities.
 
@@ -115,7 +115,7 @@ Every time I pushed some changes I let the reviewer know and I always answers ea
 
 I preferred to push the changes even though I didn't fully understand what the review wants because in my experience is easier to talk about an implemented code than a hypothetical one.
 
-There is a [Contributor Covenant Code of Conduct](https://github.com/jhipster/jhipster-lite/blob/main/CODE_OF_CONDUCT.md)
+There is a [Contributor Covenant Code of Conduct](https://github.com/seed4j/seed4j/blob/main/CODE_OF_CONDUCT.md)
 > In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
 
 In my own experience as a contributor, I can say that everyone who I interacted with was kind and genuinely wants the best for the project. I felt that they appreciate my effort to fix an issue and they were cheering me up!
@@ -124,9 +124,9 @@ In my own experience as a contributor, I can say that everyone who I interacted 
 
 After my pull request got merged, I was eligible to claim the bounty.
 
-First, I create an invoice at open collective: [$300 bug bounty claim for https://github.com/jhipster/jhipster-lite/pull/4814](https://opencollective.com/generator-jhipster/expenses/117514).
+First, I create an invoice at open collective: [$300 bug bounty claim for https://github.com/seed4j/seed4j/pull/4814](https://opencollective.com/generator-jhipster/expenses/117514).
 
-Then I published the invoice link at my pull request: [https://github.com/jhipster/jhipster-lite/pull/4814#issuecomment-1374433366](https://github.com/jhipster/jhipster-lite/pull/4814#issuecomment-1374433366).
+Then I published the invoice link at my pull request: [https://github.com/seed4j/seed4j/pull/4814#issuecomment-1374433366](https://github.com/seed4j/seed4j/pull/4814#issuecomment-1374433366).
 
 After some time, the invoice was processed and I got paid 👏😃☺️!
 

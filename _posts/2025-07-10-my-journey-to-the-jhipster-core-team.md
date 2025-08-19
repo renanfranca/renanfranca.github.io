@@ -30,7 +30,7 @@ When I joined the core team in January 2024, here's how I introduced myself:
 
 > My name is Renan Franca, and I have been a software engineer since 2008. I am a big fan of JHipster! I first encountered JHipster in 2021 while creating a side project to monitor my baby girl's status: https://renanfranca.github.io/i-built-a-baby-care-web-app-using-jhipster.html Since then, I have been maintaining a blog to promote JHipster https://renanfranca.github.io
 >
-> My first contribution to the jhipster-generator was on 07/2021: https://github.com/jhipster/generator-jhipster/pull/15724. After blogging for a while, I decided to contribute to the JHipster Lite project and wrote about the experience here: https://renanfranca.github.io/how-did-i-earn-money-to-fix-an-issue-from-an-open-source-software.html. Then, I made 10 contributions to the JHipster Lite project (https://github.com/jhipster/jhipster-lite/pulls?q=is%3Apr+author%3A%40me+is%3Aclosed).
+> My first contribution to the jhipster-generator was on 07/2021: https://github.com/jhipster/generator-jhipster/pull/15724. After blogging for a while, I decided to contribute to the JHipster Lite project and wrote about the experience here: https://renanfranca.github.io/how-did-i-earn-money-to-fix-an-issue-from-an-open-source-software.html. Then, I made 10 contributions to the JHipster Lite project (https://github.com/seed4j/seed4j/pulls?q=is%3Apr+author%3A%40me+is%3Aclosed).
 >
 > I'd like to join the core team because I truly love this project and the community. Recently, I realized my ambition isn't to create new side projects anymore. Now, my goal is to adopt the JHipster project as my primary side project.
 
@@ -38,11 +38,11 @@ When I joined the core team in January 2024, here's how I introduced myself:
 
 My contributions until today (2025-07-10):
 
-- I contributed with more than [73 merged Pull Requests](https://github.com/jhipster/jhipster-lite/pulls?q=is%3Apr+author%3Arenanfranca+is%3Amerged+) at [JHipster Lite Project](https://github.com/jhipster/jhipster-lite)
+- I contributed with more than [73 merged Pull Requests](https://github.com/seed4j/seed4j/pulls?q=is%3Apr+author%3Arenanfranca+is%3Amerged+) at [JHipster Lite Project](https://github.com/seed4j/seed4j)
 
-- I also contributed to the [JHipster Lite Extension project](https://github.com/jhipster/jhipster-lite-extension) with [7 merged Pull Requests](https://github.com/jhipster/jhipster-lite-extension/pulls?q=is%3Apr+author%3Arenanfranca+is%3Amerged+)
+- I also contributed to the [JHipster Lite Extension project](https://github.com/seed4j/seed4j-extension) with [7 merged Pull Requests](https://github.com/seed4j/seed4j-extension/pulls?q=is%3Apr+author%3Arenanfranca+is%3Amerged+)
 
-- I am currently working on the CLI version of JHLite called [JHipster Lite CLI Project](https://github.com/jhipster/jhipster-lite-cli), with [9 Pull Requests merged](https://github.com/jhipster/jhipster-lite-cli/pulls?q=is%3Apr+author%3Arenanfranca+is%3Amerged+)
+- I am currently working on the CLI version of JHLite called [JHipster Lite CLI Project](https://github.com/seed4j/seed4j-cli), with [9 Pull Requests merged](https://github.com/seed4j/seed4j-cli/pulls?q=is%3Apr+author%3Arenanfranca+is%3Amerged+)
 
 This CLI project was the first major project I built using jhipster-lite to assist me, marking my first coding experience with it.
 
@@ -76,9 +76,9 @@ Lastly, let me extend an invitation to join me on my journey 🚀 in the realm o
 
 **If you like those projects, please, considering give it a star 🌟 to support us and enhanced both repository's visibility 🤩!**
 
-<!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/jhipster/jhipster-lite" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" data-size="large" aria-label="Star jhipster-jhipster-lite on GitHub">•⭐ jhipster-lite</a>
+<!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/seed4j/seed4j" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" data-size="large" aria-label="Star jhipster-jhipster-lite on GitHub">•⭐ jhipster-lite</a>
 
-<!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/jhipster/jhipster-lite-cli" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" data-size="large" aria-label="Star jhipster/jhipster-lite-cli on GitHub">•⭐ jhipster-lite-cli</a>
+<!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/seed4j/seed4j-cli" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" data-size="large" aria-label="Star jhipster/jhipster-lite-cli on GitHub">•⭐ jhipster-lite-cli</a>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 

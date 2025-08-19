@@ -1,4 +1,4 @@
-- Fix [Add loading animation while the command is executed](https://github.com/jhipster/jhipster-lite-cli/issues/13)
+- Fix [Add loading animation while the command is executed](https://github.com/seed4j/seed4j-cli/issues/13)
 
 I would like to share a demo video showing the loading animation while using the `jhlite` in a possible real-world situation. As you can see, it already has a nice developer experience:
 

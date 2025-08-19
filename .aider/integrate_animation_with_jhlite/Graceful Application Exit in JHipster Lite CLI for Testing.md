@@ -4,7 +4,7 @@
 
 ## Understanding Exit Management in CLI Applications
 
-When building CLI applications with Spring Boot, handling the application exit properly is crucial for maintaining clean application shutdown and reporting accurate exit codes to the calling environment. [JHipster Lite CLI](https://github.com/jhipster/jhipster-lite-cli) provides an elegant solution to this challenge through its exit module.
+When building CLI applications with Spring Boot, handling the application exit properly is crucial for maintaining clean application shutdown and reporting accurate exit codes to the calling environment. [JHipster Lite CLI](https://github.com/seed4j/seed4j-cli) provides an elegant solution to this challenge through its exit module.
 
 ## The Exit Module Architecture
 
