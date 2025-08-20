@@ -5,7 +5,7 @@ title: Blog Archive
 
 <a href="/archive.html">Sort by category</a>
 
-{% assign filteredPosts = "" | split,"" %}
+{% assign filteredPosts = "" | split: "" %}
 {%- assign allposts = site.posts | sort_natural: "date" | reverse %}
 
 {% for post in allposts %}
