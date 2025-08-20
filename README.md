@@ -18,15 +18,20 @@ npm install
 
 ## Local environment
 
-
 <!-- seed4j-needle-localEnvironment -->
 
 ## Start up
 
+```bash
+docker compose up
+```
+
+```bash
+npm run build:css:prod:watch
+```
 
 <!-- seed4j-needle-startupCommand -->
 
 ## Documentation
-
 
 <!-- seed4j-needle-documentation -->
