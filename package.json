@@ -4,15 +4,23 @@
   "private": true,
   "description": "Seed4J Sample Application",
   "license": "UNLICENSED",
+  "scripts": {
+    "prepare": "husky",
+    "prettier:check": "prettier --check .",
+    "prettier:format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@prettier/plugin-xml": "3.4.2",
+    "husky": "9.1.7",
+    "lint-staged": "16.1.5",
+    "prettier": "3.6.2",
+    "prettier-plugin-gherkin": "3.1.2",
+    "prettier-plugin-java": "2.7.4",
+    "prettier-plugin-organize-imports": "4.2.0",
+    "prettier-plugin-packagejson": "2.5.19"
+  },
   "packageManager": "npm@11.5.2",
   "engines": {
     "node": ">=22"
-  },
-  "scripts": {
-    "prepare": "husky"
-  },
-  "devDependencies": {
-    "husky": "9.1.7",
-    "lint-staged": "16.1.5"
   }
 }
