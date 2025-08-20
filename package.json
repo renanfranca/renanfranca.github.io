@@ -5,22 +5,35 @@
   "description": "Seed4J Sample Application",
   "license": "UNLICENSED",
   "scripts": {
+    "build:css": "NODE_ENV=development npx postcss assets/css/tailwind.css -o assets/css/style.css",
+    "build:css:prod": "NODE_ENV=production npx postcss assets/css/tailwind.css -o assets/css/style.css",
+    "build:css:prod:watch": "NODE_ENV=production npx postcss assets/css/tailwind.css -o assets/css/style.css --watch",
+    "build:css:watch": "NODE_ENV=development npx postcss assets/css/tailwind.css -o assets/css/style.css --watch",
     "prepare": "husky",
     "prettier:check": "prettier --check .",
     "prettier:format": "prettier --write ."
   },
   "devDependencies": {
-    "@prettier/plugin-xml": "3.4.2",
+    "@prettier/plugin-xml": "3.1.1",
+    "animated-tailwindcss": "^4.0.0",
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
     "husky": "9.1.7",
     "lint-staged": "16.1.5",
+    "postcss": "^8.4.28",
+    "postcss-cli": "^10.1.0",
     "prettier": "3.6.2",
     "prettier-plugin-gherkin": "3.1.2",
     "prettier-plugin-java": "2.7.4",
     "prettier-plugin-organize-imports": "4.2.0",
-    "prettier-plugin-packagejson": "2.5.19"
+    "prettier-plugin-packagejson": "2.5.19",
+    "tailwindcss": "^3.3.3"
   },
   "packageManager": "npm@11.5.2",
   "engines": {
     "node": ">=22"
-  }
+  },
+  "cacheDirectories": [
+    "node_modules"
+  ]
 }
