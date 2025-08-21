@@ -468,6 +468,9 @@ video {
 .h-screen {
   height: 100vh;
 }
+.h-\[101\.68px\] {
+  height: 101.68px;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1153,6 +1156,12 @@ video {
   .md\:h-\[480px\] {
     height: 480px;
   }
+  .md\:h-\[334px\] {
+    height: 334px;
+  }
+  .md\:h-\[140\.34px\] {
+    height: 140.34px;
+  }
   .md\:w-1\/2 {
     width: 50%;
   }
@@ -1260,6 +1269,9 @@ video {
   }
   .lg\:h-\[384px\] {
     height: 384px;
+  }
+  .lg\:h-\[182\.35px\] {
+    height: 182.35px;
   }
   .lg\:w-1\/2 {
     width: 50%;
