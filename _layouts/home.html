@@ -1,36 +1,138 @@
 ---
-layout: default
+layout: default_tailwindcss
 ---
 
-<div class="home">
-	{%- if page.title -%}
-	<h1 class="page-heading">{{ page.title }}</h1>
-	{%- endif -%}
+<section id="introduction" class="flex flex-col w-full py-16 md:py-24">
+  <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
+    <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
+      As a software engineer and member of the
+      <a
+        class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
+        href="https://www.jhipster.tech/team/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >JHipster Core Team</a
+      >, I’m excited to share my experiences with
+      <a
+        class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
+        href="https://www.jhipster.tech/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >JHipster</a
+      >
+      and
+      <a
+        class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
+        href="https://www.jhipster.tech/jhipster-lite/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >JHipster-Lite</a
+      >.
+    </p>
+    <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
+      Additionally, I’ll offer some helpful tips and tricks related to various other technologies and tools.
+    </p>
+    Enjoy ✌!
+  </div>
+</section>
 
-	{{ content }}
+<section id="posts" class="flex flex-col w-full py-16 md:py-24 gap-6">
+  <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
+    <div class="flex flex-col gap-4">
+      <div class="flex justify-center">
+        <p
+          class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 rounded-xl bg-lightgray-200 dark:bg-darkgray-200"
+        >
+          Posts
+        </p>
+      </div>
+      <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
+        Some of the noteworthy projects I have built:
+      </p>
+    </div>
+    {%- if site.posts.size > 0 -%} {%- for post in site.posts -%} {% unless post.draft %}
+    <div class="flex flex-col md:flex-row rounded-xl shadow-md dark:shadow-xl">
+      <div
+        class="flex w-full md:w-1/2 items-center justify-center p-8 rounded-t-xl md:rounded-tr-none md:rounded-l-xl bg-lightgray-50 dark:bg-darkgray-200"
+      >
+        <a href="https://renanfranca.github.io/portfolio/feedbacker-html-css/" target="_blank" rel="noopener noreferrer">
+          <div class="flex w-[242px] h-[192px] md:w-[334px] md:h-[284px] lg:w-[434px] lg:h-[384px]">
+            <img
+              class="rounded-xl shadow-lg transition-transform duration-500 md:hover:scale-105"
+              src="assets/images/feedbacker-portfolio.png"
+              alt="Feedbacker Layout"
+              loading="lazy"
+            />
+          </div>
+        </a>
+      </div>
+      <div class="flex flex-col md:w-1/2 p-8 gap-6 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
+        <p class="font-semibold text-lg text-left text-lightgray-900 dark:text-darkgray-900">
+          <a
+            class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
+            href="https://www.jhipster.tech/jhipster-lite/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ post.title | escape }}
+          </a>
+        </p>
+        <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">{{ post.description | escape }}</p>
+        <div class="flex flex-wrap gap-2">
+          {%- for tag in post.tags -%}
+          <p
+            class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
+          >
+            {{ tag | escape }}
+          </p>
+          {%- endfor -%}
+        </div>
+        <a href="https://renanfranca.github.io/portfolio/feedbacker-html-css/" target="_blank" rel="noopener noreferrer">
+          <svg
+            class="stroke-lightgray-600 dark:stroke-darkgray-600"
+            height="36"
+            viewBox="0 0 36 36"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 19V25C24 25.5304 23.7893 26.0391 23.4142 26.4142C23.0391 26.7893 22.5304 27 22 27H11C10.4696 27 9.96086 26.7893 9.58579 26.4142C9.21071 26.0391 9 25.5304 9 25V14C9 13.4696 9.21071 12.9609 9.58579 12.5858C9.96086 12.2107 10.4696 12 11 12H17"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path d="M21 9H27V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M16 20L27 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+    {% endunless %} {%- endfor -%} {%- endif -%}
+  </div>
+</section>
 
-	{%- if site.posts.size > 0 -%}
-	<h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-	<ul class="post-list">
-		{%- for post in site.posts -%}
-		{% unless post.draft %}
-		<li>
-			{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-			<span class="post-meta">{{ post.date | date: date_format }}</span>
-			<h3>
-				<a class="post-link" href="{{ post.url | relative_url }}">
-					{{ post.title | escape }}
-				</a>
-			</h3>
-			{%- if site.show_excerpts -%}
-			{{ post.excerpt }}
-			{%- endif -%}
-		</li>
-		{% endunless %}
-		{%- endfor -%}
-	</ul>
+<main class="page-content" aria-label="Content">
+  <div class="wrapper">
+    <div class="home">
+      {%- if page.title -%}
+      <h1 class="page-heading">{{ page.title }}</h1>
+      {%- endif -%} {{ content }} {%- if site.posts.size > 0 -%}
+      <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+      <ul class="post-list">
+        {%- for post in site.posts -%} {% unless post.draft %}
+        <li>
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <span class="post-meta">{{ post.date | date: date_format }}</span>
+          <h3>
+            <a class="post-link" href="{{ post.url | relative_url }}"> {{ post.title | escape }} </a>
+          </h3>
+          {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
+        </li>
+        {% endunless %} {%- endfor -%}
+      </ul>
 
-	<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-	{%- endif -%}
-
-</div>
+      <p class="rss-subscribe">subscribe <a href='{{ "/feed.xml" | relative_url }}'>via RSS</a></p>
+      {%- endif -%}
+    </div>
+  </div>
+</main>
