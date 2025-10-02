@@ -1,9 +1,10 @@
 services:
   jekyll:
     image: jekyll/jekyll:latest
-    command: jekyll serve --watch --host 0.0.0.0 --force_polling
+    command: jekyll serve --watch --host 0.0.0.0 --livereload --force_polling
     ports:
       - '4000:4000'
+      - '35729:35729'
     volumes:
       - .:/srv/jekyll
   tailwind:
