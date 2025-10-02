@@ -8,6 +8,14 @@ layout: default_tailwindcss
       As a software engineer and member of the
       <a
         class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
+        href="https://seed4j.com/docs/team.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Seed4J Core Team</a
+      >
+      and
+      <a
+        class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
         href="https://www.jhipster.tech/team/"
         target="_blank"
         rel="noopener noreferrer"
@@ -32,7 +40,7 @@ layout: default_tailwindcss
     <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
       Additionally, I’ll offer some helpful tips and tricks related to various other technologies and tools.
     </p>
-    Enjoy ✌!
+    <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">Enjoy ✌!</p>
   </div>
 </section>
 
@@ -46,21 +54,20 @@ layout: default_tailwindcss
           Posts
         </p>
       </div>
-      <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
-        Some of the noteworthy projects I have built:
-      </p>
+      <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">I am sharing my own experiences</p>
     </div>
     {%- if site.posts.size > 0 -%} {%- for post in site.posts -%} {% unless post.draft %}
+    <!--    TODO: ajustar link da imagem e o link ao clicar para abrir em outra aba -->
     <div class="flex flex-col md:flex-row rounded-xl shadow-md dark:shadow-xl">
       <div
         class="flex w-full md:w-1/2 items-center justify-center p-8 rounded-t-xl md:rounded-tr-none md:rounded-l-xl bg-lightgray-50 dark:bg-darkgray-200"
       >
-        <a href="https://renanfranca.github.io/portfolio/feedbacker-html-css/" target="_blank" rel="noopener noreferrer">
+        <a href="{{ post.url | relative_url }}" rel="noopener noreferrer">
           <div class="flex w-[242px] h-[101.68px] md:w-[334px] md:h-[140.34px] lg:w-[434px] lg:h-[182.35px]">
             <img
               class="rounded-xl shadow-lg transition-transform duration-500 md:hover:scale-105"
               src="{{ post.image | relative_url }}"
-              alt="Feedbacker Layout"
+              alt="Post Cover Image"
               loading="lazy"
             />
           </div>
@@ -70,8 +77,7 @@ layout: default_tailwindcss
         <p class="font-semibold text-lg text-left text-lightgray-900 dark:text-darkgray-900">
           <a
             class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-            href="https://www.jhipster.tech/jhipster-lite/"
-            target="_blank"
+            href="{{ post.url | relative_url }}"
             rel="noopener noreferrer"
           >
             {{ post.title | escape }}
@@ -87,7 +93,7 @@ layout: default_tailwindcss
           </p>
           {%- endfor -%}
         </div>
-        <a href="https://renanfranca.github.io/portfolio/feedbacker-html-css/" target="_blank" rel="noopener noreferrer">
+        <a href="{{ post.url | relative_url }}" target="_blank" rel="noopener noreferrer">
           <svg
             class="stroke-lightgray-600 dark:stroke-darkgray-600"
             height="36"

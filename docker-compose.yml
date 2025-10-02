@@ -6,9 +6,10 @@ services:
       - '4000:4000'
     volumes:
       - .:/srv/jekyll
-#  tailwind:
-#    image: node:22
-#    working_dir: /srv/jekyll
-#    volumes:
-#      - .:/srv/jekyll
+  tailwind:
+    image: node:22
+    working_dir: /srv/jekyll
+    volumes:
+      - .:/srv/jekyll
+    command: npm run build:css:prod:watch
 #    command: npx postcss assets/css/tailwind.css -o assets/css/style.css --watch
