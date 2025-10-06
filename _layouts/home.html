@@ -47,12 +47,22 @@ layout: default_tailwindcss
 <section id="posts" class="flex flex-col w-full py-16 md:py-24 gap-6">
   <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
     <div class="flex flex-col gap-4">
-      <div class="flex justify-center">
+      <div class="flex justify-center items-center gap-3">
         <p
           class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 rounded-xl bg-lightgray-200 dark:bg-darkgray-200"
         >
           Posts
         </p>
+        <a
+          href='{{ "/feed.xml" | relative_url }}'
+          class="flex items-center gap-1.5 font-medium text-sm text-lightgray-600 dark:text-darkgray-600 py-1 px-4 rounded-xl border border-lightgray-200 dark:border-darkgray-200 transition-all hover:bg-lightgray-200 dark:hover:bg-darkgray-200"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Subscribe via RSS"
+        >
+          <svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg>
+          RSS
+        </a>
       </div>
       <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">I am sharing my own experiences</p>
     </div>
