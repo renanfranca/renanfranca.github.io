@@ -2,15 +2,14 @@
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   {%- include head.html -%}
 
-  <body>
-    {%- include header.html -%}
+  <body class="bg-lightgray dark:bg-darkgray">
+    <link href="assets/css/fonts.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/override.css" rel="stylesheet" />
 
-    <main class="flex flex-col min-h-screen w-full">
-      <link href="assets/css/fonts.css" rel="stylesheet" />
-      <link href="assets/css/style.css" rel="stylesheet" />
-      <link href="assets/css/override.css" rel="stylesheet" />
-      {{ content }}
-    </main>
+    {%- include header_tailwindcss.html -%}
+
+    <main class="flex flex-col min-h-screen w-full">{{ content }}</main>
 
     {%- include footer.html -%}
   </body>
