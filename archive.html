@@ -3,6 +3,58 @@ layout: page
 title: Blog Archive
 ---
 
+<div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 py-10 md:py-16 gap-8">
+  <!-- Sort by date link -->
+  <div class="flex justify-start">
+    <a
+      href="/archive-date.html"
+      class="font-medium text-sm text-lightgray-600 dark:text-darkgray-600 py-2 px-5 rounded-xl border border-lightgray-200 dark:border-darkgray-200 transition-all hover:bg-lightgray-200
+dark:hover:bg-darkgray-200"
+    >
+      Sort by date
+    </a>
+  </div>
+
+  <!-- Tags sections -->
+  {% for tag in site.tags %}
+  {% assign filteredPosts = "" | split: "" %}
+
+  {%- for post in tag[1] %}
+  {% unless post.draft %}
+  {% assign filteredPosts = filteredPosts | push:post %}
+  {% endunless %}
+  {%- endfor %}
+
+  {%- if filteredPosts.size > 0 -%}
+  <div class="flex flex-col gap-4">
+    <!-- Tag title -->
+    <div class="flex items-center gap-3">
+      <h3 class="font-semibold text-xl text-lightgray-900 dark:text-darkgray-900">{{- tag[0] -}}</h3>
+      <span class="font-medium text-sm text-lightgray-500 dark:text-darkgray-500">({{ filteredPosts.size }})</span>
+    </div>
+
+    <!-- Posts list -->
+    <ul class="flex flex-col gap-2">
+      {%- for post in filteredPosts %}
+      <li>
+        <a
+          href="{{ post.url }}"
+          class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 p-4 rounded-xl transition-all hover:bg-lightgray-50 dark:hover:bg-darkgray-200"
+        >
+          <span class="font-medium text-sm text-lightgray-500 dark:text-darkgray-500 min-w-[80px]">
+            {{ post.date | date: "%b %Y" }}
+          </span>
+          <span class="font-normal text-base text-lightgray-600 dark:text-darkgray-600 hover:text-lightgray-900 dark:hover:text-darkgray-900 transition-all">
+            {{ post.title }}
+          </span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+  {%- endif -%}
+  {%- endfor %}
+</div>
 <a href="/archive-date.html">Sort by date</a>
 {% for tag in site.tags %}
 {% assign filteredPosts = "" | split: "" %}
