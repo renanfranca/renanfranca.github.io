@@ -1,3 +1,52 @@
+/* Force default Tailwind text colors for all elements */
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+code {
+  color: #4b5563 !important; /* Tailwind gray-600 for light mode */
+}
+
+.dark body,
+.dark p,
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6,
+.dark code {
+  color: #d1d5db !important; /* Tailwind gray-400 for dark mode */
+}
+
+/* Ensure all elements inherit the base text color */
+* {
+  color: inherit;
+}
+
+/* Override for links to use Tailwind's default link colors */
+a {
+  color: #2563eb !important; /* Tailwind blue-600 */
+}
+
+a:hover {
+  color: #1d4ed8 !important; /* Tailwind blue-700 */
+}
+
+@media (prefers-color-scheme: dark) {
+  a {
+    color: #3b82f6 !important; /* Tailwind blue-500 */
+  }
+
+  a:hover {
+    color: #60a5fa !important; /* Tailwind blue-400 */
+  }
+}
+
 hr {
   margin-top: 30px;
   margin-bottom: 20px;
@@ -68,7 +117,9 @@ h6:hover .header-link {
   max-width: 100%;
 }
 
-.embed-container iframe, .embed-container object, .embed-container embed {
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
   position: absolute;
   top: 0;
   left: 0;
