@@ -19,8 +19,7 @@ code {
 .dark h3,
 .dark h4,
 .dark h5,
-.dark h6,
-.dark code {
+.dark h6 {
   color: #d1d5db !important; /* Tailwind gray-400 for dark mode */
 }
 
@@ -51,6 +50,7 @@ ol {
   list-style: decimal !important;
   padding: unset !important;
   margin-left: 30px !important;
+  margin-bottom: 15px !important;
 }
 
 /**
