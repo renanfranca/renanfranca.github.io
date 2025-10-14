@@ -47,9 +47,15 @@ a:hover {
 
 ul,
 ol {
-  list-style: decimal !important;
+  list-style: inherit !important;
   padding: unset !important;
   margin-left: 30px !important;
+  margin-bottom: 15px !important;
+}
+
+pre {
+  padding: 8px 12px !important;
+  overflow-x: auto !important;
   margin-bottom: 15px !important;
 }
 
