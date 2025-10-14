@@ -9,6 +9,7 @@ h5,
 h6,
 code {
   color: #4b5563 !important; /* Tailwind gray-600 for light mode */
+  margin-bottom: 15px !important;
 }
 
 .dark body,
@@ -37,14 +38,19 @@ a:hover {
   color: #1d4ed8 !important; /* Tailwind blue-700 */
 }
 
-@media (prefers-color-scheme: dark) {
-  a {
-    color: #3b82f6 !important; /* Tailwind blue-500 */
-  }
+.dark a {
+  color: #3b82f6 !important; /* Tailwind blue-500 */
+}
 
-  a:hover {
-    color: #60a5fa !important; /* Tailwind blue-400 */
-  }
+.dark a:hover {
+  color: #60a5fa !important; /* Tailwind blue-400 */
+}
+
+ul,
+ol {
+  list-style: decimal !important;
+  padding: unset !important;
+  margin-left: 30px !important;
 }
 
 hr {
@@ -170,4 +176,21 @@ figcaption {
   display: block;
   font-size: 14px;
   font-style: italic;
+}
+
+/**
+ * Wrapper override
+ */
+.wrapper {
+  max-width: 1120px !important; /* ou o valor que preferir */
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+
+  @media (max-width: 800px) {
+    max-width: 100% !important;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
 }
