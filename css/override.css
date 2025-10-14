@@ -57,7 +57,7 @@ ol {
  * Wrapper override
  */
 .wrapper {
-  max-width: 1120px !important; /* ou o valor que preferir */
+  max-width: 1120px !important;
   margin-right: auto;
   margin-left: auto;
   padding-right: 2rem;
