@@ -34,12 +34,12 @@ dark:hover:bg-darkgray-200"
     </div>
 
     <!-- Posts list -->
-    <ul class="flex flex-col gap-2">
+    <ul class="flex flex-col gap-1 list-style-type: list-disc">
       {%- for post in filteredPosts %}
       <li>
         <a
           href="{{ post.url }}"
-          class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 p-4 rounded-xl transition-all hover:bg-lightgray-50 dark:hover:bg-darkgray-200"
+          class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 p-1 rounded-xl transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
         >
           <span class="font-medium text-sm text-lightgray-500 dark:text-darkgray-500 min-w-[80px]">
             {{ post.date | date: "%b %Y" }}

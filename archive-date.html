@@ -36,12 +36,12 @@ dark:hover:bg-darkgray-200"
     </div>
 
     <!-- Posts list -->
-    <ul class="flex flex-col gap-2">
+    <ul class="flex flex-col gap-2 list-style-type: list-disc">
       {%- for post in yearMonth.items %}
       <li>
         <a
           href="{{ post.url }}"
-          class="flex items-center p-4 rounded-xl transition-all hover:bg-lightgray-50 dark:hover:bg-darkgray-200"
+          class="flex items-center p-1 rounded-xl transition-all hover:bg-lightgray-50 dark:hover:bg-darkgray-200"
         >
           <span class="font-normal text-base text-lightgray-600 dark:text-darkgray-600 hover:text-lightgray-900 dark:hover:text-darkgray-900 transition-all">
             {{ post.title }}
