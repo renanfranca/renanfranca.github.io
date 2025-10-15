@@ -1,0 +1,4 @@
+.svg-icon,.svg-icon:after,.svg-icon:before {
+  border: 0 solid #022a7a;
+  box-sizing: content-box !important;
+}

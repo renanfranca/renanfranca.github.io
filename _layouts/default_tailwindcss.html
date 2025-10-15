@@ -1,23 +1,16 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   {%- include head.html -%}
 
-<body class="bg-lightgray dark:bg-darkgray">
+  <body class="bg-lightgray dark:bg-darkgray">
     <link href="assets/css/fonts.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
     <link href="assets/css/override.css" rel="stylesheet" />
 
     {%- include header_tailwindcss.html -%}
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </main>
+    <main class="flex flex-col min-h-screen w-full">{{ content }}</main>
 
     {%- include footer.html -%}
-
   </body>
-
 </html>

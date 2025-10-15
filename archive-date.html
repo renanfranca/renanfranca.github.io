@@ -3,25 +3,53 @@ layout: page
 title: Blog Archive
 ---
 
-<a href="/archive.html">Sort by category</a>
+<div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 py-10 md:py-16 gap-8">
+  <!-- Sort by category link -->
+  <div class="flex justify-start">
+    <a
+      href="/archive.html"
+      class="font-medium text-sm text-lightgray-600 dark:text-darkgray-600 py-2 px-5 rounded-xl border border-lightgray-200 dark:border-darkgray-200 transition-all hover:bg-lightgray-200
+dark:hover:bg-darkgray-200"
+    >
+      Sort by category
+    </a>
+  </div>
 
-{% assign filteredPosts = "" | split: "" %}
-{%- assign allposts = site.posts | sort_natural: "date" | reverse %}
+  <!-- Posts by year/month sections -->
+  {% assign filteredPosts = "" | split: "" %}
+  {%- assign allposts = site.posts | sort_natural: "date" | reverse %}
 
-{% for post in allposts %}
-{% unless post.draft %}
-{% assign filteredPosts = filteredPosts | push:post %}
-{% endunless %}
-{% endfor %}
+  {% for post in allposts %}
+  {% unless post.draft %}
+  {% assign filteredPosts = filteredPosts | push:post %}
+  {% endunless %}
+  {% endfor %}
 
-{%- assign postsByYearMonth = filteredPosts | group_by_exp:"allposts", "allposts.date | date: '%Y %B'" %}
+  {%- assign postsByYearMonth = filteredPosts | group_by_exp:"allposts", "allposts.date | date: '%Y %B'" %}
 
+  {%- for yearMonth in postsByYearMonth %}
+  <div class="flex flex-col gap-4">
+    <!-- Year/Month title -->
+    <div class="flex items-center gap-3">
+      <h3 class="font-semibold text-xl text-lightgray-900 dark:text-darkgray-900">{{ yearMonth.name }}</h3>
+      <span class="font-medium text-sm text-lightgray-500 dark:text-darkgray-500">({{ yearMonth.items.size }})</span>
+    </div>
 
-{%- for yearMonth in postsByYearMonth %}
-<h3>{{ yearMonth.name }}</h3>
-<ul>
-  {%- for post in yearMonth.items %}
-  <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    <!-- Posts list -->
+    <ul class="flex flex-col gap-2 list-style-type: list-disc">
+      {%- for post in yearMonth.items %}
+      <li>
+        <a
+          href="{{ post.url }}"
+          class="flex items-center p-1 rounded-xl transition-all hover:bg-lightgray-50 dark:hover:bg-darkgray-200"
+        >
+          <span class="font-normal text-base text-lightgray-600 dark:text-darkgray-600 hover:text-lightgray-900 dark:hover:text-darkgray-900 transition-all">
+            {{ post.title }}
+          </span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
   {%- endfor %}
-</ul>
-{%- endfor %}
+</div>

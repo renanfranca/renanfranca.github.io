@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: " en" }}" class="scroll-smooth">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}" class="scroll-smooth">
 
 {%- include head.html -%}
 
@@ -35,14 +35,14 @@
         <li class="flex">
           <a id="menu-about" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#about">About</a>
         </li>
-        <li class="flex">
-          <a id="menu-services" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#services"
-            >Services</a
-          >
-        </li>
-        <li class="flex">
-          <a id="menu-work" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#work">Portfolio</a>
-        </li>
+<!--        <li class="flex">-->
+<!--          <a id="menu-services" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#services"-->
+<!--            >Services</a-->
+<!--          >-->
+<!--        </li>-->
+<!--        <li class="flex">-->
+<!--          <a id="menu-work" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#work">Portfolio</a>-->
+<!--        </li>-->
         <li class="flex">
           <a id="menu-contact" class="w-full font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#contact">Contact</a>
         </li>
@@ -126,8 +126,8 @@
       </a>
       <div class="hidden md:flex items-center gap-6">
         <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#about">About</a>
-        <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#services">Services</a>
-        <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#work">Portfolio</a>
+<!--        <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#services">Services</a>-->
+<!--        <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#work">Portfolio</a>-->
         <a class="font-medium text-base text-lightgray-600 dark:text-darkgray-600" href="#contact">Contact</a>
         <span class="h-6 w-0.5 bg-lightgray-100 dark:bg-darkgray-100"></span>
         <button id="switch-theme" class="p-1 rounded-lg hover:bg-lightgray-100 dark:hover:bg-darkgray-100">
@@ -235,7 +235,15 @@
             <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
               I have <span id="experience">...</span> years of experience as a software engineer 👨‍💻. Over the years, I've taken on various
               roles, ranging from a versatile full-stack developer to a proficient backend engineer. My disciplined ✅ and organized 🗂️
-              approach has always been central to my work ethic. Recently, I was elected as a member of the
+              approach has always been central to my work ethic. Recently, I joined the
+              <a
+                class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
+                href="https://seed4j.com/docs/team.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              ><strong>Seed4J Core Team</strong></a
+              > 🌱
+              and I am a member of the
               <a
                 class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
                 href="https://www.jhipster.tech/team/"
@@ -425,12 +433,12 @@
                 of modern tools and technologies like Docker, OpenShift, Redis, and Kubernetes to craft microservices that stand the test
                 of time.
               </p>
-              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
-                Previously, I was deeply immersed in frontend development. Converting intricate designs into dynamic HTML + CSS, coupled
-                with JavaScript's task of interfacing with backend APIs, was a formidable challenge. As I grappled with the nuances of
-                frameworks like AngularJS, React, and Vue.js, I identified a niche I deeply resonated with: translating Figma layouts into
-                sleek HTML + CSS designs using TailwindCSS.
-              </p>
+<!--              <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">-->
+<!--                Previously, I was deeply immersed in frontend development. Converting intricate designs into dynamic HTML + CSS, coupled-->
+<!--                with JavaScript's task of interfacing with backend APIs, was a formidable challenge. As I grappled with the nuances of-->
+<!--                frameworks like AngularJS, React, and Vue.js, I identified a niche I deeply resonated with: translating Figma layouts into-->
+<!--                sleek HTML + CSS designs using TailwindCSS.-->
+<!--              </p>-->
               <p class="font-normal text-base text-lightgray-600 dark:text-darkgray-600">
                 My academic journey commenced with a Bachelor's in Computer Science from 2005 to 2009. Elevating my knowledge base, I
                 pursued a Postgraduate Degree in Information Security between 2018 and 2020, arming myself with the expertise to navigate
@@ -544,287 +552,287 @@
         </div>
       </div>
     </section>
-    <section id="services" class="flex flex-col w-full py-16 md:py-24 gap-6 bg-lightgray-50 dark:bg-darkgray-50">
-      <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
-        <div class="flex flex-col gap-4">
-          <div class="flex justify-center">
-            <p
-              class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-            >
-              Services
-            </p>
-          </div>
-          <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
-            Here is a quick summary of my services as freelancer:
-          </p>
-        </div>
-        <div class="flex flex-col p-8 gap-4 md:gap-12 shadow-md dark:shadow-xl rounded-xl bg-lightgray dark:bg-darkgray-100">
-          <h2 class="font-bold text-xl md:text-2xl text-center text-lightgray-900 dark:text-darkgray-900 mb-3">
-            Convert Your Figma Design to a Live Page
-          </h2>
-          <div class="flex flex-col md:flex-row md:justify-between">
-            <div class="flex flex-col md:w-3/5 gap-4">
-              <h3 class="font-semibold text-lg md:text-xl text-lightgray-800 dark:text-darkgray-800 mb-2">Service Features:</h3>
-              <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5">
-                <li><strong>Responsive Design:</strong> Perfect viewing on any device - mobile, tablet, or desktop.</li>
-                <li>
-                  <strong>Engaging Scroll Animations:</strong> Guide and captivate your visitors with smooth animations as they navigate.
-                </li>
-                <li><strong>Pixel Perfect:</strong> Your website will look exactly like your Figma design.</li>
-                <li><strong>Strategic Animations:</strong> Enhance user experience with subtle animations where they matter.</li>
-                <li><strong>Vanilla JavaScript:</strong> Clean, efficient, and easily maintainable code for page interactivity.</li>
-                <li>
-                  <strong>Private GitHub Repository:</strong> Access your source code anytime. Enhance or learn from the development
-                  process in a developer-friendly environment.
-                </li>
-                <li><strong>Use TailwindCSS</strong> to style your website in the best way possible.</li>
-                <li><strong>100% Satisfaction:</strong> If you're not satisfied with my work, I'll make it right.</li>
-              </ul>
-              <h3 class="font-semibold text-lg md:text-xl text-lightgray-800 dark:text-darkgray-800 mb-2">Why TailwindCSS?</h3>
-              <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5 mb-3">
-                <li><strong>Utility-first:</strong> Enables rapid UI development with reusable classes.</li>
-                <li><strong>Highly Customizable:</strong> Tailor-made configurations to suit your design needs.</li>
-                <li><strong>Performance Optimized:</strong> Only includes the CSS you use, ensuring lightweight pages.</li>
-                <li><strong>Responsive:</strong> Built-in responsiveness to make sure your design looks great on all devices.</li>
-                <li><strong>Maintainability:</strong> Easy to update and maintain with clear and concise class naming.</li>
-              </ul>
-            </div>
-            <div class="flex flex-col md:w-2/5 gap-4">
-              <h3 class="font-bold text-xl md:text-2xl text-lightgray-900 dark:text-darkgray-900 mb-3">Special Pricing</h3>
-              <ul class="flex flex-col list-decimal font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5">
-                <li class="group">
-                  Landing page with 4 sections:
-                  <span class="font-semibold line-through">$200</span> Now at
-                  <span class="font-bold text-red-600 dark:text-red-400">$100!</span
-                  ><button id="landingpage-price-help" class="relative">
-                    <svg
-                      class="inline-flex stroke-purple-600 dark:stroke-purple-300 cursor-pointer animate-twBounce animate-infinite"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                      <path d="M12 17h.01" />
-                    </svg>
-                    <span
-                      class="group-hover:opacity-100 group-hover:h-auto group-hover:py-1 absolute z-50 bottom-6 overflow-hidden h-0 transform -translate-x-1/2 px-3 py-0 bg-gray-600 text-white text-sm rounded-md opacity-0 transition-opacity duration-500"
-                      >Understand the price calculation by an example!</span
-                    >
-                  </button>
-                  <br />
-                  - Add sections for just <span class="font-bold text-red-600 dark:text-red-400">$20</span> (Originally
-                  <span class="font-semibold line-through">$40</span>) each.
-                </li>
-                <li class="group mt-2">
-                  Multiple Pages: <span class="font-bold text-red-600 dark:text-red-400">$150</span> (<span
-                    class="font-semibold line-through"
-                    >$300</span
-                  >) for the first page!
-                  <button id="multipage-price-help" class="relative">
-                    <svg
-                      class="inline-flex stroke-purple-600 dark:stroke-purple-300 cursor-pointer animate-twBounce animate-infinite"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                      <path d="M12 17h.01" />
-                    </svg>
-                    <span
-                      class="group-hover:opacity-100 group-hover:h-auto group-hover:py-1 absolute bottom-6 overflow-hidden h-0 transform -translate-x-1/2 px-3 py-0 bg-gray-600 text-white text-sm rounded-md opacity-0 transition-opacity duration-500"
-                      >Understand the price calculation by an example!</span
-                    ></button
-                  ><br />
-                  - Add inner page for <span class="font-bold text-red-600 dark:text-red-400">$35</span> (Originally
-                  <span class="font-semibold line-through">$70</span>) each.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <a
-            href="https://www.fiverr.com/renan_franca/convert-figma-to-html-using-tailwindcss"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="font-bold text-lg text-center text-lightgray-50 dark:text-darkgray-50 bg-lightgray-900 dark:bg-darkgray-900 rounded-xl py-2 px-4 hover:bg-lightgray-700 dark:hover:bg-darkgray-700 active:bg-lightgray-800 dark:active:bg-darkgray-800 transition-all ease-in-out duration-200 mt-4"
-          >
-            Grab This Offer Now!
-          </a>
-        </div>
-      </div>
-    </section>
-    <section id="work" class="flex flex-col w-full py-16 md:py-24 gap-6">
-      <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
-        <div class="flex flex-col gap-4">
-          <div class="flex justify-center">
-            <p
-              class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 rounded-xl bg-lightgray-200 dark:bg-darkgray-200"
-            >
-              Portfolio
-            </p>
-          </div>
-          <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">
-            Some of the noteworthy projects I have built:
-          </p>
-        </div>
-        <div class="flex flex-col md:flex-row rounded-xl shadow-md dark:shadow-xl">
-          <div
-            class="flex w-full md:w-1/2 items-center justify-center p-8 rounded-t-xl md:rounded-tr-none md:rounded-l-xl bg-lightgray-50 dark:bg-darkgray-200"
-          >
-            <a href="https://renanfranca.github.io/portfolio/feedbacker-html-css/" target="_blank" rel="noopener noreferrer">
-              <div class="flex w-[242px] h-[192px] md:w-[334px] md:h-[284px] lg:w-[434px] lg:h-[384px]">
-                <img
-                  class="rounded-xl shadow-lg transition-transform duration-500 md:hover:scale-105"
-                  src="assets/images/feedbacker-portfolio.png"
-                  alt="Feedbacker Layout"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-          </div>
-          <div class="flex flex-col md:w-1/2 p-8 gap-6 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
-            <p class="font-semibold text-lg text-left text-lightgray-900 dark:text-darkgray-900">Feedbacker</p>
-            <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">
-              I meticulously converted a Figma design into interactive HTML & CSS, leveraging the power of TailwindCSS. This project was
-              showcased in the
-              <a
-                class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-                href="https://treinamento.vuejsbrasil.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Vue.js Brazilian Community course</a
-              >
-              as a prime example of an application crafted during their training sessions.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <p
-                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-              >
-                HTML5
-              </p>
-              <p
-                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-              >
-                CSS3
-              </p>
-              <p
-                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-              >
-                Tailwindcss
-              </p>
-              <p
-                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-              >
-                Git
-              </p>
-            </div>
-            <a href="https://renanfranca.github.io/portfolio/feedbacker-html-css/" target="_blank" rel="noopener noreferrer">
-              <svg
-                class="stroke-lightgray-600 dark:stroke-darkgray-600"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M24 19V25C24 25.5304 23.7893 26.0391 23.4142 26.4142C23.0391 26.7893 22.5304 27 22 27H11C10.4696 27 9.96086 26.7893 9.58579 26.4142C9.21071 26.0391 9 25.5304 9 25V14C9 13.4696 9.21071 12.9609 9.58579 12.5858C9.96086 12.2107 10.4696 12 11 12H17"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path d="M21 9H27V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M16 20L27 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="flex flex-col md:flex-row rounded-xl shadow-md dark:shadow-xl">
-          <div
-            class="flex w-full md:w-1/2 items-center justify-center p-8 rounded-t-xl md:rounded-tr-none md:rounded-l-xl bg-lightgray-50 dark:bg-darkgray-200"
-          >
-            <a href="https://renanfranca.github.io/portfolio/personal-portfolio-html-css/" target="_blank" rel="noopener noreferrer">
-              <div class="flex w-[191px] h-[192px] md:w-[283px] md:h-[284px] lg:w-[382px] lg:h-[384px]">
-                <img
-                  class="rounded-xl shadow-lg transition-transform duration-500 md:hover:scale-105"
-                  src="assets/images/personal-portfolio-portfolio.png"
-                  alt="Personal Portfolio"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-          </div>
-          <div class="flex flex-col md:w-1/2 p-8 gap-6 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">
-            <p class="font-semibold text-lg text-left text-lightgray-900 dark:text-darkgray-900">Personal Portfolio</p>
-            <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">
-              I've transformed a Figma design by
-              <a
-                class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
-                href="https://sagarshah.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Sagar Shah</a
-              >
-              into a dynamic HTML & CSS interface utilizing TailwindCSS. The design boasts a responsive layout, seamless light and dark
-              mode transitions, and captivating animations, all meticulously curated to ensure an immersive and effortless user
-              experience.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <p
-                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-              >
-                HTML5
-              </p>
-              <p
-                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-              >
-                CSS3
-              </p>
-              <p
-                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-              >
-                Tailwindcss
-              </p>
-              <p
-                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"
-              >
-                Git
-              </p>
-            </div>
-            <a href="https://renanfranca.github.io/portfolio/personal-portfolio-html-css/" target="_blank" rel="noopener noreferrer">
-              <svg
-                class="stroke-lightgray-600 dark:stroke-darkgray-600"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M24 19V25C24 25.5304 23.7893 26.0391 23.4142 26.4142C23.0391 26.7893 22.5304 27 22 27H11C10.4696 27 9.96086 26.7893 9.58579 26.4142C9.21071 26.0391 9 25.5304 9 25V14C9 13.4696 9.21071 12.9609 9.58579 12.5858C9.96086 12.2107 10.4696 12 11 12H17"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path d="M21 9H27V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M16 20L27 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+<!--    <section id="services" class="flex flex-col w-full py-16 md:py-24 gap-6 bg-lightgray-50 dark:bg-darkgray-50">-->
+<!--      <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">-->
+<!--        <div class="flex flex-col gap-4">-->
+<!--          <div class="flex justify-center">-->
+<!--            <p-->
+<!--              class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"-->
+<!--            >-->
+<!--              Services-->
+<!--            </p>-->
+<!--          </div>-->
+<!--          <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">-->
+<!--            Here is a quick summary of my services as freelancer:-->
+<!--          </p>-->
+<!--        </div>-->
+<!--        <div class="flex flex-col p-8 gap-4 md:gap-12 shadow-md dark:shadow-xl rounded-xl bg-lightgray dark:bg-darkgray-100">-->
+<!--          <h2 class="font-bold text-xl md:text-2xl text-center text-lightgray-900 dark:text-darkgray-900 mb-3">-->
+<!--            Convert Your Figma Design to a Live Page-->
+<!--          </h2>-->
+<!--          <div class="flex flex-col md:flex-row md:justify-between">-->
+<!--            <div class="flex flex-col md:w-3/5 gap-4">-->
+<!--              <h3 class="font-semibold text-lg md:text-xl text-lightgray-800 dark:text-darkgray-800 mb-2">Service Features:</h3>-->
+<!--              <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5">-->
+<!--                <li><strong>Responsive Design:</strong> Perfect viewing on any device - mobile, tablet, or desktop.</li>-->
+<!--                <li>-->
+<!--                  <strong>Engaging Scroll Animations:</strong> Guide and captivate your visitors with smooth animations as they navigate.-->
+<!--                </li>-->
+<!--                <li><strong>Pixel Perfect:</strong> Your website will look exactly like your Figma design.</li>-->
+<!--                <li><strong>Strategic Animations:</strong> Enhance user experience with subtle animations where they matter.</li>-->
+<!--                <li><strong>Vanilla JavaScript:</strong> Clean, efficient, and easily maintainable code for page interactivity.</li>-->
+<!--                <li>-->
+<!--                  <strong>Private GitHub Repository:</strong> Access your source code anytime. Enhance or learn from the development-->
+<!--                  process in a developer-friendly environment.-->
+<!--                </li>-->
+<!--                <li><strong>Use TailwindCSS</strong> to style your website in the best way possible.</li>-->
+<!--                <li><strong>100% Satisfaction:</strong> If you're not satisfied with my work, I'll make it right.</li>-->
+<!--              </ul>-->
+<!--              <h3 class="font-semibold text-lg md:text-xl text-lightgray-800 dark:text-darkgray-800 mb-2">Why TailwindCSS?</h3>-->
+<!--              <ul class="flex flex-col list-disc font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5 mb-3">-->
+<!--                <li><strong>Utility-first:</strong> Enables rapid UI development with reusable classes.</li>-->
+<!--                <li><strong>Highly Customizable:</strong> Tailor-made configurations to suit your design needs.</li>-->
+<!--                <li><strong>Performance Optimized:</strong> Only includes the CSS you use, ensuring lightweight pages.</li>-->
+<!--                <li><strong>Responsive:</strong> Built-in responsiveness to make sure your design looks great on all devices.</li>-->
+<!--                <li><strong>Maintainability:</strong> Easy to update and maintain with clear and concise class naming.</li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--            <div class="flex flex-col md:w-2/5 gap-4">-->
+<!--              <h3 class="font-bold text-xl md:text-2xl text-lightgray-900 dark:text-darkgray-900 mb-3">Special Pricing</h3>-->
+<!--              <ul class="flex flex-col list-decimal font-normal text-base text-lightgray-600 dark:text-darkgray-600 pl-5">-->
+<!--                <li class="group">-->
+<!--                  Landing page with 4 sections:-->
+<!--                  <span class="font-semibold line-through">$200</span> Now at-->
+<!--                  <span class="font-bold text-red-600 dark:text-red-400">$100!</span-->
+<!--                  ><button id="landingpage-price-help" class="relative">-->
+<!--                    <svg-->
+<!--                      class="inline-flex stroke-purple-600 dark:stroke-purple-300 cursor-pointer animate-twBounce animate-infinite"-->
+<!--                      xmlns="http://www.w3.org/2000/svg"-->
+<!--                      width="20"-->
+<!--                      height="20"-->
+<!--                      viewBox="0 0 24 24"-->
+<!--                      fill="none"-->
+<!--                      stroke="currentColor"-->
+<!--                      stroke-width="2"-->
+<!--                      stroke-linecap="round"-->
+<!--                      stroke-linejoin="round"-->
+<!--                    >-->
+<!--                      <circle cx="12" cy="12" r="10" />-->
+<!--                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />-->
+<!--                      <path d="M12 17h.01" />-->
+<!--                    </svg>-->
+<!--                    <span-->
+<!--                      class="group-hover:opacity-100 group-hover:h-auto group-hover:py-1 absolute z-50 bottom-6 overflow-hidden h-0 transform -translate-x-1/2 px-3 py-0 bg-gray-600 text-white text-sm rounded-md opacity-0 transition-opacity duration-500"-->
+<!--                      >Understand the price calculation by an example!</span-->
+<!--                    >-->
+<!--                  </button>-->
+<!--                  <br />-->
+<!--                  - Add sections for just <span class="font-bold text-red-600 dark:text-red-400">$20</span> (Originally-->
+<!--                  <span class="font-semibold line-through">$40</span>) each.-->
+<!--                </li>-->
+<!--                <li class="group mt-2">-->
+<!--                  Multiple Pages: <span class="font-bold text-red-600 dark:text-red-400">$150</span> (<span-->
+<!--                    class="font-semibold line-through"-->
+<!--                    >$300</span-->
+<!--                  >) for the first page!-->
+<!--                  <button id="multipage-price-help" class="relative">-->
+<!--                    <svg-->
+<!--                      class="inline-flex stroke-purple-600 dark:stroke-purple-300 cursor-pointer animate-twBounce animate-infinite"-->
+<!--                      xmlns="http://www.w3.org/2000/svg"-->
+<!--                      width="20"-->
+<!--                      height="20"-->
+<!--                      viewBox="0 0 24 24"-->
+<!--                      fill="none"-->
+<!--                      stroke="currentColor"-->
+<!--                      stroke-width="2"-->
+<!--                      stroke-linecap="round"-->
+<!--                      stroke-linejoin="round"-->
+<!--                    >-->
+<!--                      <circle cx="12" cy="12" r="10" />-->
+<!--                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />-->
+<!--                      <path d="M12 17h.01" />-->
+<!--                    </svg>-->
+<!--                    <span-->
+<!--                      class="group-hover:opacity-100 group-hover:h-auto group-hover:py-1 absolute bottom-6 overflow-hidden h-0 transform -translate-x-1/2 px-3 py-0 bg-gray-600 text-white text-sm rounded-md opacity-0 transition-opacity duration-500"-->
+<!--                      >Understand the price calculation by an example!</span-->
+<!--                    ></button-->
+<!--                  ><br />-->
+<!--                  - Add inner page for <span class="font-bold text-red-600 dark:text-red-400">$35</span> (Originally-->
+<!--                  <span class="font-semibold line-through">$70</span>) each.-->
+<!--                </li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <a-->
+<!--            href="https://www.fiverr.com/renan_franca/convert-figma-to-html-using-tailwindcss"-->
+<!--            target="_blank"-->
+<!--            rel="noopener noreferrer"-->
+<!--            class="font-bold text-lg text-center text-lightgray-50 dark:text-darkgray-50 bg-lightgray-900 dark:bg-darkgray-900 rounded-xl py-2 px-4 hover:bg-lightgray-700 dark:hover:bg-darkgray-700 active:bg-lightgray-800 dark:active:bg-darkgray-800 transition-all ease-in-out duration-200 mt-4"-->
+<!--          >-->
+<!--            Grab This Offer Now!-->
+<!--          </a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
+<!--    <section id="work" class="flex flex-col w-full py-16 md:py-24 gap-6">-->
+<!--      <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">-->
+<!--        <div class="flex flex-col gap-4">-->
+<!--          <div class="flex justify-center">-->
+<!--            <p-->
+<!--              class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 rounded-xl bg-lightgray-200 dark:bg-darkgray-200"-->
+<!--            >-->
+<!--              Portfolio-->
+<!--            </p>-->
+<!--          </div>-->
+<!--          <p class="font-normal text-lg lg:text-xl text-center text-lightgray-600 dark:text-darkgray-600">-->
+<!--            Some of the noteworthy projects I have built:-->
+<!--          </p>-->
+<!--        </div>-->
+<!--        <div class="flex flex-col md:flex-row rounded-xl shadow-md dark:shadow-xl">-->
+<!--          <div-->
+<!--            class="flex w-full md:w-1/2 items-center justify-center p-8 rounded-t-xl md:rounded-tr-none md:rounded-l-xl bg-lightgray-50 dark:bg-darkgray-200"-->
+<!--          >-->
+<!--            <a href="https://renanfranca.github.io/portfolio/feedbacker-html-css/" target="_blank" rel="noopener noreferrer">-->
+<!--              <div class="flex w-[242px] h-[192px] md:w-[334px] md:h-[284px] lg:w-[434px] lg:h-[384px]">-->
+<!--                <img-->
+<!--                  class="rounded-xl shadow-lg transition-transform duration-500 md:hover:scale-105"-->
+<!--                  src="assets/images/feedbacker-portfolio.png"-->
+<!--                  alt="Feedbacker Layout"-->
+<!--                  loading="lazy"-->
+<!--                />-->
+<!--              </div>-->
+<!--            </a>-->
+<!--          </div>-->
+<!--          <div class="flex flex-col md:w-1/2 p-8 gap-6 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">-->
+<!--            <p class="font-semibold text-lg text-left text-lightgray-900 dark:text-darkgray-900">Feedbacker</p>-->
+<!--            <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">-->
+<!--              I meticulously converted a Figma design into interactive HTML & CSS, leveraging the power of TailwindCSS. This project was-->
+<!--              showcased in the-->
+<!--              <a-->
+<!--                class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"-->
+<!--                href="https://treinamento.vuejsbrasil.org"-->
+<!--                target="_blank"-->
+<!--                rel="noopener noreferrer"-->
+<!--                >Vue.js Brazilian Community course</a-->
+<!--              >-->
+<!--              as a prime example of an application crafted during their training sessions.-->
+<!--            </p>-->
+<!--            <div class="flex flex-wrap gap-2">-->
+<!--              <p-->
+<!--                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"-->
+<!--              >-->
+<!--                HTML5-->
+<!--              </p>-->
+<!--              <p-->
+<!--                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"-->
+<!--              >-->
+<!--                CSS3-->
+<!--              </p>-->
+<!--              <p-->
+<!--                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"-->
+<!--              >-->
+<!--                Tailwindcss-->
+<!--              </p>-->
+<!--              <p-->
+<!--                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"-->
+<!--              >-->
+<!--                Git-->
+<!--              </p>-->
+<!--            </div>-->
+<!--            <a href="https://renanfranca.github.io/portfolio/feedbacker-html-css/" target="_blank" rel="noopener noreferrer">-->
+<!--              <svg-->
+<!--                class="stroke-lightgray-600 dark:stroke-darkgray-600"-->
+<!--                height="36"-->
+<!--                viewBox="0 0 36 36"-->
+<!--                fill="none"-->
+<!--                xmlns="http://www.w3.org/2000/svg"-->
+<!--              >-->
+<!--                <path-->
+<!--                  d="M24 19V25C24 25.5304 23.7893 26.0391 23.4142 26.4142C23.0391 26.7893 22.5304 27 22 27H11C10.4696 27 9.96086 26.7893 9.58579 26.4142C9.21071 26.0391 9 25.5304 9 25V14C9 13.4696 9.21071 12.9609 9.58579 12.5858C9.96086 12.2107 10.4696 12 11 12H17"-->
+<!--                  stroke-width="2"-->
+<!--                  stroke-linecap="round"-->
+<!--                  stroke-linejoin="round"-->
+<!--                />-->
+<!--                <path d="M21 9H27V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />-->
+<!--                <path d="M16 20L27 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />-->
+<!--              </svg>-->
+<!--            </a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="flex flex-col md:flex-row rounded-xl shadow-md dark:shadow-xl">-->
+<!--          <div-->
+<!--            class="flex w-full md:w-1/2 items-center justify-center p-8 rounded-t-xl md:rounded-tr-none md:rounded-l-xl bg-lightgray-50 dark:bg-darkgray-200"-->
+<!--          >-->
+<!--            <a href="https://renanfranca.github.io/portfolio/personal-portfolio-html-css/" target="_blank" rel="noopener noreferrer">-->
+<!--              <div class="flex w-[191px] h-[192px] md:w-[283px] md:h-[284px] lg:w-[382px] lg:h-[384px]">-->
+<!--                <img-->
+<!--                  class="rounded-xl shadow-lg transition-transform duration-500 md:hover:scale-105"-->
+<!--                  src="assets/images/personal-portfolio-portfolio.png"-->
+<!--                  alt="Personal Portfolio"-->
+<!--                  loading="lazy"-->
+<!--                />-->
+<!--              </div>-->
+<!--            </a>-->
+<!--          </div>-->
+<!--          <div class="flex flex-col md:w-1/2 p-8 gap-6 rounded-b-xl md:rounded-bl-none md:rounded-r-xl dark:bg-darkgray-100">-->
+<!--            <p class="font-semibold text-lg text-left text-lightgray-900 dark:text-darkgray-900">Personal Portfolio</p>-->
+<!--            <p class="font-normal text-base text-left text-lightgray-600 dark:text-darkgray-600">-->
+<!--              I've transformed a Figma design by-->
+<!--              <a-->
+<!--                class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"-->
+<!--                href="https://sagarshah.dev/"-->
+<!--                target="_blank"-->
+<!--                rel="noopener noreferrer"-->
+<!--                >Sagar Shah</a-->
+<!--              >-->
+<!--              into a dynamic HTML & CSS interface utilizing TailwindCSS. The design boasts a responsive layout, seamless light and dark-->
+<!--              mode transitions, and captivating animations, all meticulously curated to ensure an immersive and effortless user-->
+<!--              experience.-->
+<!--            </p>-->
+<!--            <div class="flex flex-wrap gap-2">-->
+<!--              <p-->
+<!--                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"-->
+<!--              >-->
+<!--                HTML5-->
+<!--              </p>-->
+<!--              <p-->
+<!--                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"-->
+<!--              >-->
+<!--                CSS3-->
+<!--              </p>-->
+<!--              <p-->
+<!--                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"-->
+<!--              >-->
+<!--                Tailwindcss-->
+<!--              </p>-->
+<!--              <p-->
+<!--                class="font-medium text-sm text-center text-gray-600 dark:text-darkgray-600 py-1 px-5 bg-lightgray-200 dark:bg-darkgray-200 rounded-xl"-->
+<!--              >-->
+<!--                Git-->
+<!--              </p>-->
+<!--            </div>-->
+<!--            <a href="https://renanfranca.github.io/portfolio/personal-portfolio-html-css/" target="_blank" rel="noopener noreferrer">-->
+<!--              <svg-->
+<!--                class="stroke-lightgray-600 dark:stroke-darkgray-600"-->
+<!--                height="36"-->
+<!--                viewBox="0 0 36 36"-->
+<!--                fill="none"-->
+<!--                xmlns="http://www.w3.org/2000/svg"-->
+<!--              >-->
+<!--                <path-->
+<!--                  d="M24 19V25C24 25.5304 23.7893 26.0391 23.4142 26.4142C23.0391 26.7893 22.5304 27 22 27H11C10.4696 27 9.96086 26.7893 9.58579 26.4142C9.21071 26.0391 9 25.5304 9 25V14C9 13.4696 9.21071 12.9609 9.58579 12.5858C9.96086 12.2107 10.4696 12 11 12H17"-->
+<!--                  stroke-width="2"-->
+<!--                  stroke-linecap="round"-->
+<!--                  stroke-linejoin="round"-->
+<!--                />-->
+<!--                <path d="M21 9H27V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />-->
+<!--                <path d="M16 20L27 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />-->
+<!--              </svg>-->
+<!--            </a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
     <section id="contact" class="flex flex-col w-full py-16 md:py-24 gap-6 bg-lightgray-50 dark:bg-darkgray-50">
       <div class="flex flex-col w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-20 gap-6 md:gap-12">
         <div class="flex flex-col gap-4">
@@ -1029,7 +1037,7 @@
         </defs>
       </svg>
       <p class="font-normal text-sm text-lightgray-600 dark:text-darkgray-600">
-        2023 |
+        <span id="copyright">...</span> |
         <a
           target="_blank"
           class="underline underline-offset-4 transition-all hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600"
@@ -1326,10 +1334,11 @@
 
     async function initialize() {
       setupMenuActions();
-      setupPriceDialogActions();
+      // setupPriceDialogActions();
       setupThemeActions();
       setupCopyActions();
       updateExperience();
+      updateCopyright();
     }
 
     function setupMenuActions() {
@@ -1466,6 +1475,11 @@
       const startYear = 2008;
       const yearsOfExperience = calculateYearsSince(startYear);
       document.getElementById('experience').textContent = `${yearsOfExperience}`;
+    }
+
+    function updateCopyright() {
+      const currentYear = new Date().getFullYear();
+      document.getElementById('copyright').textContent = `${currentYear}`;
     }
   </script>
 </body>
