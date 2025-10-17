@@ -1,7 +1,7 @@
 <ul class="social-media-list font-normal text-base text-lightgray-600 dark:text-darkgray-600">
   {%- if site.github_username -%}
   <li>
-    <a href="https://github.com/{{ site.github_username }}">
+    <a href="https://github.com/{{ site.github_username }}" class="hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600 visited:text-lightgray-600 dark:visited:text-darkgray-600">
       <svg class="svg-icon">
         <use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use>
       </svg>
@@ -10,7 +10,7 @@
   </li>
   {%- endif -%} {%- if site.linkedin_username -%}
   <li>
-    <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
+    <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" class="hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600 visited:text-lightgray-600 dark:visited:text-darkgray-600">
       <svg class="svg-icon">
         <use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use>
       </svg>
@@ -19,7 +19,7 @@
   </li>
   {%- endif -%} {%- if site.twitter_username -%}
   <li>
-    <a href="https://www.twitter.com/{{ site.twitter_username }}">
+    <a href="https://www.twitter.com/{{ site.twitter_username }}" class="hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600 visited:text-lightgray-600 dark:visited:text-darkgray-600">
       <svg class="svg-icon">
         <use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use>
       </svg>
@@ -29,7 +29,7 @@
   {%- endif -%}
 
   <li>
-    <a href="{{ site.feed.path | default: 'feed.xml' | relative_url }}">
+    <a href="{{ site.feed.path | default: 'feed.xml' | relative_url }}" class="hover:text-lightgray-900 dark:hover:text-darkgray-900 active:text-lightgray-600 dark:active:text-darkgray-600 visited:text-lightgray-600 dark:visited:text-darkgray-600">
       <svg class="svg-icon">
         <use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>
       </svg>
