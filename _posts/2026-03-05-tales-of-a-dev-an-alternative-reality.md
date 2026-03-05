@@ -8,7 +8,7 @@ permalink: /:categories/:title:output_ext
 draft: true
 ---
 
-It’s been a little over a year since I realized that I work in the desert (a term coined by Kent Beck), and I understood why some things that are so useful and cool in the forest didn’t work when I tried to bring them into the desert.
+It’s been a little over a year since I realized that I work in the desert ([a term coined by Kent Beck](https://martinfowler.com/bliki/ForestAndDesert.html)), and I understood why some things that are so useful and cool in the forest didn’t work when I tried to bring them into the desert.
 
 So I decided to talk to people who are outside my reality to see how their day to day works, what new pain points they have that I’ll never experience in the desert because I’m dealing with more “basic” problems.
 
