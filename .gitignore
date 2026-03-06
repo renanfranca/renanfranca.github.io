@@ -120,7 +120,7 @@ Desktop.ini
 # Logs
 ######################
 *.log*
-.env
+.env_to_delete
 
 ######################
 # Others
