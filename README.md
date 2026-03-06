@@ -28,6 +28,7 @@ docker compose up
 
 The Jekyll site is available at `http://localhost:4000`.
 Tailwind watch runs in the `tailwind` service started by Docker Compose.
+Ruby gems are cached in a Docker named volume to speed up subsequent starts.
 
 <!-- seed4j-needle-startupCommand -->
 
@@ -94,6 +95,9 @@ Recommended local defaults:
 - Validate local service response:
   - `curl -I http://localhost:4000`
 - If browser shows `Forbidden` but `curl` returns `200`, the block is likely from corporate proxy/browser policy, not Jekyll.
+- If bundler starts failing after image/Ruby changes, clear gem cache volume and recreate containers:
+  - `docker compose down -v --remove-orphans`
+  - `docker compose up --force-recreate`
 
 ## Documentation
 

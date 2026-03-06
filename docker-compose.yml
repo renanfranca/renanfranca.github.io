@@ -15,6 +15,7 @@ services:
       - '${JEKYLL_PUBLISH_IP:-127.0.0.1}:${LIVERELOAD_PORT:-35729}:35729'
     volumes:
       - .:/srv/jekyll
+      - bundle:/usr/local/bundle
   tailwind:
     image: node:22
     working_dir: /srv/jekyll
@@ -22,3 +23,5 @@ services:
       - .:/srv/jekyll
     command: npm run build:css:prod:watch
 #    command: npx postcss assets/css/tailwind.css -o assets/css/style.css --watch
+volumes:
+  bundle:
