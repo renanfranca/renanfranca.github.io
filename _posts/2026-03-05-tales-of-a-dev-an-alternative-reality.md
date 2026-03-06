@@ -6,7 +6,6 @@ date: 2026-03-05 10:30:00 -0300
 tags: tales-of-a-dev
 image: img/postbanners/2026-03-05-cover-tales-of-a-dev-an-alternative-reality.jpg
 permalink: /:categories/:title:output_ext
-draft: true
 ---
 
 ![cover image](https://renanfranca.github.io/img/postbanners/2026-03-05-cover-tales-of-a-dev-an-alternative-reality.jpg)
