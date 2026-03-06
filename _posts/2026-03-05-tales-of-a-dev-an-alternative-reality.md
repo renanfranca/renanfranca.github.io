@@ -4,9 +4,12 @@ title: Tales of a Dev: An Alternative Reality
 description: It’s been a little over a year since I realized that I work in the desert (a term coined by Kent Beck).
 date: 2026-03-05 10:30:00 -0300
 tags: tales-of-a-dev
+image: img/postbanners/2026-03-05-cover-tales-of-a-dev-an-alternative-reality.jpg
 permalink: /:categories/:title:output_ext
 draft: true
 ---
+
+![cover image](https://renanfranca.github.io/img/postbanners/2026-03-05-cover-tales-of-a-dev-an-alternative-reality.jpg)
 
 It’s been a little over a year since I realized that I work in the desert ([a term coined by Kent Beck](https://martinfowler.com/bliki/ForestAndDesert.html)), and I understood why some things that are so useful and cool in the forest didn’t work when I tried to bring them into the desert.
 
