@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tales of a Dev: An Alternative Reality
+title: Tales of a Dev - An Alternative Reality
 description: It’s been a little over a year since I realized that I work in the desert (a term coined by Kent Beck).
 date: 2026-03-05 10:30:00 -0300
 tags: tales-of-a-dev
