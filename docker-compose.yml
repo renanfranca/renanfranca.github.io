@@ -1,7 +1,15 @@
 services:
   jekyll:
-    image: jekyll/jekyll:latest
-    command: jekyll serve --watch --host 0.0.0.0 --livereload --force_polling
+    image: jekyll/jekyll:4
+    working_dir: /srv/jekyll
+    command: sh -c "bundle install && bundle exec jekyll serve --watch --host 0.0.0.0 --livereload --force_polling"
+    environment:
+      HTTP_PROXY: ${HTTP_PROXY:-}
+      HTTPS_PROXY: ${HTTPS_PROXY:-}
+      NO_PROXY: ${NO_PROXY:-localhost,127.0.0.1}
+      http_proxy: ${http_proxy:-}
+      https_proxy: ${https_proxy:-}
+      no_proxy: ${no_proxy:-localhost,127.0.0.1}
     ports:
       - '4000:4000'
       - '35729:35729'
