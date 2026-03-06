@@ -19,7 +19,7 @@ So I decided to talk to people who are outside my reality to see how their day t
 
 ## Learning from open-source friends
 
-For a while now, I’ve been talking to people I work with on open-source projects (e.g., seed4j.com), and even though the project is incredible, it’s impossible to apply it in the desert where I work. I was fascinated to learn how they use it in their daily routine. It’s not just exciting because it’s something sophisticated; it’s genuinely useful and makes the day to day less stressful and overwhelming.
+For a while now, I’ve been talking to people I work with on open-source projects (e.g., [seed4j.com](https://seed4j.com)), and even though the project is incredible, it’s impossible to apply it in the desert where I work. I was fascinated to learn how they use it in their daily routine. It’s not just exciting because it’s something sophisticated; it’s genuinely useful and makes the day to day less stressful and overwhelming.
 
 ## Replying to a newsletter
 
@@ -27,11 +27,11 @@ Recently, I received an email from a newsletter (I’ve subscribed to several), 
 
 ## Catching up with a developer friend
 
-On top of that, I had the chance to talk via video call with a developer friend I hadn’t spoken to in a long time. I was impressed to discover new areas where a developer can work, areas I didn’t even know existed. In the end, it felt like a conversation with a longtime friend. It had been a long time since I’d spoken English, but I felt so comfortable that at no point did I feel that speaking English got in the way.
+On top of that, I had the chance to talk over a video call with a developer friend I hadn’t spoken to in a long time. I was impressed to discover new areas where a developer can work, areas I didn’t even know existed. In the end, it felt like a conversation with a longtime friend. It had been a long time since I’d spoken English, but I felt so comfortable that at no point did I feel that speaking English was getting in the way.
 
 ## Back to Seed4J CLI
 
-I decided that I’m going to get back to working on the Seed4J CLI ([https://github.com/seed4j/seed4j-cli](https://github.com/seed4j/seed4j-cli)), but before that, I decided to reach out to other developers who use Seed4J to understand how they use it day to day and to learn a bit about their work routine.
+I decided that I’m going to get back to working on the [Seed4J CLI](https://github.com/seed4j/seed4j-cli), but before that, I decided to reach out to other developers who use Seed4J to understand how they use it day to day and to learn a bit about their work routine. Surprisingly, a developer has already replied and supported me, saying that creating this CLI application might be a good path so that the AI can autonomously understand which features Seed4J has and use them whenever appropriate, making the experience more transparent.
 
 ## Motivation boost
 
