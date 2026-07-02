@@ -3,7 +3,7 @@ layout: post
 title: Sharing Pieces of My AI Agent Workflow
 description: Why I decided to share adaptable parts of my AI agent workflow instead of trying to publish a complete recipe.
 date: 2026-07-02 11:00:00 -0300
-tags: ai agents workflow software-development learning
+tags: tales-of-a-dev
 image: img/postbanners/2026-07-02-cover-sharing-pieces-of-my-ai-agent-workflow.jpg
 permalink: /:categories/:title:output_ext
 ---
