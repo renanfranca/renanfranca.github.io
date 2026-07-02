@@ -10,7 +10,7 @@ permalink: /:categories/:title:output_ext
 
 ![cover image](https://renanfranca.github.io/img/postbanners/2026-07-02-cover-sharing-pieces-of-my-ai-agent-workflow.jpg)
 
-I had given up on writing about my progress with AI agents for a while..
+I had given up on writing about my progress with AI agents for a while.
 
 Not because I stopped experimenting. Quite the opposite.
 
