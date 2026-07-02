@@ -10,6 +10,8 @@ permalink: /:categories/:title:output_ext
 
 ![cover image](https://renanfranca.github.io/img/postbanners/2026-07-02-cover-sharing-pieces-of-my-ai-agent-workflow.jpg)
 
+## Why I stopped writing about it
+
 I had given up on writing about my progress with AI agents for a while.
 
 Not because I stopped experimenting. Quite the opposite.
@@ -20,6 +22,8 @@ Every time I felt close to describing my workflow, I would improve something, re
 
 And I did not want to create an exhausting commitment for myself: writing a post today, then feeling forced to update it every time my process changed.
 
+## Why I did not want to sound prescriptive
+
 There was another reason too.
 
 I did not want to sound like I was trying to impose a workflow.
@@ -27,6 +31,8 @@ I did not want to sound like I was trying to impose a workflow.
 My biggest discoveries with AI agents have been very individual. They did not come from a perfectly synchronized team process. They came from trial and error, from frustration, from curiosity, from small improvements, and from many moments where I had to rethink how I work as a software developer.
 
 So, for some time, I preferred not to write about it.
+
+## What changed my mind
 
 But recently, after watching the podcasts from [Kent Beck - Still Burning](https://stillburningpodcast.com/), I felt a strong desire to contribute more openly to this revolution that is happening.
 
@@ -38,19 +44,21 @@ I want to contribute to the conversation.
 
 Maybe by sharing parts of what I am discovering, I can help someone else. And maybe, by making these ideas public, I can also accelerate my own learning through external insights, criticism, and suggestions.
 
+## A better format
+
 So I started thinking about a better format.
 
 Instead of trying to publish my entire workflow as if it were a recipe, I decided to share smaller steps from it.
 
-Pieces.
-
-Practices.
-
-Decisions.
+- Pieces.
+- Practices.
+- Decisions.
 
 Things that can be adapted, improved, questioned, or absorbed into someone else’s workflow.
 
 That feels much more honest to me.
+
+## What I want to share
 
 A complete AI agent workflow is too personal and too unstable to be treated as a final answer. But specific ideas can still be useful. A way to prepare context. A way to ask for changes. A way to review generated code. A way to avoid losing control. A way to keep tests and design as the center of the process instead of blindly trusting the agent.
 
