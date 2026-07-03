@@ -74,6 +74,8 @@ This is the part that I find fascinating.
 
 The conversation can happen in one language, while the work product follows another language.
 
+The [seed4j-cli](https://github.com/seed4j/seed4j-cli) is the project I am working on, where I have experienced everything I mentioned 😀
+
 ## Intention is not implementation
 
 This made me think about the difference between intention and implementation.
