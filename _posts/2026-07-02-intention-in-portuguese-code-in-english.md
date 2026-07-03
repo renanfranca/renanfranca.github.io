@@ -62,7 +62,7 @@ I provide the intention in Portuguese.
 
 Codex reads the repository.
 
-It sees that `AGENTS.md` is entirely in English.
+It sees that [`AGENTS.md`](https://github.com/seed4j/seed4j-cli/blob/main/AGENTS.md) is entirely in English.
 
 It understands that the project is standardized in English.
 
