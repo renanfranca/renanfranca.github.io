@@ -80,7 +80,7 @@ After GPT-5.5 was released, I asked the model to revise the original instruction
 
 The result required fewer step-by-step directions and placed more emphasis on the properties the final execution plan should preserve.
 
-I then transformed those instructions into my [`implement-execplan`](https://github.com/renanfranca/codex-skills/blob/main/implement-execplan/SKILL.md) skill.
+I then transformed those instructions into my [implement-execplan](https://github.com/renanfranca/codex-skills/blob/main/implement-execplan/SKILL.md) skill.
 
 The skill defines an ExecPlan as a living document. It requires the agent to maintain sections such as:
 
