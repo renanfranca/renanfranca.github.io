@@ -42,7 +42,7 @@ In many cases, before implementing the feature, the agent creates a Markdown doc
 
 That document is also written in Portuguese. 😀
 
-Later, I want to share more details about how I usually get that document created, because this small step has become an important part of my workflow.
+[Later, I want to share more details about how I usually get that document created, because this small step has become an important part of my workflow.](https://renanfranca.github.io/when-plan-mode-was-no-longer-enough.html)
 
 But even with that planning document in Portuguese, the implementation itself remains aligned with the project.
 
