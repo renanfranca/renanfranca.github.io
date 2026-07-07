@@ -12,7 +12,7 @@ permalink: /:categories/:title:output_ext
 
 ## From English prompts to Portuguese intention
 
-I am Brazilian, and my native language is Portuguese. test
+I am Brazilian, and my native language is Portuguese.
 
 Since the launch of ChatGPT, I got used to interacting with it in English. At the time, it was not just a preference. I clearly felt that the responses were better, and it also made my work easier when I wanted to generate code, documentation, method names, tests, and examples for my open-source projects.
 
