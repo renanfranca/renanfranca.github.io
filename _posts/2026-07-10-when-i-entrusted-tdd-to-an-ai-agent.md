@@ -299,7 +299,7 @@ The result is usually well designed code with tests that genuinely verify behavi
 
 I still find opportunities for refactoring and improvement.
 
-But the experience now feels like reviewing a very well-written pull request.
+But the experience now feels like reviewing a very well written pull request.
 
 I begin with the first behavior test.
 
