@@ -325,7 +325,7 @@ Waiting between three and six minutes for the agent to deliver the implementatio
 
 The agent writes quickly enough that I cannot meaningfully follow every operation in real time.
 
-At the same time, it is slow enough to leave me waiting and disconnected from the problem-solving process.
+At the same time, it is slow enough to leave me waiting and disconnected from the problem solving process.
 
 Ideally, the interaction would [respond within the precious 400 milliseconds](https://newsletter.kentbeck.com/p/the-precious-eyeblink), preserving the feeling of a continuous workflow.
 
@@ -347,7 +347,7 @@ Reviewing an autonomous implementation is different.
 
 If I am interrupted in the middle of the review, I need to mark which test I have already examined and which one I should read next.
 
-I also carry a greater cognitive load because I did not participate directly in each problem-solving step.
+I also carry a greater cognitive load because I did not participate directly in each problem solving step.
 
 The final code may be clear, but the path that produced it is not fixed in my mind in the same way as code I developed myself.
 
