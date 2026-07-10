@@ -46,7 +46,7 @@ Reusable agent skills, at least in the form in which I use them today, did not e
 
 ## My first TDD skill
 
-When skills emerged, I used Lada's prompt as the foundation for my first [`tdd` skill](https://github.com/renanfranca/codex-skills/blob/main/tdd%2FSKILL.md).
+When skills emerged, I used Lada's prompt as the foundation for my first [tdd skill](https://github.com/renanfranca/codex-skills/blob/main/tdd%2FSKILL.md).
 
 Sorry, Lada, if I somehow ruined your original prompt 😅.
 
@@ -77,7 +77,7 @@ My need for control was forcing me to use the agent with the handbrake on.
 
 ## Removing confirmations from inside the cycle
 
-My next experiment was [`tdd-strict-cycle-confirmation`](https://github.com/renanfranca/codex-skills/blob/main/tdd-strict-cycle-confirmation%2FSKILL.md).
+My next experiment was [tdd-strict-cycle-confirmation](https://github.com/renanfranca/codex-skills/blob/main/tdd-strict-cycle-confirmation%2FSKILL.md).
 
 Instead of requiring approval at several boundaries inside the same TDD cycle, the agent could complete red, green, and refactor before returning control to me.
 
@@ -95,7 +95,7 @@ Then I wanted to know what would happen if I removed even that confirmation gate
 
 ## Letting the agent finish the feature
 
-I created another variation called [`tdd-strict-autonomous`](https://github.com/renanfranca/codex-skills/blob/main/tdd-strict-autonomous%2FSKILL.md).
+I created another variation called [tdd-strict-autonomous](https://github.com/renanfranca/codex-skills/blob/main/tdd-strict-autonomous%2FSKILL.md).
 
 This version no longer stopped after every completed cycle. It continued automatically through red, green, and refactor, pausing only when it encountered an exceptional situation such as ambiguous behavior, an unexpected failure, an architectural decision, or an environment problem.
 
@@ -129,7 +129,7 @@ The problem was not a lack of activity.
 
 The problem was that local progress no longer implied progress through the feature's public path.
 
-I abandoned the implementation and returned to [`tdd-strict-cycle-confirmation`](https://github.com/renanfranca/codex-skills/blob/main/tdd-strict-cycle-confirmation%2FSKILL.md).
+I abandoned the implementation and returned to [tdd-strict-cycle-confirmation](https://github.com/renanfranca/codex-skills/blob/main/tdd-strict-cycle-confirmation%2FSKILL.md).
 
 This time, I wanted to find the precise cycle in which the agent started following implementation details instead of behavior.
 
@@ -149,7 +149,7 @@ Detailed output had initially helped me trust the process. Once the agent became
 
 Routine file reads, expected failures, test commands, green transitions, and minor refactorings created a long stream of activity.
 
-I created [`tdd-strict-autonomous-quiet`](https://github.com/renanfranca/codex-skills/blob/main/tdd-strict-autonomous-quiet%2FSKILL.md) to reduce that noise.
+I created [tdd-strict-autonomous-quiet](https://github.com/renanfranca/codex-skills/blob/main/tdd-strict-autonomous-quiet%2FSKILL.md) to reduce that noise.
 
 Quiet does not mean merely writing shorter messages.
 
@@ -219,7 +219,7 @@ I needed the repository itself to reject architectural violations.
 
 ## Making the architecture executable
 
-I implemented architectural tests such as [`HexagonalArchTest`](https://github.com/seed4j/seed4j-cli/blob/main/src%2Ftest%2Fjava%2Fcom%2Fseed4j%2Fcli%2FHexagonalArchTest.java).
+I implemented architectural tests such as [HexagonalArchTest](https://github.com/seed4j/seed4j-cli/blob/main/src%2Ftest%2Fjava%2Fcom%2Fseed4j%2Fcli%2FHexagonalArchTest.java).
 
 These tests use ArchUnit to enforce rules including:
 
@@ -245,7 +245,7 @@ When an architectural test failed, the agent received concrete evidence that its
 
 The remaining task was to combine everything I had learned into another skill.
 
-I created [`tdd-behavior-autonomous-quiet`](https://github.com/renanfranca/codex-skills/blob/main/tdd-behavior-autonomous-quiet%2FSKILL.md).
+I created [tdd-behavior-autonomous-quiet](https://github.com/renanfranca/codex-skills/blob/main/tdd-behavior-autonomous-quiet%2FSKILL.md).
 
 It preserves autonomous red-green-refactor cycles and quiet output, but it adds an important requirement: tests must follow observable behavior, public contracts, user journeys, or intentionally stable component APIs.
 
