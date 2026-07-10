@@ -241,7 +241,7 @@ The architecture became executable feedback inside the same loop the agent was a
 
 When an architectural test failed, the agent received concrete evidence that its current design had crossed a boundary.
 
-## From strict TDD to behavior-focused TDD
+## From strict TDD to behavior focused TDD
 
 The remaining task was to combine everything I had learned into another skill.
 
@@ -389,7 +389,7 @@ The third question remains more difficult.
 
 > Does the agent genuinely practise TDD, or does it develop the solution first and create the tests afterwards?
 
-My friend [Victor Perone](https://www.linkedin.com/in/victor-perone-696634a7?utm_source=share_via&utm_content=profile&utm_medium=member_android) introduced me to a few machine-learning concepts.
+My friend [Victor Perone](https://www.linkedin.com/in/victor-perone-696634a7?utm_source=share_via&utm_content=profile&utm_medium=member_android) introduced me to a few machine learning concepts.
 
 That alone was enough for me to realize how different this field is from my own.
 
