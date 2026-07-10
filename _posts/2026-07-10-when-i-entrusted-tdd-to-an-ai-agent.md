@@ -295,7 +295,7 @@ Together, these elements allow the agent to work autonomously without reducing t
 
 ## Reviewing the result as a pull request
 
-The result is usually well-designed code with tests that genuinely verify behavior.
+The result is usually well designed code with tests that genuinely verify behavior.
 
 I still find opportunities for refactoring and improvement.
 
