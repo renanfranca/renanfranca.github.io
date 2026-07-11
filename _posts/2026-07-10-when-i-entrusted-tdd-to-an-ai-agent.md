@@ -271,8 +271,6 @@ This was the missing piece.
 
 Today, I use `tdd-behavior-autonomous-quiet` to implement execution plans created through the process I described in [When Plan Mode Was No Longer Enough](https://renanfranca.github.io/when-plan-mode-was-no-longer-enough.html).
 
-My workflow has changed since I wrote that post.
-
 Previously, I asked the agent to implement one milestone at a time. I reviewed the result and explicitly authorized the next milestone.
 
 I no longer do that.
