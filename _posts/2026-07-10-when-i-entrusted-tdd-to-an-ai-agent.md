@@ -379,7 +379,7 @@ Today, most routine steps remain internal, but the agent surfaces relevant decis
 
 I no longer experience the feedback loop by personally performing each step.
 
-Instead, I make the loop executable through the skill, the test suite, the architectural rules, and the public-path checkpoints.
+Instead, I make the loop executable through the skill, the test suite, the architectural rules, and the public path checkpoints.
 
 That is not the same experience as practising TDD manually, but it preserves the properties I care about.
 
