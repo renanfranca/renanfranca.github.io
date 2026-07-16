@@ -120,7 +120,7 @@ But TDD alone was not enough.
 
 An agent can write passing tests while moving behavior into the wrong architectural layer. It can also create tests that merely reproduce the structure of the production code.
 
-For this reason, the loop also receives feedback from architectural tests such as [`HexagonalArchTest`](https://github.com/seed4j/seed4j-cli/blob/main/src%2Ftest%2Fjava%2Fcom%2Fseed4j%2Fcli%2FHexagonalArchTest.java).
+For this reason, the loop also receives feedback from architectural tests such as [HexagonalArchTest](https://github.com/seed4j/seed4j-cli/blob/main/src%2Ftest%2Fjava%2Fcom%2Fseed4j%2Fcli%2FHexagonalArchTest.java).
 
 These tests make architectural boundaries executable.
 
