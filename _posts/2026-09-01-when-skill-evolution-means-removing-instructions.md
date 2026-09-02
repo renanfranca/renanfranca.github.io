@@ -82,6 +82,10 @@ This one is interesting because the skill itself coordinates a multi-chat workfl
 
 A dedicated Coordinator keeps the approved plan and controls a set of specialized chats. Each role is created once and then reused throughout the implementation: an Implementer works through TDD, a Committer owns commits, a Validator runs the complete quality gates, a Habit Curator handles mechanically detected design findings, and an independent Structural Reviewer looks for design problems after the implementation is already green.
 
+The specialization is not only about giving each chat a different responsibility. The skill also assigns different models to different roles. The Coordinator, Implementer, Habit Curator, and Structural Reviewer run on `gpt-5.6-sol` at `xhigh`; the Committer runs on `gpt-5.6-terra` at `xhigh`; and the Validator runs on `gpt-5.6-luna` at `xhigh`.
+
+That routing makes the workflow more economical. Sol is reserved for open-ended implementation, orchestration, and design judgment; Terra handles commit work, which is narrower but still requires judgment about repository conventions; and Luna runs the mostly deterministic validation gates. The point is not merely to create specialists, but to avoid using the flagship model where a more economical model is sufficient.
+
 ![Coordinator and specialist chats created by implement-approved-plan](https://renanfranca.github.io/img/when-skill-evolution-means-removing-instructions/implement-approved-plan-specific-chats.png)
 <figcaption>These are the chats created by the <code>implement-approved-plan</code> skill to implement <a href="https://github.com/habit-hooks/habit-hooks/issues/160">habit-hooks issue #160</a> in the amazing habit-hooks project.</figcaption>
 
