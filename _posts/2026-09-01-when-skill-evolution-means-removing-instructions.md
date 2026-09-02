@@ -83,6 +83,7 @@ This one is interesting because the skill itself coordinates a multi-chat workfl
 A dedicated Coordinator keeps the approved plan and controls a set of specialized chats. Each role is created once and then reused throughout the implementation: an Implementer works through TDD, a Committer owns commits, a Validator runs the complete quality gates, a Habit Curator handles mechanically detected design findings, and an independent Structural Reviewer looks for design problems after the implementation is already green.
 
 ![Coordinator and specialist chats created by implement-approved-plan](https://renanfranca.github.io/img/when-skill-evolution-means-removing-instructions/implement-approved-plan-specific-chats.png)
+<figcaption>These are the chats created by the <code>implement-approved-plan</code> skill to implement <a href="https://github.com/habit-hooks/habit-hooks/issues/160">habit-hooks issue #160</a> in the amazing habit-hooks project.</figcaption>
 
 Conceptually, it looks roughly like this:
 
