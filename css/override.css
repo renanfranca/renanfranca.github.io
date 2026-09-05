@@ -45,6 +45,12 @@ a:hover {
   color: #60a5fa !important; /* Tailwind blue-400 */
 }
 
+.post-content a code {
+  color: inherit !important;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 ul,
 ol {
   list-style: inherit !important;
