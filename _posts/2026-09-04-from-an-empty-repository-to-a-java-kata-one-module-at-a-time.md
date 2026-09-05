@@ -16,9 +16,11 @@ I wanted a small project to learn how to use Seed4J CLI, but with a slightly dif
 
 [Seed4J](https://seed4j.com/) is a modular code generator. Instead of generating one fixed project, it applies named transformations, called modules, that add or configure one capability at a time.
 
-The Seed4J CLI makes that approach available from the command line. The repository also contains a project-local skill for the coding agent. That skill is a set of instructions that helps the agent discover and operate the CLI; it is not a Seed4J module.
+The Seed4J CLI makes that approach available from the command line.
 
 So I created a repository around the classic String Calculator kata. It is a small testing exercise in which an `add` function starts with simple string inputs and gradually supports more rules, such as multiple numbers and custom delimiters.
+
+The Seed4J CLI can also install a project-local skill in the repository where it will be used. That skill teaches the coding agent how to discover and operate the CLI. The skill guides the agent; the Seed4J modules are what transform the project.
 
 The starting point is intentionally minimal: a specification for the kata and the Seed4J CLI skill installed locally for the agent.
 
