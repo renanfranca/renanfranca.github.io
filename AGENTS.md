@@ -31,6 +31,8 @@ There is no dedicated automated test suite in this repo today; validate changes 
 
 - Indentation: 2 spaces (`.editorconfig`).
 - Formatting: Prettier (`printWidth: 140`, `singleQuote: true`). Pre-commit runs `lint-staged` to format changed files.
+- Avoid unnecessary hyphens in Portuguese and English text. Do not use hyphens merely as a stylistic device or create compound words when a natural construction without a hyphen is correct.
+- Keep a hyphen only when required by spelling rules, when it is part of an established technical term, proper name, code, command, slug, file path, or URL, or when omitting it would impair clarity.
 - Keep generated CSS in sync: if you edit Tailwind config or `assets/css/tailwind.css`, rebuild so `assets/css/style.css` matches.
 
 ## Commit & Pull Request Guidelines
