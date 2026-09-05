@@ -53,12 +53,12 @@ From the available modules, the agent identifies four capabilities that seem use
     seed4j apply maven-wrapper --help
     seed4j apply jacoco-with-min-coverage-check --help
 
-The module names describe four separate transformations:
+The module names describe four separate transformations. Each name below links to the commit Seed4J created for that transformation:
 
-- `init` establishes the common project foundation: project metadata, repository conventions, development tooling, and a record of the Seed4J modules applied. It does not create the Java application.
-- `maven-java` adds the Java and Maven build, including the testing dependencies.
-- `maven-wrapper` adds a project-local Maven launcher, so the build does not depend on a separately installed Maven version.
-- `jacoco-with-min-coverage-check` turns code coverage into a build requirement.
+- [`init`](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/commit/bc2937fbd28b1af9e8d225e3d1aa04e139ce7d88) establishes the common project foundation: project metadata, repository conventions, development tooling, and a record of the Seed4J modules applied. It does not create the Java application.
+- [`maven-java`](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/commit/9c434d1503b32c02415df461182cfb58979c3ccd) adds the Java and Maven build, including the testing dependencies.
+- [`maven-wrapper`](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/commit/675c0a86abae6116bf4aa8c46044164fec19ffec) adds a project-local Maven launcher, so the build does not depend on a separately installed Maven version.
+- [`jacoco-with-min-coverage-check`](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/commit/2890bef54b3fb268a447d1e9c62b30084dd3ddfe) turns code coverage into a build requirement.
 
 The `apply-set` command composes several modules and resolves a valid execution order. Before changing the repository, the agent uses `--plan` to preview the resolved modules and parameters without applying them:
 
@@ -77,7 +77,7 @@ After reviewing the plan, the agent applies exactly the same composition without
 
 Seed4J applies the modules sequentially and creates one commit for each successful module.
 
-Once Seed4J finishes, the repository has a common project foundation, a Java 25 Maven build with testing libraries, an enforced coverage threshold, and a project-local Maven launcher. Seed4J stops at that foundation; it does not generate the String Calculator. From there, the agent writes the kata in one production class and one test class. Running `./mvnw verify` executes 13 behavior tests and enforces 100% line and branch coverage with JaCoCo.
+Once Seed4J finishes, the repository has a common project foundation, a Java 25 Maven build with testing libraries, an enforced coverage threshold, and a project-local Maven launcher. Seed4J stops at that foundation; it does not generate the String Calculator. From there, the agent [implements the kata in one production class and one test class](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/commit/e22bea4e216db808ae7682a63d857f2cce3d8c0b). Running `./mvnw verify` executes 13 behavior tests and enforces 100% line and branch coverage with JaCoCo.
 
 What interested me was not the generated files alone. It was watching the agent discover the available capabilities, select the modules it needed, and let Seed4J resolve and record the composition one module at a time.
 
@@ -98,6 +98,15 @@ For me, this makes the kata a small training ground for a larger question: how s
 I do not think this kata answers that question. It gives me a controlled place to observe the interaction, learn what information the agent needs, and make the next experiment more concrete.
 
 ## Reproduction note
+
+Seed4J CLI itself requires Java 25 or newer on your `PATH`, and its npm launcher requires Node.js 22 or newer. With those prerequisites available, install the CLI and verify the command:
+
+    npm install -g seed4j-cli
+    seed4j --version
+
+Then, from the kata repository, install the optional project-local skill that guides the coding agent:
+
+    seed4j skill install
 
 I used Codex in the ChatGPT desktop app with Full Access enabled so Seed4J could write its per-module commits to `.git` without approval interruptions. In Codex CLI, the equivalent is running `codex --yolo`. Because that bypasses approvals and sandboxing, it should only be used in a controlled or externally isolated environment.
 
