@@ -97,6 +97,8 @@ For me, this makes the kata a small training ground for a larger question: how s
 
 I do not think this kata answers that question. It gives me a controlled place to observe the interaction, learn what information the agent needs, and make the next experiment more concrete.
 
+If this experiment made you curious about the approach, consider giving [Seed4J](https://github.com/seed4j/seed4j) and [Seed4J CLI](https://github.com/seed4j/seed4j-cli) a star 🌟 on GitHub. It helps more people discover the projects and follow their evolution.
+
 ## Reproduction note
 
 Seed4J CLI itself requires Java 25 or newer on your `PATH`, and its npm launcher requires Node.js 22 or newer. With those prerequisites available, install the CLI and verify the command:
