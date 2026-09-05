@@ -62,6 +62,8 @@ The agent then applies exactly the same composition without `--plan`:
 
 Seed4J applies the modules sequentially and creates one commit for each successful module.
 
+One execution detail matters for reproducing this run: I used Codex in the ChatGPT desktop app with Full Access enabled so Seed4J could write its per-module commits to `.git` without approval interruptions. In Codex CLI, the equivalent is running `codex --yolo`. Because that bypasses approvals and sandboxing, it should only be used in a controlled or externally isolated environment.
+
 This is what made the kata interesting to me.
 
 ## The kata is not the thing I am trying to learn
