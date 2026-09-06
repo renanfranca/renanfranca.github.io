@@ -71,7 +71,7 @@ The plan is valid and Seed4J resolves the execution order as:
     jacoco-with-min-coverage-check
     maven-wrapper
 
-Notice that this is not exactly the order requested by the agent. It asked for `maven-wrapper` before `jacoco-with-min-coverage-check`, but Seed4J resolved the effective order from the module dependencies.
+Notice that this is not exactly the order requested by the agent. It placed `maven-wrapper` before `jacoco-with-min-coverage-check`. The agent's order was valid: both modules can be applied after `maven-java`, and neither depends on the other. Seed4J does not preserve the requested order, however. Because both modules are at the same dependency level, Seed4J 2.2.0 sorts them lexically by slug, placing `jacoco-with-min-coverage-check` before `maven-wrapper`.
 
 After reviewing the plan, the agent applies exactly the same composition without `--plan`.
 
