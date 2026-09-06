@@ -51,6 +51,101 @@ a:hover {
   text-underline-offset: 2px;
 }
 
+/* Keep post tables aligned with the site palette and readable on small screens. */
+.post-content table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  margin-bottom: 15px;
+  color: #4b5563;
+  font-size: inherit;
+  line-height: inherit;
+  background-color: #ffffff;
+  border-color: #e5e7eb;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.post-content table th,
+.post-content table td {
+  padding: 10px 15px;
+  vertical-align: top;
+  border-color: #e5e7eb;
+}
+
+.post-content table th {
+  color: #374151;
+  font-weight: 600;
+  background-color: #f3f4f6;
+  border-bottom-color: #d1d5db;
+}
+
+.post-content table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.post-content table tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.post-content table code {
+  color: #4b5563 !important;
+  white-space: nowrap;
+  background-color: #f3f4f6;
+  border-color: #e5e7eb;
+}
+
+.post-content table a code {
+  color: inherit !important;
+}
+
+.dark .post-content table {
+  color: #d1d5db;
+  background-color: #030712;
+  border-color: #374151;
+}
+
+.dark .post-content table th {
+  color: #f3f4f6;
+  background-color: #1f2937;
+  border-color: #4b5563;
+}
+
+.dark .post-content table td {
+  border-color: #374151;
+}
+
+.dark .post-content table tbody tr:nth-child(odd) {
+  background-color: #030712;
+}
+
+.dark .post-content table tbody tr:nth-child(even) {
+  background-color: #111827;
+}
+
+.dark .post-content table code {
+  color: #f3f4f6 !important;
+  background-color: #1f2937;
+  border-color: #4b5563;
+}
+
+.dark .post-content table a code {
+  color: inherit !important;
+}
+
+@media (max-width: 800px) {
+  .post-content table th,
+  .post-content table td {
+    min-width: 9rem;
+  }
+
+  .post-content table th:first-child,
+  .post-content table td:first-child {
+    min-width: 7rem;
+  }
+}
+
 ul,
 ol {
   list-style: inherit !important;
