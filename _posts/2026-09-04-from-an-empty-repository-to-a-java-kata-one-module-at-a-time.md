@@ -20,7 +20,7 @@ The Seed4J CLI makes that approach available from the command line.
 
 So I created a repository around the classic String Calculator kata. It is a small testing exercise in which an `add` function starts with simple string inputs and gradually supports more rules, such as multiple numbers and custom delimiters.
 
-The Seed4J CLI can also install a project-local skill in the repository where it will be used. That skill teaches the coding agent how to discover and operate the CLI. The skill guides the agent; the Seed4J modules are what transform the project.
+The Seed4J CLI can also install a skill directly in the repository where it will be used. That skill teaches the coding agent how to discover and operate the CLI. The skill guides the agent; the Seed4J modules are what transform the project.
 
 The starting point is intentionally minimal: a specification for the kata and the Seed4J CLI skill installed locally for the agent.
 
@@ -30,7 +30,7 @@ The original prompt was written in Brazilian Portuguese:
 
 For readability, I translated it to English:
 
-> Implement the kata using the already-installed Seed4J CLI tool as support.
+> Implement the kata with support from the installed Seed4J CLI tool.
 
 From there, the agent has to inspect the active CLI and decide how to compose the project.
 
@@ -57,7 +57,7 @@ The module names describe four separate transformations. Each name below links t
 
 - [`init`](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/commit/bc2937fbd28b1af9e8d225e3d1aa04e139ce7d88) establishes the common project foundation: project metadata, repository conventions, development tooling, and a record of the Seed4J modules applied. It does not create the Java application.
 - [`maven-java`](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/commit/9c434d1503b32c02415df461182cfb58979c3ccd) adds the Java and Maven build, including the testing dependencies.
-- [`maven-wrapper`](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/commit/675c0a86abae6116bf4aa8c46044164fec19ffec) adds a project-local Maven launcher, so the build does not depend on a separately installed Maven version.
+- [`maven-wrapper`](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/commit/675c0a86abae6116bf4aa8c46044164fec19ffec) adds a Maven launcher to the project, so the build does not depend on a separately installed Maven version.
 - [`jacoco-with-min-coverage-check`](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/commit/2890bef54b3fb268a447d1e9c62b30084dd3ddfe) turns code coverage into a build requirement.
 
 The `apply-set` command composes several modules and resolves a valid execution order. Before changing the repository, the agent uses `--plan` to preview the resolved modules and parameters without applying them:
@@ -77,7 +77,7 @@ After reviewing the plan, the agent applies exactly the same composition without
 
 Seed4J applies the modules sequentially and creates one commit for each successful module.
 
-Once Seed4J finishes, the repository has a common project foundation, a Java 25 Maven build with testing libraries, an enforced coverage threshold, and a project-local Maven launcher. Seed4J stops at that foundation; it does not generate the String Calculator. From there, the agent [implements the kata in one production class and one test class](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/commit/e22bea4e216db808ae7682a63d857f2cce3d8c0b). Running `./mvnw verify` executes 13 behavior tests and enforces 100% line and branch coverage with JaCoCo.
+Once Seed4J finishes, the repository has a common project foundation, a Java 25 Maven build with testing libraries, an enforced coverage threshold, and its own Maven launcher. Seed4J stops at that foundation; it does not generate the String Calculator. From there, the agent [implements the kata in one production class and one test class](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/commit/e22bea4e216db808ae7682a63d857f2cce3d8c0b). Running `./mvnw verify` executes 13 behavior tests and enforces 100% line and branch coverage with JaCoCo.
 
 What interested me was not the generated files alone. It was watching the agent discover the available capabilities, select the modules it needed, and let Seed4J resolve and record the composition one module at a time.
 
@@ -106,11 +106,11 @@ Seed4J CLI itself requires Java 25 or newer on your `PATH`, and its npm launcher
     npm install -g seed4j-cli
     seed4j --version
 
-Then, from the kata repository, install the optional project-local skill that guides the coding agent:
+Then, install the optional skill that guides the coding agent by running this command from the kata repository:
 
     seed4j skill install
 
-I used Codex in the ChatGPT desktop app with Full Access enabled so Seed4J could write its per-module commits to `.git` without approval interruptions. In Codex CLI, the equivalent is running `codex --yolo`. Because that bypasses approvals and sandboxing, it should only be used in a controlled or externally isolated environment.
+I used Codex in the ChatGPT desktop app with Full Access enabled so Seed4J could write to `.git` and create a separate commit for each module without approval interruptions. In Codex CLI, the equivalent is running `codex --yolo`. Because that bypasses approvals and sandboxing, it should only be used in a controlled or externally isolated environment.
 
 ## References
 
