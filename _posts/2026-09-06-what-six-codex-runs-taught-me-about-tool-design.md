@@ -22,13 +22,13 @@ I had also repeated the same task five more times, changing which model powered 
 
 I initially evaluated them with a [shared rubric](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/blob/main/MODEL_EVALUATION.md). It awarded up to 100 points across Seed4J effectiveness, required behavior, tests and design. The rubric was useful for comparing the runs against the same criteria, but it reduced each execution to a score.
 
-Returning to the transcripts did not change what the experiment was about. It revealed another layer of the same interaction.
+Comparing the commands and messages recorded during the six runs did not change the subject of the experiment. It made the different paths through the same interaction visible.
 
-One run showed the workflow in action. Six runs made the variability inside that workflow visible.
+One run showed the workflow in action. Six runs showed how differently agents navigated that workflow.
 
 ## What I mean by a decision trajectory
 
-I am not trying to infer the model's private reasoning. The transcripts do not expose it, and I do not need it for this comparison.
+I am not trying to infer the model's private reasoning. The recorded commands and messages do not expose it, and I do not need it for this comparison.
 
 There is already a lot I can observe:
 
@@ -94,7 +94,7 @@ The next visible message said:
 
 > The environment has Java 25, but does not have `mvn`.
 
-That sentence is my English translation of the original Brazilian Portuguese message in the [Terra transcript](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/blob/9001fe863565408ac3c9622b3b9e7e3edb7786f6/CONVERSATION_TRANSCRIPT.md).
+That sentence is my English translation of the original Brazilian Portuguese message in the [Terra run record](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/blob/9001fe863565408ac3c9622b3b9e7e3edb7786f6/CONVERSATION_TRANSCRIPT.md).
 
 The run then inspected `maven-wrapper`, generated an individual plan, applied the module and continued through `./mvnw`.
 
@@ -194,7 +194,7 @@ The model still decides. But it decides inside a workflow with explicit feedback
 
 ## What this experiment does not show
 
-This was one kata, one prompt, one host and one run per model and effort configuration. The runs were sequential, so later executions may have benefited from warmer caches. Their transcript formats and omission policies also differ, which limits direct comparisons of presentation and completeness.
+This was one kata, one prompt, one host and one run per model and effort configuration. The runs were sequential, so later executions may have benefited from warmer caches. The records also differ in format and in what they omit, which limits direct comparisons of presentation and completeness.
 
 There was no control group implementing the kata without Seed4J. I therefore cannot claim that Seed4J made the runs faster, cheaper or more correct than another approach.
 
@@ -216,7 +216,7 @@ Different runs can explore different candidates, compose at different moments an
 - [Seed4J CLI](https://github.com/seed4j/seed4j-cli)
 - [Seed4J CLI String Calculator Kata](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/)
 - [Detailed experiment report](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/blob/main/MODEL_EVALUATION.md)
-- [Sol xhigh transcript](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/blob/3d179c56b288f0fcbc0c62ee94b5af3152887136/AUDITORIA-CONVERSA.md)
-- [Terra xhigh transcript](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/blob/9001fe863565408ac3c9622b3b9e7e3edb7786f6/CONVERSATION_TRANSCRIPT.md)
-- [Luna xhigh transcript](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/blob/7ad4d48b311ff664c2f8e4b012151513cad15916/CONVERSATION_TRANSCRIPT.md)
+- [Sol xhigh run record](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/blob/3d179c56b288f0fcbc0c62ee94b5af3152887136/AUDITORIA-CONVERSA.md)
+- [Terra xhigh run record](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/blob/9001fe863565408ac3c9622b3b9e7e3edb7786f6/CONVERSATION_TRANSCRIPT.md)
+- [Luna xhigh run record](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/blob/7ad4d48b311ff664c2f8e4b012151513cad15916/CONVERSATION_TRANSCRIPT.md)
 - [OpenAI model catalog](https://developers.openai.com/api/docs/models)
