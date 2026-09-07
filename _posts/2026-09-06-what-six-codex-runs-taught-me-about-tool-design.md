@@ -12,17 +12,19 @@ permalink: /:categories/:title:output_ext
 
 ## The score was not the most interesting result
 
-In [From an Empty Repository to a Java Kata, One Module at a Time](https://renanfranca.github.io/from-an-empty-repository-to-a-java-kata-one-module-at-a-time.html), I followed one Codex run as it discovered Seed4J CLI, selected modules, planned their composition and built the foundation for a String Calculator kata.
+The String Calculator was never the object of this experiment. It was a small Java kata often used to practice TDD, giving a coding agent a concrete reason to use Seed4J CLI.
 
-That post follows the Sol `xhigh` run. I had already repeated the same task with six model and reasoning effort configurations, but I kept the comparison in the background so I could focus on one complete execution.
+The object was the interaction among three parts: the agent interpreting the goal and choosing capabilities, a skill installed in the repository guiding how it should discover, plan and verify, and Seed4J CLI validating and materializing the selected transformations.
 
-When I returned to the six runs, the comparison changed what I thought the experiment was about.
+In [From an Empty Repository to a Java Kata, One Module at a Time](https://renanfranca.github.io/from-an-empty-repository-to-a-java-kata-one-module-at-a-time.html), I followed that interaction through one complete Codex run, from an empty repository to a Java and Maven foundation and then to the kata implementation.
 
-The detailed evaluation gives Sol `xhigh` 98 points, Luna `xhigh` 95 and Terra `xhigh` 91. Those scores are useful for comparing the resulting artifacts against one rubric. But they compress something I now find more interesting: all three implementations satisfy the required behavior, while the runs reach that result through visibly different paths.
+I had also repeated the same task five more times, changing which model powered Codex or how much reasoning effort it used. All six runs started from the same commit and kata specification, received the same prompt and used Seed4J CLI v0.0.4 with Seed4J 2.2.0. All six produced a working String Calculator implementation, passed the build included in the project and passed the same independent tests covering the kata requirements.
 
-The kata stopped being the main object of the experiment.
+I initially evaluated them with a [shared rubric](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/blob/main/MODEL_EVALUATION.md). It awarded up to 100 points across Seed4J effectiveness, required behavior, tests and design. The rubric was useful for comparing the runs against the same criteria, but it reduced each execution to a score.
 
-The way each run used the same tool became the object.
+Returning to the transcripts did not change what the experiment was about. It revealed another layer of the same interaction.
+
+One run showed the workflow in action. Six runs made the variability inside that workflow visible.
 
 ## What I mean by a decision trajectory
 
@@ -40,15 +42,15 @@ There is already a lot I can observe:
 
 I think of that visible sequence as a decision trajectory.
 
-The experiment contained six independent Codex runs. Codex was the coding agent. Sol, Terra and Luna were the models selected for those runs, and `low`, `medium`, `high` and `xhigh` were reasoning effort configurations. Four runs used Sol at different effort levels; the other two used Terra and Luna at `xhigh`.
-
-Every run started from the same commit and specification, received the same short prompt in Brazilian Portuguese, and used Seed4J CLI v0.0.4 with Seed4J 2.2.0. All six discovered the active runtime, generated a read-only plan before applying modules, retained a Maven Wrapper and left a project that passed both its native build and the same external functional validation.
-
-The shared result makes the differences in the paths easier to see.
+The six runs used three models: Sol, Terra and Luna. Four used Sol at `low`, `medium`, `high` and `xhigh` reasoning effort; the other two used Terra and Luna at `xhigh`.
 
 ## Three paths through the same CLI
 
 The three `xhigh` runs provide the cleanest narrative comparison because the reasoning effort stays fixed while the selected model changes.
+
+In the detailed evaluation, Sol `xhigh` scored 98/100, Luna `xhigh` 95/100 and Terra `xhigh` 91/100. All three earned the full 30 points for the required String Calculator behavior. Their remaining differences came from Seed4J usage, tests and design.
+
+The behavior scores confirm a common functional baseline. They do not describe the different paths each run took through the interaction among agent, skill and CLI.
 
 ### Sol xhigh anticipated the foundation
 
@@ -135,7 +137,7 @@ This table does not rank the trajectories. It gives me a vocabulary for comparin
 
 ## The skill constrained the protocol, not every decision
 
-All six runs had the same repository-local [Seed4J CLI skill](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/blob/38ebbcbfab95f5725b1c22b1d4701fb6222cab6b/.agents/skills/seed4j-cli/SKILL.md).
+All six runs had the same [Seed4J CLI skill installed in the repository](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/blob/38ebbcbfab95f5725b1c22b1d4701fb6222cab6b/.agents/skills/seed4j-cli/SKILL.md).
 
 The skill defines an operating protocol:
 
@@ -174,7 +176,7 @@ The tool then turns that explicit intent into deterministic transformations.
 
 This does not make module selection irrelevant. A run can still omit a useful capability, add one the task does not need or choose parameters poorly. Seed4J also cannot guarantee that the kata implementation itself will be well designed.
 
-What it can do is narrow the area in which those choices operate. Once a valid capability is selected, the run does not also need to reproduce all of the low-level configuration behind it from memory.
+What it can do is narrow the area in which those choices operate. Once a valid capability is selected, the run does not also need to reproduce all of the configuration details behind it from memory.
 
 The models can take different routes through discovery and planning without every difference becoming a different manually written build configuration.
 
