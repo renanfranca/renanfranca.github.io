@@ -194,7 +194,7 @@ The model still decides. But it decides inside a workflow with explicit feedback
 
 ## What this experiment does not show
 
-This was one kata, one prompt, one host and one run per model and effort configuration. The runs were sequential, so later executions may have benefited from warmer caches. The records also differ in format and in what they omit, which limits direct comparisons of presentation and completeness.
+This was one kata, one prompt and one run for each model and effort configuration, all executed on the same host. Each run took place in a separate chat, and execution time was not part of the comparison. The records also differ in format and in what they omit, which limits direct comparisons of presentation and completeness.
 
 There was no control group implementing the kata without Seed4J. I therefore cannot claim that Seed4J made the runs faster, cheaper or more correct than another approach.
 
