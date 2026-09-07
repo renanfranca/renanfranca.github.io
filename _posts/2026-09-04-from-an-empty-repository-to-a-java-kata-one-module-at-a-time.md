@@ -18,7 +18,7 @@ I wanted a small project to learn how to use Seed4J CLI, but with a slightly dif
 
 The Seed4J CLI makes that approach available from the command line.
 
-So I created a repository around the classic String Calculator kata. It is a small testing exercise in which an `add` function starts with simple string inputs and gradually supports more rules, such as multiple numbers and custom delimiters.
+So I created a repository around the classic String Calculator kata, using the [specification from the Coding Kata Catalog](https://github.com/ardalis/kata-catalog/blob/main/katas/String%20Calculator.md). It is a small testing exercise in which an `add` function starts with simple string inputs and gradually supports more rules, such as multiple numbers and custom delimiters.
 
 The Seed4J CLI can also install a skill directly in the repository where it will be used. That skill teaches the coding agent how to discover and operate the CLI. The skill guides the agent; the Seed4J modules are what transform the project.
 
@@ -116,6 +116,7 @@ I used Codex in the ChatGPT desktop app with Full Access enabled so Seed4J could
 
 - [Seed4J](https://seed4j.com/)
 - [Seed4J CLI](https://github.com/seed4j/seed4j-cli)
+- [Coding Kata Catalog](https://github.com/ardalis/kata-catalog)
 - [Seed4J CLI String Calculator Kata](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/)
 - [Sol xhigh implementation](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/tree/string-calculator-sol-xhigh)
 - [Detailed experiment report](https://github.com/renanfranca/seed4j-cli-string-calculator-kata/blob/main/MODEL_EVALUATION.md)
