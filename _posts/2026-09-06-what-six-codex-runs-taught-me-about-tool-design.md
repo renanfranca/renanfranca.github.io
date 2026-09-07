@@ -210,6 +210,8 @@ Different runs can explore different candidates, compose at different moments an
 
 > A good agent tool may not need to eliminate model variability. It may need to constrain where that variability can cause damage.
 
+If this experiment made you curious about the approach, consider giving [Seed4J](https://github.com/seed4j/seed4j) and [Seed4J CLI](https://github.com/seed4j/seed4j-cli) a star 🌟 on GitHub. It helps more people discover the projects and follow their evolution.
+
 ## References
 
 - [Seed4J](https://seed4j.com/)
