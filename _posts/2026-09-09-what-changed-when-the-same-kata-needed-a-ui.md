@@ -80,24 +80,182 @@ In every run, Codex first discovered the active CLI and module catalog, inspecte
 
 For the library kata, that led to compact Java and Maven foundations. Luna selected `init` and `maven-java`. Terra added `maven-wrapper` after the environment showed that global Maven was unavailable. Sol also selected `approval-tests`, although its final tests did not use that capability.
 
-The mandatory UI widened the available paths. The compositions recorded in the Seed4J history were:
+The mandatory UI widened the available paths. The commands below preserve the arguments and values from the recorded runs, with line breaks added for readability.
 
-- **Luna:** `init` → `maven-java` → `java-base` → `spring-boot` → `logs-spy` → `spring-boot-mvc-empty` → `spring-boot-thymeleaf` → `spring-boot-tomcat` → `thymeleaf-template`, followed by `maven-wrapper`.
-- **Terra and Sol:** `init` → `prettier` → `typescript` → `react-core`.
+### Luna corrected the composition before applying it
 
-The CLI validated dependencies and resolved module order, while each Codex run remained responsible for choosing the capabilities and implementing the game.
+Luna's [first plan](https://github.com/renanfranca/seed4j-cli-hangman-ui-kata/blob/4e7a814af62f67bf90120a45516c142da38d543a/CONVERSATION_TRANSCRIPT.md) requested five Spring and Java modules:
 
-The plans also provided useful feedback. Luna corrected an invalid initial Spring composition before mutation. Sol recovered from a failed initialization hook and replanned the same React set. Those events remained visible in the transcripts and Seed4J history instead of disappearing behind the final screenshots.
+```bash
+seed4j apply-set \
+  maven-java \
+  spring-boot \
+  spring-boot-tomcat \
+  spring-boot-thymeleaf \
+  thymeleaf-template \
+  --plan \
+  --base-name=hangman \
+  --project-name='Hangman UI Kata' \
+  --package-name=com.example.hangman \
+  --server-port=8080 \
+  --spring-configuration-format=properties \
+  --node-package-manager=npm \
+  --indent-size=2 \
+  --end-of-line=lf
+```
 
-## Reproducible does not have to mean identical
+Seed4J rejected the composition without changing the repository:
 
-I did not learn that one stack is the correct way to build Hangman, or that one of these models will always make better choices. There was only one run per model, the runs were sequential, and there was no control group implementing the same tasks without Seed4J.
+```text
+Preflight: INVALID
+Missing modules: init, java-base, logs-spy, spring-boot-mvc-empty
+Unused option: --end-of-line
+No changes were applied.
+```
 
-What I could observe was more useful to my current exploration: a deterministic tool can preserve dependencies, plans, parameters, module history and commits without forcing every agent toward the same product.
+Luna added the required modules explicitly, removed the unused option and planned again:
 
-The behavior stayed comparable. The decisions stayed visible. The results still had room to be different.
+```bash
+seed4j apply-set \
+  init \
+  maven-java \
+  java-base \
+  spring-boot \
+  spring-boot-mvc-empty \
+  spring-boot-tomcat \
+  logs-spy \
+  spring-boot-thymeleaf \
+  thymeleaf-template \
+  --plan \
+  --base-name=hangman \
+  --project-name='Hangman UI Kata' \
+  --package-name=com.example.hangman \
+  --server-port=8080 \
+  --spring-configuration-format=properties \
+  --node-package-manager=npm \
+  --indent-size=2
+```
 
-That combination makes me want to keep using small katas as a training ground for larger applications. If you want to inspect the evidence rather than only the finished interfaces, both repositories include the prompts, preserved branches, transcripts, scorecards and reproduction notes.
+This time the preflight was valid. Seed4J resolved the order as `init` → `maven-java` → `java-base` → `spring-boot` → `logs-spy` → `spring-boot-mvc-empty` → `spring-boot-thymeleaf` → `spring-boot-tomcat` → `thymeleaf-template`. Luna applied the same command without `--plan`, then later planned and applied `maven-wrapper`.
+
+### Terra applied a valid composition directly
+
+Terra's [complete plan](https://github.com/renanfranca/seed4j-cli-hangman-ui-kata/blob/428db51ed018f1f2e520dfd30fe0b9a38ca67523/CONVERSATION_TRANSCRIPT.md) was valid on the first attempt:
+
+```bash
+seed4j apply-set \
+  init \
+  prettier \
+  typescript \
+  react-core \
+  --plan \
+  --base-name hangmanui \
+  --project-name 'Hangman UI' \
+  --node-package-manager npm \
+  --end-of-line lf \
+  --indent-size 2 \
+  --project-path .
+```
+
+```text
+Preflight: VALID
+Execution order: init → prettier → typescript → react-core
+No changes were applied.
+```
+
+Terra applied the same modules and parameters by running the command again without `--plan`.
+
+### Sol recovered after a partial application
+
+Sol's [initial plan](https://github.com/renanfranca/seed4j-cli-hangman-ui-kata/blob/96e4cc13f2ee260921dccbc7f8abbe0a6d7703f7/CONVERSATION_TRANSCRIPT.md) was also valid:
+
+```bash
+seed4j apply-set \
+  init \
+  prettier \
+  typescript \
+  react-core \
+  --project-name 'Hangman UI Kata' \
+  --base-name hangman \
+  --node-package-manager npm \
+  --indent-size 2 \
+  --end-of-line lf \
+  --project-path . \
+  --plan
+```
+
+Sol then applied the same composition:
+
+```bash
+seed4j apply-set \
+  init \
+  prettier \
+  typescript \
+  react-core \
+  --project-name 'Hangman UI Kata' \
+  --base-name hangman \
+  --node-package-manager npm \
+  --indent-size 2 \
+  --end-of-line lf \
+  --project-path .
+```
+
+The generated commit hook could not find `lint-staged` while applying `init`. Seed4J stopped the sequence instead of invoking the remaining modules:
+
+```text
+init: FAILED
+prettier: SKIPPED
+typescript: SKIPPED
+react-core: SKIPPED
+Module set status: PARTIAL_FAILURE
+```
+
+After inspecting the partial output and Seed4J history, Sol installed the dependencies, planned again and reapplied the same set:
+
+```bash
+npm install
+
+seed4j apply-set \
+  init \
+  prettier \
+  typescript \
+  react-core \
+  --project-name 'Hangman UI Kata' \
+  --base-name hangman \
+  --node-package-manager npm \
+  --indent-size 2 \
+  --end-of-line lf \
+  --project-path . \
+  --plan
+
+seed4j apply-set \
+  init \
+  prettier \
+  typescript \
+  react-core \
+  --project-name 'Hangman UI Kata' \
+  --base-name hangman \
+  --node-package-manager npm \
+  --indent-size 2 \
+  --end-of-line lf \
+  --project-path .
+```
+
+These runs exposed two kinds of feedback. Seed4J rejected an invalid composition before mutation, and it stopped a module sequence after the first application failure. The CLI validated dependencies and resolved module order, while each Codex run remained responsible for choosing capabilities, reacting to feedback and implementing the game. The transcripts and Seed4J history preserved those adjustments instead of showing only the finished applications.
+
+## The plan is where collaboration can begin
+
+This experiment does not show that one stack is the correct way to build Hangman or that one model will always make better choices. There was only one run per model, the runs were sequential and there was no control group implementing the same tasks without Seed4J. The shared checks let me compare the required behavior; they do not show that Seed4J made the implementations more correct or caused their differences.
+
+What the records do expose is a useful separation of responsibilities. The specification defined the behavior. Each Codex run chose an architecture and a set of modules, then implemented the game. Seed4J CLI turned the selected modules into an explicit plan containing dependencies, parameters and execution order before the repository changed. During application, it also recorded what happened to each module.
+
+Luna showed why validation before mutation matters: Seed4J rejected an invalid composition and made the missing modules visible. Terra showed the direct path from a valid plan to application. Sol showed the limit of planning: a valid composition can still encounter an environment failure, but the CLI stopped the remaining modules and preserved the partial history.
+
+In a real project, `apply-set --plan` can become the starting point for a conversation with the agent. A developer can question the architecture, replace modules or adjust parameters before approving the transformation. After application, the module history provides a record of the path that was actually taken.
+
+The benefit is not that different architectures are automatically better. It is that architectural freedom becomes reviewable before execution and traceable afterward.
+
+That is what I want to carry from these small katas into larger applications. The single prompt in this experiment deliberately withheld the planning conversation. In real work, the Seed4J plan can support that conversation instead of replacing it. If you want to inspect the evidence rather than only the finished interfaces, both repositories include the prompts, preserved branches, transcripts, scorecards and reproduction notes.
 
 If this experiment made you curious about the approach, consider giving [Seed4J](https://github.com/seed4j/seed4j) and [Seed4J CLI](https://github.com/seed4j/seed4j-cli) a star 🌟 on GitHub. It helps more people discover the projects and follow their evolution.
 
