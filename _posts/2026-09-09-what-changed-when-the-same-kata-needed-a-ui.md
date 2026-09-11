@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What Changed When the Same Kata Needed a UI
-description: I ran the same Hangman kata with three Codex models and Seed4J CLI, then made the UI mandatory. The behavior stayed consistent; the engineering choices became visible.
+description: I gave the same Hangman UI kata to three Codex models using only one prompt each and watched how Seed4J CLI helped them plan, fix mistakes and keep going.
 date: 2026-09-09 15:08:00 -0300
 tags: seed4j
 image: img/postbanners/2026-09-09-cover-what-changed-when-the-same-kata-needed-a-ui.jpg
