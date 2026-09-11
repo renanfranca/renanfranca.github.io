@@ -80,7 +80,12 @@ In every run, Codex first discovered the active CLI and module catalog, inspecte
 
 For the library kata, that led to compact Java and Maven foundations. Luna selected `init` and `maven-java`. Terra added `maven-wrapper` after the environment showed that global Maven was unavailable. Sol also selected `approval-tests`, although its final tests did not use that capability.
 
-The mandatory UI widened the available paths. Luna composed ten modules around Spring Boot and Thymeleaf. Terra and Sol selected the smaller `init`, `prettier`, `typescript` and `react-core` set. The CLI validated dependencies and resolved module order, while each Codex run remained responsible for choosing the capabilities and implementing the game.
+The mandatory UI widened the available paths. The compositions recorded in the Seed4J history were:
+
+- **Luna:** `init` → `maven-java` → `java-base` → `spring-boot` → `logs-spy` → `spring-boot-mvc-empty` → `spring-boot-thymeleaf` → `spring-boot-tomcat` → `thymeleaf-template`, followed by `maven-wrapper`.
+- **Terra and Sol:** `init` → `prettier` → `typescript` → `react-core`.
+
+The CLI validated dependencies and resolved module order, while each Codex run remained responsible for choosing the capabilities and implementing the game.
 
 The plans also provided useful feedback. Luna corrected an invalid initial Spring composition before mutation. Sol recovered from a failed initialization hook and replanned the same React set. Those events remained visible in the transcripts and Seed4J history instead of disappearing behind the final screenshots.
 
