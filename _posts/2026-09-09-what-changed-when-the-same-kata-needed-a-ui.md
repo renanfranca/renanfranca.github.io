@@ -48,19 +48,25 @@ In a real project, I would plan with the agent first. The agent could inspect `s
 
 So this experiment is not evidence that one prompt is enough. It asks a narrower question: what paths do agents take through Seed4J when the planning conversation is intentionally withheld?
 
-## The common behavior survived the added freedom
+## The shared behavior is the baseline
 
-All three library implementations passed the same ten functional requirements and three public contract checks. When the UI became mandatory, all three new implementations passed the shared domain harness and the complete browser journey, including correct, incorrect, invalid and duplicate guesses, followed by both winning and losing states.
+All six implementations passed their shared functional checks. That matters here only as a baseline: the Seed4J paths are being compared among implementations that reached the required behavior. The behavior score itself is not the subject of this article.
 
-The scores below come from the frozen rubric inside each repository. They include Seed4J usage, specification behavior, tests, design and reproducibility.
+The [library kata report](https://github.com/renanfranca/seed4j-cli-hangman-kata/blob/main/MODEL_EVALUATION.md) and the [UI kata report](https://github.com/renanfranca/seed4j-cli-hangman-ui-kata/blob/main/MODEL_EVALUATION.md) use complete rubrics with a total of 100 points that also evaluate specification correctness, tests and design. For this comparison, the relevant slice is the Seed4J effectiveness category, worth 35 points:
 
-| Model | Library kata            | UI kata                                       | UI stack selected         |
-| ----- | ----------------------- | --------------------------------------------- | ------------------------- |
-| Luna  | Behavior passed, 84/100 | Domain and browser behavior passed, 89.99/100 | Spring Boot and Thymeleaf |
-| Terra | Behavior passed, 97/100 | Domain and browser behavior passed, 99.06/100 | React and Vite            |
-| Sol   | Behavior passed, 95/100 | Domain and browser behavior passed, 98.50/100 | React and Vite            |
+| Model | Library kata: Seed4J /35 | UI kata: Seed4J /35 |
+| ----- | -----------------------: | ------------------: |
+| Luna  |                       32 |                  33 |
+| Terra |                       35 |                  35 |
+| Sol   |                       33 |                  34 |
 
-The scores are not evidence that adding a UI improved any model. The two rubrics evaluate different scopes. What matters here is simpler: every implementation reached the shared behavioral target, while the engineering paths became much easier to see.
+Those 35 points cover discovery and help, preflight and planning, module choice and order, explicit parameters, history and wrapper usage. The deductions show what the totals summarize:
+
+- **Luna:** In the library kata, the project had no wrapper, costing three points. In the UI kata, the unnecessary `logs-spy` module cost one point, and the `maven-wrapper` commit also included handwritten implementation files, costing another point for commit coherence.
+- **Terra:** Both runs earned 35/35 through explicit parameters, valid compositions, appropriate wrappers and coherent module histories.
+- **Sol:** In the library kata, selecting `approval-tests` without using it in the final tests cost two points. In the UI kata, the failed application and retry left two `init` history records, costing one point for commit coherence.
+
+These scores do not rank the overall quality of the models or products. They summarize only the observable use of Seed4J CLI and lead into the module choices, commands and feedback below.
 
 ## One requirement, three products
 
