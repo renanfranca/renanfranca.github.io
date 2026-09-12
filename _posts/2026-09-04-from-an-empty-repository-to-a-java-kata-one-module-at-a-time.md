@@ -4,6 +4,11 @@ title: From an Empty Repository to a Java Kata, One Module at a Time
 description: Using the String Calculator kata as a small training ground to learn how a coding agent can discover and compose a Java project with Seed4J CLI.
 date: 2026-09-04 16:28:00 -0300
 tags: seed4j
+dev_to_tags:
+  - java
+  - ai
+  - agents
+  - testing
 image: img/postbanners/2026-09-04-cover-from-an-empty-repository-to-a-java-kata-one-module-at-a-time.jpg
 permalink: /:categories/:title:output_ext
 ---

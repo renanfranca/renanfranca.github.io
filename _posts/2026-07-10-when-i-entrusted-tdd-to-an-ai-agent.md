@@ -4,6 +4,11 @@ title: When I Entrusted TDD to an AI Agent
 description: How I gradually removed confirmation gates, added behavioral and architectural guardrails, and learned to let Codex CLI practise TDD autonomously.
 date: 2026-07-10 18:00:00 -0300
 tags: tales-of-a-dev
+dev_to_tags:
+  - tdd
+  - testing
+  - ai
+  - agents
 image: img/postbanners/2026-07-10-cover-when-i-entrusted-tdd-to-an-ai-agent.jpg
 permalink: /:categories/:title:output_ext
 ---

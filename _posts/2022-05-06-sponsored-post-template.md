@@ -4,6 +4,7 @@ title: Sponsored Post Template
 description: A blog post example of how to identify a sponsored post.
 date: 2022-05-06 09:24:46 -0300
 tags: 
+dev_to: false
 image: img/postbanners/2022-05-06-cover-sponsored-post-template.png
 permalink: /:categories/:title:output_ext
 draft: true

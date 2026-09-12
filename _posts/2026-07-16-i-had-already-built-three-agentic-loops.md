@@ -4,6 +4,11 @@ title: I Had Already Built Three Agentic Loops Without Naming Them
 description: How execution plans, milestone acceptance criteria, and TDD with executable architecture became three nested feedback loops in my coding agent workflow.
 date: 2026-07-16 12:00:00 -0300
 tags: tales-of-a-dev
+dev_to_tags:
+  - ai
+  - agents
+  - tdd
+  - architecture
 image: img/postbanners/2026-07-16-cover-i-had-already-built-three-agentic-loops.jpg
 permalink: /:categories/:title:output_ext
 ---

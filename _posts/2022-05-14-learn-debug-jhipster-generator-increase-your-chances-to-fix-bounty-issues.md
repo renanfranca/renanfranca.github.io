@@ -4,6 +4,11 @@ title: Learn to debug the JHipster generator, increase your chances to fix bount
 description: You can earn money by fixing issues with bounty labels! Here I will show you how to debug the jhipster import-jdl command with an inline entity example. I am using VSCode with Windows 10.
 date: 2022-11-16 12:00:00 -0300
 tags: jhipster
+dev_to_tags:
+  - jhipster
+  - webdev
+  - beginners
+  - tutorial
 image: img/postbanners/2022-05-14-cover-debug-jhipster-generator.jpeg
 permalink: /:categories/:title:output_ext
 

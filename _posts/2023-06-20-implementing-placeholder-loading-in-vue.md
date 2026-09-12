@@ -4,6 +4,11 @@ title: Your Guide to Implementing Vue Placeholder Loading
 description: Implementing placeholder loading in Vue.js has never been easier. Click for a step-by-step guide.
 date: 2023-06-20 08:00:00 -0300
 tags: jhipster-lite
+dev_to_tags:
+  - webdev
+  - vue
+  - beginners
+  - javascript
 image: img/postbanners/2023-06-20-cover-placeholder-loading.jpeg
 permalink: /:categories/:title:output_ext
 ---

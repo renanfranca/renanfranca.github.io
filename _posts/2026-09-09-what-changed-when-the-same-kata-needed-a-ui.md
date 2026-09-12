@@ -4,6 +4,11 @@ title: What Changed When the Same Kata Needed a UI
 description: I gave the same Hangman UI kata to three Codex models using only one prompt each and watched how Seed4J CLI helped them plan, fix mistakes and keep going.
 date: 2026-09-09 15:08:00 -0300
 tags: seed4j
+dev_to_tags:
+  - ai
+  - agents
+  - webdev
+  - showdev
 image: img/postbanners/2026-09-09-cover-what-changed-when-the-same-kata-needed-a-ui.jpg
 permalink: /:categories/:title:output_ext
 ---

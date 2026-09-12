@@ -4,6 +4,11 @@ title: What Six Codex Runs Taught Me About Tool Design
 description: How six Codex runs followed different decision paths through the same Seed4J CLI, and why good agent tools may need to constrain variability rather than eliminate it.
 date: 2026-09-06 16:40:00 -0300
 tags: seed4j
+dev_to_tags:
+  - ai
+  - agents
+  - tooling
+  - java
 image: img/postbanners/2026-09-06-cover-what-six-codex-runs-taught-me-about-tool-design.jpg
 permalink: /:categories/:title:output_ext
 ---

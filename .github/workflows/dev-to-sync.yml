@@ -1,0 +1,105 @@
+name: Sync blog posts to DEV
+
+on:
+  pull_request:
+    paths:
+      - '_posts/**'
+      - '_data/dev_to_tags.json'
+      - 'scripts/dev-to/**'
+      - '_config.yml'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/dev-to-sync.yml'
+  push:
+    branches: [main]
+    paths:
+      - '_posts/**'
+      - '_data/dev_to_tags.json'
+      - 'scripts/dev-to/**'
+      - '_config.yml'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/dev-to-sync.yml'
+  schedule:
+    # 23:30 in America/Bahia (UTC-3), at 02:30 UTC on the following date.
+    - cron: '30 2 * * *'
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: DEV synchronization operation
+        required: true
+        default: dry-run
+        type: choice
+        options:
+          - dry-run
+          - missing-only
+          - all
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dev-to-sync
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run test:dev-to
+      - run: npm run dev-to:validate
+
+  sync:
+    needs: validate
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      ((github.event_name == 'push' || github.event_name == 'schedule') && vars.DEV_TO_SYNC_ENABLED == 'true')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+    env:
+      DEV_TO_API_KEY: ${{ secrets.DEV_TO_API_KEY }}
+      DEV_TO_MODE: >-
+        ${{ github.event_name == 'push' && 'changed' ||
+            github.event_name == 'schedule' && 'missing-only' ||
+            github.event.inputs.operation == 'all' && 'all' || 'missing-only' }}
+      DEV_TO_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.operation == 'dry-run' && 'true' || 'false' }}
+      DEV_TO_FROM: ${{ github.event.before }}
+      DEV_TO_TO: ${{ github.sha }}
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Rebuild GitHub Pages for scheduled posts
+        if: github.event_name == 'schedule'
+        run: node scripts/dev-to/cli.mjs pages rebuild-and-wait --commit "$GITHUB_SHA"
+      - name: Wait for the pushed revision to reach GitHub Pages
+        if: github.event_name == 'push'
+        run: node scripts/dev-to/cli.mjs pages wait --commit "$GITHUB_SHA"
+      - name: Synchronize DEV articles
+        shell: bash
+        run: |
+          set -o pipefail
+          if [[ "$DEV_TO_DRY_RUN" == "true" ]]; then
+            node scripts/dev-to/cli.mjs sync --mode "$DEV_TO_MODE" --dry-run | tee /tmp/dev-to-sync.log
+          else
+            node scripts/dev-to/cli.mjs sync --mode "$DEV_TO_MODE" | tee /tmp/dev-to-sync.log
+          fi
+          {
+            echo '## DEV synchronization'
+            echo
+            sed -n '/^Summary:/p' /tmp/dev-to-sync.log
+          } >> "$GITHUB_STEP_SUMMARY"

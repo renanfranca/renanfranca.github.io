@@ -4,6 +4,11 @@ title: My Journey to the JHipster Core Team
 description: Reflecting on 18 months as a JHipster Core Team member and how my journey began in January 2024
 date: 2025-07-10 10:45:00 -0300
 tags: jhipster-lite
+dev_to_tags:
+  - jhipster
+  - webdev
+  - beginners
+  - tutorial
 image: img/postbanners/2025-07-10-cover-my-journey-to-the-jhipster-core-team.jpg
 permalink: /:categories/:title:output_ext
 ---
@@ -81,4 +86,3 @@ Lastly, let me extend an invitation to join me on my journey 🚀 in the realm o
 <!-- Place this tag where you want the button to render. --> <a class="github-button" href="https://github.com/seed4j/seed4j-cli" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" data-size="large" aria-label="Star jhipster/jhipster-lite-cli on GitHub">•⭐ jhipster-lite-cli</a>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-

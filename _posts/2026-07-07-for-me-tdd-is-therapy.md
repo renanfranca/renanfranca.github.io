@@ -4,6 +4,11 @@ title: For Me, TDD Is Therapy
 description: How TDD gave me a systematic way to work through the anxiety and uncertainty of software development—and how AI agents brought some of that anxiety back.
 date: 2026-07-07 15:00:00 -0300
 tags: tales-of-a-dev
+dev_to_tags:
+  - tdd
+  - testing
+  - ai
+  - career
 image: img/postbanners/2026-07-07-cover-for-me-tdd-is-therapy.jpg
 permalink: /:categories/:title:output_ext
 ---
