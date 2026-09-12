@@ -4,6 +4,11 @@ title: Intention in Portuguese, Code in English
 description: How I started talking to Codex CLI in Portuguese while keeping open-source code, documentation, and project conventions in English.
 date: 2026-07-02 19:00:00 -0300
 tags: tales-of-a-dev
+dev_to_tags:
+  - ai
+  - agents
+  - programming
+  - opensource
 image: img/postbanners/2026-07-02-cover-intention-in-portuguese-code-in-english.jpg
 permalink: /:categories/:title:output_ext
 ---

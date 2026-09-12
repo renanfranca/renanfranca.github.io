@@ -32,6 +32,26 @@ Ruby gems are cached in a Docker named volume to speed up subsequent starts.
 
 <!-- seed4j-needle-startupCommand -->
 
+## DEV syndication
+
+Posts are validated and synchronized from `_posts` to the `renanfranca` DEV account. Refresh the local tag catalog and validate post metadata with:
+
+```bash
+npm run dev-to:tags:update
+npm run dev-to:validate
+npm run dev-to:dry-run
+```
+
+Every syndicated post must contain exactly four `dev_to_tags`. Set `dev_to: false` to keep a post on this blog only.
+
+Automatic synchronization requires these repository settings:
+
+- Actions secret `DEV_TO_API_KEY`, generated from DEV Settings → Extensions.
+- Actions variable `DEV_TO_SYNC_ENABLED` set to `true` only after the initial import is reviewed.
+- No active RSS publishing source in DEV, which prevents duplicate imports.
+
+Leave `DEV_TO_SYNC_ENABLED` unset or set it to `false` while installing the integration. Run the **Sync blog posts to DEV** workflow with `dry-run`, then with `missing-only`. After reviewing the created articles, enable automatic synchronization. A failed partial import can safely rerun `missing-only` because articles are matched by canonical URL.
+
 ## Corporate network / proxy
 
 When you are in a corporate network that requires HTTP/HTTPS proxy:

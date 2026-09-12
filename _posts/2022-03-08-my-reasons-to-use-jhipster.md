@@ -5,6 +5,11 @@ description: You are going to have a bootstrap project with a lot of features an
 published: true
 date: 2022-03-08 09:00:00 -0300
 tags: jhipster
+dev_to_tags:
+  - jhipster
+  - webdev
+  - beginners
+  - java
 image: /img/postbanners/2022-03-08-cover-my-reasons-to-use-jhipster.jpeg
 ---
 ![cover image](/img/postbanners/2022-03-08-cover-my-reasons-to-use-jhipster.jpeg)

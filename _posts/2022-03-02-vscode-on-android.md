@@ -4,6 +4,11 @@ title: VSCode on Android (you don’t need to install anything)
 description: Since my baby girl was born I don't have the time to use my computer because I'm taking care of her and I only have a short period of free time during the day. So I needed to use my Android smartphone to create and update my blog.
 date: 2022-03-02 08:04:05 -03:00
 tags: vscode
+dev_to_tags:
+  - tutorials
+  - webdev
+  - vscode
+  - android
 image: /img/postbanners/2022-03-02-cover-vscode-android.jpeg
 ---
 ![cover image](/img/postbanners/2022-03-02-cover-vscode-android.jpeg)

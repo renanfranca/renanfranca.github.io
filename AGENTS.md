@@ -22,6 +22,8 @@ This repository is a Jekyll site with Tailwind/PostCSS-generated CSS.
 - `npm run build:css`: Build CSS for development.
 - `npm run build:css:prod`: Build minified/production CSS.
 - `npm run build:css:watch` / `npm run build:css:prod:watch`: Rebuild CSS on change.
+- `npm run dev-to:tags:update`: Refresh the local DEV tag catalog from the public DEV API.
+- `npm run dev-to:validate`: Validate DEV syndication metadata for every blog post.
 - `npm run prettier:check`: Verify formatting.
 - `npm run prettier:format`: Auto-format the repo.
 
@@ -34,6 +36,14 @@ There is no dedicated automated test suite in this repo today; validate changes 
 - Avoid unnecessary hyphens in Portuguese and English text. Do not use hyphens merely as a stylistic device or create compound words when a natural construction without a hyphen is correct.
 - Keep a hyphen only when required by spelling rules, when it is part of an established technical term, proper name, code, command, slug, file path, or URL, or when omitting it would impair clarity.
 - Keep generated CSS in sync: if you edit Tailwind config or `assets/css/tailwind.css`, rebuild so `assets/css/style.css` matches.
+
+## Blog Post Publishing
+
+- Before finalizing a post that will be syndicated to DEV, run `npm run dev-to:tags:update` and inspect `_data/dev_to_tags.json`.
+- Read the complete title, description, and body, then add exactly four genuinely relevant tags to the `dev_to_tags` front matter list. Prefer specific tags and do not add popular tags such as `beginners`, `tutorial`, or `webdev` unless the content supports them.
+- Keep the Jekyll `tags` field separate from `dev_to_tags`. DEV tags must come from the local catalog and their order is significant.
+- Set `dev_to: false` when a post must stay on this blog only; those posts do not need `dev_to_tags`.
+- Run `npm run dev-to:validate` before considering a post complete.
 
 ## Commit & Pull Request Guidelines
 

@@ -4,6 +4,11 @@ title: Deploy jhipster monolithic (angular + spring boot) at fly.io for FREE
 description: I will share with you my experience to publish an angular + spring boot + postgres database solution into fly.io for FREE.
 date: 2022-09-27 11:30:00 -0300
 tags: jhipster
+dev_to_tags:
+  - jhipster
+  - webdev
+  - beginners
+  - java
 image: img/postbanners/2022-09-03-cover-deploy-jhipster-monolithic-fly-io.jpeg
 permalink: /:categories/:title:output_ext
 

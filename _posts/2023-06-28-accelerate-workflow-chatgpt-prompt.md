@@ -4,6 +4,11 @@ title: 💨🚀 Accelerate Your Workflow with ChatGPT Prompts 📝 - Ditch the B
 description: Discover how ChatGPT prompts can streamline your workflow, eliminate boilerplate code and tackle code duplication. Join the discussion.
 date: 2023-07-11 08:00:00 -0300
 tags: chatgpt
+dev_to_tags:
+  - ai
+  - beginners
+  - javascript
+  - tutorial
 image: img/postbanners/2023-06-28-cover-chatgpt-prompts.jpeg
 permalink: /:categories/:title:output_ext
 ---

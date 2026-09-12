@@ -4,6 +4,11 @@ title: When Skill Evolution Means Removing Instructions
 description: What ACES, WikiSkill, skill-eval, and my latest agent workflows taught me about evaluating skills, removing obsolete instructions, and moving knowledge into deterministic mechanisms.
 date: 2026-09-01 22:24:00 -0300
 tags: tales-of-a-dev
+dev_to_tags:
+  - ai
+  - agents
+  - tooling
+  - learning
 image: img/postbanners/2026-09-01-cover-when-skill-evolution-means-removing-instructions.jpg
 permalink: /:categories/:title:output_ext
 ---
