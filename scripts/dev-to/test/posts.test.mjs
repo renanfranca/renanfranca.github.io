@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { canonicalUrlForPost, parseDocument, postEligibility, validatePost } from '../posts.mjs';
+import { canonicalUrlForPost, devToUsername, parseDocument, postEligibility, validatePost } from '../posts.mjs';
 
 const siteConfig = { url: 'https://renanfranca.github.io' };
 
@@ -55,4 +55,11 @@ test('opts out explicitly and defers future posts', () => {
 
   post.data.dev_to = true;
   assert.deepEqual(postEligibility(post, new Date('2026-01-01T00:00:00Z')), { eligible: false, reason: 'future' });
+});
+
+test('requires a non-empty DEV username in site configuration', () => {
+  assert.equal(devToUsername({ dev_to_username: ' renanfranca ' }), 'renanfranca');
+  assert.throws(() => devToUsername({}), /dev_to_username is required/);
+  assert.throws(() => devToUsername({ dev_to_username: 42 }), /dev_to_username must be a string/);
+  assert.throws(() => devToUsername({ dev_to_username: '   ' }), /dev_to_username must not be blank/);
 });

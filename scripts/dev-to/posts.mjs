@@ -94,6 +94,22 @@ export function postEligibility(post, now = new Date()) {
   return { eligible: true };
 }
 
+export function devToUsername(siteConfig) {
+  const username = siteConfig.dev_to_username;
+  if (username === undefined || username === null) {
+    throw new Error('_config.yml: dev_to_username is required');
+  }
+  if (typeof username !== 'string') {
+    throw new Error('_config.yml: dev_to_username must be a string');
+  }
+
+  const normalizedUsername = username.trim();
+  if (!normalizedUsername) {
+    throw new Error('_config.yml: dev_to_username must not be blank');
+  }
+  return normalizedUsername;
+}
+
 export function validatePost(post, catalog) {
   if (post.data.dev_to === false) return [];
 

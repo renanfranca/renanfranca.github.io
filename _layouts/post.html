@@ -2,37 +2,33 @@
 layout: default
 ---
 
-<link href="/css/override.css" rel="stylesheet" type="text/css">
+<link href="/css/override.css" rel="stylesheet" type="text/css" />
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%} {{ page.date | date: date_format }}
       </time>
-      {% assign author = page.author | default: site.author %}
-      {%- if author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ author }}</span></span>
-      {%- endif -%}</p>
+      {% assign author = page.author | default: site.author %} {%- if author -%} •
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person"
+        ><span class="p-author h-card" itemprop="name">{{ author }}</span></span
+      >
+      {%- endif -%}
+    </p>
   </header>
 
-  <div class="share-links">
-    {% include sharelinks.html %}
-  </div>
+  <div class="share-links">{% include sharelinks.html %}</div>
 
   <div class="post-content e-content" itemprop="articleBody">
     {% if page.draft == true %}
     <div class="message">DRAFT - This blog post is <strong>under construction</strong>.</div>
-    {% endif %}
-    {% include anchor_headings.html html=content anchorBody="<i class='fa fa-link header-link'></i>" %}
-    {% include navlinks.html %}
+    {% endif %} {% capture anchor_body %}<i class="fa fa-link header-link"></i>{% endcapture %} {% include anchor_headings.html html=content
+    anchorBody=anchor_body %} {% include navlinks.html %}
   </div>
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
 
-{% if site.comments_repo %}
-  {% include comments.html %}
+{% unless page.dev_to == false %} {% include dev-to-comments.html %} {% endunless %} {% if site.comments_repo %} {% include comments.html %}
 {% endif %}

@@ -3,10 +3,8 @@ import { execFileSync } from 'node:child_process';
 import { DevToClient } from './client.mjs';
 import { prepareDevMarkdown } from './markdown.mjs';
 import { GitHubPagesClient, waitForCanonicalUrl } from './pages.mjs';
-import { canonicalUrlForPost, loadSiteConfig, loadTagCatalog, readAllPosts, validatePost } from './posts.mjs';
+import { canonicalUrlForPost, devToUsername, loadSiteConfig, loadTagCatalog, readAllPosts, validatePost } from './posts.mjs';
 import { buildOperations, executeOperations, verifyDevAccount } from './sync.mjs';
-
-const EXPECTED_USERNAME = 'renanfranca';
 
 function option(name, fallback) {
   const index = process.argv.indexOf(`--${name}`);
@@ -33,6 +31,12 @@ async function loadValidatedContext(rootDirectory) {
     loadSiteConfig(rootDirectory),
   ]);
   const errors = posts.flatMap(post => validatePost(post, catalog));
+  let username;
+  try {
+    username = devToUsername(siteConfig);
+  } catch (error) {
+    errors.push(error.message);
+  }
   const canonicals = new Map();
   for (const post of posts) {
     if (post.data.dev_to === false) continue;
@@ -50,7 +54,7 @@ async function loadValidatedContext(rootDirectory) {
       errors.map(message => new Error(message)),
       `Validation failed with ${errors.length} error(s)`,
     );
-  return { posts, catalog, siteConfig };
+  return { posts, catalog, siteConfig, username };
 }
 
 async function validate(rootDirectory) {
@@ -60,7 +64,7 @@ async function validate(rootDirectory) {
 }
 
 async function sync(rootDirectory) {
-  const { posts, siteConfig } = await loadValidatedContext(rootDirectory);
+  const { posts, siteConfig, username } = await loadValidatedContext(rootDirectory);
   const mode = option('mode', process.env.DEV_TO_MODE ?? 'changed');
   const dryRun = hasFlag('dry-run') || process.env.DEV_TO_DRY_RUN === 'true';
   if (!['all', 'changed', 'missing-only'].includes(mode)) throw new Error(`Unsupported sync mode: ${mode}`);
@@ -74,11 +78,11 @@ async function sync(rootDirectory) {
   const client = new DevToClient({ apiKey: process.env.DEV_TO_API_KEY });
   let articles;
   if (process.env.DEV_TO_API_KEY) {
-    await verifyDevAccount(client, EXPECTED_USERNAME);
+    await verifyDevAccount(client, username);
     articles = await client.listAllMyArticles();
   } else {
     if (!dryRun) throw new Error('DEV_TO_API_KEY is required unless --dry-run is used');
-    articles = await client.listPublicUserArticles(EXPECTED_USERNAME);
+    articles = await client.listPublicUserArticles(username);
   }
 
   const operations = buildOperations(selectedPosts, articles, siteConfig, { mode });
