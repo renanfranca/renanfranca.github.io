@@ -17,6 +17,14 @@ function jsonResponse(value, init = {}) {
   return new Response(JSON.stringify(value), { headers: { 'Content-Type': 'application/json' }, status: 200, ...init });
 }
 
+function commentsPage(...visibleIds) {
+  const anchors = visibleIds.map(id => `<a name="comment-${id}"></a>`).join('');
+  return new Response(`<html><body><div id="comment-trees-container">${anchors}</div></body></html>`, {
+    headers: { 'Content-Type': 'text/html' },
+    status: 200,
+  });
+}
+
 function comment(overrides = {}) {
   return {
     body_html: '<p>Safe <strong>comment</strong></p>',
@@ -149,7 +157,7 @@ test('renders valid top-level comments and replies in API order with safe naviga
   const calls = [];
   const result = await loadDevComments(fixture.root, {
     ...fixture,
-    fetchImpl: queuedFetch([jsonResponse([article]), jsonResponse(comments)], calls),
+    fetchImpl: queuedFetch([jsonResponse([article]), jsonResponse(comments), commentsPage('root1', 'reply1', 'root2')], calls),
     logger: { warn: message => assert.fail(message) },
   });
 
@@ -174,6 +182,32 @@ test('renders valid top-level comments and replies in API order with safe naviga
   assert.equal(fixture.root.querySelectorAll('.dev-comment-avatar-link').length, 0);
   assert.equal(fixture.root.querySelectorAll('.dev-comment').length, 3);
   assert.match(calls[1].url, /\/comments\?a_id=42$/);
+  assert.equal(calls[2].url, `${article.url}/comments`);
+});
+
+test('omits comments that the DEV API returns after DEV removes them from the public discussion', async () => {
+  const fixture = browserFixture();
+  const calls = [];
+  const comments = [
+    comment({ id_code: 'api-only', user: { name: 'Promotional account', username: 'promotional' } }),
+    comment({ id_code: 'public-comment', user: { name: 'Public author', username: 'public-author' } }),
+  ];
+  const result = await loadDevComments(fixture.root, {
+    ...fixture,
+    fetchImpl: queuedFetch([jsonResponse([article]), jsonResponse(comments), commentsPage('public-comment')], calls),
+    logger: { warn: message => assert.fail(message) },
+  });
+
+  assert.equal(result.status, 'rendered');
+  assert.equal(result.renderedCount, 1);
+  assert.deepEqual(
+    [...fixture.root.querySelectorAll('.dev-comment-author')].map(link => link.textContent),
+    ['Public author'],
+  );
+  assert.equal(calls.length, 3);
+  assert.equal(calls[2].url, `${article.url}/comments`);
+  assert.deepEqual(calls[2].init.headers, { Accept: 'text/html' });
+  assert.equal(calls[2].init.credentials, 'omit');
 });
 
 test('preserves deep semantic nesting while marking levels beyond the visual indentation cap', async () => {
@@ -184,7 +218,11 @@ test('preserves deep semantic nesting while marking levels beyond the visual ind
   const rootComment = comment({ children: [level2], id_code: 'level1' });
   const result = await loadDevComments(fixture.root, {
     ...fixture,
-    fetchImpl: queuedFetch([jsonResponse([{ ...article, comments_count: 4 }]), jsonResponse([rootComment])]),
+    fetchImpl: queuedFetch([
+      jsonResponse([{ ...article, comments_count: 4 }]),
+      jsonResponse([rootComment]),
+      commentsPage('level1', 'level2', 'level3', 'level4'),
+    ]),
     logger: { warn: message => assert.fail(message) },
   });
 
@@ -236,6 +274,7 @@ test('omits a malformed comment and its descendants while preserving valid sibli
         comment({ body_html: '<p>secret malformed body</p>', id_code: undefined, children: [comment({ id_code: 'hidden-child' })] }),
         comment({ id_code: 'valid-sibling', user: { name: 'Valid Sibling', username: 'valid' } }),
       ]),
+      commentsPage('valid-sibling'),
     ]),
     logger: { warn: message => warnings.push(message) },
   });
@@ -265,6 +304,7 @@ test('isolates a sanitizer failure to its comment and descendants', async () => 
         comment({ body_html: '<p>private marker</p>', children: [comment({ id_code: 'hidden-child' })] }),
         comment({ id_code: 'safe-sibling', user: { name: 'Safe Sibling', username: 'safe' } }),
       ]),
+      commentsPage('abc1', 'safe-sibling'),
     ]),
     logger: { warn: message => warnings.push(message) },
     sanitizer,
@@ -325,12 +365,30 @@ test('shows a compact DEV article fallback only when comment retrieval fails aft
   assert.deepEqual(warnings, ['[DEV comments] Comment retrieval failed: comment retrieval request failed']);
 });
 
+test('fails closed when DEV visibility cannot be verified', async () => {
+  const fixture = browserFixture();
+  const warnings = [];
+  const result = await loadDevComments(fixture.root, {
+    ...fixture,
+    fetchImpl: queuedFetch([jsonResponse([article]), jsonResponse([comment()]), new Error('network details must stay private')]),
+    logger: { warn: message => warnings.push(message) },
+  });
+
+  assert.equal(result.status, 'comment-error');
+  assert.equal(fixture.root.hidden, false);
+  assert.equal(fixture.root.querySelector('.dev-comment'), null);
+  assert.equal(fixture.root.querySelector('.dev-comments-fallback-link').href, article.url);
+  assert.deepEqual(warnings, ['[DEV comments] Comment visibility check failed: comment visibility request failed']);
+});
+
 test('keeps an empty comment response and an all-malformed response hidden', async () => {
   for (const comments of [[], [{ body_html: '<p>bad</p>', children: [] }]]) {
     const fixture = browserFixture();
+    const responses = [jsonResponse([article]), jsonResponse(comments)];
+    if (comments.length) responses.push(commentsPage());
     const result = await loadDevComments(fixture.root, {
       ...fixture,
-      fetchImpl: queuedFetch([jsonResponse([article]), jsonResponse(comments)]),
+      fetchImpl: queuedFetch(responses),
       logger: { warn: () => {} },
     });
 

@@ -100,6 +100,31 @@ async function requestJson(fetchImpl, url, label) {
   }
 }
 
+async function requestText(fetchImpl, url, label) {
+  let response;
+  try {
+    response = await fetchImpl(url, {
+      cache: 'no-cache',
+      credentials: 'omit',
+      headers: { Accept: 'text/html' },
+      method: 'GET',
+    });
+  } catch (error) {
+    throw new DevCommentsError(`${label} request failed`, { cause: error });
+  }
+
+  if (!response?.ok) {
+    const status = Number.isInteger(response?.status) ? ` (${response.status})` : '';
+    throw new DevCommentsError(`${label} request returned a non-success response${status}`);
+  }
+
+  try {
+    return await response.text();
+  } catch (error) {
+    throw new DevCommentsError(`${label} response was not valid text`, { cause: error });
+  }
+}
+
 function validateMatchedArticle(article) {
   if (!article || typeof article !== 'object') throw new DevCommentsError('matched article was malformed');
   if (!Number.isSafeInteger(article.id) || article.id <= 0) throw new DevCommentsError('matched article had an invalid ID');
@@ -148,6 +173,29 @@ export async function fetchDevComments({ articleId, baseUrl = DEV_API_BASE_URL, 
   const comments = await requestJson(fetchImpl, url, 'comment retrieval');
   if (!Array.isArray(comments)) throw new DevCommentsError('comment response was not an array');
   return comments;
+}
+
+export async function fetchVisibleDevCommentIds({ articleUrl, documentRef, fetchImpl }) {
+  const url = safeDevArticleUrl(articleUrl);
+  if (!url) throw new DevCommentsError('DEV article URL was unsafe');
+  url.hash = '';
+  url.search = '';
+  url.pathname = `${url.pathname.replace(/\/$/, '')}/comments`;
+
+  const html = await requestText(fetchImpl, url, 'comment visibility');
+  const DOMParser = documentRef?.defaultView?.DOMParser;
+  if (typeof DOMParser !== 'function') throw new DevCommentsError('comment visibility parser was unavailable');
+
+  const page = new DOMParser().parseFromString(html, 'text/html');
+  const commentTree = page.querySelector('#comment-trees-container');
+  if (!commentTree) throw new DevCommentsError('comment visibility response was malformed');
+
+  const ids = new Set();
+  for (const anchor of commentTree.querySelectorAll('a[name^="comment-"]')) {
+    const idCode = anchor.getAttribute('name')?.slice('comment-'.length);
+    if (idCode && COMMENT_ID_PATTERN.test(idCode)) ids.add(idCode);
+  }
+  return ids;
 }
 
 export function sanitizeCommentBody({ baseUrl, documentRef, html, sanitizer }) {
@@ -212,7 +260,7 @@ function commentPermalink(articleUrl, idCode) {
   return url;
 }
 
-function renderComment({ article, comment, depth, documentRef, formatter, logger, path, sanitizer }) {
+function renderComment({ article, comment, depth, documentRef, formatter, logger, path, sanitizer, visibleCommentIds }) {
   let value;
   try {
     value = validateComment(comment);
@@ -220,6 +268,7 @@ function renderComment({ article, comment, depth, documentRef, formatter, logger
     logger.warn(`[DEV comments] Skipped malformed comment at ${path}: ${error.message}`);
     return undefined;
   }
+  if (!visibleCommentIds.has(value.idCode)) return undefined;
 
   const item = documentRef.createElement('li');
   item.className = 'dev-comment';
@@ -293,6 +342,7 @@ function renderComment({ article, comment, depth, documentRef, formatter, logger
       logger,
       path: `${path}.${index + 1}`,
       sanitizer,
+      visibleCommentIds,
     });
     if (rendered) childItems.push(rendered);
   }
@@ -321,7 +371,7 @@ function reveal(root) {
   root.setAttribute('aria-labelledby', 'dev-comments-heading');
 }
 
-export function renderConversation({ article, comments, documentRef, locale, logger, root, sanitizer }) {
+export function renderConversation({ article, comments, documentRef, locale, logger, root, sanitizer, visibleCommentIds }) {
   let formatter;
   try {
     formatter = new Intl.DateTimeFormat(locale || 'en', { dateStyle: 'medium', timeStyle: 'short' });
@@ -339,6 +389,7 @@ export function renderConversation({ article, comments, documentRef, locale, log
       logger,
       path: String(index + 1),
       sanitizer,
+      visibleCommentIds,
     });
     if (rendered) items.push(rendered);
   }
@@ -397,6 +448,15 @@ export async function loadDevComments(
   }
 
   if (!comments.length) return { status: 'no-comments', article };
+  let visibleCommentIds;
+  try {
+    visibleCommentIds = await fetchVisibleDevCommentIds({ articleUrl: article.url, documentRef, fetchImpl });
+  } catch (error) {
+    logger.warn(`[DEV comments] Comment visibility check failed: ${error.message}`);
+    renderCommentFailure({ article, documentRef, root });
+    return { status: 'comment-error', article };
+  }
+
   const renderedCount = renderConversation({
     article,
     comments,
@@ -405,6 +465,7 @@ export async function loadDevComments(
     logger,
     root,
     sanitizer,
+    visibleCommentIds,
   });
   return renderedCount ? { status: 'rendered', article, renderedCount } : { status: 'no-valid-comments', article };
 }

@@ -44,7 +44,7 @@ DEV metadata validation MUST fail with a clear diagnostic when `dev_to_username`
 
 ## Runtime Data Flow
 
-The browser MUST use unauthenticated DEV API v1 requests and the `Accept: application/vnd.forem.api-v1+json` media type. It MUST NOT receive, read, or transmit `DEV_TO_API_KEY`.
+Article discovery and raw thread retrieval MUST use unauthenticated DEV API v1 requests and the `Accept: application/vnd.forem.api-v1+json` media type. The browser MUST also request the matched article's public `/comments` page without credentials and use its rendered comment anchors as DEV's current visibility decision. It MUST NOT receive, read, or transmit `DEV_TO_API_KEY`.
 
 For each eligible post page:
 
@@ -54,7 +54,9 @@ For each eligible post page:
 4. Treat multiple exact matches as an integration error rather than choosing one arbitrarily.
 5. If the unique article reports zero comments, do not request its comments and keep the section absent.
 6. Otherwise, request all comment threads using the article's numeric ID.
-7. Keep the section absent when the returned collection is empty. When it is non-empty, render every valid node recursively.
+7. Keep the section absent when the returned collection is empty. When it is non-empty, request `<article.url>/comments`, collect valid comment IDs rendered inside DEV's public comment tree, and render only valid API nodes whose IDs are present there. An absent parent comment also excludes its descendants.
+
+The visibility intersection is required because DEV's public comments API can return comments that its public interface suppresses through moderation scores not exposed by the API. The blog MUST NOT infer spam from comment text, links, author metadata, or a repository-owned allowlist or blocklist. If the public visibility page cannot be retrieved or recognized, the integration MUST fail closed and show the compact DEV article fallback instead of rendering unverified API comments.
 
 The integration MUST NOT add an application-level persistent cache. A normal page reload MUST revalidate article and comment data with DEV. HTTP caching directed by DEV or the browser is permitted.
 
@@ -88,7 +90,7 @@ Text and attribute values from the API MUST be assigned through safe DOM operati
 Failures in DEV integration MUST NOT block or alter the blog post, navigation, or Utterances.
 
 - If article discovery fails because of a network error, non-success response, malformed response, or duplicate canonical match, the DEV section MUST remain absent and a concise diagnostic MUST be written to the browser console without exposing credentials or full response bodies.
-- If a matched article is known but comment retrieval fails, the section MUST show a compact message that the DEV discussion could not be loaded and provide a link to the matched article.
+- If a matched article is known but comment retrieval or public visibility verification fails, the section MUST show a compact message that the DEV discussion could not be loaded and provide a link to the matched article.
 - If an individual comment lacks the fields required for safe rendering, that node and its descendants MUST be omitted, valid sibling threads MUST still render, and the browser console MUST identify the malformed comment without logging its body.
 - Failed profile images or optional profile metadata MUST NOT suppress an otherwise valid comment.
 
@@ -109,10 +111,11 @@ The privacy policy MUST state that eligible post pages contact DEV to retrieve p
 7. Given comment HTML containing scripts, unsafe URLs, event handlers, frames, or embedded active content, none executes or survives sanitization; safe text and formatting continue to render.
 8. Given a deeply nested conversation, desktop and mobile layouts preserve the reply relationship without horizontal page overflow.
 9. In light mode, dark mode, keyboard navigation, and print preview, the discussion remains readable and operable, and no DEV or GitHub comments appear in print.
+10. Given a comment returned by the API but absent from DEV's public comment tree, that comment and its descendants are absent from the blog without relying on a local content or author filter.
 
 ## Validation Expectations
 
-Automated tests MUST use simulated DEV responses and MUST cover eligibility, exact canonical matching, no match, duplicate matches, zero comments, recursive ordering, safe link construction, malformed nodes, request failures, and sanitization of executable content. They MUST run through the existing `npm run test:dev-to` command and MUST NOT depend on the live DEV service.
+Automated tests MUST use simulated DEV responses and MUST cover eligibility, exact canonical matching, no match, duplicate matches, zero comments, recursive ordering, DEV visibility mismatches, safe link construction, malformed nodes, request failures, and sanitization of executable content. They MUST run through the existing `npm run test:dev-to` command and MUST NOT depend on the live DEV service.
 
 Before completion, implementation validation MUST include:
 
