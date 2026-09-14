@@ -68,13 +68,14 @@ test('keeps the locally served DOMPurify module synchronized with the installed 
   assert.deepEqual(vendored, installed);
 });
 
-test('emits the DEV loader only inside the post opt-out guard and before blog comments', async () => {
+test('emits the DEV loader only for eligible posts and before blog comments', async () => {
   const [layout, devCommentsInclude, blogCommentsInclude] = await Promise.all([
     readFile('_layouts/post.html', 'utf8'),
     readFile('_includes/dev-to-comments.html', 'utf8'),
     readFile('_includes/comments.html', 'utf8'),
   ]);
-  const guardStart = layout.indexOf('{% unless page.dev_to == false %}');
+  const eligibilityGuard = '{% unless page.dev_to == false or page.draft == true or page.published == false %}';
+  const guardStart = layout.indexOf(eligibilityGuard);
   const devInclude = layout.indexOf('{% include dev-to-comments.html %}');
   const guardEnd = layout.indexOf('{% endunless %}', guardStart);
   const blogInclude = layout.indexOf('{% include comments.html %}');

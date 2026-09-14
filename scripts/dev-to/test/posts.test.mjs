@@ -49,12 +49,32 @@ test('requires four unique catalog tags on an eligible post', () => {
   assert.deepEqual(validatePost(post, catalog), []);
 });
 
-test('opts out explicitly and defers future posts', () => {
-  const post = { filePath: '_posts/2030-01-01-example.md', data: { date: '2030-01-01 10:00:00 -0300', dev_to: false } };
-  assert.deepEqual(postEligibility(post, new Date('2026-01-01T00:00:00Z')), { eligible: false, reason: 'opt-out' });
+const eligibilityDate = new Date('2026-01-01T00:00:00Z');
 
-  post.data.dev_to = true;
-  assert.deepEqual(postEligibility(post, new Date('2026-01-01T00:00:00Z')), { eligible: false, reason: 'future' });
+function eligibilityPost(overrides = {}) {
+  return {
+    filePath: '_posts/2025-01-01-example.md',
+    data: { date: '2025-01-01 10:00:00 -0300', ...overrides },
+  };
+}
+
+test('opts out a post when DEV syndication is disabled', () => {
+  assert.deepEqual(postEligibility(eligibilityPost({ dev_to: false }), eligibilityDate), { eligible: false, reason: 'opt-out' });
+});
+
+test('defers a post marked as a draft', () => {
+  assert.deepEqual(postEligibility(eligibilityPost({ draft: true }), eligibilityDate), { eligible: false, reason: 'draft' });
+});
+
+test('defers a post marked as unpublished', () => {
+  assert.deepEqual(postEligibility(eligibilityPost({ published: false }), eligibilityDate), { eligible: false, reason: 'draft' });
+});
+
+test('defers a future post', () => {
+  assert.deepEqual(postEligibility(eligibilityPost({ date: '2030-01-01 10:00:00 -0300' }), eligibilityDate), {
+    eligible: false,
+    reason: 'future',
+  });
 });
 
 test('requires a non-empty DEV username in site configuration', () => {

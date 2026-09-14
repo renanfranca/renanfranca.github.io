@@ -30,5 +30,5 @@ layout: default
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
 
-{% unless page.dev_to == false %} {% include dev-to-comments.html %} {% endunless %} {% if site.comments_repo %} {% include comments.html %}
-{% endif %}
+{% unless page.dev_to == false or page.draft == true or page.published == false %} {% include dev-to-comments.html %} {% endunless %} {% if
+site.comments_repo %} {% include comments.html %} {% endif %}
