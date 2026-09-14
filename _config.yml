@@ -9,10 +9,11 @@ gravatar_hash: 5794be838f4cf87310ec5db10d39400b
 
 # Email / Social media user names used by the minima theme:
 # All of these are optional and can be removed or commented out
-email: "renan.andradefranca@gmail.com"
+email: 'renan.andradefranca@gmail.com'
 twitter_username: renan_afranca
 github_username: renanfranca
 linkedin_username: renan-af
+dev_to_username: renanfranca
 #facebook_username: username
 #flickr_username: username
 #instagram_username: username
@@ -34,7 +35,7 @@ header_pages:
 #########################################################################################
 ######### Nothing below needs to be changed (unless you know what you're doing) #########
 #########################################################################################
-theme: "minima"
+theme: 'minima'
 
 rss: rss
 
@@ -52,7 +53,7 @@ titles_from_headings:
 
 defaults:
   - scope:
-      path: ""
+      path: ''
       type: post
     values:
       tags: Other

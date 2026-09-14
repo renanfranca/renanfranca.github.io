@@ -1,70 +1,78 @@
-# Automate DEV article syndication
+# Display public DEV conversations on blog posts
 
 ## Purpose and success
 
-Make every eligible Jekyll post publishable to the `renanfranca` DEV account without copying content or metadata. A successful implementation validates four repository-owned DEV tags, creates missing articles with the blog URL as canonical, updates matching articles after blog changes, preserves DEV-only articles and series, and remains disabled until the repository owner explicitly enables it.
+Show the current public DEV conversation for each eligible syndicated post before the existing Utterances discussion. A successful implementation discovers the DEV article by exact canonical URL, renders every valid nested comment safely in API order, reloads fresh data without a deployment, and leaves the post and Utterances usable through every DEV failure mode.
 
 ## Context and limits
 
-- `_posts` remains the content source of truth; `dev_to: false` opts a post out.
-- The integration uses the official DEV REST API and a GitHub Actions secret named `DEV_TO_API_KEY`; no credential is stored or printed.
-- Existing DEV articles are matched only by canonical URL. Deleting or opting out of a blog post never unpublishes its DEV article.
-- RSS import is outside the implementation and must be disabled manually before activation.
-- The scheduled workflow checks once per day at 23:30 in `America/Bahia` and may publish a future-dated post later than its declared time.
+- `.agent/specifications/display-dev-comments-on-blog-posts.md` is the approved behavioral contract.
+- `_config.yml` must define the single production `dev_to_username`; `dev_to: false` remains the per-post opt out.
+- The browser may issue unauthenticated DEV API v1 `GET` requests only. It must never receive `DEV_TO_API_KEY`.
+- Canonical URLs remain the identity contract. No article IDs, comments, snapshots, allowlists, browser storage, or scheduled synchronization may be introduced.
+- The new page contract passes only the canonical URL and configured username from Jekyll to a browser module through `data-*` attributes.
+- The current baseline has 24 passing DEV tests and validates 29 enabled posts, one opt out, and 1,287 tags. The repository-wide Prettier check has unrelated pre-existing failures.
 
 ## Decisions
 
-- Store the public DEV tag catalog plus the author's used tags as a stable alphabetical JSON array in `_data/dev_to_tags.json`. This makes AI-assisted tag selection inspectable and avoids an AI dependency during deployment.
-- Require exactly four `dev_to_tags` values for every eligible post. Missing metadata fails validation instead of silently selecting deployment-time tags.
-- Match articles by canonical URL rather than writing DEV IDs back into posts. Rerunning a partially successful missing-only import is therefore idempotent without bot commits.
-- Gate automatic push and schedule jobs with the `DEV_TO_SYNC_ENABLED` repository variable. Manual dry runs and the initial missing-only import remain available while the gate is off.
+- Use a package-lock-pinned DOMPurify build served from `assets/js/vendor` rather than a CDN or a custom sanitizer. This limits third-party requests and reduces XSS risk; recovery is reverting the integration and vendored artifact together.
+- Use JSDOM plus dependency injection for deterministic browser-module tests. Runtime initialization stays thin while fetch, DOM, sanitizer, and logger behavior can be simulated without the live DEV service.
+- Render sanitized comment bodies as DOM fragments and validate every link and image URL after sanitization. API text and attributes are assigned only through DOM APIs.
+- Add component styles to `css/override.css`, which post pages already load, instead of changing Tailwind sources or generated CSS.
 
 ## Milestones
 
-1. Establish tag and post contracts.
-   - Add the site URL, generated tag catalog, package commands, `AGENTS.md` authoring rules, `dev_to_tags` for the 28 real posts, and `dev_to: false` for the sponsored template.
-   - Add parsing, canonical URL, tag validation, and Markdown conversion modules with focused Node tests.
-   - Validate with `npm run test:dev-to` and `npm run dev-to:validate`; both must exit 0 for all 29 posts.
-2. Implement safe DEV synchronization.
-   - Add a paginated DEV client, account verification, rate-limit retry, create/update/missing-only behavior, dry-run output, changed-file selection, and canonical duplicate protection.
-   - Test HTTP behavior with simulated responses and validate current canonical URL derivation against the published sitemap.
-   - Validate with `npm run test:dev-to` and `npm run dev-to:dry-run`; tests must pass and dry run must report 11 creates, 17 skips, and one opt-out without writing to DEV.
-3. Wire GitHub Actions and rollout controls.
-   - Add pull-request validation, guarded push synchronization, manual modes, daily future-post handling, GitHub Pages build waiting/requesting, and concise job summaries.
-   - Run repository formatting checks and re-audit every requested behavior.
-   - Validate the new files with Prettier, validate the workflow with actionlint, build the Jekyll site, and rerun the DEV tests and metadata validation.
+1. Centralize and validate DEV account configuration.
+   - Edit `_config.yml`, `scripts/dev-to/posts.mjs`, `scripts/dev-to/cli.mjs`, and the focused post tests.
+   - Require a non-empty string `dev_to_username`, remove the synchronization hardcode, and use the validated value for account verification and public article lookup.
+   - Run `npm run test:dev-to` and `npm run dev-to:validate`; both must exit 0 and validation must retain the current post and tag counts.
+2. Implement tested browser discovery, sanitization, and rendering.
+   - Add DOMPurify, JSDOM, a reproducible `npm run build:dev-comments` command, a locally served vendor module, `assets/js/dev-to-comments.mjs`, and `scripts/dev-to/test/comments.test.mjs`.
+   - Cover eligibility, exact and duplicate canonical matches, pagination, zero comments, recursive order, safe links, malformed nodes, network failures, profile images, dates, and executable content with simulated responses.
+   - Run `npm run build:dev-comments` and `npm run test:dev-to`; the vendor copy must be current and all tests must pass without live calls.
+3. Integrate presentation, privacy, and final validation.
+   - Add `_includes/dev-to-comments.html`, update `_layouts/post.html` and `_includes/comments.html`, style the component and print behavior in `css/override.css`, and update `privacy-policy.html`.
+   - Emit no integration for `dev_to: false`; otherwise reveal DEV content only after valid comments or the specified post-match retrieval fallback.
+   - Build Jekyll, inspect enabled and opted-out output, exercise the real nested conversation on desktop and mobile in both themes and print preview, and run all repository validation commands.
 
 ## Progress
 
-- [x] Create a dedicated working branch.
-- [x] Record the implementation plan.
-- [x] Complete milestone 1: 28 enabled posts and one opt-out validate against 1,287 catalog tags; 21 focused tests pass.
-- [x] Complete milestone 2: the public-account dry run reports 11 creates, 17 existing articles plus one opt-out skipped, and no writes; all 29 canonical URLs match the published sitemap.
-- [x] Complete milestone 3: actionlint accepts the workflow, all new integration files pass Prettier, and Jekyll builds successfully in the repository's Docker image after preloading its missing `bigdecimal` runtime dependency.
-- [x] Perform the final request audit and handoff: every requested behavior is implemented, automatic writes remain gated off, and no DEV mutation occurred during validation.
+- [x] Approve the specification and map the current repository behavior.
+- [x] Confirm the test, metadata, formatting, API, and nested-comment baselines.
+- [x] Select locally served DOMPurify.
+- [x] Complete milestone 1: configuration is centralized and validated; 25 DEV tests and metadata validation pass.
+- [x] Complete milestone 2: local DOMPurify, deterministic browser behavior, and adversarial rendering tests pass in a 35-test suite.
+- [x] Complete milestone 3: Jekyll integration, presentation, privacy disclosure, real DEV rendering, responsive themes, fallback, and print behavior are validated.
+- [x] Perform the final specification audit and handoff: every approved behavior and prohibition is accounted for, with only the unrelated global Prettier baseline remaining red.
 
 ## Risks
 
-- DEV and Jekyll support different embeds and URL resolution. Conversion must leave fenced code untouched and fail on unsupported executable markup rather than publish broken content.
-- The DEV API has separate creation and update limits. Requests must honor `Retry-After`, and retries must remain idempotent through canonical matching.
-- GitHub Pages builds and the sync job can race. No DEV write may occur until the relevant Pages build succeeds and the canonical page is reachable.
-- A first implementation commit changes post metadata. The activation variable prevents that commit from publishing before credentials and import review are ready.
+- Remote HTML can attempt XSS or DOM clobbering. DOMPurify, an explicit passive allowlist, URL validation, safe DOM assignment, and adversarial tests must all remain in place.
+- DEV API shape changes and outages must not degrade the post. Discovery errors stay hidden; failures after a matched article show only the safe article fallback.
+- Deep nesting and wide formatted content can overflow narrow screens. Semantic nesting remains complete while additional visual indentation stops after two levels.
+- The vendored sanitizer can drift from its package. The test suite must compare the committed artifact with the installed distribution.
+- The global Prettier baseline is red. Changed files must pass a focused check without broad unrelated formatting edits.
+
+## Documentation
+
+`privacy-policy.html` is the public canonical disclosure. It must name DEV requests and DEV-hosted profile images, the possible exposure of IP address and user agent, DEV's privacy page, and the new last-updated date. No new authoring metadata or publishing guide is needed.
 
 ## Rollout and recovery
 
-1. Merge with `DEV_TO_SYNC_ENABLED` absent or set to `false`.
-2. Generate a DEV API key, store it as `DEV_TO_API_KEY`, and verify RSS publishing is disabled.
-3. Run the workflow manually in dry-run mode, then in `missing-only` mode.
-4. Verify a sample of the 11 new articles and set `DEV_TO_SYNC_ENABLED=true`.
-5. If the import fails partway, rerun `missing-only`; canonical matching skips successful articles. Disable the variable to stop later automatic writes.
+- Deploy as a normal static-site change with no migration, secret, workflow activation, or data recovery step.
+- Verify `when-skill-evolution-means-removing-instructions.html`, which currently has 17 DEV comments and nested replies, after deployment.
+- DEV outages are expected to fail in isolation. For a visual or security regression, revert the integration commit and republish; no local comment data exists to recover.
 
 ## Validation
 
-- `npm run test:dev-to`: 24 focused unit and integration-style tests pass.
-- `npm run dev-to:validate`: 28 eligible posts and one opt-out validate against 1,287 catalog tags.
-- `npm run dev-to:dry-run`: performs reads only and reports 11 creates, no updates, and 18 skips while displaying tags for each decision.
-- A live comparison confirms that all 29 canonical URLs occur in the published sitemap and that all 17 existing blog-backed DEV articles retain their current DEV tags.
-- The new workflow, scripts, tests, catalog, and documentation pass a focused Prettier check; actionlint v1.7.12 accepts the workflow.
-- The repository-wide `npm run prettier:check` remains red because of existing formatting warnings and Liquid/HTML parse errors in files outside this implementation.
-- Jekyll 4.4.1 builds successfully in Docker after preloading `bigdecimal`; the current container bundle omits that Ruby runtime dependency when invoked without the preload.
-- Final manual workflow validation is intentionally deferred until the owner configures `DEV_TO_API_KEY`; implementation must not publish during local validation.
+- Milestone 1: `npm run test:dev-to` passed 25 tests, `npm run dev-to:validate` reported 29 enabled posts, one opt out, and 1,287 tags, and the four changed configuration files passed a focused Prettier check.
+- Milestone 2: `npm run build:dev-comments` refreshed the pinned DOMPurify module, `npm run test:dev-to` passed 35 tests, metadata validation remained green, and the new package, copier, browser module, and tests passed focused formatting.
+- Milestone 3: the suite passed 39 tests after security and failed-image hardening; Jekyll built successfully with the image's required `bigdecimal` preload; an eligible page rendered 18 live comments in seven reply groups while the opt-out and zero-comment pages emitted no DEV conversation.
+- `npm run build:dev-comments`: exited 0 and the test suite confirmed the local DOMPurify module exactly matches the pinned package.
+- `npm run test:dev-to`: passed 39 deterministic tests without the live DEV service.
+- `npm run dev-to:validate`: exited 0 with 29 enabled posts, one opt out, and 1,287 tags.
+- Focused `npx prettier --check` for every changed source and content file: exited 0; the vendor artifact and lockfile are intentionally ignored.
+- `npm run prettier:check`: exited 2 with the same unrelated repository baseline, including the five known Liquid/HTML parser errors; no changed file appears in its warnings or errors.
+- `docker compose run --rm jekyll ruby -rbigdecimal -S bundle exec jekyll build`: exited 0. The platform line Bundler adds locally was removed from `Gemfile.lock` afterward.
+- Generated HTML contains the loader only for eligible posts and orders the rendered DEV section before `Comments on this blog` and the Utterances iframe. The opted-out post contains no DEV loader.
+- Headless Chrome rendered 18 current comments in seven nested lists on the real post. Desktop and 390 px mobile checks showed no horizontal overflow; light and dark screenshots were readable; print hid both discussions; reload issued fresh article and comment requests; a real zero-comment post stayed hidden; and a blocked comment request showed the safe DEV fallback while preserving the page.

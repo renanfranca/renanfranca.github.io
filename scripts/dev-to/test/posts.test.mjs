@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { canonicalUrlForPost, parseDocument, postEligibility, validatePost } from '../posts.mjs';
+import { canonicalUrlForPost, devToUsername, parseDocument, postEligibility, validatePost } from '../posts.mjs';
 
 const siteConfig = { url: 'https://renanfranca.github.io' };
 
@@ -49,10 +49,37 @@ test('requires four unique catalog tags on an eligible post', () => {
   assert.deepEqual(validatePost(post, catalog), []);
 });
 
-test('opts out explicitly and defers future posts', () => {
-  const post = { filePath: '_posts/2030-01-01-example.md', data: { date: '2030-01-01 10:00:00 -0300', dev_to: false } };
-  assert.deepEqual(postEligibility(post, new Date('2026-01-01T00:00:00Z')), { eligible: false, reason: 'opt-out' });
+const eligibilityDate = new Date('2026-01-01T00:00:00Z');
 
-  post.data.dev_to = true;
-  assert.deepEqual(postEligibility(post, new Date('2026-01-01T00:00:00Z')), { eligible: false, reason: 'future' });
+function eligibilityPost(overrides = {}) {
+  return {
+    filePath: '_posts/2025-01-01-example.md',
+    data: { date: '2025-01-01 10:00:00 -0300', ...overrides },
+  };
+}
+
+test('opts out a post when DEV syndication is disabled', () => {
+  assert.deepEqual(postEligibility(eligibilityPost({ dev_to: false }), eligibilityDate), { eligible: false, reason: 'opt-out' });
+});
+
+test('defers a post marked as a draft', () => {
+  assert.deepEqual(postEligibility(eligibilityPost({ draft: true }), eligibilityDate), { eligible: false, reason: 'draft' });
+});
+
+test('defers a post marked as unpublished', () => {
+  assert.deepEqual(postEligibility(eligibilityPost({ published: false }), eligibilityDate), { eligible: false, reason: 'draft' });
+});
+
+test('defers a future post', () => {
+  assert.deepEqual(postEligibility(eligibilityPost({ date: '2030-01-01 10:00:00 -0300' }), eligibilityDate), {
+    eligible: false,
+    reason: 'future',
+  });
+});
+
+test('requires a non-empty DEV username in site configuration', () => {
+  assert.equal(devToUsername({ dev_to_username: ' renanfranca ' }), 'renanfranca');
+  assert.throws(() => devToUsername({}), /dev_to_username is required/);
+  assert.throws(() => devToUsername({ dev_to_username: 42 }), /dev_to_username must be a string/);
+  assert.throws(() => devToUsername({ dev_to_username: '   ' }), /dev_to_username must not be blank/);
 });

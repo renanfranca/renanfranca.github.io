@@ -301,3 +301,171 @@ figcaption {
   font-size: 14px;
   font-style: italic;
 }
+
+/* DEV and GitHub discussions */
+.dev-comments,
+.blog-comments {
+  margin-top: 3rem;
+}
+
+.dev-comments[hidden] {
+  display: none !important;
+}
+
+.dev-comment-list,
+.dev-comment-children {
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.dev-comment-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0 !important;
+}
+
+.dev-comment-children {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0.75rem 0 0 1.5rem !important;
+  padding-left: 0.75rem !important;
+  border-left: 2px solid #d1d5db;
+}
+
+.dev-comment-children-deep {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  border-left: 0;
+}
+
+.dev-comment-card {
+  padding: 1rem;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+}
+
+.dev-comment-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.dev-comment-avatar-link {
+  flex: 0 0 auto;
+}
+
+.dev-comment-avatar {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: 0;
+  object-fit: cover;
+  border-radius: 9999px;
+}
+
+.dev-comment-metadata {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.dev-comment-author {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.dev-comment-time-link {
+  width: fit-content;
+  color: #6b7280 !important;
+  font-size: 0.875rem;
+}
+
+.dev-comment-body {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.dev-comment-body > :last-child {
+  margin-bottom: 0 !important;
+}
+
+.dev-comment-body pre,
+.dev-comment-body table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.dev-comment-body img {
+  max-width: 100%;
+  height: auto;
+}
+
+.dev-comment-body h1,
+.dev-comment-body h2,
+.dev-comment-body h3,
+.dev-comment-body h4,
+.dev-comment-body h5,
+.dev-comment-body h6 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.dev-comments-action,
+.dev-comments-fallback {
+  margin-top: 1rem;
+}
+
+.dev-comments a:focus-visible,
+.blog-comments a:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+
+.dark .dev-comment-card {
+  background: #111827;
+  border-color: #374151;
+}
+
+.dark .dev-comment-children {
+  border-color: #4b5563;
+}
+
+.dark .dev-comment-time-link {
+  color: #9ca3af !important;
+}
+
+.dark .dev-comments a:focus-visible,
+.dark .blog-comments a:focus-visible {
+  outline-color: #60a5fa;
+}
+
+@media (max-width: 600px) {
+  .dev-comment-card {
+    padding: 0.75rem;
+  }
+
+  .dev-comment-children {
+    margin-left: 0.75rem !important;
+    padding-left: 0.5rem !important;
+  }
+
+  .dev-comment-children-deep {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .dev-comment-avatar {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
