@@ -9,9 +9,11 @@ dev_to_tags:
   - devops
   - opensource
   - npm
-image: img/postbanners/2026-09-12-cover-how-seed4j-validates-compatibility.png
+image: img/postbanners/2026-09-18-cover-following-seed4js-main-branch-with-seed4j-cli-experimental.png
 permalink: /:categories/:title:output_ext
 ---
+
+![Seed4J connected to technology modules beneath a terminal showing the experimental CLI installation command](/img/postbanners/2026-09-18-cover-following-seed4js-main-branch-with-seed4j-cli-experimental.png)
 
 As I mentioned in [another post](https://renanfranca.github.io/how-seed4j-validates-compatibility.html), one of the biggest advantages of Seed4J is that it keeps the dependencies used in generated projects up to date, such as PostgreSQL, MySQL, Maven, Angular, Vue, and so on. This is very important because whenever a version is updated, Seed4J also runs several tests to make sure the tested configurations remain compatible. That way, developers only need to worry about choosing the modules they need and implementing the business logic.
 
