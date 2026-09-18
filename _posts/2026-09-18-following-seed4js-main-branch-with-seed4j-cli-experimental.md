@@ -33,7 +33,7 @@ And this is not simply a GitHub Actions workflow that takes `main`, packages it,
 
 First, the [snapshot publisher](https://github.com/renanfranca/seed4j-main-snapshots#publication-contract) selects the current commit of Seed4J's `main` branch, requires its upstream CI to have passed, and checks whether its snapshot is eligible for publication. A snapshot already published less than 60 days ago is skipped; after that, the same revision can become eligible for a retention refresh.
 
-If it is eligible, the publisher builds that exact revision, runs lint checks and a complete Maven `clean verify`, and publishes the validated snapshot to Maven Central's snapshot repository. Renovate then proposes that snapshot as a dependency update on Seed4J CLI's `experimental` branch, where the CLI build and tests check the integration.
+If it is eligible, the publisher builds that exact revision, runs lint checks and a complete Maven `clean verify`, and publishes the validated snapshot to [Sonatype's Central Portal snapshot repository](https://central.sonatype.org/publish/publish-portal-snapshots/). Sonatype provides the repository service; Apache Maven is the build tool used to verify and publish the artifacts. Renovate then proposes that snapshot as a dependency update on Seed4J CLI's `experimental` branch, where the CLI build and tests check the integration.
 
 Only after the required tests pass and the exact experimental revision is qualified does the [Seed4J CLI publishing flow](https://github.com/seed4j/seed4j-cli/blob/b5abaff24fb1a703bbd573341e7a932913c0961a/documentation/experimental-channel.md#build-release-and-branch-isolation) evaluate a new npm release. And that publishing process itself is also extremely sophisticated: it verifies the build evidence and publishes eligible versions with provenance under the `experimental` tag. If the commits do not qualify for a release, no new npm version is published.
 
@@ -47,6 +47,28 @@ seed4j --version
 ```
 
 The version output identifies the experimental channel, the snapshot version, and the exact Seed4J upstream commit used. It gives you a concrete revision to include when reporting an issue.
+
+Here is the actual output from both channels, captured on September 18, 2026 using isolated temporary installations. The npm tags can point to newer versions over time.
+
+**Stable (`seed4j-cli@latest`):**
+
+```text
+Seed4J CLI v0.1.1
+Seed4J version: 2.2.0
+Runtime mode: standard
+```
+
+**Experimental (`seed4j-cli@experimental`):**
+
+```text
+Seed4J CLI v0.2.0-experimental.3
+Release channel: experimental
+Seed4J version: 2.2.1-main.20260907.055800.4eebd07bce14-SNAPSHOT
+Seed4J upstream commit: 4eebd07bce14c9a6ac70bace157fcc616133e950
+Runtime mode: standard
+```
+
+The experimental output makes the source revision explicit: this package uses Seed4J built from [commit `4eebd07bce14`](https://github.com/seed4j/seed4j/commit/4eebd07bce14c9a6ac70bace157fcc616133e950), while the stable package uses Seed4J 2.2.0.
 
 To return to the stable channel:
 
