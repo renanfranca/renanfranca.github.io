@@ -16,6 +16,8 @@ image: img/postbanners/2026-10-10-cover-revisiting-sifuture-with-kof.png
 permalink: /:categories/:title:output_ext
 ---
 
+![SiFuture running in the browser with the spaceship, meteors, and game indicators](/img/postbanners/2026-10-10-cover-revisiting-sifuture-with-kof.png)
+
 In 2006, I started developing [SiFuture](https://github.com/renanfranca/sifuture/blob/6f59817aef0f8aaf56bf7d8854d20c26e84bfc4f/README.md), a space shooter game for mobile phones using [Java ME (J2ME)](https://www.oracle.com/java/technologies/javaformobiledevicesgetstarted.html). At the time, I was studying Computer Science and had just started learning how to program. To build the game, I learned Java directly from Sun&#39;s official documentation. It was my only source for learning the language.
 
 It was in that documentation that I discovered Java&#39;s famous promise: &#34;[Write once, run anywhere.](https://blogs.oracle.com/java/our-world-moved-by-java)&#34;
