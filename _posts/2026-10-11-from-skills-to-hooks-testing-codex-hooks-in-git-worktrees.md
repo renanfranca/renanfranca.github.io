@@ -13,7 +13,9 @@ image: img/postbanners/2026-10-11-cover-from-skills-to-hooks-testing-codex-hooks
 permalink: /:categories/:title:output_ext
 ---
 
-I've set myself a new challenge: instead of using GPT-6.1 Medium for implementation, I'm now going to use GPT-6 Luna XHigh.
+![Abstract branch diagram illustrating Codex hooks across Git worktrees](/img/postbanners/2026-10-11-cover-from-skills-to-hooks-testing-codex-hooks-in-git-worktrees.svg)
+
+I've set myself a new challenge: instead of using GPT-6.1 Medium for implementation, I'm now going to use GPT-6 Luna xhigh.
 
 My goal is to accomplish everything I already do during the implementation phase, but with a model whose capabilities are closer to those of a model that could run locally. If I succeed, this could open the door to eventually migrating to a local model.
 
