@@ -9,11 +9,11 @@ dev_to_tags:
   - agents
   - tooling
   - git
-image: img/postbanners/2026-10-11-cover-from-skills-to-hooks-testing-codex-hooks-in-git-worktrees.svg
+image: img/postbanners/2026-10-11-cover-from-skills-to-hooks-testing-codex-hooks-in-git-worktrees.png
 permalink: /:categories/:title:output_ext
 ---
 
-![Abstract branch diagram illustrating Codex hooks across Git worktrees](/img/postbanners/2026-10-11-cover-from-skills-to-hooks-testing-codex-hooks-in-git-worktrees.svg)
+![Abstract branch diagram illustrating Codex hooks across Git worktrees](/img/postbanners/2026-10-11-cover-from-skills-to-hooks-testing-codex-hooks-in-git-worktrees.png)
 
 I've set myself a new challenge: instead of using GPT-6.1 Medium for implementation, I'm now going to use GPT-6 Luna xhigh.
 
