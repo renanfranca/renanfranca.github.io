@@ -1,0 +1,330 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  .enpj-page {
+    --paper: #eee9de;
+    --night: #080b12;
+    --warm: #df785c;
+    position: relative;
+    isolation: isolate;
+    max-width: 100%;
+    margin: 0;
+    background: var(--night);
+    color: var(--paper);
+    font:
+      16px/1.5 Arial,
+      Helvetica,
+      sans-serif;
+    overflow: hidden;
+  }
+  .enpj-page * {
+    box-sizing: border-box;
+  }
+  .enpj-page .enpj-banner {
+    position: relative;
+    min-height: clamp(310px, 32vw, 430px);
+    overflow: hidden;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    padding: clamp(26px, 5vw, 70px);
+    background: #10131b;
+  }
+  .enpj-page .enpj-banner:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      #080b12 0%,
+      #080b12 17%,
+      rgba(8, 11, 18, 0.95) 30%,
+      rgba(8, 11, 18, 0.4) 62%,
+      rgba(8, 11, 18, 0.06) 100%
+    );
+  }
+  .enpj-page .enpj-banner:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    opacity: 0.11;
+    background: repeating-linear-gradient(0deg, transparent 0 3px, #b4a18d 4px, transparent 5px 9px);
+  }
+  .enpj-page .enpj-mural {
+    position: absolute;
+    z-index: 1;
+    top: -22px;
+    right: -10%;
+    bottom: -22px;
+    left: 26%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    transform: rotate(-5deg) scale(1.06);
+    overflow: hidden;
+  }
+  .enpj-page .enpj-lane {
+    display: flex;
+    width: max-content;
+    animation: enpj-drift 135s linear infinite;
+    will-change: transform;
+  }
+  .enpj-page .enpj-lane:nth-child(2) {
+    animation-duration: 160s;
+    animation-direction: reverse;
+    transform: translateX(-38%);
+  }
+  .enpj-page .enpj-sequence {
+    display: flex;
+    gap: 12px;
+    padding-right: 12px;
+    flex: none;
+  }
+  .enpj-page .enpj-sequence img {
+    width: clamp(145px, 16.2vw, 234px);
+    height: clamp(145px, 16.2vw, 234px);
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: #282833;
+    box-shadow: 0 3px 14px #0008;
+  }
+  .enpj-page .enpj-wordmark {
+    position: relative;
+    z-index: 4;
+    max-width: 820px;
+    pointer-events: none;
+    text-shadow: 0 3px 25px #050507aa;
+  }
+  .enpj-page .enpj-overline {
+    margin: 0 0 18px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font:
+      700 clamp(10px, 1.1vw, 13px) / 1.5 'Courier New',
+      monospace;
+    color: #f1b6a2;
+  }
+  .enpj-page h1 {
+    margin: 0;
+    font:
+      900 clamp(73px, 11.8vw, 180px) / 0.75 Impact,
+      'Arial Black',
+      Arial,
+      sans-serif;
+    letter-spacing: -0.045em;
+    text-transform: uppercase;
+  }
+  .enpj-page h1 span {
+    display: block;
+  }
+  .enpj-page h1 span:last-child {
+    color: #e0d5c9;
+  }
+  .enpj-page .enpj-tagline {
+    display: inline-block;
+    margin: 24px 0 0;
+    padding: 8px 0 0;
+    border-top: 2px solid var(--warm);
+    font:
+      700 clamp(10px, 1.15vw, 14px) / 1.55 'Courier New',
+      monospace;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+  .enpj-page .enpj-stamp {
+    position: absolute;
+    z-index: 4;
+    right: clamp(18px, 4vw, 55px);
+    bottom: 18px;
+    color: #eee9de;
+    text-align: right;
+    font:
+      700 11px/1.5 'Courier New',
+      monospace;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 9px #050509;
+  }
+  .enpj-page .enpj-stamp b {
+    display: block;
+    color: #ffb093;
+    font-size: 14px;
+  }
+  .enpj-page .enpj-art {
+    padding: 9px clamp(15px, 3vw, 45px) 13px;
+    background: #11141c;
+    border-top: 1px solid #5c4b47;
+    font:
+      11px/1.6 'Courier New',
+      monospace;
+    color: #d7d0c6;
+  }
+  .enpj-page .enpj-art strong {
+    color: #fff2dd;
+  }
+  .enpj-page .enpj-palette {
+    display: inline-flex;
+    vertical-align: middle;
+    gap: 3px;
+    margin: 0 8px;
+  }
+  .enpj-page .enpj-palette i {
+    display: inline-block;
+    width: 13px;
+    height: 9px;
+    border: 1px solid #ffffff55;
+    background: var(--c);
+  }
+  .enpj-page details {
+    margin-top: 4px;
+  }
+  .enpj-page summary {
+    width: max-content;
+    max-width: 100%;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .enpj-page summary:focus-visible {
+    outline: 2px solid #fbb99b;
+    outline-offset: 3px;
+  }
+  .enpj-page .enpj-art p {
+    margin: 6px 0;
+  }
+  @keyframes enpj-drift {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @media (max-width: 680px) {
+    .enpj-page .enpj-banner {
+      min-height: 330px;
+      padding: 25px;
+    }
+    .enpj-page .enpj-mural {
+      left: -15%;
+      right: -100%;
+      top: -10%;
+      bottom: -10%;
+      opacity: 0.68;
+      transform: rotate(-8deg) scale(1.05);
+    }
+    .enpj-page .enpj-banner:before {
+      background: linear-gradient(90deg, #080b12e8, #080b12ac 58%, #080b1266);
+    }
+    .enpj-page h1 {
+      font-size: clamp(76px, 18vw, 130px);
+    }
+    .enpj-page .enpj-overline {
+      margin-bottom: 18px;
+    }
+    .enpj-page .enpj-stamp {
+      right: 20px;
+      bottom: 15px;
+      font-size: 10px;
+    }
+    .enpj-page .enpj-tagline {
+      font-size: 11px;
+    }
+    .enpj-page .enpj-sequence img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .enpj-page .enpj-lane {
+      animation: none !important;
+      transform: none !important;
+    }
+  }
+</style>
+<main class="enpj-page">
+  <article class="enpj-banner" aria-label="Capa da comunidade Pearl Jam, com as capas dos 12 álbuns de estúdio em movimento lento">
+    <div class="enpj-mural" aria-hidden="true">
+      <div class="enpj-lane">
+        <div class="enpj-sequence">
+          <img src="https://renanfranca.github.io/enois/pearl-jam/1991-ten.png" alt="" /><img
+            src="https://renanfranca.github.io/enois/pearl-jam/1993-vs.webp"
+            alt=""
+          /><img src="https://renanfranca.github.io/enois/pearl-jam/1994-vitalogy.jpg" alt="" /><img
+            src="https://renanfranca.github.io/enois/pearl-jam/1996-no-code.jpg"
+            alt=""
+          /><img src="https://renanfranca.github.io/enois/pearl-jam/1998-yield.jpg" alt="" /><img
+            src="https://renanfranca.github.io/enois/pearl-jam/2000-binaural.jpg"
+            alt=""
+          />
+        </div>
+        <div class="enpj-sequence" aria-hidden="true">
+          <img src="https://renanfranca.github.io/enois/pearl-jam/1991-ten.png" alt="" /><img
+            src="https://renanfranca.github.io/enois/pearl-jam/1993-vs.webp"
+            alt=""
+          /><img src="https://renanfranca.github.io/enois/pearl-jam/1994-vitalogy.jpg" alt="" /><img
+            src="https://renanfranca.github.io/enois/pearl-jam/1996-no-code.jpg"
+            alt=""
+          /><img src="https://renanfranca.github.io/enois/pearl-jam/1998-yield.jpg" alt="" /><img
+            src="https://renanfranca.github.io/enois/pearl-jam/2000-binaural.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="enpj-lane">
+        <div class="enpj-sequence">
+          <img src="https://renanfranca.github.io/enois/pearl-jam/2002-riot-act.jpg" alt="" /><img
+            src="https://renanfranca.github.io/enois/pearl-jam/2006-pearl-jam.jpg"
+            alt=""
+          /><img src="https://renanfranca.github.io/enois/pearl-jam/2009-backspacer.jpg" alt="" /><img
+            src="https://renanfranca.github.io/enois/pearl-jam/2013-lightning-bolt.jpg"
+            alt=""
+          /><img src="https://renanfranca.github.io/enois/pearl-jam/2020-gigaton.jpg" alt="" /><img
+            src="https://renanfranca.github.io/enois/pearl-jam/2024-dark-matter.jpg"
+            alt=""
+          />
+        </div>
+        <div class="enpj-sequence" aria-hidden="true">
+          <img src="https://renanfranca.github.io/enois/pearl-jam/2002-riot-act.jpg" alt="" /><img
+            src="https://renanfranca.github.io/enois/pearl-jam/2006-pearl-jam.jpg"
+            alt=""
+          /><img src="https://renanfranca.github.io/enois/pearl-jam/2009-backspacer.jpg" alt="" /><img
+            src="https://renanfranca.github.io/enois/pearl-jam/2013-lightning-bolt.jpg"
+            alt=""
+          /><img src="https://renanfranca.github.io/enois/pearl-jam/2020-gigaton.jpg" alt="" /><img
+            src="https://renanfranca.github.io/enois/pearl-jam/2024-dark-matter.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <header class="enpj-wordmark">
+      <p class="enpj-overline">Comunidade de fãs • Énóis</p>
+      <h1><span>Pearl</span><span>Jam</span></h1>
+      <p class="enpj-tagline">Música. Memória. Gente.<br />De Seattle para todo lugar.</p>
+    </header>
+    <div class="enpj-stamp">12 álbuns de estúdio<b>1991 ↗ 2024</b></div>
+  </article>
+  <footer class="enpj-art">
+    <strong>A arte por trás desta capa</strong> · No Code (1996), Binaural (2000) e Dark Matter (2024). Um mural de discos em movimento
+    quase imperceptível.<span class="enpj-palette" aria-label="Cores do projeto"
+      ><i style="--c: #080b12"></i><i style="--c: #eee9de"></i><i style="--c: #df785c"></i
+    ></span>
+    <details>
+      <summary>Ver escolhas de direção de arte</summary>
+      <p>
+        No Code inspira o mosaico; Binaural, a profundidade escura; Dark Matter, o contraste entre luz e sombra. Cores: noite #080B12
+        (fundo), osso #EEE9DE (texto) e coral queimado #DF785C (acento). Impact marca o título, Arial sustenta a estrutura e Courier New
+        marca os detalhes editoriais. Faixas inclinadas lembram encartes e cartazes serigráficos. Composição independente, não oficial. As
+        capas dos discos pertencem aos seus respectivos titulares.
+      </p>
+    </details>
+  </footer>
+</main>
