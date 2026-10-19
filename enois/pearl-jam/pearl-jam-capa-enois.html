@@ -242,6 +242,30 @@
       height: 150px;
     }
   }
+  @media (max-height: 240px) {
+    html,
+    body {
+      margin: 0;
+    }
+    .enpj-page {
+      height: 100vh;
+    }
+    .enpj-page .enpj-banner {
+      min-height: 0;
+      height: 100%;
+      padding: min(8vh, 18px) clamp(16px, 4vw, 48px);
+    }
+    .enpj-page h1 {
+      font-size: min(18vw, 42vh, 92px);
+      line-height: 0.9;
+    }
+    .enpj-page .enpj-overline,
+    .enpj-page .enpj-tagline,
+    .enpj-page .enpj-stamp,
+    .enpj-page .enpj-art {
+      display: none;
+    }
+  }
   @media (prefers-reduced-motion: reduce) {
     .enpj-page .enpj-lane {
       animation: none !important;
