@@ -19,7 +19,7 @@ I've set myself a new challenge: instead of using GPT-6.1 Medium for implementat
 
 My goal is to accomplish everything I already do during the implementation phase, but with a model whose capabilities are closer to those of a model that could run locally. If I succeed, this could open the door to eventually migrating to a local model.
 
-To make this possible, I realized that Luna wouldn't be able to follow all the instructions in my skills. So I decided to replace skills with hooks wherever possible.
+To make this possible, I started looking at hooks as a complement to skills. A skill can explain a workflow and guide judgment, while a hook can trigger a repeatable check at a defined point in Codex's lifecycle. The goal was not to replace skills wholesale, but to find out which checks hooks could run reliably.
 
 However, I ran into a problem with hooks in ChatGPT Desktop. There's a bug that prevents them from working.
 
@@ -27,7 +27,34 @@ That's why I switched to Codex CLI. While working on my project, I decided to te
 
 And what did I discover? Hooks behave differently when working with Git Worktrees.
 
-I ran several tests to better understand this behavior, and now I'm going to share a report with my findings.
+I ran several tests to better understand this behavior. Before the report, it helps to explain what a hook does and where it fits in an agent workflow.
+
+## Hooks and sensors
+
+A hook is a trigger attached to an event in Codex's lifecycle. When that event occurs, the hook can start a command or call a connected MCP tool. The sensor is the check or process that gets triggered: for example, a static analysis command that reports structural problems. The hook decides _when_ a check runs; the sensor decides _what_ it examines.
+
+The [Codex hooks documentation](https://learn.chatgpt.com/docs/hooks) lists these events and the conditions under which they run. The table groups them by when they happen. `Stop` runs when the agent finishes a turn, while `SessionEnd` runs when the main thread's session ends. They mark different boundaries.
+
+| Lifecycle group       | Event                            | When it runs                                                                                                                                       |
+| --------------------- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Session start and end | `SessionStart`                   | When a session starts, resumes, is cleared, is compacted, or is forked.                                                                            |
+| Session start and end | `SessionEnd`                     | When the main thread's session ends, such as when Codex closes normally or the conversation is archived or deleted. It does not run for subagents. |
+| During a turn         | `UserPromptSubmit`               | When the user submits a prompt.                                                                                                                    |
+| During a turn         | `PreToolUse`                     | Before a supported tool runs; it can inspect, block, or rewrite a call.                                                                            |
+| During a turn         | `PermissionRequest`              | When Codex is about to ask the user to approve a tool action.                                                                                      |
+| During a turn         | `PostToolUse`                    | After a supported tool call completes, including supported file edits such as `apply_patch`.                                                       |
+| During a turn         | `PreCompact` / `PostCompact`     | Immediately before or after Codex compacts the conversation.                                                                                       |
+| During a turn         | `Stop`                           | When the agent finishes a turn. A hook can request a continuation; this does not end the session.                                                  |
+| Interruption          | `Interrupt`                      | When the user interrupts an active turn on the main thread. It does not run for idle threads or subagents.                                         |
+| Subagents             | `SubagentStart` / `SubagentStop` | When a subagent starts or finishes, respectively.                                                                                                  |
+
+An event is a useful place to run a sensor, but it is not itself the check. That distinction makes it possible to choose a fast check after an edit and reserve slower work for a later boundary.
+
+## A practical flow
+
+Consider a generic layered workflow. After a supported editing tool completes, a hook can trigger a change detector. The detector identifies the changed files and runs a deterministic static check of structural complexity. At `Stop`, a hook advances to mutation testing only if those faster checks passed. If the result indicates that a design review is due, the hook can request a continuation prompt asking the model to perform a separate design review. The model performs the review; it is not a skill or code executed by the hook.
+
+This is a conceptual example of how hooks can coordinate sensors, not a configuration recipe. It also clarifies the question behind my experiment: before deciding which checks to delegate to hooks, I needed to learn which checkout supplies the hook definition when the session runs in a worktree.
 
 ## What I tested
 
