@@ -19,7 +19,7 @@ I've set myself a new challenge: instead of using GPT-6.1 Medium for implementat
 
 My goal is to accomplish everything I already do during the implementation phase, but with a model whose capabilities are closer to those of a model that could run locally. If I succeed, this could open the door to eventually migrating to a local model.
 
-To make this possible, I started looking for ways to move some checks from my skills into hooks. Hooks cannot replace skills wholesale: a skill can explain a workflow and guide judgment, while a hook is better suited to triggering a repeatable action at a defined point in Codex's lifecycle.
+To make this possible, I started looking at hooks as a complement to skills. A skill can explain a workflow and guide judgment, while a hook can trigger a repeatable check at a defined point in Codex's lifecycle. The goal was not to replace skills wholesale, but to find out which checks hooks could run reliably.
 
 However, I ran into a problem with hooks in ChatGPT Desktop. There's a bug that prevents them from working.
 
@@ -31,29 +31,28 @@ I ran several tests to better understand this behavior. Before the report, it he
 
 ## Hooks and sensors
 
-A hook is a trigger attached to an event in Codex's lifecycle. When that event occurs, the hook can start a command or call a connected MCP tool. The check that the hook starts is the sensor: for example, a static analysis command that reports structural problems. The hook decides _when_ a check runs; the sensor decides _what_ it examines.
+A hook is a trigger attached to an event in Codex's lifecycle. When that event occurs, the hook can start a command or call a connected MCP tool. The sensor is the check or process that gets triggered: for example, a static analysis command that reports structural problems. The hook decides _when_ a check runs; the sensor decides _what_ it examines.
 
-Codex documents these events and the conditions under which they run. The table groups the current events by when they happen. [`Stop`](https://learn.chatgpt.com/docs/hooks) runs when the agent finishes a turn, while `SessionEnd` runs when the main session actually ends; closing a response does not itself mean the session has ended.
+The [Codex hooks documentation](https://learn.chatgpt.com/docs/hooks) lists these events and the conditions under which they run. The table groups them by when they happen. `Stop` runs when the agent finishes a turn, while `SessionEnd` runs when the main thread's session ends. They mark different boundaries.
 
-| Lifecycle group       | Event                        | When it runs                                                                                                                                       |
-| --------------------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Session start and end | `SessionStart`               | When a session starts, resumes, clears, compacts, or forks.                                                                                        |
-| Session start and end | `SessionEnd`                 | When the main thread's session ends, such as when Codex closes normally or the conversation is archived or deleted. It does not run for subagents. |
-| During a turn         | `UserPromptSubmit`           | When a user submits a prompt.                                                                                                                      |
-| During a turn         | `PreToolUse`                 | Before a supported tool runs; it can inspect, block, or rewrite a call.                                                                            |
-| During a turn         | `PermissionRequest`          | When Codex is about to ask the user to approve a tool action.                                                                                      |
-| During a turn         | `PostToolUse`                | After a supported tool produces output. This includes edits made through tools such as `apply_patch`; there is no `AfterFileEdit` event.           |
-| During a turn         | `PreCompact` / `PostCompact` | Immediately before or after Codex compacts the conversation.                                                                                       |
-| During a turn         | `Stop`                       | When the agent finishes its turn. It is a turn boundary, not the end of the session.                                                               |
-| During a turn         | `SubagentStop`               | When a subagent finishes.                                                                                                                          |
-| Interruption          | `Interrupt`                  | When an active turn is interrupted. It does not run for subagents.                                                                                 |
-| Subagents             | `SubagentStart`              | When a subagent starts.                                                                                                                            |
+| Lifecycle group       | Event                            | When it runs                                                                                                                                       |
+| --------------------- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Session start and end | `SessionStart`                   | When a session starts, resumes, is cleared, is compacted, or is forked.                                                                            |
+| Session start and end | `SessionEnd`                     | When the main thread's session ends, such as when Codex closes normally or the conversation is archived or deleted. It does not run for subagents. |
+| During a turn         | `UserPromptSubmit`               | When the user submits a prompt.                                                                                                                    |
+| During a turn         | `PreToolUse`                     | Before a supported tool runs; it can inspect, block, or rewrite a call.                                                                            |
+| During a turn         | `PermissionRequest`              | When Codex is about to ask the user to approve a tool action.                                                                                      |
+| During a turn         | `PostToolUse`                    | After a supported tool call completes, including supported file edits such as `apply_patch`.                                                       |
+| During a turn         | `PreCompact` / `PostCompact`     | Immediately before or after Codex compacts the conversation.                                                                                       |
+| During a turn         | `Stop`                           | When the agent finishes a turn. A hook can request a continuation; this does not end the session.                                                  |
+| Interruption          | `Interrupt`                      | When the user interrupts an active turn on the main thread. It does not run for idle threads or subagents.                                         |
+| Subagents             | `SubagentStart` / `SubagentStop` | When a subagent starts or finishes, respectively.                                                                                                  |
 
 An event is a useful place to run a sensor, but it is not itself the check. That distinction makes it possible to choose a fast check after an edit and reserve slower work for a later boundary.
 
-## A practical flow: Katacombs
+## A practical flow
 
-The [Katacombs quality-sensors example](https://sdiamante13.github.io/katacombs-kata-ts/references.html) shows how these triggers can form a layered workflow. At `SessionStart`, a hook records a baseline. After a tool call, a watcher detects changed files and runs quick structural checks. At `Stop`, more expensive checks, including mutation testing, advance only if earlier stages pass. When a design review is due, the hook signals that to the agent; the agent then performs a separate review, without a skill. In its JavaScript and TypeScript example, ESLint provides structural checks; PMD is listed as an equivalent for Java.
+Consider a generic layered workflow. After a supported editing tool completes, a hook can trigger a change detector. The detector identifies the changed files and runs a deterministic static check of structural complexity. At `Stop`, a hook advances to mutation testing only if those faster checks passed. If the result indicates that a design review is due, the hook can request a continuation prompt asking the model to perform a separate design review. The model performs the review; it is not a skill or code executed by the hook.
 
 This is a conceptual example of how hooks can coordinate sensors, not a configuration recipe. It also clarifies the question behind my experiment: before deciding which checks to delegate to hooks, I needed to learn which checkout supplies the hook definition when the session runs in a worktree.
 
